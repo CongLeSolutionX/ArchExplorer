@@ -54,6 +54,7 @@ config:
 }%%
 flowchart TB
     subgraph Legend
+    style Legend fill:#cf32,stroke:#333,stroke-width:2px
         UI[User Interface]:::frontend
         CS[Core Service]:::core
         EX[External Service]:::external
@@ -61,7 +62,8 @@ flowchart TB
         SEC[Security Component]:::security
     end
 
-    subgraph "Frontend Layer"
+    subgraph Frontend_Layer["Frontend Layer"]
+    style Frontend_Layer fill:#2f32,stroke:#333,stroke-width:2px
         MainRoutes["Main App Routes"]:::frontend
         AuthRoutes["Auth Routes"]:::frontend
         ModalSystem["Modal System"]:::frontend
@@ -74,35 +76,41 @@ flowchart TB
         Settings["Settings Management"]:::frontend
     end
 
-    subgraph "Core Services Layer"
+    subgraph Core_Services_Layer["Core Services Layer"]
+    style Core_Services_Layer fill:#232,stroke:#333,stroke-width:2px
         AgentRuntime["Agent Runtime"]:::core
         PluginSystem["Plugin System"]:::core
         
-        subgraph "State Management"
+        subgraph State_Management["State Management"]
+        style State_Management fill:#2fd2,stroke:#333,stroke-width:2px
             GlobalState["Global State"]:::core
             ChatState["Chat State"]:::core
             UserState["User State"]:::core
         end
         
-        subgraph "Database Layer"
+        subgraph Database_Layer["Database Layer"]
+        style Database_Layer fill:#f1d1,stroke:#333,stroke-width:2px
             ClientDB[(Client Database)]:::infra
             ServerDB[(Server Database)]:::infra
         end
         
-        subgraph "Authentication"
+        subgraph Authentication["Authentication"]
+        style Authentication fill:#2fd2,stroke:#333,stroke-width:2px
             NextAuth["Next-Auth"]:::security
             ClerkAuth["Clerk Integration"]:::security
             AuthProvider["Auth Provider"]:::security
         end
     end
 
-    subgraph "Backend Layer"
+    subgraph Backend_Layer["Backend Layer"]
+    style Backend_Layer fill:#2cc5,stroke:#333,stroke-width:2px
         APIRoutes["API Routes"]:::core
         TRPCEndpoints["TRPC Endpoints"]:::core
         WebAPIServices["WebAPI Services"]:::core
     end
 
-    subgraph "External Services"
+    subgraph External_Services["External Services"]
+    style External_Services fill:#55c5,stroke:#333,stroke-width:2px
         LLMProviders["LLM Providers"]:::external
         Storage["Storage Services"]:::external
         AuthProviders["Auth Providers"]:::external
