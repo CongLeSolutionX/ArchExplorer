@@ -245,7 +245,7 @@ Please see the `CONTRIBUTING.md` file (to be created) for more detailed instruct
 ## License
 
 *   Code files within this repository (including the Mermaid.js diagram source files) are licensed under the [MIT License](LICENSE).
-*   Documentation and textual explanations (README.md and associated files) are licensed under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](LICENSE-CC-BY-4.0).
+*   Documentation and textual explanations (README.md and associated files) are licensed under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](LICENSE-CC-BY).
 
 ---
 
