@@ -76,7 +76,7 @@ The repository is organized by architectural focus area and then by individual p
 ```
 ArchExplorer/
 ├── LICENSE                   (MIT License text)
-├── LICENSE-CC-BY-4.0         (Creative Commons BY 4.0 License text)
+├── LICENSE-CC-BY             (Creative Commons BY 4.0 License text)
 ├── README.md                 (This file - project overview)
 │
 ├── OperatingSystems/
