@@ -9,7 +9,11 @@ Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 ---
 
-Welcome to **ArchExplorer**! This open-source project aims to demystify the architectures of popular open-source projects by breaking them down into clear, concise, and interactive visualizations. We primarily use Mermaid.js diagrams (sequence diagrams, flowcharts, class diagrams, state diagrams, etc.) to illustrate the components, interactions, and data flows within these systems.  Whether you're trying to understand a new codebase, contribute to an open-source project, learn about architectural patterns, or simply curious about how large systems are built, ArchExplorer provides a visual entry point.
+Welcome to **ArchExplorer**!
+
+This open-source project aims to demystify the architectures of popular open-source projects by breaking them down into clear, concise, and interactive visualizations. We primarily use `Mermaid.js` diagrams (sequence diagrams, flowcharts, class diagrams, state diagrams, etc.) to illustrate the components, interactions, and data flows within these systems.  Whether you're trying to understand a new codebase, contribute to an open-source project, learn about architectural patterns, or simply curious about how large systems are built, `ArchExplorer` provides a visual entry point.
+
+**`ArchExplorer` is part of a larger initiative, alongside `AlgoVerse` and `Synthetic Zooniverse`, to make complex technical concepts more accessible through visualization. [AlgoVerse](https://github.com/CongLeSolutionX/AlgoVerse) focuses on algorithms, [Synthetic Zooniverse](https://github.com/CongLeSolutionX/Synthetic-Zooniverse) on AI models, and `ArchExplorer` on software architectures.  Together, they provide a comprehensive suite of resources for visual learning in computer science and software engineering.**
 
 ## Table of Contents
 
@@ -125,34 +129,53 @@ config:
   look: handDrawn
   theme: dark
 ---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Toggle theme value to `base` to activate the initilization below for the customized theme version.
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
+%%{
+  init: {
+    "graph": { "htmlLabels": false, 'curve': 'linear' },
+    'fontFamily': 'Fantasy',
+    'themeVariables': {
+      'primaryColor': '#ffff',
+      'primaryTextColor': '#55ff',
+      'primaryBorderColor': '#7c2',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
+    }
+  }
+}%%
 graph LR
-    subgraph ControlPlane["Control Plane (Master Node)"]
-    style ControlPlane fill:#d2f3,stroke:#005a9e,stroke-width:2px
-        A[API Server] --> B(Scheduler);
-        A --> C(Controller Manager);
-        A --> D(etcd);
-        B --> E[Kubelet];
-        C --> E;
+    subgraph Control_Plane["Control Plane (Master Node)"]
+    style Control_Plane fill:#d2f3,stroke:#005a9e,stroke-width:2px
+        A[API Server] --> B(Scheduler)
+        A --> C(Controller Manager)
+        A --> D(etcd)
+        B --> E[Kubelet]
+        C --> E
     end
 
-    subgraph WorkerNodes["Worker Nodes"]
-        style WorkerNodes fill:#f2aa,stroke:#005a9e,stroke-width:1px
-        E --> F(Pods);
-        E --> G(Container Runtime);
-        F --> G;
-        H[Kube-proxy] --> F;
-        E <--> H;
+    subgraph Worker_Nodes["Worker Nodes"]
+        style Worker_Nodes fill:#f252,stroke:#005a9e,stroke-width:1px
+        E --> F(Pods)
+        E --> G(Container Runtime)
+        F --> G
+        H[Kube-proxy] --> F
+        E <--> H
     end
   
     subgraph Pod_Component["Pod Component"]
-        style Pod_Component fill:#a2fa,stroke:#005a9e,stroke-width:1px
+        style Pod_Component fill:#a255,stroke:#005a9e,stroke-width:1px
         I[Container1]
         J[Container2]
     end
 
-    A -.-> User[User/Client];
-    F -.-> Pod_Component;
+    A -.-> User["User/Client"]
+    F -.-> Pod_Component
     linkStyle 4,8 stroke:#333,stroke-width:1px,stroke-dasharray: 3 3
+
 ```
 
 **Component Explanations:**
@@ -199,6 +222,10 @@ Replace `[YOUR_REPOSITORY_URL]` with the actual URL of the ArchExplorer reposito
 
 ## Contributing
 
+We welcome contributions! If you have new insights, model implementations, or research updates to share, please refer to the `CONTRIBUTING.md` (Not yet implemented will be updated later) for guidelines.
+
+
+<!-- 
 Contributions are highly encouraged! If you'd like to contribute an architectural visualization, please follow these guidelines:
 
 1.  **Fork the Repository:**  Create a fork of the repository on your own GitHub account.
@@ -211,7 +238,7 @@ Contributions are highly encouraged! If you'd like to contribute an architectura
 8.  **Create a Pull Request:** Submit a pull request to the main repository. Clearly describe your changes and the project you've visualized.
 9.  **Code of Conduct:** Adhere to project code of conduct.
 
-Please see the `CONTRIBUTING.md` file (to be created) for more detailed instructions and style guides.
+Please see the `CONTRIBUTING.md` file (to be created) for more detailed instructions and style guides. -->
 
 ---
 
