@@ -8,7 +8,7 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 
 
-# CHANGE_ME
+# Papers With Code - Client
 > **Disclaimer:**
 >
 > This document contains my personal notes on the topic,

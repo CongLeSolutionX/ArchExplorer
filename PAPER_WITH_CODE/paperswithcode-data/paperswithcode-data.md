@@ -8,7 +8,7 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 
 
-# Papers With Code Data
+# Papers With Code - Data
 > **Disclaimer:**
 >
 > This document contains my personal notes on the topic,
@@ -80,7 +80,7 @@ flowchart TD
     classDef scheduler fill:#fbb3,stroke:#f55,stroke-width:2px
     classDef consumers fill:#cdf3,stroke:#9bf,stroke-width:2px
     classDef policy fill:#ddd3,stroke:#333,stroke-width:2px
-    
+
 ```
 
 
