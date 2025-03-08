@@ -50,6 +50,8 @@ We achieve this by:
 *   **Focusing on Clarity:**  We prioritize clarity and simplicity over exhaustive detail.  The goal is to provide an accessible overview, not a complete blueprint.
 *   **Community Contributions:** We welcome contributions from the community to expand the library of visualized architectures.
 
+**This project builds upon the visual learning principles established in AlgoVerse (algorithm visualization) and Synthetic Zooniverse (AI model visualization), extending the approach to the realm of software architecture.**
+
 ---
 
 ## Architectural Focus Areas
@@ -74,7 +76,7 @@ The repository is organized by architectural focus area and then by individual p
 ```
 ArchExplorer/
 ├── LICENSE                   (MIT License text)
-├── LICENSE-CC-BY-4.0         (Creative Commons BY 4.0 License text)
+├── LICENSE-CC-BY             (Creative Commons BY 4.0 License text)
 ├── README.md                 (This file - project overview)
 │
 ├── OperatingSystems/
@@ -109,7 +111,7 @@ Each project folder contains:
     *   One or more Mermaid.js diagrams visualizing different aspects of the architecture.
     *   Explanations of the components, interactions, and data flows shown in the diagrams.
     *   Links to the project's official documentation and source code.
-*   **diagrams/:**  A directory containing the Mermaid.js source files (`.mmd`) for the diagrams.  This allows you to easily modify and extend the diagrams.
+*   **diagrams/:**  A directory containing the `Mermaid.js` source files (`.md`) for the diagrams.  This allows you to easily modify and extend the diagrams.
 
 ---
 
@@ -148,7 +150,7 @@ config:
   }
 }%%
 graph LR
-    subgraph Control_Plane["Control Plane (Master Node)"]
+    subgraph Control_Plane["Control Plane<br>(Master Node)"]
     style Control_Plane fill:#d2f3,stroke:#005a9e,stroke-width:2px
         A[API Server] --> B(Scheduler)
         A --> C(Controller Manager)
