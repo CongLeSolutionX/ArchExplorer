@@ -23,6 +23,96 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 ## A Diagrammatic Guide 
 
 
+```mermaid
+---
+title: "System Design Primer"
+config:
+  layout: elk
+  look: handDrawn
+  theme: dark
+---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
+%%{
+  init: {
+    "flowchart": { "htmlLabels": false, 'curve': 'linear' },
+    'fontFamily': 'Fantasy',
+    'themeVariables': {
+      'primaryColor': '#BB28',
+      'primaryTextColor': '#299',
+      'primaryBorderColor': '#7c2',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
+    }
+  }
+}%%
+flowchart TD
+    subgraph Central_Education["Central Education"]
+    style Central_Education fill:#c222,stroke:#333,stroke-width:2px
+        ED("Educational Content Hub"):::hub
+    end
+
+    subgraph Resource_Materials["Resource Materials"]
+    style Resource_Materials fill:#c222,stroke:#333,stroke-width:2px
+        FC("Flash Cards"):::resource
+        SG("Study Guide"):::resource
+    end
+
+    subgraph Sample_Solutions["Sample Solutions"]
+    style Sample_Solutions fill:#c222,stroke:#333,stroke-width:2px
+        subgraph "Object-Oriented Design Solutions"
+            OOD("OOD Solutions"):::solution
+        end
+        subgraph System_Design_Solutions["System Design Solutions"]
+            SD("System Design Solutions"):::solution
+        end
+    end
+
+    subgraph Tooling_and_Utilities["Tooling & Utilities"]
+    style Tooling_and_Utilities fill:#c222,stroke:#333,stroke-width:2px
+        TOOL("Build/Generation Tools"):::tool
+    end
+
+    %% Connections from Educational Hub
+    ED -->|"guides"| FC
+    ED -->|"guides"| SG
+    ED -->|"illustrates"| OOD
+    ED -->|"illustrates"| SD
+    ED -->|"assembles"| TOOL
+
+    %% Click Events for Educational Content Hub (README files)
+    click ED "https://github.com/donnemartin/system-design-primer/blob/master/README.md"
+    click ED "https://github.com/donnemartin/system-design-primer/blob/master/README-ja.md"
+    click ED "https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md"
+    click ED "https://github.com/donnemartin/system-design-primer/blob/master/README-zh-TW.md"
+
+    %% Click Events for Resource Materials
+    click FC "https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards"
+    click SG "https://github.com/donnemartin/system-design-primer/blob/master/resources/study_guide.graffle"
+
+    %% Click Events for Sample Solutions
+    click OOD "https://github.com/donnemartin/system-design-primer/tree/master/solutions/object_oriented_design"
+    click SD "https://github.com/donnemartin/system-design-primer/tree/master/solutions/system_design"
+
+    %% Click Events for Tooling & Utilities
+    click TOOL "https://github.com/donnemartin/system-design-primer/blob/master/generate-epub.sh"
+    click TOOL "https://github.com/donnemartin/system-design-primer/blob/master/.gitignore"
+    click TOOL "https://github.com/donnemartin/system-design-primer/blob/master/LICENSE.txt"
+    click TOOL "https://github.com/donnemartin/system-design-primer/blob/master/CONTRIBUTING.md"
+    click TOOL "https://github.com/donnemartin/system-design-primer/blob/master/epub-metadata.yaml"
+
+    %% Styles
+    classDef hub fill:#cf25,stroke:#4532,stroke-width:2px
+    classDef resource fill:#fd55,stroke:#233331,stroke-width:1px
+    classDef solution fill:#d4da,stroke:#155724,stroke-width:2px
+    classDef tool fill:#f7d3,stroke:#1c23,stroke-width:2px
+    
+```
+
+
+
 
 
 ---
