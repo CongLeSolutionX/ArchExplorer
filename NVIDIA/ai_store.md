@@ -33,7 +33,7 @@ copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
   layout: elk
   look: handDrawn
-  theme: default
+  theme: dark
 ---
 %%%%%%%% Mermaid version v11.4.1-b.14
 %%%%%%%% Toggle theme value to `base` to activate the initilization below for the customized theme version.
@@ -130,13 +130,13 @@ graph TD
     Docs ---|"guides"| CLI
 
     %% Styling classes
-    classDef client fill:#CCCCCC,stroke:#333,stroke-width:2px;
-    classDef api fill:#FFA500,stroke:#333,stroke-width:2px;
-    classDef control fill:#87CEEB,stroke:#333,stroke-width:2px;
-    classDef data fill:#90EE90,stroke:#333,stroke-width:2px;
-    classDef external fill:#DDA0DD,stroke:#333,stroke-width:2px;
-    classDef deploy fill:#FF7F7F,stroke:#333,stroke-width:2px;
-    classDef monitor fill:#FFB6C1,stroke:#333,stroke-width:2px;
+    classDef client fill:#CCC3,stroke:#333,stroke-width:2px;
+    classDef api fill:#FFA5,stroke:#333,stroke-width:2px;
+    classDef control fill:#87CE,stroke:#333,stroke-width:2px;
+    classDef data fill:#90EE,stroke:#333,stroke-width:2px;
+    classDef external fill:#DDA5,stroke:#333,stroke-width:2px;
+    classDef deploy fill:#FCF2,stroke:#333,stroke-width:2px;
+    classDef monitor fill:#FFB6,stroke:#333,stroke-width:2px;
 
     %% Click Events for Control Plane
     click AISInit "https://github.com/nvidia/aistore/blob/main/cmd/aisinit/config.go"
