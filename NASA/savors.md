@@ -26,7 +26,7 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 ```mermaid
 ---
-title: "CHANGE_ME_DADDY"
+title: "savors"
 author: "Cong Le"
 version: "1.0"
 license(s): "MIT, CC BY 4.0"
@@ -34,7 +34,7 @@ copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
   layout: elk
   look: handDrawn
-  theme: default
+  theme: dark
 ---
 %%%%%%%% Mermaid version v11.4.1-b.14
 %%%%%%%% Toggle theme value to `base` to activate the initilization below for the customized theme version.
@@ -107,10 +107,10 @@ flowchart TD
     click libMaps "https://github.com/pkolano/savors/tree/master/lib/maps"
     click ConfigDoc "https://github.com/pkolano/savors/tree/master/etc/savorsrc"
 
-    classDef core fill:#add8e6,stroke:#000,stroke-width:2px
-    classDef vis fill:#90ee90,stroke:#000,stroke-width:2px
-    classDef aux fill:#ffffcc,stroke:#000,stroke-width:2px
-    classDef config fill:#ffb6c1,stroke:#000,stroke-width:2px
+    classDef core fill:#c1a9,stroke:#000,stroke-width:2px
+    classDef vis fill:#ef29,stroke:#000,stroke-width:2px
+    classDef aux fill:#f5c9,stroke:#000,stroke-width:2px
+    classDef config fill:#f2a9,stroke:#000,stroke-width:2px
 
 ```
 
