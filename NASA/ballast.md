@@ -25,7 +25,7 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 ```mermaid
 ---
-title: "CHANGE_ME_DADDY"
+title: "Ballast"
 author: "Cong Le"
 version: "1.0"
 license(s): "MIT, CC BY 4.0"
