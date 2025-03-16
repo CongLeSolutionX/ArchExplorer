@@ -103,12 +103,12 @@ flowchart TD
     J -->|"binds"| K
 
     %% Styles
-    classDef core fill:#AED6F,stroke:#2471A3,stroke-width:2px
-    classDef domain fill:#DF22,stroke:#27AE60,stroke-width:2px
-    classDef interface fill:#F9E79,stroke:#B7950B,stroke-width:2px
-    classDef tools fill:#F5CBA,stroke:#CA6F1E,stroke-width:2px
-    classDef legacy fill:#FAD7A,stroke:#E67E22,stroke-width:2px
-    classDef external fill:#E8DAE,stroke:#8E44AD,stroke-width:2px
+    classDef core fill:#AEF23,stroke:#2471A3,stroke-width:2px
+    classDef domain fill:#DFC25,stroke:#27AE60,stroke-width:2px
+    classDef interface fill:#FEE95,stroke:#B7950B,stroke-width:2px
+    classDef tools fill:#FCB25,stroke:#CA6F1E,stroke-width:2px
+    classDef legacy fill:#FAA45,stroke:#E67E22,stroke-width:2px
+    classDef external fill:#EDA35,stroke:#8E44AD,stroke-width:2px
 
     %% Click Events
     click A "https://github.com/visionworkbench/visionworkbench/tree/master/src/vw/Core"
