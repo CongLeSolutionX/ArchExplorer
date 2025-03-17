@@ -43,7 +43,7 @@ config:
 %%{
   init: {
     'flowchart': {'htmlLabels': true, 'curve': 'basis' },
-    'fontFamily': 'arial',
+    'fontFamily': 'Fantasy',
     'themeVariables': {
       'lineColor': '#F8B229'
     }
