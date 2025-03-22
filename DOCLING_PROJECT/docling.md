@@ -34,7 +34,7 @@ copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
   layout: elk
   look: handDrawn
-  theme: default
+  theme: dark
 ---
 %%%%%%%% Mermaid version v11.4.1-b.14
 %%%%%%%% Toggle theme value to `base` to activate the initilization below for the customized theme version.
@@ -130,14 +130,14 @@ flowchart TD
     click CH "https://github.com/docling-project/docling/tree/main/docling/chunking"
 
     %% Styles
-    classDef interface fill:#AEDFF7,stroke:#333,stroke-width:2px
-    classDef core fill:#FFCCCC,stroke:#333,stroke-width:2px
-    classDef pipelines fill:#D5F5E3,stroke:#333,stroke-width:2px
-    classDef backends fill:#FCF3CF,stroke:#333,stroke-width:2px
-    classDef models fill:#D6EAF8,stroke:#333,stroke-width:2px
-    classDef utilities fill:#F9E79F,stroke:#333,stroke-width:2px
-    classDef external fill:#C39BD3,stroke:#333,stroke-width:2px
-    classDef cicd fill:#E8DAEF,stroke:#333,stroke-width:2px
+    classDef interface fill:#AFF7,stroke:#333,stroke-width:0.5px
+    classDef core fill:#FCC3,stroke:#333,stroke-width:0.5px
+    classDef pipelines fill:#DFE3,stroke:#333,stroke-width:0.5px
+    classDef backends fill:#FCF2,stroke:#333,stroke-width:0.5px
+    classDef models fill:#DEA8,stroke:#333,stroke-width:0.5px
+    classDef utilities fill:#FEF9,stroke:#333,stroke-width:0.5px
+    classDef external fill:#CBD3,stroke:#333,stroke-width:0.5px
+    classDef cicd fill:#EDF3,stroke:#333,stroke-width:0.5px
     
 ```
 
