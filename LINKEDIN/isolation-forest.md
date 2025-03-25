@@ -31,7 +31,7 @@ copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
   layout: elk
   look: handDrawn
-  theme: base
+  theme: dark
 ---
 %%%%%%%% Mermaid version v11.4.1-b.14
 %%%%%%%% Toggle theme value to `base` to activate the initilization below for the customized theme version.
@@ -94,12 +94,12 @@ graph LR
     click gradleBuild "https://github.com/linkedin/isolation-forest/blob/master/build.gradle"
 
     %% Styles
-    classDef scala fill:#AED6F1,stroke:#1F618D,stroke-width:2px;
-    classDef python fill:#A9DFBF,stroke:#196F3D,stroke-width:2px;
-    classDef external fill:#F9E79F,stroke:#B7950B,stroke-width:2px;
-    classDef storage fill:#E8DAEF,stroke:#8E44AD,stroke-width:2px;
-    classDef build fill:#F5B7B1,stroke:#C0392B,stroke-width:2px;
-    classDef ci fill:#FDEBD0,stroke:#D35400,stroke-width:2px
+    classDef scala fill:#AD22,stroke:#1F618D,stroke-width:2px;
+    classDef python fill:#AF22,stroke:#196F3D,stroke-width:2px;
+    classDef external fill:#FE79F,stroke:#B7950B,stroke-width:2px;
+    classDef storage fill:#EDAEF,stroke:#8E44AD,stroke-width:2px;
+    classDef build fill:#F7B1,stroke:#C0392B,stroke-width:2px;
+    classDef ci fill:#FDD1,stroke:#D35400,stroke-width:2px
     
 ```
 
