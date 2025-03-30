@@ -32,7 +32,7 @@ copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
   layout: elk
   look: handDrawn
-  theme: default
+  theme: dark
 ---
 %%%%%%%% Mermaid version v11.4.1-b.14
 %%%%%%%% Toggle theme value to `base` to activate the initilization below for the customized theme version.
@@ -146,13 +146,13 @@ flowchart TD
     click SdlLib "https://github.com/sourmesen/mesen2/tree/master/Sdl"
 
     %% Styles
-    classDef core fill:#8ecae6,stroke:#219ebc,stroke-width:2px;
-    classDef ui fill:#ffcc99,stroke:#ff9900,stroke-width:2px;
-    classDef interop fill:#f5c8d6,stroke:#f72585,stroke-width:2px;
-    classDef debugger fill:#ffe5b4,stroke:#ffb703,stroke-width:2px;
-    classDef scripting fill:#caffbf,stroke:#57cc99,stroke-width:2px;
-    classDef platform fill:#d8f3dc,stroke:#40916c,stroke-width:2px;
-    classDef util fill:#e0fbfc,stroke:#98c1d9,stroke-width:2px;
+    classDef core fill:#afe6,stroke:#219ebc,stroke-width:2px;
+    classDef ui fill:#fcf9,stroke:#ff9900,stroke-width:2px;
+    classDef interop fill:#fdf6,stroke:#f72585,stroke-width:2px;
+    classDef debugger fill:#feb4,stroke:#ffb703,stroke-width:2px;
+    classDef scripting fill:#caf3,stroke:#57cc99,stroke-width:2px;
+    classDef platform fill:#ddc3,stroke:#40916c,stroke-width:2px;
+    classDef util fill:#ebc3,stroke:#98c1d9,stroke-width:2px;
 
 ```
 
