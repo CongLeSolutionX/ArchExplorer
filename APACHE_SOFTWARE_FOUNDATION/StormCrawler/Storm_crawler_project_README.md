@@ -46,7 +46,7 @@ To provide a flexible and robust framework for developers to create custom web c
 StormCrawler doesn't exist in a vacuum. It interacts with several other key technologies to provide its functionality.
 
 <details open>
-<summary>Click to show/hide the full native PlantUML implementation with comment documentation.</summary>
+<summary>Click to show/hide the full native DOT implementation</summary>
 
 
 ```dot
