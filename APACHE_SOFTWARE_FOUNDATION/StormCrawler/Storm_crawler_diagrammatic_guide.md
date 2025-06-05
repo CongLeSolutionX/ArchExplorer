@@ -34,8 +34,6 @@ source: https://github.com/apache/stormcrawler
 > 2. **Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0):** Applies to all non-code content, including text, explanations, diagrams, and illustrations.
 ---
 
-Storm_crawler_diagrammatic_guide
-
 ```mermaid
 ---
 title: "A Diagrammatic Guide to the Storm Crawler Project"
