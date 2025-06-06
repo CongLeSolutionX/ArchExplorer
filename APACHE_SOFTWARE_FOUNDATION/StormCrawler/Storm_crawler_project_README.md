@@ -12,7 +12,7 @@ source: https://github.com/apache/stormcrawler/blob/main/README.md
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdWJvdmdiOGthMjlkbWZwOHdkaHpyY2Rhdmd6d3ZrbDZkeXU2bmdlciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8KWG2s3MR6SXbjccBO/giphy.gif)
+> ![Loading...](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2g4OGtqNjR0bnF4dDFzZWwwOGQwdGZnY211eTg4Z2xiaTNyY214ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wLa0m8uCyEZGhNS6dT/giphy.gif)
 > 
 > gif image is provided by [Giphy](https://giphy.com)
 > 
