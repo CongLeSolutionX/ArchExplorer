@@ -13,6 +13,8 @@ source: https://github.com/ipfs/ipfs-desktop
 > This is a working draft in progress
 > 
 > ![Loading...](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHNwdmJteDFidGlyMnE4MHFiYnU3ZG05dnQ1eHY5NDQ4dnlzNmtzdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qc5fbrb4qpupRA9r4o/giphy.gif)
+>
+> gif image is provided by [Giphy](https://giphy.com)
 > 
 > ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
 
