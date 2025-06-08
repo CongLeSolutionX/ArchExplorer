@@ -4,7 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
-source: https://github.com/ipfs/ipfs-repository-template
+source: https://github.com/ipfs/specs
 ---
 
 
@@ -22,7 +22,7 @@ source: https://github.com/ipfs/ipfs-repository-template
 
 
 
-# ipfs-repository-template repo project
+# specs repo project
 > **Disclaimer:**
 >
 > This document contains my personal notes on the topic,
@@ -34,10 +34,9 @@ source: https://github.com/ipfs/ipfs-repository-template
 ---
 
 
-
 ```mermaid
 ---
-title: "ipfs-repository-template repo project"
+title: "specs repo project"
 author: "Cong Le"
 version: "1.0"
 license(s): "MIT, CC BY-SA 4.0"
@@ -66,44 +65,90 @@ config:
   }
 }%%
 flowchart TD
-    classDef docs fill:#ADD8E6,stroke:#333
-    classDef cfg fill:#90EE90,stroke:#333
-    classDef ci fill:#98FB98,stroke:#333
-    classDef external fill:#F0E68C,stroke:#333
-    classDef event fill:#22BB,stroke:#333
-    classDef future fill:#D3D3D3,stroke:#333,stroke-dasharray: 5 5
-
-    Contributors((Contributors)):::external
-    PR((Pull Request)):::event
-    StaleTrigger((Stale Trigger)):::event
-
-    subgraph "GitHub Repository"
-        README["README.md"]:::docs
-        LICENSE["LICENSE.md"]:::docs
-        subgraph ".github"
-            subgraph "ISSUE_TEMPLATE"
-                ISSUE["Issue Templates"]:::cfg
-            end
-            GHCONFIG["config.yml"]:::cfg
-            subgraph "workflows"
-                GEN[(generated-pr.yml)]:::ci
-                STALE[(stale.yml)]:::ci
-            end
-        end
-        FUTURE["src/ (Future code)"]:::future
+    subgraph "Content Layer"
+        RootSpecs["Root Markdown Specs"]:::content
+        IPIP["IPIP Proposals"]:::content
+        HTTPG["HTTP Gateways Specs"]:::content
+        IPNSs["IPNS Specs"]:::content
+        RoutingSpecs["Routing Specs"]:::content
+        Assets["Assets (img/ & src/img/)"]:::content
     end
 
-    Contributors -->|"opens Issue"| ISSUE
-    Contributors -->|"submits PR"| PR
-    PR -->|"triggers"| GEN
-    StaleTrigger -->|"triggers"| STALE
+    subgraph "Static Site Generator"
+        Eleventy["Eleventy (Node.js)"]:::processing
+        Templates["Templates:\ntemplate.html, template.md, src/_includes"]:::processing
+        CSS["CSS:\nsrc/css/index.css, src/css/specs.css"]:::processing
+        Config["Config:\npackage.json, Makefile"]:::processing
+    end
 
-    click README "https://github.com/ipfs/ipfs-repository-template/blob/main/README.md"
-    click LICENSE "https://github.com/ipfs/ipfs-repository-template/blob/main/LICENSE.md"
-    click ISSUE "https://github.com/ipfs/ipfs-repository-template/tree/main/.github/ISSUE_TEMPLATE/"
-    click GHCONFIG "https://github.com/ipfs/ipfs-repository-template/blob/main/.github/config.yml"
-    click GEN "https://github.com/ipfs/ipfs-repository-template/blob/main/.github/workflows/generated-pr.yml"
-    click STALE "https://github.com/ipfs/ipfs-repository-template/blob/main/.github/workflows/stale.yml"
+    subgraph "Built Site"
+        Site["Built Site\n(HTML, CSS, Assets)"]:::processing
+    end
+
+    subgraph "Build & Validation"
+        Linter["Linter\n(.markdownlint.json)"]:::processing
+        CI["CI Workflows"]:::infra
+    end
+
+    subgraph "Deployment"
+        Deploy["GitHub Pages / CDN"]:::infra
+    end
+
+    subgraph "External Integrations"
+        IPLD["IPLD.io, Multiformats, libp2p"]:::external
+        Community["Community\n(Issues & PRs)"]:::external
+    end
+
+    %% Data Flows
+    RootSpecs --> Eleventy
+    IPIP --> Eleventy
+    HTTPG --> Eleventy
+    IPNSs --> Eleventy
+    RoutingSpecs --> Eleventy
+    Assets --> Eleventy
+
+    Eleventy --> Site
+    Templates --> Site
+    CSS --> Site
+    Config --> Eleventy
+
+    Site --> Linter
+    Linter --> CI
+    CI --> Deploy
+
+    CI <--> Community
+    Community --> RootSpecs
+
+    IPLD -.-> RootSpecs
+    IPLD -.-> Eleventy
+
+    %% Click Events
+    click IPIP "https://github.com/ipfs/specs/blob/main/IPIP/*.md"
+    click HTTPG "https://github.com/ipfs/specs/blob/main/http-gateways/*.md"
+    click IPNSs "https://github.com/ipfs/specs/blob/main/ipns/*.md"
+    click RoutingSpecs "https://github.com/ipfs/specs/blob/main/routing/*.md"
+    click Assets "https://github.com/ipfs/specs/tree/main/img/"
+    click Assets "https://github.com/ipfs/specs/tree/main/src/img/"
+    click Templates "https://github.com/ipfs/specs/tree/main/src/_includes/"
+    click Eleventy "https://github.com/ipfs/specs/blob/main/package.json"
+    click Config "https://github.com/ipfs/specs/tree/main/Makefile"
+    click CSS "https://github.com/ipfs/specs/blob/main/src/css/index.css"
+    click CSS "https://github.com/ipfs/specs/blob/main/src/css/specs.css"
+    click Linter "https://github.com/ipfs/specs/blob/main/.markdownlint.json"
+    click CI "https://github.com/ipfs/specs/blob/main/.github/workflows/build.yml"
+    click CI "https://github.com/ipfs/specs/blob/main/.github/workflows/linter.yml"
+    click CI "https://github.com/ipfs/specs/blob/main/.github/workflows/stale.yml"
+    click CI "https://github.com/ipfs/specs/blob/main/.github/workflows/generated-pr.yml"
+    click Deploy "https://github.com/ipfs/specs/blob/main/.github/workflows/build.yml"
+    click Community "https://github.com/ipfs/specs/tree/main/.github/CODEOWNERS"
+    click Community "https://github.com/ipfs/specs/blob/main/.github/ISSUE_TEMPLATE/config.yml"
+    click Community "https://github.com/ipfs/specs/blob/main/.github/ISSUE_TEMPLATE/open_an_issue.md"
+
+    %% Styles
+    classDef content fill:#cfe2f3,stroke:#0366d6,stroke-width:1px
+    classDef processing fill:#d9ead3,stroke:#38761d,stroke-width:1px
+    classDef infra fill:#f9cb9c,stroke:#b45f06,stroke-width:1px
+    classDef external fill:#d9d2e9,stroke:#674ea7,stroke-width:1px
 ```
 
 

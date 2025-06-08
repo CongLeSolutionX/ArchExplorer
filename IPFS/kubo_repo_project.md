@@ -4,7 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
-source: https://github.com/ipfs/ipfs-repository-template
+source: https://github.com/ipfs/kubo
 ---
 
 
@@ -22,7 +22,7 @@ source: https://github.com/ipfs/ipfs-repository-template
 
 
 
-# ipfs-repository-template repo project
+# kubo repo project
 > **Disclaimer:**
 >
 > This document contains my personal notes on the topic,
@@ -34,10 +34,9 @@ source: https://github.com/ipfs/ipfs-repository-template
 ---
 
 
-
 ```mermaid
 ---
-title: "ipfs-repository-template repo project"
+title: "kubo repo project"
 author: "Cong Le"
 version: "1.0"
 license(s): "MIT, CC BY-SA 4.0"
@@ -66,46 +65,74 @@ config:
   }
 }%%
 flowchart TD
-    classDef docs fill:#ADD8E6,stroke:#333
-    classDef cfg fill:#90EE90,stroke:#333
-    classDef ci fill:#98FB98,stroke:#333
-    classDef external fill:#F0E68C,stroke:#333
-    classDef event fill:#22BB,stroke:#333
-    classDef future fill:#D3D3D3,stroke:#333,stroke-dasharray: 5 5
-
-    Contributors((Contributors)):::external
-    PR((Pull Request)):::event
-    StaleTrigger((Stale Trigger)):::event
-
-    subgraph "GitHub Repository"
-        README["README.md"]:::docs
-        LICENSE["LICENSE.md"]:::docs
-        subgraph ".github"
-            subgraph "ISSUE_TEMPLATE"
-                ISSUE["Issue Templates"]:::cfg
-            end
-            GHCONFIG["config.yml"]:::cfg
-            subgraph "workflows"
-                GEN[(generated-pr.yml)]:::ci
-                STALE[(stale.yml)]:::ci
-            end
-        end
-        FUTURE["src/ (Future code)"]:::future
+    %% Frontend Interfaces
+    subgraph "Frontend Interfaces"
+        CLI["CLI (Entry Point)"]:::external
+        HTTP["HTTP API Gateway"]:::external
+        WebUI["WebUI Interface"]:::external
     end
 
-    Contributors -->|"opens Issue"| ISSUE
-    Contributors -->|"submits PR"| PR
-    PR -->|"triggers"| GEN
-    StaleTrigger -->|"triggers"| STALE
+    %% Backend Daemon
+    subgraph "Backend Service"
+        Daemon["IPFS Daemon/Node"]:::backend
+    end
 
-    click README "https://github.com/ipfs/ipfs-repository-template/blob/main/README.md"
-    click LICENSE "https://github.com/ipfs/ipfs-repository-template/blob/main/LICENSE.md"
-    click ISSUE "https://github.com/ipfs/ipfs-repository-template/tree/main/.github/ISSUE_TEMPLATE/"
-    click GHCONFIG "https://github.com/ipfs/ipfs-repository-template/blob/main/.github/config.yml"
-    click GEN "https://github.com/ipfs/ipfs-repository-template/blob/main/.github/workflows/generated-pr.yml"
-    click STALE "https://github.com/ipfs/ipfs-repository-template/blob/main/.github/workflows/stale.yml"
+    %% Internal Subsystems
+    subgraph "Subsystems"
+        Core["Core Services (Command Parsing & Core API)"]:::internal
+        Networking["Libp2p Networking (DHT, Bitswap)"]:::networking
+        Storage["Data Storage (Repo & Config)"]:::storage
+        Plugins["Plugin Manager"]:::plugin
+        UnixFS_Client["UnixFS Client Support"]:::auxiliary
+        UnixFS_Core["UnixFS Core Support"]:::auxiliary
+        Blocks["Block Handling"]:::auxiliary
+        Fuse["Fuse Mounting Service"]:::auxiliary
+    end
+
+    %% Testing Module
+    Testing["Testing & Integration"]:::testing
+
+    %% Connections from Frontend to Backend
+    CLI -->|"sendsCommand"| Daemon
+    HTTP -->|"apiRequest"| Daemon
+    WebUI -->|"viaAPI"| HTTP
+
+    %% Internal routing from Daemon to core subsystems
+    Daemon -->|"executes"| Core
+    Core -->|"handlesNetwork"| Networking
+    Core -->|"accessesStorage"| Storage
+    Core -->|"invokesPlugin"| Plugins
+    Core -->|"processesUnixFS"| UnixFS_Client
+    Core -->|"processesUnixFS"| UnixFS_Core
+    Core -->|"managesBlocks"| Blocks
+    Core -->|"mountsFuse"| Fuse
+
+    %% Testing interacts with the Daemon
+    Testing ---|"validates"| Daemon
+
+    %% Click Events for Component Mapping
+    click CLI "https://github.com/ipfs/kubo/tree/master/cmd/ipfs"
+    click Core "https://github.com/ipfs/kubo/tree/master/core"
+    click Storage "https://github.com/ipfs/kubo/tree/master/repo"
+    click Networking "https://github.com/ipfs/kubo/tree/master/core/node/libp2p"
+    click Networking "https://github.com/ipfs/kubo/tree/master/p2p"
+    click Plugins "https://github.com/ipfs/kubo/tree/master/plugin"
+    click UnixFS_Client "https://github.com/ipfs/kubo/blob/master/client/rpc/unixfs.go"
+    click UnixFS_Core "https://github.com/ipfs/kubo/blob/master/core/coreiface/unixfs.go"
+    click Blocks "https://github.com/ipfs/kubo/tree/master/blocks"
+    click Fuse "https://github.com/ipfs/kubo/tree/master/fuse"
+    click Testing "https://github.com/ipfs/kubo/tree/master/test"
+
+    %% Styles
+    classDef external fill:#FFD700,stroke:#DAA520,stroke-width:2px;
+    classDef backend fill:#87CEFA,stroke:#4682B4,stroke-width:2px;
+    classDef internal fill:#98FB98,stroke:#2E8B57,stroke-width:2px;
+    classDef networking fill:#AFEEEE,stroke:#20B2AA,stroke-width:2px;
+    classDef storage fill:#FFFACD,stroke:#BDB76B,stroke-width:2px;
+    classDef plugin fill:#E6E6FA,stroke:#9370DB,stroke-width:2px;
+    classDef auxiliary fill:#FFE4E1,stroke:#CD5C5C,stroke-width:2px;
+    classDef testing fill:#F0E68C,stroke:#BDB76B,stroke-width:2px;
 ```
-
 
 
 ---

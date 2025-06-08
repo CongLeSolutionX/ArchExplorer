@@ -4,7 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
-source: https://github.com/ipfs/ipfs-repository-template
+source: https://github.com/ipfs/service-worker-gateway
 ---
 
 
@@ -22,7 +22,7 @@ source: https://github.com/ipfs/ipfs-repository-template
 
 
 
-# ipfs-repository-template repo project
+# service-worker-gateway repo project
 > **Disclaimer:**
 >
 > This document contains my personal notes on the topic,
@@ -37,7 +37,7 @@ source: https://github.com/ipfs/ipfs-repository-template
 
 ```mermaid
 ---
-title: "ipfs-repository-template repo project"
+title: "service-worker-gateway repo project"
 author: "Cong Le"
 version: "1.0"
 license(s): "MIT, CC BY-SA 4.0"
@@ -65,45 +65,75 @@ config:
     }
   }
 }%%
-flowchart TD
-    classDef docs fill:#ADD8E6,stroke:#333
-    classDef cfg fill:#90EE90,stroke:#333
-    classDef ci fill:#98FB98,stroke:#333
-    classDef external fill:#F0E68C,stroke:#333
-    classDef event fill:#22BB,stroke:#333
-    classDef future fill:#D3D3D3,stroke:#333,stroke-dasharray: 5 5
-
-    Contributors((Contributors)):::external
-    PR((Pull Request)):::event
-    StaleTrigger((Stale Trigger)):::event
-
-    subgraph "GitHub Repository"
-        README["README.md"]:::docs
-        LICENSE["LICENSE.md"]:::docs
-        subgraph ".github"
-            subgraph "ISSUE_TEMPLATE"
-                ISSUE["Issue Templates"]:::cfg
-            end
-            GHCONFIG["config.yml"]:::cfg
-            subgraph "workflows"
-                GEN[(generated-pr.yml)]:::ci
-                STALE[(stale.yml)]:::ci
-            end
-        end
-        FUTURE["src/ (Future code)"]:::future
+flowchart TB
+    %% Frontend Layer
+    subgraph "Frontend: Browser"
+        direction TB
+        IndexHTML["public/index.html"]:::frontend
+        ReactApp["React SPA (src/app.tsx)"]:::frontend
+        SWRegister["SW Registration (src/ipfs-sw-first-hit.ts)"]:::frontend
     end
 
-    Contributors -->|"opens Issue"| ISSUE
-    Contributors -->|"submits PR"| PR
-    PR -->|"triggers"| GEN
-    StaleTrigger -->|"triggers"| STALE
+    %% Service Worker Layer
+    subgraph "Service Worker"
+        direction TB
+        SWCore["SW Core (src/sw.ts)"]:::sw
+        Utils["SW Utils (src/service-worker-utils.ts)"]:::sw
+        Helia["Helia IPFS Node"]:::sw
+        VF["Verified-Fetch (src/lib/get-verified-fetch.ts)"]:::sw
+        Routing["Routing & Gateway Logic"]:::sw
+        ConfigDB["Config & Storage (src/lib/config-db.ts)"]:::sw
+    end
 
-    click README "https://github.com/ipfs/ipfs-repository-template/blob/main/README.md"
-    click LICENSE "https://github.com/ipfs/ipfs-repository-template/blob/main/LICENSE.md"
-    click ISSUE "https://github.com/ipfs/ipfs-repository-template/tree/main/.github/ISSUE_TEMPLATE/"
-    click GHCONFIG "https://github.com/ipfs/ipfs-repository-template/blob/main/.github/config.yml"
-    click GEN "https://github.com/ipfs/ipfs-repository-template/blob/main/.github/workflows/generated-pr.yml"
-    click STALE "https://github.com/ipfs/ipfs-repository-template/blob/main/.github/workflows/stale.yml"
+    %% Backend Layer
+    subgraph "Backend: Static Server / Reverse Proxy"
+        direction TB
+        NodeServe["Node Server (serve.ts / build.js)"]:::backend
+        GoServer["Go Server (main.go)"]:::backend
+        PublicAssets["Public Assets (public/)"]:::backend
+    end
+
+    %% External Systems
+    subgraph "External Systems"
+        direction TB
+        IPFSP2P["IPFS P2P Network"]:::external
+        HTTPGW["HTTP Gateways"]:::external
+        CI["CI/CD Pipeline (.github/workflows/)"]:::external
+    end
+
+    %% Data Flows
+    ReactApp -->|"register SW"| SWRegister
+    ReactApp -->|"GET /"| NodeServe
+    NodeServe -->|"serves index.html & bundles"| IndexHTML
+    GoServer -->|"serves assets & proxy"| PublicAssets
+    NodeServe --> PublicAssets
+    SWRegister -->|"activates"| SWCore
+    SWCore --> VF
+    VF --> Helia
+    Helia --> IPFSP2P
+    SWCore --> HTTPGW
+    SWCore -->|"respond with content"| ReactApp
+    ReactApp <-->|"postMessage: updateConfig"| SWCore
+    NodeServe -->|"subdomain proxy requests"| GoServer
+    CI --> ReactApp
+    CI --> SWCore
+    CI --> NodeServe
+    CI --> GoServer
+
+    %% Click Events
+    click ReactApp "https://github.com/ipfs/service-worker-gateway/blob/main/src/app.tsx"
+    click SWRegister "https://github.com/ipfs/service-worker-gateway/blob/main/src/ipfs-sw-first-hit.ts"
+    click IndexHTML "https://github.com/ipfs/service-worker-gateway/blob/main/public/index.html"
+    click SWCore "https://github.com/ipfs/service-worker-gateway/blob/main/src/sw.ts"
+    click Utils "https://github.com/ipfs/service-worker-gateway/blob/main/src/service-worker-utils.ts"
+    click VF "https://github.com/ipfs/service-worker-gateway/blob/main/src/lib/get-verified-fetch.ts"
+    click ConfigDB "https://github.com/ipfs/service-worker-gateway/blob/main/src/lib/config-db.ts"
+
+    %% Styles
+    classDef frontend fill:#D0E8FF,stroke:#0366d6,color:#000
+    classDef sw fill:#FFECD0,stroke:#D9822B,color:#000
+    classDef backend fill:#D0FFD6,stroke:#237E2E,color:#000
+    classDef external fill:#EDEDED,stroke:#888888,color:#000
 ```
 
 
