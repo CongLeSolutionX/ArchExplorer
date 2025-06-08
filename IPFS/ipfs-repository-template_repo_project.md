@@ -4,6 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
+source: https://github.com/ipfs/ipfs-repository-template
 ---
 
 
@@ -21,7 +22,7 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 
 
-# CHANGE_ME
+# ipfs-repository-template repo project
 > **Disclaimer:**
 >
 > This document contains my personal notes on the topic,
@@ -33,7 +34,78 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 ---
 
 
-## MAIN CONTENT - A Diagrammatic Guide 
+
+```mermaid
+---
+title: "ipfs-repository-template repo project"
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY-SA 4.0"
+copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+config:
+  layout: elk
+  theme: base
+---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
+%%{
+  init: {
+    'flowchart': { 'htmlLabels': true, 'curve': 'linear' },
+    'fontFamily': 'Monaco',
+    'themeVariables': {
+      'primaryColor': '#222B2B',
+      'primaryTextColor': '#F8B229',
+      'lineColor': '#F8B229',
+      'primaryBorderColor': '#27AE60',
+      'secondaryColor': '#2221',
+      'secondaryTextColor': '#6C3483',
+      'secondaryBorderColor': '#A569BD',
+      'fontSize': '20px'
+    }
+  }
+}%%
+flowchart TD
+    classDef docs fill:#ADD8E6,stroke:#333
+    classDef cfg fill:#90EE90,stroke:#333
+    classDef ci fill:#98FB98,stroke:#333
+    classDef external fill:#F0E68C,stroke:#333
+    classDef event fill:#FFA500,stroke:#333
+    classDef future fill:#D3D3D3,stroke:#333,stroke-dasharray: 5 5
+
+    Contributors((Contributors)):::external
+    PR((Pull Request)):::event
+    StaleTrigger((Stale Trigger)):::event
+
+    subgraph "GitHub Repository"
+        README["README.md"]:::docs
+        LICENSE["LICENSE.md"]:::docs
+        subgraph ".github"
+            subgraph "ISSUE_TEMPLATE"
+                ISSUE["Issue Templates"]:::cfg
+            end
+            GHCONFIG["config.yml"]:::cfg
+            subgraph "workflows"
+                GEN[(generated-pr.yml)]:::ci
+                STALE[(stale.yml)]:::ci
+            end
+        end
+        FUTURE["src/ (Future code)"]:::future
+    end
+
+    Contributors -->|"opens Issue"| ISSUE
+    Contributors -->|"submits PR"| PR
+    PR -->|"triggers"| GEN
+    StaleTrigger -->|"triggers"| STALE
+
+    click README "https://github.com/ipfs/ipfs-repository-template/blob/main/README.md"
+    click LICENSE "https://github.com/ipfs/ipfs-repository-template/blob/main/LICENSE.md"
+    click ISSUE "https://github.com/ipfs/ipfs-repository-template/tree/main/.github/ISSUE_TEMPLATE/"
+    click GHCONFIG "https://github.com/ipfs/ipfs-repository-template/blob/main/.github/config.yml"
+    click GEN "https://github.com/ipfs/ipfs-repository-template/blob/main/.github/workflows/generated-pr.yml"
+    click STALE "https://github.com/ipfs/ipfs-repository-template/blob/main/.github/workflows/stale.yml"
+```
+
 
 
 ---
