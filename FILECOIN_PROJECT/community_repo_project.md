@@ -38,7 +38,7 @@ source: https://github.com/filecoin-project/community
 
 ```mermaid
 ---
-title: "CHANGE_ME_DADDY"
+title: "community repo project"
 author: "Cong Le"
 version: "1.0"
 license(s): "MIT, CC BY-SA 4.0"
