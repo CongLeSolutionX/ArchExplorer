@@ -7,6 +7,18 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 ---
 
 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+> 
+> This is a working draft in progress.
+> 
+> ![Loading...](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmJ1dTBocm56YWVvanozZDFiNnQ0MnA1azRiOW00a3B2MGlrZmNwMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8Ajnlx0wUQsiIUdtqc/giphy.gif)
+> 
+> gif image is provided by [Giphy](https://giphy.com)
+> 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+
+----
+
 
 # Docling Core
 > **Disclaimer:**
