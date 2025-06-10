@@ -64,8 +64,8 @@ config:
   }
 }%%
 mindmap
-  root((Web Fonts for Mermaid))
-    Sans-Serif
+  root)"Web Fonts for Mermaid"(
+    Sans_Serif))"Sans-Serif"((
       Helvetica["Helvetica<br>[WS]"]
       Arial["Arial<br>[WS]"]
       Arial_Black["Arial Black<br>[WS]"]
@@ -80,14 +80,14 @@ mindmap
       Roboto["Roboto<br>[PWF - Android/Google]"]
       Source_Sans_Pro["Source Sans Pro<br>[PWF - Adobe]"]
       Lato["Lato<br>[PWF - Google]"]
-    Serif
+    Serif))"Serif"((
       Times_New_Roman["Times New Roman<br>[WS]"]
       Georgia["Georgia<br>[WS]"]
       Palatino["Palatino<br>[WS]"]
       Baskerville["Baskerville<br>[WS]"]
       Cambria["Cambria<br>[MOD - Win/Office]"]
       Source_Serif_Pro["Source Serif Pro<br>[PWF - Adobe]"]
-    Monospace
+    Monospace))"Monospace"((
       Andale_Mono["Andalé Mono<br>[WS]"]
       Courier["Courier<br>[WS]"]
       Courier_New["Courier New<br>[WS]"]
@@ -97,11 +97,11 @@ mindmap
       Menlo["Menlo<br>[MOD - Mac]"]
       Source_Code_Pro["Source Code Pro<br>[PWF - Adobe]"]
       Fira_Mono_Fira_Code["Fira Mono / Fira Code<br>[PWF - Mozilla]"]
-    Cursive
+    Cursive))"Cursive"((
       Comic_Sans_MS["Comic Sans MS [WS]<br>(Often debated category, technically cursive)"]
       Bradley_Hand["Bradley Hand<br>[O]"]
       Brush_Script_MT["Brush Script MT<br>[O]"]
-    Fantasy
+    Fantasy))"Fantasy"((
       Luminari["Luminari<br>[O]"]
       
 ```
