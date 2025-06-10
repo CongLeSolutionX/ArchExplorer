@@ -7,6 +7,19 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 ---
 
 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+> 
+> This is a working draft in progress.
+> 
+> ![Loading...](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXV2OXBzZWFuZm9qNGJhc3gydTl1aW04cjR0dHQ5OGx3aTFoZmc0biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/spu2k869TI1aw/giphy.gif)
+> 
+> gif image is provided by [Giphy](https://giphy.com)
+> 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+
+----
+
+
 
 # PixArt Sigma
 > **Disclaimer:**
