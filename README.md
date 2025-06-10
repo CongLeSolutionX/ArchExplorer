@@ -9,6 +9,50 @@ Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 ---
 
+
+```mermaid
+---
+title: "CongLeSolutionX"
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY-SA 4.0"
+copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+config:
+  theme: base
+---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%{
+  init: {
+    'flowchart': { 'htmlLabels': false },
+    'fontFamily': 'Bradley Hand',
+    'themeVariables': {
+      'primaryColor': '#fc82',
+      'primaryTextColor': '#F8B229',
+      'primaryBorderColor': '#27AE60',
+      'secondaryColor': '#8784',
+      'secondaryTextColor': '#6C3483',
+      'lineColor': '#F8B229',
+      'fontSize': '20px'
+    }
+  }
+}%%
+flowchart LR
+    My_Meme@{ img: "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnd0dzk0N3kyaThnZnhja293MDd1OXJoNnBjYXF5MTlib2FzMGtzZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SCt3Miv6ugvSg/giphy.gif", label: "....?", pos: "b", w: 200, h: 150, constraint: "on" }
+
+Closing_quote@{ shape: braces, label: "If you understood all the world's rules,<br/> would you break them <br/>or<br/> create new ones....?" }
+My_Meme ~~~ Closing_quote
+Link_to_my_profile{{"<a href='https://github.com/CongLeSolutionX' target='_blank'>Click here if you care about my profile</a>"}}
+
+Closing_quote ~~~ My_Meme
+My_Meme animatingEdge@--> Link_to_my_profile
+animatingEdge@{ animate: true }
+
+```
+
+
+---
+
+
 Welcome to **ArchExplorer**!
 
 This open-source project aims to demystify the architectures of popular open-source projects by breaking them down into clear, concise, and interactive visualizations. We primarily use `Mermaid.js` diagrams (sequence diagrams, flowcharts, class diagrams, state diagrams, etc.) to illustrate the components, interactions, and data flows within these systems.  Whether you're trying to understand a new codebase, contribute to an open-source project, learn about architectural patterns, or simply curious about how large systems are built, `ArchExplorer` provides a visual entry point.
@@ -17,16 +61,21 @@ This open-source project aims to demystify the architectures of popular open-sou
 
 ## Table of Contents
 
-- [About the Project](#about-the-project)
-- [Architectural Focus Areas](#architectural-focus-areas)
-- [Repository Structure](#repository-structure)
-- [Example Visualization: Simplified Kubernetes Architecture](#example-visualization-simplified-kubernetes-architecture)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Disclaimer](#disclaimer)
-- [Markdown and Visualization Resources](#markdown-and-visualization-resources)
+- [ArchExplorer: Deconstructing Open-Source Architectures with Visualizations](#archexplorer-deconstructing-open-source-architectures-with-visualizations)
+  - [Table of Contents](#table-of-contents)
+  - [About the Project](#about-the-project)
+  - [Architectural Focus Areas](#architectural-focus-areas)
+  - [Repository Structure](#repository-structure)
+  - [Example Visualization: Simplified Kubernetes Architecture](#example-visualization-simplified-kubernetes-architecture)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Cloning the Repository](#cloning-the-repository)
+  - [Usage](#usage)
+  - [🚀 Project Current Activities](#-project-current-activities)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Disclaimer](#disclaimer)
+  - [Markdown and Visualization Resources](#markdown-and-visualization-resources)
 
 ---
 
