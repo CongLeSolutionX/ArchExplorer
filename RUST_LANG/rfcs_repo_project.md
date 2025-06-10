@@ -12,7 +12,7 @@ source: https://github.com/rust-lang/rfcs
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnZsaHdtc21kMnkzcHQ1c210amliNmlnZm9seGE3Y3VrcGlubWVhaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/d7ri9CMTYZLWuiqQrR/giphy.gif)
+> ![Loading...](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzBod3ZwbWNwb3IxcXE5Znc0bjE4eGZubGh4cW1jaHk1bm91cTN2diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xIAyO8FSP95Di/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
