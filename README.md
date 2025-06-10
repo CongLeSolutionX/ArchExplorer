@@ -335,9 +335,7 @@ My_Meme ~~~ Closing_quote
 Link_to_my_profile{{"<a href='https://github.com/CongLeSolutionX' target='_blank'>Click here if you care about my profile</a>"}}
 
 Closing_quote ~~~ My_Meme
- 
-Link_to_my_profile animatingEdge@--> My_Meme
-
+My_Meme animatingEdge@--> Link_to_my_profile
 animatingEdge@{ animate: true }
 
 ```
