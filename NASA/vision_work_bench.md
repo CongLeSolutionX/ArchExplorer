@@ -9,6 +9,19 @@ original source: "https://github.com/visionworkbench/visionworkbench"
 
 
 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+> 
+> This is a working draft in progress.
+> 
+> ![Loading...](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWhjeTBvZXFubnZsaDBzN2E1c2Y2OTdjMXppYno4OGh2NHJ3cHU0eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26xBx5DA7w8tgw0Yo/giphy.gif)
+> 
+> gif image is provided by [Giphy](https://giphy.com)
+> 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+
+----
+
+
 # Vision Workbench
 > **Disclaimer:**
 >
