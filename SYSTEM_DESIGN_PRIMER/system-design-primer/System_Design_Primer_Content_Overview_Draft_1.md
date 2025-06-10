@@ -8,6 +8,18 @@ original source: "https://github.com/donnemartin/system-design-primer/blob/maste
 ---
 
 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+> 
+> This is a working draft in progress.
+> 
+> ![Loading...](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2xodTZzb3owNnM4YThtcGkycjZobmE5czN0ZnhqMHdoNzNqNGZpaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lXHwJv89PvdN200Anr/giphy.gif)
+> 
+> gif image is provided by [Giphy](https://giphy.com)
+> 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+
+----
+
 
 # System Design Primer - Content Overview
 > **Disclaimer:**
