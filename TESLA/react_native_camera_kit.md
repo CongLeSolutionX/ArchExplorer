@@ -8,6 +8,21 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 
 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+> 
+> This is a working draft in progress.
+> 
+> ![Loading...](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2Y4MGZybmJhcTNnMXJzOXdpdDM5ejk0dWtvcWR4dzdjejR0bTQ5dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/K5DhLPHVVRrNW7nhfy/giphy.gif)
+> 
+> gif image is provided by [Giphy](https://giphy.com)
+> 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+
+----
+
+
+
+
 # React Native Camera Kit
 > **Disclaimer:**
 >
