@@ -6,6 +6,18 @@ license(s): MIT, CC BY 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 ---
 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+> 
+> This is a working draft in progress.
+> 
+> ![Loading...](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXZzZzVvamF5MmNkc3FicDd4NmpqZXF2emR2cDJwNjM0ZTcxbTdkciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26xBFf8svDzIBiU2A/giphy.gif)
+> 
+> gif image is provided by [Giphy](https://giphy.com)
+> 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+
+----
+
 
 
 # FastText
