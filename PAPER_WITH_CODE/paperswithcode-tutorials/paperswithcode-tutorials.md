@@ -83,7 +83,7 @@ flowchart TD
     README -->|"links to"| AT
     README -->|"feedback"| GHI
 
-    click DR "https://github.com/paperswithcode/tutorials/tree/main/project root"
+    click DR "https://github.com/paperswithcode/tutorials"
     click README "https://github.com/paperswithcode/tutorials/blob/main/README.md"
     click AP "https://github.com/paperswithcode/tutorials/blob/main/add_paper.md"
     click AR "https://github.com/paperswithcode/tutorials/blob/main/add_results.md"
