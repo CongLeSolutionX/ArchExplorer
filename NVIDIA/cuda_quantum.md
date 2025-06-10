@@ -7,6 +7,19 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 ---
 
 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+> 
+> This is a working draft in progress.
+> 
+> ![Loading...](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Z4N2gyY3hpYzhpejRpa3YwYjV0OGU4NHc3bnF1a2J3Y2g0ZDZlbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yQltwC4N8nzOE1WdDW/giphy.gif)
+> 
+> gif image is provided by [Giphy](https://giphy.com)
+> 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+
+----
+
+
 
 # Cuda Quantum
 > **Disclaimer:**
