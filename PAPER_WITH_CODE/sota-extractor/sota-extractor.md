@@ -60,6 +60,7 @@ config:
     'themeVariables': {
       'primaryColor': '#f231',
       'primaryTextColor': '#239',
+      'textColor': '#F8B229',
       'primaryBorderColor': '#7c2',
       'lineColor': '#F8B229',
       'secondaryColor': '#006100',
