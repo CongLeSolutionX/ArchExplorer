@@ -42,14 +42,24 @@ version: "1.0"
 license(s): "MIT, CC BY 4.0"
 copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
-  theme: dark
+  theme: base
 ---
 %%%%%%%% Mermaid version v11.4.1-b.14
 %%{
   init: {
+    'fontFamily': 'Andale Mono, monospace',
+    'mindmap': {
+	    'nodeAlign': 'center',
+	    'padding': 20
+    },
     'themeVariables': {
-      'fontSize': '12px',
-      'fontFamily': 'Monospace'
+      'primaryColor': '#FC82',
+      'primaryTextColor': '#F8B229',
+      'primaryBorderColor': '#27AE60',
+      'secondaryColor': '#EBF3',
+      'secondaryTextColor': '#6C3483',
+      'secondaryBorderColor': '#A569BD',
+      'fontSize': '20px'
     }
   }
 }%%
@@ -210,7 +220,8 @@ config:
     'themeVariables': {
       'primaryColor': '#FC82',
       'primaryTextColor': '#F8B229',
-      'lineColor': '#F8B229'
+      'lineColor': '#F8B229',
+      'fontSize': '20px'
     }
   }
 }%%
