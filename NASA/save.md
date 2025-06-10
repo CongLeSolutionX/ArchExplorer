@@ -11,7 +11,7 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 > 
 > This is a working draft in progress.
 > 
-> ![Loading...](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGo3YTRwbHZuMmFtOTkzMjB1MWN3aTM4OWZmcWdrdGFpZXQ5d2cybiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NrXyKCIbSebv5Sgxpj/giphy.gif)
+> ![Loading...](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHlvMXJzdTFsdjh2ajg1bG5oYTEyem5wNTE1d3hiMjdrZDhuNHg1dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26xBP0d9pciEWyteo/giphy.gif)
 > 
 > gif image is provided by [Giphy](https://giphy.com)
 > 
