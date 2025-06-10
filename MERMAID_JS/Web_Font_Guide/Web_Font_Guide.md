@@ -88,21 +88,21 @@ mindmap
       Cambria("Cambria<br>[MOD - Win/Office]")
       Source_Serif_Pro("Source Serif Pro<br>[PWF - Adobe]")
     Monospace))"Monospace"((
-      Andale_Mono["Andalé Mono<br>[WS]"]
-      Courier["Courier<br>[WS]"]
-      Courier_New["Courier New<br>[WS]"]
-      Lucida["Lucida<br>(Console/Sans Typewriter)<br>[WS]"]
-      Monaco["Monaco<br>[MOD - Mac Classic]"]
-      Consolas["Consolas<br>[MOD - Win/Office]"]
-      Menlo["Menlo<br>[MOD - Mac]"]
-      Source_Code_Pro["Source Code Pro<br>[PWF - Adobe]"]
-      Fira_Mono_Fira_Code["Fira Mono / Fira Code<br>[PWF - Mozilla]"]
+      Andale_Mono("Andalé Mono<br>[WS]")
+      Courier("Courier<br>[WS]")
+      Courier_New("Courier New<br>[WS]")
+      Lucida("Lucida<br>(Console/Sans Typewriter)<br>[WS]")
+      Monaco("Monaco<br>[MOD - Mac Classic]")
+      Consolas("Consolas<br>[MOD - Win/Office]")
+      Menlo("Menlo<br>[MOD - Mac]")
+      Source_Code_Pro("Source Code Pro<br>[PWF - Adobe]")
+      Fira_Mono_Fira_Code("Fira Mono / Fira Code<br>[PWF - Mozilla]")
     Cursive))"Cursive"((
-      Comic_Sans_MS["Comic Sans MS [WS]<br>(Often debated category, technically cursive)"]
-      Bradley_Hand["Bradley Hand<br>[O]"]
-      Brush_Script_MT["Brush Script MT<br>[O]"]
+      Comic_Sans_MS("Comic Sans MS [WS]<br>(Often debated category, technically cursive)")
+      Bradley_Hand("Bradley Hand<br>[O]")
+      Brush_Script_MT("Brush Script MT<br>[O]")
     Fantasy))"Fantasy"((
-      Luminari["Luminari<br>[O]"]
+      Luminari("Luminari<br>[O]")
       
 ```
 
