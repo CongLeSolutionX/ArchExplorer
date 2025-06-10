@@ -7,6 +7,18 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 ---
 
 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+> 
+> This is an ongoing project collecting notes for personal educational purposes and references. 
+> 
+> ![Loading...](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGoyOGFxamNyZm9uanNrbG94c2M2ZHA4am1hcDVlZWZyeDkzajdveiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/htSV2Ktelwcp34rvlK/giphy.gif)
+> 
+> gif image is provided by [Giphy](https://giphy.com)
+> 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+
+----
+
 
 # Comprehensive Web Font Guide for Mermaid Diagrams
 > **Disclaimer:**
