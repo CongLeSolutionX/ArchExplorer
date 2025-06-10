@@ -7,6 +7,18 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 ---
 
 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+> 
+> This is a working draft in progress.
+> 
+> ![Loading...](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3B1dTdiZXV4cHIwZnVhcGJjZmNvM2kyeTEzYmN1cWdvY2dtOHhyMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yfL6boWDfXpwA/giphy.gif)
+> 
+> gif image is provided by [Giphy](https://giphy.com)
+> 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+
+----
+
 
 # Continue
 > **Disclaimer:**
@@ -44,6 +56,7 @@ config:
     'flowchart': {'htmlLabels': true, 'curve': 'basis' },
     'fontFamily': 'Fantasy',
     'themeVariables': {
+      'textColor': '#F8B229',
       'lineColor': '#F8B229'
     }
   }
