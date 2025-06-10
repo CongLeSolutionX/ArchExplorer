@@ -8,7 +8,7 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 > ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
 > 
-> This is an ongoing document collecting notes for personal educational purposes and references. 
+> This is a working draft in progress
 > 
 > ![Loading...](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmkyeTh4c3podTM1M21pbW12dmdyYXZwaDBidW52MWh4Z25pOTE4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xp6n2H229mIb6/giphy.gif)
 > 
