@@ -69,10 +69,10 @@ config:
 flowchart TD
     User("User/Contributor"):::contributor
     DR("Documentation Repository"):::repository
-    README("README.md (Central Hub)"):::doc
-    AP("add_paper.md"):::doc
-    AR("add_results.md"):::doc
-    AT("add_task.md"):::doc
+    README("<b>README.md<br/>(Central Hub)"):::doc
+    AP("<b>add_paper.md</b>"):::doc
+    AR("<b>add_results.md</b>"):::doc
+    AT("<b>add_task.md</b>"):::doc
     GHI("GitHub Issues"):::external
 
     User -->|"access"| DR
