@@ -59,6 +59,7 @@ config:
     'themeVariables': {
       'primaryColor': '#f231',
       'primaryTextColor': '#239',
+      'textColor': '#F8B229',
       'primaryBorderColor': '#7c2',
       'lineColor': '#F8B229',
       'secondaryColor': '#006100',
@@ -89,7 +90,7 @@ flowchart TD
     click AT "https://github.com/paperswithcode/tutorials/blob/main/add_task.md"
 
     classDef contributor fill:#ffccc,stroke:#cc0000,stroke-width:2px
-    classDef repository fill:#ffe6b,stroke:#cc6600,stroke-width:2px
+    classDef repository fill:#2AA2,stroke:#cc6600,stroke-width:2px
     classDef doc fill:#cce5f,stroke:#004085,stroke-width:2px
     classDef external fill:#d4edd,stroke:#155724,stroke-width:2px,stroke-dasharray: 5,5
 
