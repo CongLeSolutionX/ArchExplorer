@@ -7,6 +7,19 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 ---
 
 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+> 
+> This is a working draft in progress.
+> 
+> ![Loading...](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDl3cXMwNWE1aXBzbXhsNndkcW9saTBjazFxeHVzeWk3cTBkd240MyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/0U7bWQK9s75PjRKcHz/giphy.gif)
+> 
+> gif image is provided by [Giphy](https://giphy.com)
+> 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+
+----
+
+
 
 # DEPNotify-Starter
 > **Disclaimer:**
