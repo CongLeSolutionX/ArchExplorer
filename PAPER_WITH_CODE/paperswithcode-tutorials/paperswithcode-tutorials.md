@@ -77,9 +77,9 @@ flowchart TD
 
     User -->|"access"| DR
     DR -->|"contains"| README
-    README -->|"linksTo"| AP
-    README -->|"linksTo"| AR
-    README -->|"linksTo"| AT
+    README -->|"links to"| AP
+    README -->|"links to"| AR
+    README -->|"links to"| AT
     README -->|"feedback"| GHI
 
     click DR "https://github.com/paperswithcode/tutorials/tree/main/project root"
