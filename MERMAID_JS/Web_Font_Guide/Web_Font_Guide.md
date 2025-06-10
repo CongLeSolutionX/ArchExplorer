@@ -50,7 +50,7 @@ config:
     'fontFamily': 'Andale Mono, monospace',
     'mindmap': {
 	    'nodeAlign': 'center',
-	    'padding': 20
+	    'padding': 15
     },
     'themeVariables': {
       'primaryColor': '#FC82',
@@ -81,12 +81,12 @@ mindmap
       Source_Sans_Pro("Source Sans Pro<br>[PWF - Adobe]")
       Lato("Lato<br>[PWF - Google]")
     Serif))"Serif"((
-      Times_New_Roman["Times New Roman<br>[WS]"]
-      Georgia["Georgia<br>[WS]"]
-      Palatino["Palatino<br>[WS]"]
-      Baskerville["Baskerville<br>[WS]"]
-      Cambria["Cambria<br>[MOD - Win/Office]"]
-      Source_Serif_Pro["Source Serif Pro<br>[PWF - Adobe]"]
+      Times_New_Roman("Times New Roman<br>[WS]")
+      Georgia("Georgia<br>[WS]")
+      Palatino("Palatino<br>[WS]")
+      Baskerville("Baskerville<br>[WS]")
+      Cambria("Cambria<br>[MOD - Win/Office]")
+      Source_Serif_Pro("Source Serif Pro<br>[PWF - Adobe]")
     Monospace))"Monospace"((
       Andale_Mono["Andalé Mono<br>[WS]"]
       Courier["Courier<br>[WS]"]
