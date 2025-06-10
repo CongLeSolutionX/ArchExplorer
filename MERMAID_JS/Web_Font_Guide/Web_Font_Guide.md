@@ -261,10 +261,10 @@ graph TD
         T4_Node --> T4_Desc
     end
 
-    T1_Node -- Safest Choice --> Recommendation("Recommendation")
-    T2_Node -- Good for Target OS --> Recommendation
-    T3_Node -- Good for Controlled Web Env --> Recommendation
-    T4_Node -- Use Sparingly/Stylistic Only --> Recommendation
+	Recommendation("Recommendation") -- Safest Choice --> T1_Node
+	Recommendation -- Good for Target OS --> T2_Node
+	Recommendation -- Good for Controlled Web Env --> T3_Node
+	Recommendation -- Use Sparingly/Stylistic Only --> T4_Node
 
 ```
 
