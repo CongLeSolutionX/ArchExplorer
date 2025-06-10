@@ -58,7 +58,7 @@ config:
     }
   }
 }%%
-flowchart TD
+flowchart LR
     R["Repository Root"]:::repo
     D["Documentation (README.md)"]:::doc
     W["Workflow (.github)"]:::workflow
