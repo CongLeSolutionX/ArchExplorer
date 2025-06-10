@@ -8,6 +8,19 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 
 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+> 
+> This is a working draft in progress.
+> 
+> ![Loading...](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXp6ejJ4eDh0dDl4Y3R5cDcwdzBnMjdhYjI5aWRpdXJqcG42N2ZwMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SmaYvew52UlC9MmB6l/giphy.gif)
+> 
+> gif image is provided by [Giphy](https://giphy.com)
+> 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+
+----
+
+
 # Open GPU Kernel Modules
 > **Disclaimer:**
 >
