@@ -52,6 +52,7 @@ config:
     'fontFamily': 'Fantasy',
     'themeVariables': {
       'primaryColor': '#BB28',
+      'textColor': '#F8B229',
       'primaryTextColor': '#299',
       'primaryBorderColor': '#7c2',
       'lineColor': '#F8B229',
