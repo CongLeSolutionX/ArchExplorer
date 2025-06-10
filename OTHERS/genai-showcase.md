@@ -7,6 +7,19 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 ---
 
 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+> 
+> This is a working draft in progress.
+> 
+> ![Loading...](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzdnYnN3NXZhMzFnc2FxN2dtNmViczVpZXQ0bmEyN3kwNnZ4a3JmOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Bzjdu3qiu1IezrKQ1p/giphy.gif)
+> 
+> gif image is provided by [Giphy](https://giphy.com)
+> 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+
+----
+
+
 
 # GenAI Showcase
 > **Disclaimer:**
