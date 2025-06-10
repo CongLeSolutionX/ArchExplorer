@@ -158,11 +158,11 @@ flowchart LR
     click VS "https://github.com/pixaranimationstudios/openusd-proposals/tree/main/proposals/variant_set_metadata"
 
     %% Styles
-    classDef repo fill:#FAD,stroke:#333,stroke-width:2px;
-    classDef doc fill:#BBF,stroke:#333,stroke-width:2px;
-    classDef workflow fill:#BFB,stroke:#333,stroke-width:2px;
-    classDef proposal fill:#FFDEAD,stroke:#333,stroke-width:2px;
-    classDef contributor fill:#CDE,stroke:#333,stroke-width:2px
+    classDef repo fill:#FAD2,stroke:#333,stroke-width:2px;
+    classDef doc fill:#BBF2,stroke:#333,stroke-width:2px;
+    classDef workflow fill:#BFB2,stroke:#333,stroke-width:2px;
+    classDef proposal fill:#FED2,stroke:#333,stroke-width:2px;
+    classDef contributor fill:#CDE2,stroke:#333,stroke-width:2px
 
 ```
 
