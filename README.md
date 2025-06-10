@@ -271,35 +271,6 @@ Please see the `CONTRIBUTING.md` file (to be created) for more detailed instruct
 
 ---
 
-
-## 🚀 Project Current Activities
-
-<div align="left"><a name="project-current-activities"></a>
-
-<details open>
-<summary>Click to show/hide more on recent activities of this project </summary>
-
-> powered by [OSS Insight](https://ossinsight.io)
-<!-- All the diagrams below are made with [OSS Insight](https://ossinsight.io/) -->
-
-| :bar_chart: Widget & Description | :art: Snapshot (Light Mode) |
-|---|---|
-| Active Contributors :technologist: of CongLeSolutionX/ArchExplorer - Last 28 days | ![Active Contributors of CongLeSolutionX/ArchExplorer - Last 28 days](https://next.ossinsight.io/widgets/official/compose-recent-active-contributors/thumbnail.png?repo_id=945004235&limit=30&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/compose-recent-active-contributors?repo_id=945004235&limit=30) |
-| Pushes :arrow_up: and Commits :writing_hand: of CongLeSolutionX/ArchExplorer | ![Pushes and Commits of CongLeSolutionX/ArchExplorer](https://next.ossinsight.io/widgets/official/analyze-repo-pushes-and-commits-per-month/thumbnail.png?repo_id=945004235&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/analyze-repo-pushes-and-commits-per-month?repo_id=945004235) |
-| Pull Request Size :straight_ruler: of CongLeSolutionX/ArchExplorer | ![Pull Request Size of CongLeSolutionX/ArchExplorer](https://next.ossinsight.io/widgets/official/analyze-repo-pull-requests-size-per-month/thumbnail.png?repo_id=945004235&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/analyze-repo-pull-requests-size-per-month?repo_id=945004235) |
-| Pull Request Lifecycle :arrows_counterclockwise: of CongLeSolutionX/ArchExplorer | ![Pull Request Lifecycle of CongLeSolutionX/ArchExplorer](https://next.ossinsight.io/widgets/official/analyze-repo-pull-request-open-to-merged/thumbnail.png?repo_id=945004235&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/analyze-repo-pull-request-open-to-merged?repo_id=945004235) |
-| Lines of Code Changes :computer::scroll: of CongLeSolutionX/ArchExplorer | ![Lines of Code Changes of CongLeSolutionX/ArchExplorer](https://next.ossinsight.io/widgets/official/analyze-repo-loc-per-month/thumbnail.png?repo_id=945004235&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/analyze-repo-loc-per-month?repo_id=945004235) |
-| Commits Time Distribution :alarm_clock::date: of CongLeSolutionX/ArchExplorer | ![Commits Time Distribution of CongLeSolutionX/ArchExplorer](https://next.ossinsight.io/widgets/official/analyze-repo-commits-time-distribution/thumbnail.png?repo_id=945004235&period=last_1_year&zone=0&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/analyze-repo-commits-time-distribution?repo_id=945004235&period=last_1_year&zone=0) | 
-
-
-</details>
-
-</div>
-
-
-
----
-
 ## License
 
 *   Code files within this repository (including the Mermaid.js diagram source files) are licensed under the [MIT License](LICENSE).
