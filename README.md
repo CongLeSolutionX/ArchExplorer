@@ -50,7 +50,7 @@ We achieve this by:
 *   **Focusing on Clarity:**  We prioritize clarity and simplicity over exhaustive detail.  The goal is to provide an accessible overview, not a complete blueprint.
 *   **Community Contributions:** We welcome contributions from the community to expand the library of visualized architectures.
 
-**This project builds upon the visual learning principles established in AlgoVerse (algorithm visualization) and Synthetic Zooniverse (AI model visualization), extending the approach to the realm of software architecture.**
+**This project builds upon the visual learning principles established in [AlgoVerse](https://github.com/CongLeSolutionX/AlgoVerse) (algorithm visualization) and [Synthetic Zooniverse](https://github.com/CongLeSolutionX/Synthetic-Zooniverse) (AI model visualization), extending the approach to the realm of software architecture.**
 
 ---
 
