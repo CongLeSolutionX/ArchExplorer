@@ -8,6 +8,20 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 
 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+> 
+> This is a working draft in progress.
+> 
+> ![Loading...](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjN1b3NuNGM2bHF2cm1pN3kyNzI0cTczcmdqcWluemZvNnZ6NHFtcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yv9TitLk3J9bHofwWv/giphy.gif)
+> 
+> gif image is provided by [Giphy](https://giphy.com)
+> 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+
+----
+
+
+
 # Kafka Helmsman
 > **Disclaimer:**
 >
