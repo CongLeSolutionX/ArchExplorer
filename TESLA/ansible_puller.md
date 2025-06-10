@@ -8,6 +8,20 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 
 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+> 
+> This is a working draft in progress.
+> 
+> ![Loading...](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExa3JjdWhwZW9iNTYxb3YwbnBqaHc0NnduMHpuemo2amVlc2YwdWMyYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mUfDhqH1dBSEM/giphy.gif)
+> 
+> gif image is provided by [Giphy](https://giphy.com)
+> 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+
+----
+
+
+
 # Ansible Puller
 > **Disclaimer:**
 >
