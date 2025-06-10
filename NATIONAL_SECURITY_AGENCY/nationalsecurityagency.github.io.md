@@ -8,6 +8,19 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 
 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+> 
+> This is a working draft in progress.
+> 
+> ![Loading...](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2ZlaTdrbzJobzd2eTF5dzFwOW5rcjhvN3RyeWhnbmhyaXQ3b2E1ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kyd2BtRpfv4q8O5oq0/giphy.gif)
+> 
+> gif image is provided by [Giphy](https://giphy.com)
+> 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+
+----
+
+
 # NationalSecurityAgency.github.io
 > **Disclaimer:**
 >
