@@ -7,6 +7,18 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 ---
 
 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+> 
+> This is a working draft in progress.
+> 
+> ![Loading...](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjBpMHFxcHZhbTBsbXVtdHBxaXFyc21ycGp2ZG11MTRoNW02N2diMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/87TcngvEXQ14Q/giphy.gif)
+> 
+> gif image is provided by [Giphy](https://giphy.com)
+> 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+
+----
+
 
 # National Security Agency - Datawave
 
