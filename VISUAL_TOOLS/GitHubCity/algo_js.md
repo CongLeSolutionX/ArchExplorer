@@ -121,6 +121,7 @@ config:
       'primaryColor': '#ffff',
       'primaryTextColor': '#2ff9',
       'primaryBorderColor': '#7c2',
+      'textColor': '#F8B229',
       'lineColor': '#F8B229',
       'secondaryColor': '#006100',
       'tertiaryColor': '#fff'
@@ -183,6 +184,7 @@ config:
       'primaryColor': '#ffff',
       'primaryTextColor': '#55ff',
       'primaryBorderColor': '#7c2',
+      'textColor': '#F8B229',
       'lineColor': '#F8B229',
       'secondaryColor': '#006100',
       'tertiaryColor': '#fff'
@@ -233,6 +235,7 @@ config:
       'primaryColor': '#ffff',
       'primaryTextColor': '#55ff',
       'primaryBorderColor': '#7c2',
+      'textColor': '#F8B229',
       'lineColor': '#F8B229',
       'secondaryColor': '#006100',
       'tertiaryColor': '#fff'
@@ -320,6 +323,7 @@ config:
       'primaryColor': '#ffff',
       'primaryTextColor': '#2ff9',
       'primaryBorderColor': '#7c2',
+      'textColor': '#F8B229',
       'lineColor': '#F8B229',
       'secondaryColor': '#006100',
       'tertiaryColor': '#fff'
@@ -406,6 +410,7 @@ config:
       'primaryColor': '#ffff',
       'primaryTextColor': '#2ff9',
       'primaryBorderColor': '#7c2',
+      'textColor': '#F8B229',
       'lineColor': '#F8B229',
       'secondaryColor': '#006100',
       'tertiaryColor': '#fff'
@@ -505,6 +510,7 @@ config:
       'primaryColor': '#ffff',
       'primaryTextColor': '#2ff9',
       'primaryBorderColor': '#7c2',
+      'textColor': '#F8B229',
       'lineColor': '#F8B229',
       'secondaryColor': '#006100',
       'tertiaryColor': '#fff'
