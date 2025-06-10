@@ -7,6 +7,19 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 ---
 
 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+> 
+> This is a working draft in progress.
+> 
+> ![Loading...](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNzh1b3h5c2swbmJvOWs1NDdnc3hmMTNkang4cnY2aTJheXUwdnAxZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/soVAY39pJqg8M/giphy.gif)
+> 
+> gif image is provided by [Giphy](https://giphy.com)
+> 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+
+----
+
+
 
 # CHANGE_ME
 > **Disclaimer:**
