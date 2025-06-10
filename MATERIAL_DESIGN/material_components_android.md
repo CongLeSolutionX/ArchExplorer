@@ -10,7 +10,7 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 > 
 > This is a working draft in progress.
 > 
-> ![Loading...](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnJwYWdheW8xNncyYWNjZW16NWdoMW5qZDV0amtqczA4NGIxcDhzaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o6fIVncMkNj6Mg2wU/giphy.gif)
+> ![Loading...](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYjduN21jdHk3cjZ0eXQ2cml0OTloNWRvMDg0dDA2bmxlcWV0bzQzaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oEduHCqVio59FqcNi/giphy.gif)
 > 
 > gif image is provided by [Giphy](https://giphy.com)
 > 
