@@ -208,34 +208,36 @@ config:
     'flowchart': {'htmlLabels': true, 'curve': 'basis' },
     'fontFamily': 'monospace',
     'themeVariables': {
+      'primaryColor': '#FC82',
+      'primaryTextColor': '#F8B229',
       'lineColor': '#F8B229'
     }
   }
 }%%
 graph TD
     subgraph Tier1["Tier 1:<br>Highest Compatibility"]
-        style Tier1 fill:#dff,stroke:#000,stroke-width:0.1px
+        style Tier1 fill:#dff2,stroke:#333,stroke-width:1px
         T1_Node("Classic Web-Safe Fonts<br>(Arial, Times New Roman, Courier New, etc.)")
         T1_Desc("Issues: <br/>- Limited aesthetic choice<br/>- Considered 'dated' by some<br/><b>+ Universally available</b><br/><b>+ Predictable rendering</b>")
         T1_Node --> T1_Desc
     end
 
     subgraph Tier2["Tier 2:<br>High Compatibility<br>(OS Dependent)"]
-        style Tier2 fill:#eff,stroke:#333,stroke-width:0.1px
+        style Tier2 fill:#eff2,stroke:#333,stroke-width:0.1px
         T2_Node("Modern OS Default Fonts<br>(Segoe UI, -apple-system, Consolas, Cambria, etc.)")
         T2_Desc("Issues: <br/>- Inconsistent look across OS<br/>- Falls back on other OS<br/><b>+ Excellent readability on target OS</b><br/><b>+ Native look & feel</b>")
         T2_Node --> T2_Desc
     end
 
     subgraph Tier3["Tier 3:<br>Medium Compatibility<br>(Context Dependent)"]
-         style Tier3 fill:#fff3e0,stroke:#333,stroke-width:0.1px
+        style Tier3 fill:#f3e2,stroke:#333,stroke-width:0.1px
        T3_Node("Popular Web/Open Source Fonts<br>(Roboto, Source Sans Pro, Fira Mono, etc.)")
        T3_Desc("Issues:<br/><b>- Requires installation OR web font loading (@font-face)</b><br/>- Potential licensing checks for embedding<br/>- Falls back if not loaded/installed<br/>+ Modern look & often high quality")
        T3_Node --> T3_Desc
     end
 
      subgraph Tier4["Tier 4:<br>Lower Compatibility/Use with Caution"]
-        style Tier4 fill:#fdd,stroke:#333,stroke-width:0.1px
+        style Tier4 fill:#fdd2,stroke:#333,stroke-width:0.1px
         T4_Node("Decorative / Less Common Fonts<br>(Brush Script, Luminari, Bradley Hand)")
         T4_Desc("Issues:<br/><b>- Very unlikely to be installed</b><br/>- Often poor readability for diagrams<br/>- Requires reliable web font loading<br/>- Falls back significantly if unavailable")
         T4_Node --> T4_Desc
