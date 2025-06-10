@@ -66,20 +66,20 @@ config:
 mindmap
   root)"Web Fonts for Mermaid"(
     Sans_Serif))"Sans-Serif"((
-      Helvetica["Helvetica<br>[WS]"]
-      Arial["Arial<br>[WS]"]
-      Arial_Black["Arial Black<br>[WS]"]
-      Verdana["Verdana<br>[WS]"]
-      Tahoma["Tahoma<br>[WS]"]
-      Trebuchet_MS["Trebuchet MS<br>[WS]"]
-      Impact["Impact<br>[WS]"]
-      Gill_Sans["Gill Sans<br>[WS]"]
-      Segoe_UI["Segoe UI<br>[MOD - Win]"]
-      apple_system["-apple-system / BlinkMacSystemFont<br>[MOD - Apple]"]
-      Calibri["Calibri<br>[MOD - Win/Office]"]
-      Roboto["Roboto<br>[PWF - Android/Google]"]
-      Source_Sans_Pro["Source Sans Pro<br>[PWF - Adobe]"]
-      Lato["Lato<br>[PWF - Google]"]
+      Helvetica("Helvetica<br>[WS]")
+      Arial("Arial<br>[WS]")
+      Arial_Black("Arial Black<br>[WS]")
+      Verdana("Verdana<br>[WS]")
+      Tahoma("Tahoma<br>[WS]")
+      Trebuchet_MS("Trebuchet MS<br>[WS]")
+      Impact("Impact<br>[WS]")
+      Gill_Sans("Gill Sans<br>[WS]")
+      Segoe_UI("Segoe UI<br>[MOD - Win]")
+      apple_system("-apple-system / BlinkMacSystemFont<br>[MOD - Apple]")
+      Calibri("Calibri<br>[MOD - Win/Office]")
+      Roboto("Roboto<br>[PWF - Android/Google]")
+      Source_Sans_Pro("Source Sans Pro<br>[PWF - Adobe]")
+      Lato("Lato<br>[PWF - Google]")
     Serif))"Serif"((
       Times_New_Roman["Times New Roman<br>[WS]"]
       Georgia["Georgia<br>[WS]"]
