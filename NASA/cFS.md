@@ -7,6 +7,18 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 ---
 
 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+> 
+> This is a working draft in progress.
+> 
+> ![Loading...](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXd2dGZnODB5ZHFrZzVzdTM5ZzhwdHFqb3pib2hmdjdhb2kzYjhsZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vTE78hxY9NmCI/giphy.gif)
+> 
+> gif image is provided by [Giphy](https://giphy.com)
+> 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+
+----
+
 
 # cFS
 > **Disclaimer:**
