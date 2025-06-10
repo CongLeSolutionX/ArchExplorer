@@ -8,6 +8,21 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 
 
+
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+> 
+> This is a working draft in progress.
+> 
+> ![Loading...](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3dqdTlrbGk1bGp5eHE2aTRybnc3cnZibHBxcTRvZHA2ZTZwM2NneiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ddK9ZkdWCtfDJcqsYx/giphy.gif)
+> 
+> gif image is provided by [Giphy](https://giphy.com)
+> 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+
+----
+
+
+
 # Helm Charts
 > **Disclaimer:**
 >
