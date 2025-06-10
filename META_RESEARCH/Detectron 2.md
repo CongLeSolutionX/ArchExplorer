@@ -7,6 +7,18 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 ---
 
 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+> 
+> This is a working draft in progress.
+> 
+> ![Loading...](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3JzaDl5eHY3M3hxdDJqMms1ZzV5NnBkamx4NXVwdm1mMDE1anN4cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oEduPoYiY3cswYxqg/giphy.gif)
+> 
+> gif image is provided by [Giphy](https://giphy.com)
+> 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+
+----
+
 
 # Detectron 2
 > **Disclaimer:**
