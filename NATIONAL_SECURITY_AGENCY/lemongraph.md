@@ -7,6 +7,18 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 ---
 
 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+> 
+> This is a working draft in progress.
+> 
+> ![Loading...](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnI4bzh6NjE4OTV0NWkwOXQ0MTlxOWk3dHdmMndtM2N3aHBvN3E1cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mLP9tIkMbXiog/giphy.gif)
+> 
+> gif image is provided by [Giphy](https://giphy.com)
+> 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+
+----
+
 
 # Lemongraph
 > **Disclaimer:**
