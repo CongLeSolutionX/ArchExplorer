@@ -38,7 +38,7 @@ source: https://github.com/bitcoin/bitcoin
 
 ```mermaid
 ---
-title: "libblkmaker repo project"
+title: "bitcoin repo project"
 author: "Cong Le"
 version: "1.0"
 license(s): "MIT, CC BY-SA 4.0"
