@@ -55,6 +55,7 @@ config:
     'flowchart': {'htmlLabels': true, 'curve': 'basis' },
     'fontFamily': 'Fantasy',
     'themeVariables': {
+      'textColor': '#F8B229',
       'lineColor': '#F8B229'
     }
   }
