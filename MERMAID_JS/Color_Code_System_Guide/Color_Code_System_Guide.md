@@ -41,26 +41,30 @@ This mind map categorizes the common color definition methods usable in Mermaid,
 
 ```mermaid
 ---
-title: "CHANGE_ME_DADDY"
+title: "Color System Overview"
 author: "Cong Le"
 version: "1.0"
 license(s): "MIT, CC BY 4.0"
 copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
-  layout: elk
-  look: handDrawn
-  theme: dark
+  theme: base
 ---
 %%%%%%%% Mermaid version v11.4.1-b.14
-%%%%%%%% Toggle theme value to `base` to activate the initilization below for the customized theme version.
-%%%%%%%% Available curve styles include the following keywords:
-%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
 %%{
   init: {
-    'flowchart': {'htmlLabels': false, 'curve': 'basis' },
-    'fontFamily': 'monospace',
+    'fontFamily': 'Andale Mono, monospace',
+    'mindmap': {
+	    'nodeAlign': 'center',
+	    'padding': 20
+    },
     'themeVariables': {
-      'lineColor': '#F8B229'
+      'primaryColor': '#FC82',
+      'primaryTextColor': '#F8B229',
+      'primaryBorderColor': '#27AE60',
+      'secondaryColor': '#EBF3',
+      'secondaryTextColor': '#6C3483',
+      'secondaryBorderColor': '#A569BD',
+      'fontSize': '20px'
     }
   }
 }%%
