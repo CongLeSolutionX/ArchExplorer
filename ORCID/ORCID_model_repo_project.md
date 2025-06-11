@@ -70,7 +70,7 @@ config:
     }
   }
 }%%
-flowchart TD
+flowchart LR
     %% External APIs
     subgraph External_ORCID_APIs["External ORCID APIs"]
         ORCID_PUBLIC["ORCID Public API"]:::external
