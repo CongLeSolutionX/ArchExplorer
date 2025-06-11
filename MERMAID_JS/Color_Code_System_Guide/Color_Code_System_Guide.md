@@ -69,8 +69,8 @@ config:
   }
 }%%
 mindmap
-  root((Color Code Systems for Mermaid))
-    Named_Colors["Named Colors<br>(CSS/HTML)"]
+  root)"**Color Code Systems for Mermaid**"(
+    Named_Colors))"**Named Colors**<br>(**CSS/HTML**)"((
       ::icon(fa fa-palette)
       Description["Description:<br>Predefined color names<br>(e.g., 'red', 'blue', 'lightgray')"]
       Syntax["Syntax:<br>'colorName'"]
@@ -81,7 +81,7 @@ mindmap
         Cons_1["Limited palette<br>(~140 standard names)"]
         Cons_2["Can be ambiguous<br>(e.g., 'grey' vs 'gray')"]
       Examples["Examples:<br>'red', 'lightblue', 'darkgreen', 'transparent'"]
-    Hexadecimal["Hexadecimal<br>(HEX)"]
+    Hexadecimal))"**Hexadecimal**<br>(**HEX**)"((
       ::icon(fa fa-hashtag)
       Description["Description:<br>- Uses hexadecimal values for Red, Green, Blue (RGB) components.<br>- Optional Alpha (Transparency)"]
       Syntax:
@@ -97,7 +97,7 @@ mindmap
         Cons_1["Less intuitive than names"]
         Cons_2["Alpha syntax ('#RRGGBBAA') is less common/supported than RGBA/HSLA in some older tools (but standard now)"]
       Examples["Examples:<br> '#FF5733', '#33FF57', '#3357FF', '#FFFFFF', '#00000080' (50% black)"]
-    RGB / RGBA
+    RGB_RGBA))"**RGB** / **RGBA**"((
       ::icon(fa fa-paint-brush)
       Description["Description:<br>- Defines colors using Red, Green, Blue values (0-255).<br>- RGBA adds an Alpha channel (0.0-1.0)."]
       Syntax:
@@ -109,7 +109,7 @@ mindmap
         Pros_3["Commonly used in design tools"]
       Cons["More verbose than HEX"]
       Examples["Examples:<br> 'rgb(100, 150, 200)', 'rgba(255, 87, 51, 0.75)'"]
-    HSL_HSLA["HSL / HSLA"]
+    HSL_HSLA))"**HSL** / **HSLA**"((
       ::icon(fa fa-adjust)
       Description["Description:<br>- Defines colors using Hue (0-360), Saturation (0-100%), Lightness (0-100%).<br>- HSLA adds Alpha (0.0-1.0)."]
       Syntax:
@@ -121,7 +121,7 @@ mindmap
         Pros_3["Standard way to specify transparency<br>(HSLA)"]
       Cons["Less common than HEX/RGB in some contexts"]
       Examples["Examples:<br> 'hsl(0, 100%, 50%)' (red),<br> 'hsl(200, 50%, 70%)',<br> 'hsla(300, 75%, 60%, 0.8)'"]
-    currentColor_Keyword["'currentColor' Keyword"]
+    currentColor_Keyword))"**currentColor** Keyword"((
       ::icon(fa fa-sync-alt)
       Description["Description:<br>A CSS keyword representing the value of the CSS 'color' property on the element"]
       Syntax["Syntax:<br>'currentColor'"]
