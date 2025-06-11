@@ -59,6 +59,7 @@ config:
       'primaryColor': '#f231',
       'primaryTextColor': '#239',
       'primaryBorderColor': '#7c2',
+      'textColor': '#F8B229',
       'lineColor': '#F8B229',
       'secondaryColor': '#006100',
       'tertiaryColor': '#fff'
@@ -194,7 +195,6 @@ config:
       'primaryBorderColor': '#27AE60',
       'secondaryColor': '#81c784',
       'secondaryTextColor': '#6C3483',
-      'textColor': '#F8B229',
       'lineColor': '#F8B229',
       'fontSize': '20px'
     }
