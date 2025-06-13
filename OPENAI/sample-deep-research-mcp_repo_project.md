@@ -12,7 +12,7 @@ source: https://github.com/openai/sample-deep-research-mcp
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2tvYWIyOGRpbWZodTQ2YTI2bjQ1eHpoaDY0YTZ3Mms2aWhneHNlYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fR6aYF0SUJAeoypyub/giphy.gif)
+> ![Loading...](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmNrdmhnMDAxMGNiMjdrcGdnbnc4YTFrNGxpajhrZTdvYWNkdnFxMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NZe7YqL8yvlxRpnnUk/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
