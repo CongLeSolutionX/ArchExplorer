@@ -12,7 +12,7 @@ source: https://github.com/openai/openai-python
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjUwdm51OXEyY3hkMmo1Ymk2MzRnOGt0MDA4Mm1jcjlvOTk1cDc2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/EuqIC0G1iLMldxvEN0/giphy.gif)
+> ![Loading...](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnJlejBpdjI5ZDBja2MyMmQ1em5iNWNxb3lwYW91NzlpenNkdnZhOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/U3amdh7Kb29YzVQbZp/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
