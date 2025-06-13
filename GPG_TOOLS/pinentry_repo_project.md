@@ -12,7 +12,7 @@ source: https://github.com/GPGTools/pinentry
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnhieGN3NXBieGt1eW0yNzl2N3FpM2Y0cmVnZzNjOTRkaGN5YjRkdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/FfwdRYpxcZsaI/giphy.gif)
+> ![Loading...](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHN6eDNuZHkyOG1qN3BqaXhybW1hZWt0dGlvcDdyNWliM2Z1Y2E3MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/DHqth0hVQoIzS/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
