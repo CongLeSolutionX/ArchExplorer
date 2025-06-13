@@ -12,7 +12,7 @@ source: https://github.com/openai/whisper
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpwazRtcTdsZmdnMGQwYmd6NDB2c3VydmdweGt6Mm9sdGQ1cTNqYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/K0VgXhOKn6TQNPjrLj/giphy.gif)
+> ![Loading...](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXZ4MGpmYmw1azl4ajBjaml2dXBob2NtYjA5a3BxY2xobzNmdWZnZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MMUJuyQBqvBuw/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
