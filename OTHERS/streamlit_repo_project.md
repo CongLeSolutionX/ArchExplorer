@@ -12,7 +12,7 @@ source: https://github.com/streamlit/streamlit
 > 
 > This is a working draft in progress.
 > 
-> ![Loading...](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXk0YjZsNDBxcDc2YnJ1MnlzeHhmdGtpM2N3eDcwNjBsbHd6bGJ1MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/U21YZuV2hxYHo3DOxH/giphy.gif)
+> ![Loading...](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2pvaTZxNzFjNDd6MWMydHAyNGsxODYwdW52Z2dnc3Jtc2t0d3M4dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l4Jz7vvlsIRgqQGpa/giphy.gif)
 > 
 > gif image is provided by [Giphy](https://giphy.com)
 > 
