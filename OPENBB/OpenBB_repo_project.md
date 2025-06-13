@@ -4,7 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
-source:
+source: https://github.com/openbb-finance/openbb
 ---
 
 
@@ -24,7 +24,7 @@ source:
 
 
 
-# CHANGE_ME
+# OpenBB repo project
 > **Disclaimer:**
 >
 > This document contains my personal notes on the topic,
@@ -35,11 +35,82 @@ source:
 > 2. **Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0):** Applies to all non-code content, including text, explanations, diagrams, and illustrations.
 ---
 
-
-## MAIN CONTENT - A Diagrammatic Guide 
-
-
+```mermaid
 ---
+title: "OpenBB repo project"
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY-SA 4.0"
+copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+config:
+  layout: elk
+  theme: base
+  look: handDrawn
+---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
+%%{
+  init: {
+    'flowchart': { 'htmlLabels': true, 'curve': 'basis' },
+    'fontFamily': 'American Typewriter, monospace',
+    'logLevel': 'fatal',
+    'themeVariables': {
+      'primaryColor': '#22BB',
+      'primaryTextColor': '#F8B229',
+      'lineColor': '#F8B229',
+      'primaryBorderColor': '#27AE60',
+      'secondaryColor': '#E2F1',
+      'secondaryTextColor': '#6C3483',
+      'secondaryBorderColor': '#A569BD',
+      'fontSize': '20px'
+    }
+  }
+}%%
+flowchart TD
+    subgraph "User Interface Layer"
+        CLI["CLI"]:::ui
+        FE["Frontend Components"]:::ui
+    end
+
+    subgraph "Core Application Layer"
+        Core["Core Engine"]:::core
+        PR["Provider Registry"]:::core
+        subgraph "Extensions and Plugins"
+            Ext["Extensions"]:::ext
+            OExt["Obbject Extensions"]:::ext
+        end
+    end
+
+    subgraph "Data Providers Layer"
+        DP["Data Providers"]:::dp
+    end
+
+    CLI -->|"user_command"| Core
+    FE -->|"user_action"| Core
+    Core -->|"load_extension"| Ext
+    Core -->|"load_ob_extension"| OExt
+    Core -->|"query"| PR
+    PR -->|"fetch_data"| DP
+    DP -->|"return_data"| PR
+    PR -->|"provide_data"| Core
+    Core -->|"render_results"| CLI
+    Core -->|"render_results"| FE
+
+    click CLI "https://github.com/openbb-finance/openbb/tree/develop/cli/openbb_cli"
+    click FE "https://github.com/openbb-finance/openbb/tree/develop/frontend-components"
+    click Core "https://github.com/openbb-finance/openbb/tree/develop/openbb_platform"
+    click Ext "https://github.com/openbb-finance/openbb/tree/develop/openbb_platform/extensions"
+    click OExt "https://github.com/openbb-finance/openbb/tree/develop/openbb_platform/obbject_extensions"
+    click DP "https://github.com/openbb-finance/openbb/tree/develop/openbb_platform/providers"
+
+    classDef ui fill:#f9e79f,stroke:#7d6608,stroke-width:2px;
+    classDef core fill:#aed6f1,stroke:#1b4f72,stroke-width:2px;
+    classDef ext fill:#d5f5e3,stroke:#186a3b,stroke-width:2px;
+    classDef dp fill:#fadbd8,stroke:#922b21,stroke-width:2px;
+```
+
+----
 
 <!-- 
 ```mermaid
