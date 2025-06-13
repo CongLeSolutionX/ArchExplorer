@@ -4,7 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
-source: https://github.com/openai/SWELancer-Benchmark
+source: https://github.com/openai/openai-builder-lab
 ---
 
 
@@ -22,7 +22,9 @@ source: https://github.com/openai/SWELancer-Benchmark
 ----
 
 
-# SWELancer-Benchmark repo project
+
+
+# builder-lab repo project
 > **Disclaimer:**
 >
 > This document contains my personal notes on the topic,
@@ -33,9 +35,10 @@ source: https://github.com/openai/SWELancer-Benchmark
 > 2. **Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0):** Applies to all non-code content, including text, explanations, diagrams, and illustrations.
 ---
 
+
 ```mermaid
 ---
-title: "SWELancer-Benchmark repo project"
+title: "builder-lab repo project"
 author: "Cong Le"
 version: "1.0"
 license(s): "MIT, CC BY-SA 4.0"
@@ -66,67 +69,81 @@ config:
   }
 }%%
 flowchart TD
-    A["User/CI"]:::user
-
-    subgraph "Deployment Layer"
-        L["Dockerfile"]:::deployment
-        M["Dockerfile_x86"]:::deployment
-        B["Docker Build Environment"]:::deployment
-        C["Docker Container"]:::deployment
-        D["Virtual Environment (uv)"]:::deployment
-        subgraph "Configuration"
-            E1["Environment (.env)"]:::deployment
-            E2["Requirements"]:::deployment
-        end
-        F["Runtime Scripts"]:::deployment
+    %% Frontend Layer
+    subgraph "Frontend (Next.js App)" 
+        direction TB
+        UI["ChatWindow Component"]:::frontend
+        MSG["MessageRendering Component"]:::frontend
+        BTN1["AssistantButton Component"]:::frontend
+        BTN2["ToolCallButton Component"]:::frontend
+        STORE["useConversationStore"]:::frontend
+        CLIENT["assistant.ts (API Client)"]:::frontend
+        TOOLS["tools.ts (Core Tools Module)"]:::frontend
+        CONST["constants.ts"]:::frontend
+        UTILS["utils.ts"]:::frontend
+        STYLES["globals.css"]:::config
+        TAILWIND["tailwind.config.ts"]:::config
+        NEXTCFG["next.config.mjs"]:::config
+        PKG["package.json"]:::config
     end
 
-    subgraph "Submodules"
-        G["nanoeval Module"]:::submodule
-        I["nanoeval_alcatraz Integration"]:::submodule
-        H["alcatraz Module"]:::submodule
+    %% Backend Layer
+    subgraph "Backend Layer" 
+        direction TB
+        API["Next.js API Route (/api/get_response)"]:::backend
+        PY["Python Service (Flask app.py)"]:::backend
     end
 
-    subgraph "Orchestration"
-        J["swelancer.py"]:::orchestration
-        K["swelancer_agent.py"]:::orchestration
-    end
+    %% External Service
+    OPENAI["OpenAI API"]:::external
 
-    A -->|"triggers"| B
-    L -->|"defines"| B
-    M -->|"defines"| B
-    B -->|"builds"| C
-    E1 -->|"injects"| C
-    E2 -->|"injects"| C
-    C -->|"hosts"| D
-    C -->|"runs"| F
-    C -->|"initializes"| J
-    C -->|"initializes"| K
+    %% Config Layer
+    ENV[".env (OPENAI_API_KEY)"]:::config
 
-    G -->|"evaluation"| I
-    I -->|"integration"| H
-    H -->|"compute"| K
-    F -->|"supports"| J
+    %% Interactions
+    UI -->|user input| CLIENT
+    MSG -->|renders state| STORE
+    BTN1 -->|triggers| CLIENT
+    BTN2 -->|triggers| CLIENT
+    CLIENT -->|POST /api/get_response| API
+    CLIENT -->|POST Python endpoint| PY
+    API -->|reads ENV & forwards| OPENAI
+    PY -->|reads ENV & forwards| OPENAI
+    OPENAI -->|response JSON| API
+    OPENAI -->|response JSON| PY
+    API -->|JSON response| CLIENT
+    PY -->|JSON response| CLIENT
+    CLIENT -->|updates| STORE
+    STORE -->|state update| UI
+    STORE -->|state update| MSG
 
-    classDef user fill:#f9f,stroke:#333,stroke-width:2px;
-    classDef deployment fill:#bbf,stroke:#333,stroke-width:2px;
-    classDef orchestration fill:#bfb,stroke:#333,stroke-width:2px;
-    classDef submodule fill:#fbf,stroke:#333,stroke-width:2px;
+    %% Click Events - Frontend
+    click UI "https://github.com/openai/openai-builder-lab/blob/main/starting_point/frontend/components/chat.tsx"
+    click MSG "https://github.com/openai/openai-builder-lab/blob/main/starting_point/frontend/components/message.tsx"
+    click BTN1 "https://github.com/openai/openai-builder-lab/blob/main/starting_point/frontend/components/assistant.tsx"
+    click BTN2 "https://github.com/openai/openai-builder-lab/blob/main/starting_point/frontend/components/tool-call.tsx"
+    click STORE "https://github.com/openai/openai-builder-lab/blob/main/starting_point/frontend/stores/useConversationStore.ts"
+    click CLIENT "https://github.com/openai/openai-builder-lab/blob/main/starting_point/frontend/lib/assistant.ts"
+    click TOOLS "https://github.com/openai/openai-builder-lab/blob/main/starting_point/frontend/lib/tools.ts"
+    click CONST "https://github.com/openai/openai-builder-lab/blob/main/starting_point/frontend/lib/constants.ts"
+    click UTILS "https://github.com/openai/openai-builder-lab/blob/main/starting_point/frontend/lib/utils.ts"
+    click API "https://github.com/openai/openai-builder-lab/blob/main/starting_point/frontend/app/api/get_response/route.ts"
+    click STYLES "https://github.com/openai/openai-builder-lab/blob/main/starting_point/frontend/app/globals.css"
+    click TAILWIND "https://github.com/openai/openai-builder-lab/blob/main/starting_point/frontend/tailwind.config.ts"
+    click NEXTCFG "https://github.com/openai/openai-builder-lab/blob/main/starting_point/frontend/next.config.mjs"
+    click PKG "https://github.com/openai/openai-builder-lab/blob/main/starting_point/frontend/package.json"
 
-click L "https://github.com/openai/swelancer-benchmark/tree/main/Dockerfile"
-click M "https://github.com/openai/swelancer-benchmark/tree/main/Dockerfile_x86"
-click D "https://github.com/openai/swelancer-benchmark/blob/main/uv.lock"
-click G "https://github.com/openai/swelancer-benchmark/tree/main/project/nanoeval/"
-click H "https://github.com/openai/swelancer-benchmark/tree/main/project/alcatraz/"
-click I "https://github.com/openai/swelancer-benchmark/tree/main/project/nanoeval_alcatraz/"
-click J "https://github.com/openai/swelancer-benchmark/blob/main/swelancer.py"
-click K "https://github.com/openai/swelancer-benchmark/blob/main/swelancer_agent.py"
-click F "https://github.com/openai/swelancer-benchmark/tree/main/runtime_scripts/"
-click E1 "https://github.com/openai/swelancer-benchmark/blob/main/sample.env"
-click E2 "https://github.com/openai/swelancer-benchmark/blob/main/requirements.txt"
+    %% Click Events - Backend
+    click PY "https://github.com/openai/openai-builder-lab/blob/main/starting_point/python-backend/app.py"
+    click ENV "https://github.com/openai/openai-builder-lab/blob/main/starting_point/python-backend/.env.example"
+
+    %% Styles
+    classDef frontend fill:#e0f7fa,stroke:#0288d1,stroke-width:1px
+    classDef backend fill:#e0f2f1,stroke:#388e3c,stroke-width:1px
+    classDef external fill:#ffebee,stroke:#c62828,stroke-width:1px
+    classDef config fill:#f3e5f5,stroke:#6a1b9a,stroke-width:1px
 
 ```
-
 
 ---
 

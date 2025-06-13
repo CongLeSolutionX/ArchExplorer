@@ -4,7 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
-source: https://github.com/openai/openai-agents-js
+source: https://github.com/openai/swarm
 ---
 
 
@@ -12,7 +12,7 @@ source: https://github.com/openai/openai-agents-js
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2FzNXNqMHhiNmxqZ2JnNnk3eTF1cHY3eGI5aWVhMmNjYWhzcDV0MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7vUBOECvNpUOs/giphy.gif)
+> ![Loading...](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXpjdmt3Mzk4aXRqaHRjczNwNmNydDV5dGJvbnA2c25ybmRqcmhrZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yb9B8kpH1oCqKHd8kW/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
@@ -24,7 +24,7 @@ source: https://github.com/openai/openai-agents-js
 
 
 
-# openai-agents-js repo project
+# swarm repo project
 > **Disclaimer:**
 >
 > This document contains my personal notes on the topic,
@@ -38,7 +38,7 @@ source: https://github.com/openai/openai-agents-js
 
 ```mermaid
 ---
-title: "openai-agents-js repo project"
+title: "swarm repo project"
 author: "Cong Le"
 version: "1.0"
 license(s): "MIT, CC BY-SA 4.0"
@@ -68,78 +68,79 @@ config:
     }
   }
 }%%
-flowchart TD
-    Developer["Developer Application"]:::dev
-    subgraph "Agents SDK (Monorepo)"
-        Umbrella["Agents (Umbrella Package)"]:::sdk
-        Core["Agents Core Engine"]:::sdk
-        OpenAIProv["Model Provider - OpenAI"]:::sdk
-        Extensions["Extensions (Twilio, AI SDK)"]:::sdk
-        Realtime["Realtime Client (WebSocket/WebRTC)"]:::sdk
+flowchart TB
+    subgraph Application
+        ClientApps["Client Applications"]:::app
+        Examples["Basic Examples & Patterns"]:::app
+        CustomImpl["Custom Implementations"]:::app
     end
-    subgraph "External Services"
-        OpenAIAPI["OpenAI API"]:::ext
-        Twilio["Twilio"]:::ext
-        MCP["Local MCP Server"]:::ext
+
+    subgraph SwarmCore["Swarm Core Layer"]
+        SwarmClient["Swarm Client"]:::core
+        AgentSystem["Agent System"]:::core
+        MessageHandler["Message Handler"]:::core
+        ContextManager["Context Variable Manager"]:::core
+        FunctionEngine["Function Execution Engine"]:::core
+        StreamHandler["Streaming Handler"]:::core
+        TypesRegistry["Types & Function Registry"]:::core
+        Utils["Utility Functions"]:::core
+        REPL["REPL Interface"]:::core
     end
-    Docs["Documentation Site"]:::docs
-    Tests["Integration Tests"]:::tests
-    Config["Monorepo Workspace Config"]:::config
-    TSconf["TypeScript Configuration"]:::config
-    VitestUnit["Vitest Unit Config"]:::config
-    VitestInt["Vitest Integration Config"]:::config
-    CI["CI/CD Workflows"]:::config
 
-    Developer -->|imports| Umbrella
-    Umbrella --> Core
-    Umbrella --> OpenAIProv
-    Umbrella --> Extensions
-    Umbrella --> Realtime
+    subgraph Integration
+        OpenAI["OpenAI API Interface"]:::external
+        ChatAPI["Chat Completions API"]:::external
+        ToolsRegistry["Tools/Functions Registry"]:::external
+    end
 
-    Core -->|invoke LLM| OpenAIProv
-    OpenAIProv -->|HTTP/WS calls| OpenAIAPI
-    Core -->|tool call| MCP
-    Core -->|handoff| Core
+    %% Relationships
+    ClientApps --> SwarmClient
+    Examples --> SwarmClient
+    CustomImpl --> SwarmClient
 
-    Realtime -->|stream events| Developer
-    Realtime -->|connect| Twilio
+    SwarmClient --> AgentSystem
+    SwarmClient --> MessageHandler
+    SwarmClient --> ContextManager
+    SwarmClient --> FunctionEngine
 
-    Core -->|emit traces| OpenAIProv
-    OpenAIProv -->|export traces| TracingStorage["Tracing Storage/UI"]:::ext
+    AgentSystem --> MessageHandler
+    MessageHandler --> ContextManager
+    MessageHandler --> FunctionEngine
+    FunctionEngine --> StreamHandler
 
-    Developer --> Docs
-    Developer --> Tests
-    Developer --> Config
-    Developer --> TSconf
-    Developer --> VitestUnit
-    Developer --> VitestInt
-    Developer --> CI
+    FunctionEngine --> OpenAI
+    OpenAI --> ChatAPI
+    FunctionEngine --> ToolsRegistry
 
-    click Developer "https://github.com/openai/openai-agents-js/tree/main/examples/"
-    click Umbrella "https://github.com/openai/openai-agents-js/tree/main/packages/agents/"
-    click Core "https://github.com/openai/openai-agents-js/tree/main/packages/agents-core/"
-    click OpenAIProv "https://github.com/openai/openai-agents-js/tree/main/packages/agents-openai/"
-    click Extensions "https://github.com/openai/openai-agents-js/tree/main/packages/agents-extensions/"
-    click Realtime "https://github.com/openai/openai-agents-js/tree/main/packages/agents-realtime/"
-    click Docs "https://github.com/openai/openai-agents-js/tree/main/docs/"
-    click Tests "https://github.com/openai/openai-agents-js/tree/main/integration-tests/"
-    click Config "https://github.com/openai/openai-agents-js/blob/main/pnpm-workspace.yaml"
-    click TSconf "https://github.com/openai/openai-agents-js/blob/main/tsconfig.json"
-    click VitestUnit "https://github.com/openai/openai-agents-js/blob/main/vitest.config.ts"
-    click VitestInt "https://github.com/openai/openai-agents-js/blob/main/vitest.integration.config.ts"
-    click CI "https://github.com/openai/openai-agents-js/tree/main/.github/workflows/"
+    %% Click Events
+    click SwarmClient "https://github.com/openai/swarm/blob/main/swarm/core.py"
+    click MessageHandler "https://github.com/openai/swarm/blob/main/swarm/core.py"
+    click TypesRegistry "https://github.com/openai/swarm/blob/main/swarm/types.py"
+    click Utils "https://github.com/openai/swarm/blob/main/swarm/util.py"
+    click REPL "https://github.com/openai/swarm/blob/main/swarm/repl/repl.py"
+    click StreamHandler "https://github.com/openai/swarm/blob/main/examples/customer_service_streaming/src/swarm/engines/engine.py"
+    click ToolsRegistry "https://github.com/openai/swarm/tree/main/examples/customer_service_streaming/configs/tools/"
+    click AgentSystem "https://github.com/openai/swarm/blob/main/examples/customer_service_streaming/src/swarm/assistants.py"
+    click FunctionEngine "https://github.com/openai/swarm/blob/main/examples/customer_service_streaming/src/swarm/engines/local_engine.py"
+    click Examples "https://github.com/openai/swarm/tree/main/examples/basic/"
+    click ContextManager "https://github.com/openai/swarm/blob/main/examples/basic/context_variables.py"
+    click FunctionEngine "https://github.com/openai/swarm/blob/main/examples/basic/function_calling.py"
 
-    classDef sdk fill:#e0f7fa,stroke:#006064,color:#006064
-    classDef dev fill:#e8f5e9,stroke:#2e7d32,color:#2e7d32
-    classDef ext fill:#fff3e0,stroke:#ef6c00,color:#e65100
-    classDef docs fill:#eeeeee,stroke:#757575,color:#424242
-    classDef tests fill:#f3e5f5,stroke:#6a1b9a,color:#4a148c
-    classDef config fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+    %% Styles
+    classDef core fill:#2374ab,stroke:#2374ab,color:#fff
+    classDef external fill:#57a773,stroke:#57a773,color:#fff
+    classDef app fill:#ffc857,stroke:#ffc857,color:#000
+
+    %% Legend
+    subgraph Legend
+        CoreComponent["Core Component"]:::core
+        ExternalService["External Service"]:::external
+        ApplicationLayer["Application Layer"]:::app
+    end
 
 ```
 
-
----
+----
 
 <!-- 
 ```mermaid

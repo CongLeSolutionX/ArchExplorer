@@ -4,7 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
-source: https://github.com/openai/openai-agents-js
+source: https://github.com/openai/model_spec
 ---
 
 
@@ -12,7 +12,7 @@ source: https://github.com/openai/openai-agents-js
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2FzNXNqMHhiNmxqZ2JnNnk3eTF1cHY3eGI5aWVhMmNjYWhzcDV0MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7vUBOECvNpUOs/giphy.gif)
+> ![Loading...](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMHkxZzEyaXV2YXZ5Mnl4eHljYWl0am11bnR0OWkyOXJkdWFpM3JleiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/S0hxMGYFhEMzm/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
@@ -24,7 +24,7 @@ source: https://github.com/openai/openai-agents-js
 
 
 
-# openai-agents-js repo project
+# model_spec repo project
 > **Disclaimer:**
 >
 > This document contains my personal notes on the topic,
@@ -38,7 +38,7 @@ source: https://github.com/openai/openai-agents-js
 
 ```mermaid
 ---
-title: "openai-agents-js repo project"
+title: "model_spec repo project"
 author: "Cong Le"
 version: "1.0"
 license(s): "MIT, CC BY-SA 4.0"
@@ -68,78 +68,74 @@ config:
     }
   }
 }%%
-flowchart TD
-    Developer["Developer Application"]:::dev
-    subgraph "Agents SDK (Monorepo)"
-        Umbrella["Agents (Umbrella Package)"]:::sdk
-        Core["Agents Core Engine"]:::sdk
-        OpenAIProv["Model Provider - OpenAI"]:::sdk
-        Extensions["Extensions (Twilio, AI SDK)"]:::sdk
-        Realtime["Realtime Client (WebSocket/WebRTC)"]:::sdk
+flowchart TB
+    %% Developer Environment
+    subgraph "Developer Environment"
+        modelSpec["model_spec.md"]:::content
+        examples["examples/"]:::content
+        README["README.md"]:::metadata
+        CHANGELOG["CHANGELOG.md"]:::metadata
+        LICENSE["LICENSE"]:::metadata
     end
-    subgraph "External Services"
-        OpenAIAPI["OpenAI API"]:::ext
-        Twilio["Twilio"]:::ext
-        MCP["Local MCP Server"]:::ext
+
+    %% Build Step
+    SSG["Static Site Generator"]:::build
+
+    %% Build Artifacts
+    subgraph "Build & Artifact"
+        docsHTML["docs/ (HTML pages)"]:::artifact
+        docsFontsDir["docs/fonts/"]:::artifact
+        docsFontsCSS["docs/fonts.gen.css"]:::artifact
+        docsCNAME["docs/CNAME"]:::artifact
     end
-    Docs["Documentation Site"]:::docs
-    Tests["Integration Tests"]:::tests
-    Config["Monorepo Workspace Config"]:::config
-    TSconf["TypeScript Configuration"]:::config
-    VitestUnit["Vitest Unit Config"]:::config
-    VitestInt["Vitest Integration Config"]:::config
-    CI["CI/CD Workflows"]:::config
 
-    Developer -->|imports| Umbrella
-    Umbrella --> Core
-    Umbrella --> OpenAIProv
-    Umbrella --> Extensions
-    Umbrella --> Realtime
+    %% Hosting & Delivery
+    subgraph "Hosting & Delivery"
+        GitHubPages["GitHub Pages<br/>model-spec.openai.com"]:::hosting
+        EndUser["End User (Browser)"]:::user
+    end
 
-    Core -->|invoke LLM| OpenAIProv
-    OpenAIProv -->|HTTP/WS calls| OpenAIAPI
-    Core -->|tool call| MCP
-    Core -->|handoff| Core
+    %% Connections
+    modelSpec -->|commit & CI triggers| SSG
+    examples -->|commit & CI triggers| SSG
+    README -->|metadata| SSG
+    CHANGELOG -->|metadata| SSG
+    LICENSE -->|metadata| SSG
 
-    Realtime -->|stream events| Developer
-    Realtime -->|connect| Twilio
+    SSG -->|"generates HTML pages"| docsHTML
+    SSG -->|"generates assets"| docsFontsDir
+    SSG -->|"generates CSS"| docsFontsCSS
+    SSG -->|"creates CNAME"| docsCNAME
 
-    Core -->|emit traces| OpenAIProv
-    OpenAIProv -->|export traces| TracingStorage["Tracing Storage/UI"]:::ext
+    docsHTML -->|"deploy to GitHub Pages"| GitHubPages
+    docsFontsDir -->|"deploy to GitHub Pages"| GitHubPages
+    docsFontsCSS -->|"deploy to GitHub Pages"| GitHubPages
+    docsCNAME -->|"deploy to GitHub Pages"| GitHubPages
 
-    Developer --> Docs
-    Developer --> Tests
-    Developer --> Config
-    Developer --> TSconf
-    Developer --> VitestUnit
-    Developer --> VitestInt
-    Developer --> CI
+    GitHubPages -->|"HTTP GET"| EndUser
 
-    click Developer "https://github.com/openai/openai-agents-js/tree/main/examples/"
-    click Umbrella "https://github.com/openai/openai-agents-js/tree/main/packages/agents/"
-    click Core "https://github.com/openai/openai-agents-js/tree/main/packages/agents-core/"
-    click OpenAIProv "https://github.com/openai/openai-agents-js/tree/main/packages/agents-openai/"
-    click Extensions "https://github.com/openai/openai-agents-js/tree/main/packages/agents-extensions/"
-    click Realtime "https://github.com/openai/openai-agents-js/tree/main/packages/agents-realtime/"
-    click Docs "https://github.com/openai/openai-agents-js/tree/main/docs/"
-    click Tests "https://github.com/openai/openai-agents-js/tree/main/integration-tests/"
-    click Config "https://github.com/openai/openai-agents-js/blob/main/pnpm-workspace.yaml"
-    click TSconf "https://github.com/openai/openai-agents-js/blob/main/tsconfig.json"
-    click VitestUnit "https://github.com/openai/openai-agents-js/blob/main/vitest.config.ts"
-    click VitestInt "https://github.com/openai/openai-agents-js/blob/main/vitest.integration.config.ts"
-    click CI "https://github.com/openai/openai-agents-js/tree/main/.github/workflows/"
+    %% Click Events
+    click modelSpec "https://github.com/openai/model_spec/blob/main/model_spec.md"
+    click examples "https://github.com/openai/model_spec/tree/main/examples/"
+    click README "https://github.com/openai/model_spec/blob/main/README.md"
+    click CHANGELOG "https://github.com/openai/model_spec/blob/main/CHANGELOG.md"
+    click LICENSE "https://github.com/openai/model_spec/tree/main/LICENSE"
+    click docsHTML "https://github.com/openai/model_spec/tree/main/docs/"
+    click docsFontsDir "https://github.com/openai/model_spec/tree/main/docs/fonts/"
+    click docsFontsCSS "https://github.com/openai/model_spec/blob/main/docs/fonts.gen.css"
+    click docsCNAME "https://github.com/openai/model_spec/tree/main/docs/CNAME"
 
-    classDef sdk fill:#e0f7fa,stroke:#006064,color:#006064
-    classDef dev fill:#e8f5e9,stroke:#2e7d32,color:#2e7d32
-    classDef ext fill:#fff3e0,stroke:#ef6c00,color:#e65100
-    classDef docs fill:#eeeeee,stroke:#757575,color:#424242
-    classDef tests fill:#f3e5f5,stroke:#6a1b9a,color:#4a148c
-    classDef config fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+    %% Styles
+    classDef content fill:#BBDEFB,stroke:#000
+    classDef build fill:#FFCC80,stroke:#000
+    classDef artifact fill:#C8E6C9,stroke:#000
+    classDef hosting fill:#E1BEE7,stroke:#000
+    classDef user fill:#F8BBD0,stroke:#000
+    classDef metadata fill:#E0E0E0,stroke:#000arine
 
 ```
 
-
----
+----
 
 <!-- 
 ```mermaid

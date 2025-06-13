@@ -4,7 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
-source: https://github.com/openai/openai-agents-js
+source: https://github.com/openai/openai-realtime-solar-system
 ---
 
 
@@ -12,7 +12,7 @@ source: https://github.com/openai/openai-agents-js
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2FzNXNqMHhiNmxqZ2JnNnk3eTF1cHY3eGI5aWVhMmNjYWhzcDV0MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7vUBOECvNpUOs/giphy.gif)
+> ![Loading...](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYm45aXBqbWF0MTc0eXBicXk4MGVnYTV6MTdlMGtqZDhudWoweG5hMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/h8sRbOtj55JACfGn8R/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
@@ -24,7 +24,7 @@ source: https://github.com/openai/openai-agents-js
 
 
 
-# openai-agents-js repo project
+# realtime-solar-system repo project
 > **Disclaimer:**
 >
 > This document contains my personal notes on the topic,
@@ -38,7 +38,7 @@ source: https://github.com/openai/openai-agents-js
 
 ```mermaid
 ---
-title: "openai-agents-js repo project"
+title: "realtime-solar-system repo project"
 author: "Cong Le"
 version: "1.0"
 license(s): "MIT, CC BY-SA 4.0"
@@ -69,77 +69,76 @@ config:
   }
 }%%
 flowchart TD
-    Developer["Developer Application"]:::dev
-    subgraph "Agents SDK (Monorepo)"
-        Umbrella["Agents (Umbrella Package)"]:::sdk
-        Core["Agents Core Engine"]:::sdk
-        OpenAIProv["Model Provider - OpenAI"]:::sdk
-        Extensions["Extensions (Twilio, AI SDK)"]:::sdk
-        Realtime["Realtime Client (WebSocket/WebRTC)"]:::sdk
+    %% Global Nodes
+    A["Client Browser"]:::external
+
+    %% Frontend UI Subgraph
+    subgraph "NextJS Frontend"
+        FL["Main Layout & Pages (NextJS)"]:::ui
+        SC["3D Scene Component (Spline Scene)"]:::ui
+        CH["Charts Components"]:::ui
+        CT["Controls Component"]:::ui
     end
-    subgraph "External Services"
-        OpenAIAPI["OpenAI API"]:::ext
-        Twilio["Twilio"]:::ext
-        MCP["Local MCP Server"]:::ext
+
+    %% API Layer Subgraph
+    subgraph "API Layer"
+        API_ISS["/api/iss (ISS Data)"]:::api
+        API_SESSION["/api/session (Session Management)"]:::api
     end
-    Docs["Documentation Site"]:::docs
-    Tests["Integration Tests"]:::tests
-    Config["Monorepo Workspace Config"]:::config
-    TSconf["TypeScript Configuration"]:::config
-    VitestUnit["Vitest Unit Config"]:::config
-    VitestInt["Vitest Integration Config"]:::config
-    CI["CI/CD Workflows"]:::config
 
-    Developer -->|imports| Umbrella
-    Umbrella --> Core
-    Umbrella --> OpenAIProv
-    Umbrella --> Extensions
-    Umbrella --> Realtime
+    %% Library/Configuration Layer
+    LC["Library/Configuration Layer"]:::lib
 
-    Core -->|invoke LLM| OpenAIProv
-    OpenAIProv -->|HTTP/WS calls| OpenAIAPI
-    Core -->|tool call| MCP
-    Core -->|handoff| Core
+    %% External Integrations Subgraph
+    subgraph "External Integrations"
+        OPENAI["OpenAI Realtime API & WebRTC"]:::external
+        SPLINE["Spline 3D Service"]:::external
+    end
 
-    Realtime -->|stream events| Developer
-    Realtime -->|connect| Twilio
+    %% Supportive Tools
+    BT["Styling & Build Tools (Tailwind, PostCSS, ESLint)"]:::tool
 
-    Core -->|emit traces| OpenAIProv
-    OpenAIProv -->|export traces| TracingStorage["Tracing Storage/UI"]:::ext
+    %% Connections
+    A -->|"loads"| FL
+    FL -->|"renders"| SC
+    FL -->|"renders"| CH
+    FL -->|"renders"| CT
 
-    Developer --> Docs
-    Developer --> Tests
-    Developer --> Config
-    Developer --> TSconf
-    Developer --> VitestUnit
-    Developer --> VitestInt
-    Developer --> CI
+    CT -->|"triggers_session"| API_SESSION
+    CT -->|"triggers_iss"| API_ISS
 
-    click Developer "https://github.com/openai/openai-agents-js/tree/main/examples/"
-    click Umbrella "https://github.com/openai/openai-agents-js/tree/main/packages/agents/"
-    click Core "https://github.com/openai/openai-agents-js/tree/main/packages/agents-core/"
-    click OpenAIProv "https://github.com/openai/openai-agents-js/tree/main/packages/agents-openai/"
-    click Extensions "https://github.com/openai/openai-agents-js/tree/main/packages/agents-extensions/"
-    click Realtime "https://github.com/openai/openai-agents-js/tree/main/packages/agents-realtime/"
-    click Docs "https://github.com/openai/openai-agents-js/tree/main/docs/"
-    click Tests "https://github.com/openai/openai-agents-js/tree/main/integration-tests/"
-    click Config "https://github.com/openai/openai-agents-js/blob/main/pnpm-workspace.yaml"
-    click TSconf "https://github.com/openai/openai-agents-js/blob/main/tsconfig.json"
-    click VitestUnit "https://github.com/openai/openai-agents-js/blob/main/vitest.config.ts"
-    click VitestInt "https://github.com/openai/openai-agents-js/blob/main/vitest.integration.config.ts"
-    click CI "https://github.com/openai/openai-agents-js/tree/main/.github/workflows/"
+    LC -->|"configures_UI"| FL
+    LC -->|"configures_API"| API_SESSION
+    LC -->|"configures_API"| API_ISS
 
-    classDef sdk fill:#e0f7fa,stroke:#006064,color:#006064
-    classDef dev fill:#e8f5e9,stroke:#2e7d32,color:#2e7d32
-    classDef ext fill:#fff3e0,stroke:#ef6c00,color:#e65100
-    classDef docs fill:#eeeeee,stroke:#757575,color:#424242
-    classDef tests fill:#f3e5f5,stroke:#6a1b9a,color:#4a148c
-    classDef config fill:#e3f2fd,stroke:#1565c0,color:#0d47a1
+    SC -->|"loads_scene"| SPLINE
+    CT -->|"voice_command"| OPENAI
 
+    OPENAI -->|"informs"| LC
+
+    BT --- FL
+
+    %% Click Events
+    click FL "https://github.com/openai/openai-realtime-solar-system/blob/main/app/layout.tsx"
+    click FL "https://github.com/openai/openai-realtime-solar-system/blob/main/app/page.tsx"
+    click SC "https://github.com/openai/openai-realtime-solar-system/blob/main/components/scene.tsx"
+    click SC "https://github.com/openai/openai-realtime-solar-system/blob/main/components/scene.css"
+    click CH "https://github.com/openai/openai-realtime-solar-system/blob/main/components/charts/chart.tsx"
+    click CH "https://github.com/openai/openai-realtime-solar-system/blob/main/components/charts/pie-chart.tsx"
+    click CT "https://github.com/openai/openai-realtime-solar-system/blob/main/components/controls.tsx"
+    click API_ISS "https://github.com/openai/openai-realtime-solar-system/blob/main/app/api/iss/route.ts"
+    click API_SESSION "https://github.com/openai/openai-realtime-solar-system/blob/main/app/api/session/route.ts"
+    click LC "https://github.com/openai/openai-realtime-solar-system/blob/main/lib/config.ts"
+
+    %% Styles
+    classDef ui fill:#f9c,stroke:#333,stroke-width:2px;
+    classDef api fill:#afa,stroke:#333,stroke-width:2px;
+    classDef lib fill:#ff9,stroke:#333,stroke-width:2px;
+    classDef external fill:#9cf,stroke:#333,stroke-width:2px;
+    classDef tool fill:#ccc,stroke:#333,stroke-width:2px;
 ```
 
-
----
+----
 
 <!-- 
 ```mermaid

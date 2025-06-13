@@ -4,7 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
-source: https://github.com/openai/codex-universal
+source: https://github.com/openai/emoclassifiers
 ---
 
 
@@ -12,7 +12,7 @@ source: https://github.com/openai/codex-universal
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjl6azRqdXBmYWd0b3J3cXhxZXMyejJuMDRkNzEyNmwzNDczbzB4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SScCqDzSf40UpqmZTO/giphy.gif)
+> ![Loading...](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGd1NW51YmdxdWFucGZneDNuZWk1ZWVycXNxZTEwdnF5bm1uaTl0ZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l4Ki1fHZorEdWAPsc/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
@@ -22,7 +22,7 @@ source: https://github.com/openai/codex-universal
 ----
 
 
-# codex-universal repo project
+# emoclassifiers repo project
 > **Disclaimer:**
 >
 > This document contains my personal notes on the topic,
@@ -36,7 +36,7 @@ source: https://github.com/openai/codex-universal
 
 ```mermaid
 ---
-title: "codex-universal repo project"
+title: "emoclassifiers repo project"
 author: "Cong Le"
 version: "1.0"
 license(s): "MIT, CC BY-SA 4.0"
@@ -66,86 +66,91 @@ config:
     }
   }
 }%%
-flowchart TB
-    %% CI/CD Pipeline
-    subgraph "CI/CD Pipeline"  
+flowchart TD
+    %% CLI Layer
+    subgraph "CLI Layer"
         direction TB
-        DevCommit["Developer Commits"]:::external
-        GHActions["GitHub Actions CI"]:::build
-        DockerfileNode["Dockerfile"]:::build
-        BuildImageYML["build-image.yml"]:::build
-        Registry["Container Registry (ghcr.io)"]:::external
+        Simple["run_simple_classification.py"]:::cli
+        Hierarchical["run_hierarchical_emoclassifiers_v1.py"]:::cli
     end
 
-    DevCommit -->|"triggers build"| GHActions
-    GHActions -->|"uses"| BuildImageYML
-    GHActions -->|"reads"| DockerfileNode
-    GHActions -->|"push image"| Registry
-
-    %% Runtime Flow
-    subgraph "Developer Runtime"  
+    %% Core Library
+    subgraph "Core Library"
         direction TB
-        DevMachine["Developer Machine"]:::external
-        DockerEngine["Docker Engine"]:::build
-        DockerImage["codex-universal Image"]:::build
-        subgraph "Container Runtime"  
-            direction TB
-            Entrypoint["entrypoint.sh"]:::runtime
-            SetupScript["setup_universal.sh"]:::runtime
-            subgraph "Language Installers"  
-                direction TB
-                Pyenv["pyenv Installer"]:::runtime
-                NvmRustGo["nvm/rustup/go/swift Installers"]:::runtime
-            end
-            subgraph "Pre-installed Tools"  
-                direction TB
-                RubyBunJava["ruby, bun, java, bazelisk"]:::runtime
-            end
-        end
-        Workspace["Mounted User Workspace"]:::external
+        Classification["Classification Orchestrator"]:::core
+        Chunking["Chunking Module"]:::core
+        Prompt["Prompt-Template Module"]:::core
+        Aggregation["Aggregation Module"]:::core
+        IOUtils["I/O Utilities"]:::core
     end
 
-    DevMachine -->|"docker pull"| Registry
-    DevMachine -->|"docker run"| DockerEngine
-    DockerEngine --> DockerImage
-    DockerImage --> Entrypoint
-    Entrypoint -->|"calls"| SetupScript
-    SetupScript --> Pyenv
-    SetupScript --> NvmRustGo
-    Entrypoint --> RubyBunJava
-    DockerEngine -.->|"mount"| Workspace
-    DockerEngine -.->|"env vars CODEX_ENV_*"| SetupScript
-
-    %% Documentation & Licensing
-    subgraph "Project Files"  
+    %% Asset Store
+    subgraph "Asset Store"
         direction TB
-        README["README.md"]:::docs
-        Gitignore[".gitignore"]:::docs
-        LicensesDir["LICENSES/"]:::docs
-        SBOM1["codex-universal-image-sbom.spdx.json"]:::docs
-        SBOM2["codex-universal-image-sbom.md"]:::docs
-        LicenseFile["LICENSE"]:::docs
+        DefV1["emoclassifiers_v1_definition.json"]:::asset
+        DepGraph["emoclassifiers_v1_dependency.json"]:::asset
+        TopLevel["emoclassifiers_v1_top_level_definition.json"]:::asset
+        DefV2["emoclassifiers_v2_definition.json"]:::asset
+        ExampleConvs["example_conversations.jsonl"]:::asset
     end
+
+    %% External Service
+    OpenAI["OpenAI API"]:::external
+
+    %% Data Stores
+    Input["Input JSONL"]:::data
+    Output["Output JSONL"]:::data
+
+    %% Connections
+    Simple -->|"load Input JSONL"| IOUtils
+    Hierarchical -->|"load Input JSONL"| IOUtils
+    Simple -->|"start classification"| Classification
+    Hierarchical -->|"start classification"| Classification
+
+    IOUtils -->|"read Input JSONL"| Input
+    Input -->|"conversations"| IOUtils
+
+    Classification -->|"load definitions"| DefV1
+    Classification -->|"load definitions"| DepGraph
+    Classification -->|"load definitions"| TopLevel
+    Classification -->|"load definitions"| DefV2
+
+    Classification -->|"invoke chunking"| Chunking
+    Chunking -->|"chunks"| Classification
+
+    Classification -->|"construct prompts"| Prompt
+
+    Classification -->|"async call"| OpenAI
+    OpenAI -->|"LLM responses"| Classification
+
+    Classification -->|"raw outputs"| Aggregation
+    Aggregation -->|"aggregated results"| IOUtils
+
+    IOUtils -->|"write Output JSONL"| Output
 
     %% Click Events
-    click BuildImageYML "https://github.com/openai/codex-universal/blob/main/.github/workflows/build-image.yml"
-    click DockerfileNode "https://github.com/openai/codex-universal/tree/main/Dockerfile"
-    click Entrypoint "https://github.com/openai/codex-universal/blob/main/entrypoint.sh"
-    click SetupScript "https://github.com/openai/codex-universal/blob/main/setup_universal.sh"
-    click README "https://github.com/openai/codex-universal/blob/main/README.md"
-    click LicensesDir "https://github.com/openai/codex-universal/tree/main/LICENSES/"
-    click SBOM1 "https://github.com/openai/codex-universal/blob/main/LICENSES/codex-universal-image-sbom.spdx.json"
-    click SBOM2 "https://github.com/openai/codex-universal/blob/main/LICENSES/codex-universal-image-sbom.md"
-    click LicenseFile "https://github.com/openai/codex-universal/tree/main/LICENSES/LICENSE"
-    click Gitignore "https://github.com/openai/codex-universal/blob/main/.gitignore"
+    click Simple "https://github.com/openai/emoclassifiers/blob/main/examples/run_simple_classification.py"
+    click Hierarchical "https://github.com/openai/emoclassifiers/blob/main/examples/run_hierarchical_emoclassifiers_v1.py"
+    click Chunking "https://github.com/openai/emoclassifiers/blob/main/emoclassifiers/chunking.py"
+    click Prompt "https://github.com/openai/emoclassifiers/blob/main/emoclassifiers/prompt_templates.py"
+    click Classification "https://github.com/openai/emoclassifiers/blob/main/emoclassifiers/classification.py"
+    click Aggregation "https://github.com/openai/emoclassifiers/blob/main/emoclassifiers/aggregation.py"
+    click IOUtils "https://github.com/openai/emoclassifiers/blob/main/emoclassifiers/io_utils.py"
+    click DefV1 "https://github.com/openai/emoclassifiers/blob/main/assets/definitions/emoclassifiers_v1_definition.json"
+    click DepGraph "https://github.com/openai/emoclassifiers/blob/main/assets/definitions/emoclassifiers_v1_dependency.json"
+    click TopLevel "https://github.com/openai/emoclassifiers/blob/main/assets/definitions/emoclassifiers_v1_top_level_definition.json"
+    click DefV2 "https://github.com/openai/emoclassifiers/blob/main/assets/definitions/emoclassifiers_v2_definition.json"
+    click ExampleConvs "https://github.com/openai/emoclassifiers/blob/main/assets/example_conversations.jsonl"
 
     %% Styles
-    classDef build fill:#cfe2f3,stroke:#084298,stroke-width:1px
-    classDef runtime fill:#d1e7dd,stroke:#0f5132,stroke-width:1px
-    classDef docs fill:#fff3cd,stroke:#664d03,stroke-width:1px
-    classDef external fill:#e2e3e5,stroke:#41464b,stroke-width:1px
-```
+    classDef cli fill:#D0E1F9,stroke:#333,stroke-width:1px
+    classDef core fill:#D5F5E3,stroke:#333,stroke-width:1px
+    classDef asset fill:#FAD7A0,stroke:#333,stroke-width:1px
+    classDef external fill:#D2B4DE,stroke:#333,stroke-width:1px
+    classDef data fill:#AED6F1,stroke:#333,stroke-width:1px
 
+
+```
 
 ---
 
