@@ -12,7 +12,7 @@ source: https://github.com/rca/GPGMail
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2RxaGR1ZDh0MTBubWxxb3FuaW9heHNxY3ltYTU2aWxyOHFnMWh1NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1xmhGbhGxJV0suEo6r/giphy.gif)
+> ![Loading...](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHAzM2xua2tid2JucnJwajY3amp4ZTVtdm9qYm9wMXgyY2drMTlxbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/in7R7WASiy3rq/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
