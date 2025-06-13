@@ -1,5 +1,5 @@
 ---
-created: 2025-06-012 05:31:26
+created: 2025-06-12 05:31:26
 author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
@@ -20,8 +20,6 @@ source: https://github.com/openai/openai-assistants-quickstart
 
 
 ----
-
-
 
 
 # assistants-quickstart repo project
