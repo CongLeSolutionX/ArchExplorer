@@ -12,7 +12,7 @@ source: https://github.com/openai/openai-dotnet
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjY2NDhiN3MyeG9pYmFuZHpwZmJ6YnJuaTBrNWJlc21sdGs3emlqbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XB3gaBJjllUtBnX8wS/giphy.gif)
+> ![Loading...](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHJweDB5OWl5NzhrdXR6eDA0ZDZvZXFvbjloNnNnb3ZwbnZxbHVkYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wJfZOIx30vMEDm16jz/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
