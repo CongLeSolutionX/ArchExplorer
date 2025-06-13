@@ -69,41 +69,51 @@ config:
 }%%
 flowchart TB
     subgraph PL[Presentation Layer]
+    style PL fill:#BB21,stroke:#27ae60,color:#F8B229
         DH[Documentation Hub]
         NS[Navigation System]
         CR[Content Rendering]
     end
 
-    subgraph CML[Content Management Layer]
+    subgraph CML["Content Management Layer"]
+    style CML fill:#22BB,stroke:#27ae60,color:#F8B229
         RS["Registry System"]
         click RS "https://github.com/openai/openai-cookbook/blob/main/registry.yaml"
         
-        subgraph CC[Content Categories]
+        subgraph CC["Content Categories"]
+        style CC fill:#55BB,stroke:#27ae60,color:#F8B229
             AR["Articles Repository"]
             click AR "https://github.com/openai/openai-cookbook/tree/main/articles/"
+            
             EX["Examples Repository"]
             click EX "https://github.com/openai/openai-cookbook/tree/main/examples/"
             TU[Tutorials]
         end
         
         AM[Asset Management]
+        
         AC["Author Configuration"]
         click AC "https://github.com/openai/openai-cookbook/blob/main/authors.yaml"
     end
 
-    subgraph IL[Integration Layer]
-        OAI[OpenAI API Connectors]
+    subgraph IL["Integration Layer"]
+    style IL fill:#EE22,stroke:#27ae60,color:#F8B229
+        OAI["OpenAI API Connectors"]
         
-        subgraph VDI[Vector Database Integration]
+        subgraph VDI["Vector Database Integration"]
+        style VDI fill:#ADD2,stroke:#3498db,color:#F8B229
             PIN["Pinecone Integration"]
             click PIN "https://github.com/openai/openai-cookbook/tree/main/examples/vector_databases/pinecone/"
+            
             WEA["Weaviate Integration"]
             click WEA "https://github.com/openai/openai-cookbook/tree/main/examples/vector_databases/weaviate/"
         end
         
-        subgraph TPI[Third-party Integration]
+        subgraph TPI["Third-party Integration"]
+        style TPI fill:#D2D2,stroke:#3498db,color:#F8B229
             WAN["Weights & Biases"]
             click WAN "https://github.com/openai/openai-cookbook/blob/main/examples/third_party/GPT_finetuning_with_wandb.ipynb"
+            
             AZ["Azure Integration"]
             click AZ "https://github.com/openai/openai-cookbook/tree/main/examples/azure/"
         end
@@ -112,11 +122,14 @@ flowchart TB
         click UT "https://github.com/openai/openai-cookbook/blob/main/examples/utils/embeddings_utils.py"
     end
 
-    subgraph INF[Infrastructure Layer]
+    subgraph INF["Infrastructure Layer"]
+    style INF fill:#22D2,stroke:#9b59b6,color:#F8B229
         GH["GitHub Repository"]
+        
         CI["CI/CD Pipelines"]
         click CI "https://github.com/openai/openai-cookbook/blob/main/.github/workflows/build-website.yaml"
-        DE[Development Environment]
+        
+        DE["Development Environment"]
     end
 
     %% Relationships
@@ -144,7 +157,8 @@ flowchart TB
     class GH,CI,DE infrastructure
 
     %% Legend
-    subgraph Legend
+    subgraph Legend["Legend"]
+    style Legend fill:#000,stroke:#9b59b6,color:#F8B229
         P[Presentation]:::presentation
         C[Content Management]:::content
         I[Integration]:::integration
