@@ -12,7 +12,7 @@ source: https://github.com/pallets/flask
 > 
 > This is a working draft in progress.
 > 
-> ![Loading...](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmdoYWhxb3c2NmR6OGZoMzN5NWxqNjJmbmVxd3U0NDFobjc4ZHdvNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUA7bjPYcgAvwq5CKc/giphy.gif)
+> ![Loading...](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbm5nejE2MHN1bXpmdm0wZ3JzOHl1MWQ2eGRwcG5xMTZpZ2NzMHFlcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/EYrYuspAxARbuyD7nm/giphy.gif)
 > 
 > gif image is provided by [Giphy](https://giphy.com)
 > 
