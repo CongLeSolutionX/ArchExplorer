@@ -12,7 +12,7 @@ source: https://github.com/grishka/Smithereen
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaDFjNmo5a2QzdXdueGRidXJicnowbWVjeWlmYjZjNmZhYzg2Z2hkMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/EYo6rhSUxI5bVqkX87/giphy.gif)
+> ![Loading...](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGlqZ2Vzdno3enBvbnBhcGE3d3g0emhlOWN2bW42MzVobjRrdTZ1OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3GSoFVODOkiPBFArlu/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
