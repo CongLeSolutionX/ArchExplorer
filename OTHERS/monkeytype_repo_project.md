@@ -12,7 +12,7 @@ source: https://github.com/monkeytypegame/monkeytype
 > 
 > This is a working draft in progress.
 > 
-> ![Loading...](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmdoYWhxb3c2NmR6OGZoMzN5NWxqNjJmbmVxd3U0NDFobjc4ZHdvNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUA7bjPYcgAvwq5CKc/giphy.gif)
+> ![Loading...](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcm8waTZlc3NoeHA5aGM3eTQ3M2Ruanc3ajdtZGFodTJyajRqcDRodyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1229mlttgo8aR2/giphy.gif)
 > 
 > gif image is provided by [Giphy](https://giphy.com)
 > 
