@@ -12,7 +12,7 @@ source: https://github.com/openai/openai-responses-starter-app
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2tvYWIyOGRpbWZodTQ2YTI2bjQ1eHpoaDY0YTZ3Mms2aWhneHNlYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fR6aYF0SUJAeoypyub/giphy.gif)
+> ![Loading...](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTlkOXMwd2ViMzA4bzZkZHRlZ2txMGQ5czcxbXJqbnowYTdlamVkZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26BkLEx4vTh2vVs3K/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
