@@ -12,7 +12,7 @@ source: https://github.com/GPGTools/MacGPG2
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2RxaGR1ZDh0MTBubWxxb3FuaW9heHNxY3ltYTU2aWxyOHFnMWh1NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1xmhGbhGxJV0suEo6r/giphy.gif)
+> ![Loading...](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWRyejBiMWgzb200eDUwdmh3OW1seHdpY3BnbG9jYXQweXMzYzU3diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/d3MLdIYIHup9Q2xG/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
