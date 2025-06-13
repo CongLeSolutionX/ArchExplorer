@@ -12,7 +12,7 @@ source: https://github.com/openai/openai-builder-lab-solution
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWU4dXJqazltMGpiaXQ2OXZ5dW9jMW9rMjY0eG0yanZ6amxra2Z4biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ciSYZSUKEPhvCSNr0s/giphy.gif)
+> ![Loading...](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2ttZWtxaHkwbWt3bXprNjNzMjN3cHhjaW8wa214dnh0aW1nNWpyeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/46zB7HJZYbZ35tLpwl/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
