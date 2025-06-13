@@ -12,7 +12,7 @@ source: https://github.com/telegramdesktop/tdesktop
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcHhtbnVoNHM1emUzNzRiajIxbnJ0dGd1emNkdXBncGZ4MzRzeGdoOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RFWYL3CCOBk2lDiCup/giphy.gif)
+> ![Loading...](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExY202NmQ5YW5kNW44N3hrN3Q3ZGV2ZmtvcXl4ZzV0YXdrZmlpZHBxbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IYnrtb8x90a4TpxPhW/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
