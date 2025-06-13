@@ -35,9 +35,122 @@ source: https://github.com/openai/openai-cookbook
 > 2. **Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0):** Applies to all non-code content, including text, explanations, diagrams, and illustrations.
 ---
 
+```mermaid
+---
+title: "openai-cookbook repo project"
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY-SA 4.0"
+copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+config:
+  layout: elk
+  theme: base
+  look: handDrawn
+---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
+%%{
+  init: {
+    'flowchart': { 'htmlLabels': true, 'curve': 'basis' },
+    'fontFamily': 'American Typewriter, monospace',
+    'logLevel': 'fatal',
+    'themeVariables': {
+      'primaryColor': '#22BB',
+      'primaryTextColor': '#F8B229',
+      'lineColor': '#F8B229',
+      'primaryBorderColor': '#27AE60',
+      'secondaryColor': '#E2F1',
+      'secondaryTextColor': '#6C3483',
+      'secondaryBorderColor': '#A569BD',
+      'fontSize': '20px'
+    }
+  }
+}%%
+flowchart TB
+    subgraph PL[Presentation Layer]
+        DH[Documentation Hub]
+        NS[Navigation System]
+        CR[Content Rendering]
+    end
 
-## MAIN CONTENT - A Diagrammatic Guide 
+    subgraph CML[Content Management Layer]
+        RS["Registry System"]
+        click RS "https://github.com/openai/openai-cookbook/blob/main/registry.yaml"
+        
+        subgraph CC[Content Categories]
+            AR["Articles Repository"]
+            click AR "https://github.com/openai/openai-cookbook/tree/main/articles/"
+            EX["Examples Repository"]
+            click EX "https://github.com/openai/openai-cookbook/tree/main/examples/"
+            TU[Tutorials]
+        end
+        
+        AM[Asset Management]
+        AC["Author Configuration"]
+        click AC "https://github.com/openai/openai-cookbook/blob/main/authors.yaml"
+    end
 
+    subgraph IL[Integration Layer]
+        OAI[OpenAI API Connectors]
+        
+        subgraph VDI[Vector Database Integration]
+            PIN["Pinecone Integration"]
+            click PIN "https://github.com/openai/openai-cookbook/tree/main/examples/vector_databases/pinecone/"
+            WEA["Weaviate Integration"]
+            click WEA "https://github.com/openai/openai-cookbook/tree/main/examples/vector_databases/weaviate/"
+        end
+        
+        subgraph TPI[Third-party Integration]
+            WAN["Weights & Biases"]
+            click WAN "https://github.com/openai/openai-cookbook/blob/main/examples/third_party/GPT_finetuning_with_wandb.ipynb"
+            AZ["Azure Integration"]
+            click AZ "https://github.com/openai/openai-cookbook/tree/main/examples/azure/"
+        end
+        
+        UT["Utility Tools"]
+        click UT "https://github.com/openai/openai-cookbook/blob/main/examples/utils/embeddings_utils.py"
+    end
+
+    subgraph INF[Infrastructure Layer]
+        GH["GitHub Repository"]
+        CI["CI/CD Pipelines"]
+        click CI "https://github.com/openai/openai-cookbook/blob/main/.github/workflows/build-website.yaml"
+        DE[Development Environment]
+    end
+
+    %% Relationships
+    DH --> NS
+    DH --> CR
+    NS --> RS
+    RS --> CC
+    CC --> AM
+    OAI --> VDI
+    OAI --> TPI
+    VDI --> UT
+    TPI --> UT
+    RS --> CI
+    CI --> DH
+
+    %% Styling
+    classDef presentation fill:#3498db,stroke:#2980b9,color:#fff
+    classDef content fill:#2ecc71,stroke:#27ae60,color:#fff
+    classDef integration fill:#e74c3c,stroke:#c0392b,color:#fff
+    classDef infrastructure fill:#9b59b6,stroke:#8e44ad,color:#fff
+
+    class DH,NS,CR presentation
+    class RS,CC,AM,AC content
+    class OAI,VDI,TPI,UT integration
+    class GH,CI,DE infrastructure
+
+    %% Legend
+    subgraph Legend
+        P[Presentation]:::presentation
+        C[Content Management]:::content
+        I[Integration]:::integration
+        F[Infrastructure]:::infrastructure
+    end
+```
 
 ---
 
