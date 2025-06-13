@@ -12,7 +12,7 @@ source: https://github.com/openai/openai-cookbook
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHUzN3gxdzh1aTh6aWQ0OTd0dzduMWZsdXJwdjR1bmJsOWVyb3R5cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/heSS8pjSXKY5q/giphy.gif)
+> ![Loading...](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMHRneG5lcTR4c2praXg1bzFkMDkyOW1reWVvZ2w5cW1tbngwcjlmZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/PwLYfy05MBVVm/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
