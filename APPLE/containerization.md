@@ -8,6 +8,18 @@ source: https://github.com/apple/containerization
 ---
 
 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+> 
+> This is an ongoing document collecting notes for personal educational purposes and references. 
+> 
+> ![Loading...](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHJ4YXdtYjJpMDl0MzEwYmU4ZzBobG0waGNiN3MzNzR0d2R2NnMwNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26gssNOlBJKjEM3yo/giphy.gif)
+> 
+> gif image is provided by [Giphy](https://giphy.com)
+> 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+
+----
+
 
 # containerization repo project
 > **Disclaimer:**
@@ -19,9 +31,6 @@ source: https://github.com/apple/containerization
 > 1. **MIT License:** Applies to all code implementations (Swift, Mermaid, and other programming languages).
 > 2. **Creative Commons Attribution 4.0 International License (CC BY 4.0):** Applies to all non-code content, including text, explanations, diagrams, and illustrations.
 ---
-
-
-----
 
 ```mermaid
 ---
@@ -56,17 +65,17 @@ config:
   }
 }%%
 flowchart TB
-    %% Host Application Layer
-    subgraph "Host Application Layer"
-        direction TB
+    subgraph Host_Application_Layer["Host Application Layer"]
+    style Host_Application_Layer fill:#22BB,stroke:#FF22, color: #FFFF
+      direction TB
         cctl["cctl CLI"]:::host
         Containerization["Containerization Library"]:::host
     end
 
     cctl -->|uses APIs| Containerization
 
-    %% Containerization sub-modules
-    subgraph "Containerization Modules"
+    subgraph Containerization_Modules["Containerization sub-modules"]
+    style Containerization_Modules fill:#1122,stroke:#FF22, color: #FFFF
         direction TB
         OCIClient["OCI Client"]:::host
         OCIContent["OCI Content Store"]:::host
@@ -106,8 +115,9 @@ flowchart TB
     Containerization -->|launch VM, vsock| VZFW
 
     %% VM Side
-    subgraph "Lightweight VM" 
-        direction TB
+    subgraph Lightweight_VM["Lightweight VM"]
+    style Lightweight_VM fill:#2DD2,stroke:#FF22, color: #FFFF
+    direction TB
         LinuxKernel["Linux Kernel"]:::vmintern
         Rootfs["Rootfs ext4"]:::vmintern
         vminitd["vminitd (gRPC Server over vsock)"]:::vmintern
@@ -129,8 +139,9 @@ flowchart TB
     PrebuiltKernel --> LinuxKernel
 
     %% Build & CI
-    subgraph "Build & Test Infrastructure"
-        direction TB
+    subgraph Build_and_Test_Infrastructure["Build & Test Infrastructure"]
+    style Build_and_Test_Infrastructure fill:#92DD,stroke:#FF22, color: #FFFF
+    direction TB
         MakefileNode["Makefile"]:::ci
         GitHubActions[".github/workflows"]:::ci
         ProtoMake["Protobuf.Makefile"]:::ci
@@ -166,11 +177,11 @@ flowchart TB
     click ProtoMake "https://github.com/apple/containerization/blob/main/Protobuf.Makefile"
 
     %% Styles
-    classDef host fill:#D0E8FF,stroke:#0000FF
-    classDef virt fill:#EEEEEE,stroke:#888888
-    classDef vmintern fill:#DDFFDD,stroke:#00AA00
-    classDef ext fill:#FFE0B2,stroke:#FF8800
-    classDef ci fill:#FFF3B0,stroke:#CC9900
+    classDef host fill:#D8F2,stroke:#0000FF
+    classDef virt fill:#EEE3,stroke:#888888
+    classDef vmintern fill:#DFD2,stroke:#00AA00
+    classDef ext fill:#FEB2,stroke:#FF8800
+    classDef ci fill:#F3B2,stroke:#CC9900
 ```
 
 
