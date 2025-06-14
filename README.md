@@ -17,16 +17,21 @@ This open-source project aims to demystify the architectures of popular open-sou
 
 ## Table of Contents
 
-- [About the Project](#about-the-project)
-- [Architectural Focus Areas](#architectural-focus-areas)
-- [Repository Structure](#repository-structure)
-- [Example Visualization: Simplified Kubernetes Architecture](#example-visualization-simplified-kubernetes-architecture)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Disclaimer](#disclaimer)
-- [Markdown and Visualization Resources](#markdown-and-visualization-resources)
+- [ArchExplorer: Deconstructing Open-Source Architectures with Visualizations](#archexplorer-deconstructing-open-source-architectures-with-visualizations)
+  - [Table of Contents](#table-of-contents)
+  - [About the Project](#about-the-project)
+  - [Architectural Focus Areas](#architectural-focus-areas)
+  - [Repository Structure](#repository-structure)
+  - [Example Visualization: Simplified Kubernetes Architecture](#example-visualization-simplified-kubernetes-architecture)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Cloning the Repository](#cloning-the-repository)
+  - [Usage](#usage)
+  - [🚀 Project Current Activities](#-project-current-activities)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Disclaimer](#disclaimer)
+  - [Markdown and Visualization Resources](#markdown-and-visualization-resources)
 
 ---
 
@@ -50,7 +55,7 @@ We achieve this by:
 *   **Focusing on Clarity:**  We prioritize clarity and simplicity over exhaustive detail.  The goal is to provide an accessible overview, not a complete blueprint.
 *   **Community Contributions:** We welcome contributions from the community to expand the library of visualized architectures.
 
-**This project builds upon the visual learning principles established in AlgoVerse (algorithm visualization) and Synthetic Zooniverse (AI model visualization), extending the approach to the realm of software architecture.**
+**This project builds upon the visual learning principles established in [AlgoVerse](https://github.com/CongLeSolutionX/AlgoVerse) (algorithm visualization) and [Synthetic Zooniverse](https://github.com/CongLeSolutionX/Synthetic-Zooniverse) (AI model visualization), extending the approach to the realm of software architecture.**
 
 ---
 
@@ -222,6 +227,33 @@ Replace `[YOUR_REPOSITORY_URL]` with the actual URL of the ArchExplorer reposito
 
 ---
 
+
+## 🚀 Project Current Activities
+
+<div align="left"><a name="project-current-activities"></a>
+
+<details open>
+<summary>Click to show/hide more on recent activities of this project </summary>
+
+> powered by [OSS Insight](https://ossinsight.io)
+<!-- All the diagrams below are made with [OSS Insight](https://ossinsight.io/) -->
+
+| :bar_chart: Widget & Description | :art: Snapshot (Light Mode) |
+|---|---|
+| Active Contributors :technologist: of CongLeSolutionX/ArchExplorer - Last 28 days | ![Active Contributors of CongLeSolutionX/ArchExplorer - Last 28 days](https://next.ossinsight.io/widgets/official/compose-recent-active-contributors/thumbnail.png?repo_id=945004235&limit=30&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/compose-recent-active-contributors?repo_id=945004235&limit=30) |
+| Pushes :arrow_up: and Commits :writing_hand: of CongLeSolutionX/ArchExplorer | ![Pushes and Commits of CongLeSolutionX/ArchExplorer](https://next.ossinsight.io/widgets/official/analyze-repo-pushes-and-commits-per-month/thumbnail.png?repo_id=945004235&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/analyze-repo-pushes-and-commits-per-month?repo_id=945004235) |
+| Pull Request Size :straight_ruler: of CongLeSolutionX/ArchExplorer | ![Pull Request Size of CongLeSolutionX/ArchExplorer](https://next.ossinsight.io/widgets/official/analyze-repo-pull-requests-size-per-month/thumbnail.png?repo_id=945004235&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/analyze-repo-pull-requests-size-per-month?repo_id=945004235) |
+| Pull Request Lifecycle :arrows_counterclockwise: of CongLeSolutionX/ArchExplorer | ![Pull Request Lifecycle of CongLeSolutionX/ArchExplorer](https://next.ossinsight.io/widgets/official/analyze-repo-pull-request-open-to-merged/thumbnail.png?repo_id=945004235&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/analyze-repo-pull-request-open-to-merged?repo_id=945004235) |
+| Lines of Code Changes :computer::scroll: of CongLeSolutionX/ArchExplorer | ![Lines of Code Changes of CongLeSolutionX/ArchExplorer](https://next.ossinsight.io/widgets/official/analyze-repo-loc-per-month/thumbnail.png?repo_id=945004235&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/analyze-repo-loc-per-month?repo_id=945004235) |
+| Commits Time Distribution :alarm_clock::date: of CongLeSolutionX/ArchExplorer | ![Commits Time Distribution of CongLeSolutionX/ArchExplorer](https://next.ossinsight.io/widgets/official/analyze-repo-commits-time-distribution/thumbnail.png?repo_id=945004235&period=last_1_year&zone=0&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/analyze-repo-commits-time-distribution?repo_id=945004235&period=last_1_year&zone=0) | 
+
+
+</details>
+
+</div>
+
+---
+
 ## Contributing
 
 We welcome contributions! If you have new insights, model implementations, or research updates to share, please refer to the `CONTRIBUTING.md` (Not yet implemented will be updated later) for guidelines.
@@ -266,3 +298,51 @@ The architectural visualizations provided in this repository are for educational
 *   **GitDiagram:** [https://github.com/ahmedkhaleel2004/gitdiagram/](https://github.com/ahmedkhaleel2004/gitdiagram/) -  A primary source of inspiration for this project, leveraging LLMs to convert open-source projects into Mermaid diagrams.
 
 ---
+
+<!-- 
+```mermaid
+%% Current Mermaid version
+info
+```  -->
+
+
+```mermaid
+---
+title: "CongLeSolutionX"
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY-SA 4.0"
+copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+config:
+  theme: base
+---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%{
+  init: {
+    'flowchart': { 'htmlLabels': false },
+    'fontFamily': 'Bradley Hand',
+    'themeVariables': {
+      'primaryColor': '#fc82',
+      'primaryTextColor': '#F8B229',
+      'primaryBorderColor': '#27AE60',
+      'secondaryColor': '#81c784',
+      'secondaryTextColor': '#6C3483',
+      'lineColor': '#F8B229',
+      'fontSize': '20px'
+    }
+  }
+}%%
+flowchart LR
+    My_Meme@{ img: "https://raw.githubusercontent.com/CongLeSolutionX/MY_GRAPHIC_ASSETS/refs/heads/Designing_graphic_syntax/MY_MEME/My-meme-icon-design.png", label: "Ăn uống gì chưa ngừi đẹp?", pos: "b", w: 200, h: 150, constraint: "on" }
+
+Closing_quote@{ shape: braces, label: "I'll leave this Earth empty-handed anyway!<br/>YOLO" }
+My_Meme ~~~ Closing_quote
+Link_to_my_profile{{"<a href='https://github.com/CongLeSolutionX' target='_blank'>Click here if you care about my profile</a>"}}
+
+Closing_quote ~~~ My_Meme
+My_Meme animatingEdge@--> Link_to_my_profile
+animatingEdge@{ animate: true }
+
+```
+
+----
