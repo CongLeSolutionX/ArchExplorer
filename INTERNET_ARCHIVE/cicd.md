@@ -4,7 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
-source: https://github.com/internetarchive/bookreader
+source: https://github.com/internetarchive/cicd
 ---
 
 
@@ -24,7 +24,7 @@ source: https://github.com/internetarchive/bookreader
 
 
 
-# bookreader repo project
+# cicd repo project
 > <ins>📢 **Disclaimer** 🚨</ins>
 >
 > This document contains my personal notes on the topic,
@@ -38,7 +38,7 @@ source: https://github.com/internetarchive/bookreader
 
 ```mermaid
 ---
-title: "bookreader repo project"
+title: "cicd repo project"
 author: "Cong Le"
 version: "1.0"
 license(s): "MIT, CC BY-SA 4.0"
@@ -69,94 +69,39 @@ config:
   }
 }%%
 flowchart TD
-  subgraph "User / Browser"
-    DemoHTML["Demo HTML Pages"]:::demo
-    ArchiveEmbed["Archive.org Embed"]:::demo
-  end
+    subgraph "Repository Structure"
+        README["README.md"]:::github
+        License["LICENSE"]:::github
+        Config["_config.yml"]:::github
+        WorkflowsDir[".github/workflows"]:::github
+    end
 
-  subgraph "BookReader Runtime"
-    CoreDir["Core Engine (src/BookReader)"]:::core
-    EntryPoint["Core Entry Point"]:::core
-    JQuery["jQuery Wrapper"]:::core
-    NavigatorDir["BookNavigator Components"]:::navigator
-    PluginsDir["Plugin Layer"]:::plugin
+    Developer["Developer"]:::external
+    Developer -->|"push code / dispatch"| YourRepo["Your App Repo"]:::github
+    YourRepo -->|"triggers"| Runner["GitHub Actions Runner"]:::github
+    Runner -->|"uses internetarchive/cicd/.github/workflows/cicd.yml"| ReusableWorkflow["Reusable Workflow Definition"]:::github
+    ReusableWorkflow -->|"defines jobs"| Runner
+    Runner -->|"executes build & test"| Docker["Docker Build & Test"]:::process
+    Docker -->|"push image"| Registry["GitHub Container Registry"]:::registry
+    Runner -->|"deploy (NOMAD_TOKEN)"| Dev["Nomad Dev Cluster"]:::registry
+    Runner -.->|"deploy (NOMAD_TOKEN_PROD)"| Prod["Nomad Prod Cluster"]:::registry
+    Secrets["GitHub Secrets"]:::github
+    Secrets -->|"NOMAD_TOKEN, BASE_DOMAIN, NOMAD_ADDR, PLATFORMS, NOMAD_VAR_*"| Runner
 
-    EntryPoint -->|imports| CoreDir
-    EntryPoint -->|uses| JQuery
-    EntryPoint -->|initializes| NavigatorDir
-    EntryPoint -->|registers| PluginsDir
-    CoreDir -->|emits events| NavigatorDir
-    CoreDir -->|emits events| PluginsDir
-    NavigatorDir -->|invokes| CoreDir
-    PluginsDir -->|hooks/mixins| CoreDir
-  end
+    click ReusableWorkflow "https://github.com/internetarchive/cicd/blob/main/.github/workflows/cicd.yml"
+    click README "https://github.com/internetarchive/cicd/blob/main/README.md"
+    click License "https://github.com/internetarchive/cicd/tree/main/LICENSE"
+    click Config "https://github.com/internetarchive/cicd/blob/main/_config.yml"
+    click WorkflowsDir "https://github.com/internetarchive/cicd/tree/main/.github/workflows"
 
-  subgraph "Build & Packaging & Deployment"
-    Babel["Babel"]:::build
-    Webpack["Webpack"]:::build
-    VersionScripts["Versioning Scripts"]:::build
-    CI["GitHub Actions CI"]:::ci
-    Dist["dist Bundle"]:::build
-    Netlify["Netlify Deployment"]:::deploy
-    NPM["NPM Publish"]:::deploy
+    classDef github fill:#cceeff,stroke:#339,stroke-width:1px
+    classDef registry fill:#ccffcc,stroke:#393,stroke-width:1px
+    classDef process fill:#eef5ff,stroke:#559,stroke-width:1px
+    classDef external fill:#ffd8b1,stroke:#e65c00,stroke-width:1px
 
-    Babel -->|transpiles| Webpack
-    VersionScripts -->|pre/post| Webpack
-    CI -->|runs workflows| Webpack
-    Webpack -->|bundles| Dist
-    Dist -->|deployed| Netlify
-    Dist -->|published| NPM
-    CI -->|publishes| NPM
-  end
-
-  subgraph "Testing"
-    Jest["Unit Tests (Jest)"]:::test
-    TestCafe["E2E Tests (TestCafe)"]:::test
-
-    Jest -->|tests| CoreDir
-    Jest -->|tests| NavigatorDir
-    Jest -->|tests| PluginsDir
-    TestCafe -->|tests| DemoHTML
-  end
-
-  subgraph "External Dependencies"
-    IIIF["IIIF Manifest Endpoints"]:::external
-    IASearch["Internet Archive Search API"]:::external
-    BrowserAPI["Browser APIs"]:::external
-
-    DemoHTML -->|fetch manifest| IIIF
-    DemoHTML -->|calls| IASearch
-    PluginsDir -->|postMessage| BrowserAPI
-  end
-
-  click CoreDir "https://github.com/internetarchive/bookreader/tree/master/src/BookReader"
-  click EntryPoint "https://github.com/internetarchive/bookreader/blob/master/src/BookReader.js"
-  click JQuery "https://github.com/internetarchive/bookreader/blob/master/src/jquery-wrapper.js"
-  click NavigatorDir "https://github.com/internetarchive/bookreader/tree/master/src/BookNavigator"
-  click PluginsDir "https://github.com/internetarchive/bookreader/tree/master/src/plugins"
-  click DemoHTML "https://github.com/internetarchive/bookreader/tree/master/BookReaderDemo"
-  click Webpack "https://github.com/internetarchive/bookreader/blob/master/webpack.config.js"
-  click Babel "https://github.com/internetarchive/bookreader/blob/master/babel.config.cjs"
-  click Netlify "https://github.com/internetarchive/bookreader/blob/master/netlify.toml"
-  click VersionScripts "https://github.com/internetarchive/bookreader/blob/master/scripts/preversion.js"
-  click VersionScripts "https://github.com/internetarchive/bookreader/blob/master/scripts/postversion.js"
-  click CI "https://github.com/internetarchive/bookreader/blob/master/.github/workflows/node.js.yml"
-  click CI "https://github.com/internetarchive/bookreader/blob/master/.github/workflows/npm-publish.yml"
-  click Jest "https://github.com/internetarchive/bookreader/tree/master/tests/jest"
-  click TestCafe "https://github.com/internetarchive/bookreader/tree/master/tests/e2e"
-
-  classDef core fill:#BBDEFB,stroke:#1E88E5;
-  classDef navigator fill:#C8E6C9,stroke:#43A047;
-  classDef plugin fill:#FFF9C4,stroke:#FBC02D;
-  classDef build fill:#CFD8DC,stroke:#607D8B;
-  classDef deploy fill:#CFD8DC,stroke:#455A64;
-  classDef ci fill:#ECEFF1,stroke:#90A4AE;
-  classDef test fill:#FFE0B2,stroke:#FB8C00;
-  classDef demo fill:#E1BEE7,stroke:#8E24AA;
-  classDef external fill:none,stroke-dasharray:5 5;
 ```
 
------
+----
 
 <!-- 
 ```mermaid
