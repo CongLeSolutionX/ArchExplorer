@@ -12,7 +12,7 @@ source: https://github.com/yaasiinaxmed/todo-dapp
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2U4aHJnYzZ4dHUyZ2g0a25ja21oM3UxNGo4b3AwNjFqd3VoM2Q3byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/10zxDv7Hv5RF9C/giphy.gif)
+> ![Loading...](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjdzMjVieWtrMHMwNXp2bzV5eGZxeWd1cTN2ajBqM2twMXR0MHFxZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT9DPIlGnuHpr2yObu/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
