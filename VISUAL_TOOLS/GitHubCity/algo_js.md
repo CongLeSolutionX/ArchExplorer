@@ -8,17 +8,34 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 
 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+> 
+> This is a working draft in progress
+> 
+> ![Loading...](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExejVqYjVpcWdncHBvOW8wdGZucDc5cjdrYTVnaXFvNnR5Y3owajdpbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/pK4av7uBK3I4M/giphy.gif)
+> 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+
+
+----
+
+
 # algo.js - A Diagrammatic Guide
-> **Disclaimer:**
+<details open>
+<summary>Click to show/hide the full disclaimer.</summary>
+   
+> <ins>📢 **Disclaimer** 🚨</ins>
 >
 > This document contains my personal notes on the topic,
 > compiled from publicly available documentation and various cited sources.
 > The materials are intended for educational purposes, personal study, and reference.
 > The content is dual-licensed:
 > 1. **MIT License:** Applies to all code implementations (Swift, Mermaid, and other programming languages).
-> 2. **Creative Commons Attribution 4.0 International License (CC BY 4.0):** Applies to all non-code content, including text, explanations, diagrams, and illustrations.
----
+> 2. **Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0):** Applies to all non-code content, including text, explanations, diagrams, and illustrations.
 
+</details>
+
+---
 
 
 This set of diagrams and explanations should provide a clear understanding of how the JavaScript code processes contribution data to generate a structured city layout grid.
