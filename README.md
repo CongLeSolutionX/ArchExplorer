@@ -150,6 +150,14 @@ Each project folder contains:
 
 ## Example Visualization: Simplified Kubernetes Architecture
 
+
+<div align="center">
+	<img alt="Example Visualization" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmQ3M2hpN292eTRvOTVjeGtvZTl0Z3BlYXc5bTVqenA3ZzQ0bzI4YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l3zomMQJWLruq1Ycg/giphy.gif"/>
+	<br/>
+	<em>gif image is provided by <a href="https://giphy.com">Giphy</a></em>
+</div>
+
+
 This example demonstrates how ArchExplorer uses Mermaid to illustrate the core components of Kubernetes.
 
 ```mermaid
