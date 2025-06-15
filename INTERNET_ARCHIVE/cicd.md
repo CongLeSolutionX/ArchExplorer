@@ -4,7 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
-source: 
+source: https://github.com/internetarchive/cicd
 ---
 
 
@@ -24,7 +24,7 @@ source:
 
 
 
-# CHANGE_ME
+# cicd repo project
 > <ins>📢 **Disclaimer** 🚨</ins>
 >
 > This document contains my personal notes on the topic,
@@ -36,10 +36,72 @@ source:
 ---
 
 
-## MAIN CONTENT - A Diagrammatic Guide 
-
-
+```mermaid
 ---
+title: "cicd repo project"
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY-SA 4.0"
+copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+config:
+  layout: elk
+  theme: base
+  look: handDrawn
+---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
+%%{
+  init: {
+    'flowchart': { 'htmlLabels': true, 'curve': 'basis' },
+    'fontFamily': 'American Typewriter, monospace',
+    'logLevel': 'fatal',
+    'themeVariables': {
+      'primaryColor': '#22BB',
+      'primaryTextColor': '#F8B229',
+      'lineColor': '#F8B229',
+      'primaryBorderColor': '#27AE60',
+      'secondaryColor': '#E2F1',
+      'secondaryTextColor': '#6C3483',
+      'secondaryBorderColor': '#A569BD',
+      'fontSize': '20px'
+    }
+  }
+}%%
+flowchart TD
+    subgraph "Repository Structure"
+        README["README.md"]:::github
+        License["LICENSE"]:::github
+        Config["_config.yml"]:::github
+        WorkflowsDir[".github/workflows"]:::github
+    end
+
+    Developer["Developer"]:::external
+    Developer -->|"push code / dispatch"| YourRepo["Your App Repo"]:::github
+    YourRepo -->|"triggers"| Runner["GitHub Actions Runner"]:::github
+    Runner -->|"uses internetarchive/cicd/.github/workflows/cicd.yml"| ReusableWorkflow["Reusable Workflow Definition"]:::github
+    ReusableWorkflow -->|"defines jobs"| Runner
+    Runner -->|"executes build & test"| Docker["Docker Build & Test"]:::process
+    Docker -->|"push image"| Registry["GitHub Container Registry"]:::registry
+    Runner -->|"deploy (NOMAD_TOKEN)"| Dev["Nomad Dev Cluster"]:::registry
+    Runner -.->|"deploy (NOMAD_TOKEN_PROD)"| Prod["Nomad Prod Cluster"]:::registry
+    Secrets["GitHub Secrets"]:::github
+    Secrets -->|"NOMAD_TOKEN, BASE_DOMAIN, NOMAD_ADDR, PLATFORMS, NOMAD_VAR_*"| Runner
+
+    click ReusableWorkflow "https://github.com/internetarchive/cicd/blob/main/.github/workflows/cicd.yml"
+    click README "https://github.com/internetarchive/cicd/blob/main/README.md"
+    click License "https://github.com/internetarchive/cicd/tree/main/LICENSE"
+    click Config "https://github.com/internetarchive/cicd/blob/main/_config.yml"
+    click WorkflowsDir "https://github.com/internetarchive/cicd/tree/main/.github/workflows"
+
+    classDef github fill:#cceeff,stroke:#339,stroke-width:1px
+    classDef registry fill:#ccffcc,stroke:#393,stroke-width:1px
+    classDef process fill:#eef5ff,stroke:#559,stroke-width:1px
+    classDef external fill:#ffd8b1,stroke:#e65c00,stroke-width:1px
+
+```
+
+----
 
 <!-- 
 ```mermaid
