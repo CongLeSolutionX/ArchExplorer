@@ -150,7 +150,6 @@ Each project folder contains:
 
 ## Example Visualization: Simplified Kubernetes Architecture
 
-
 <div align="center">
 	<img alt="Example Visualization" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmQ3M2hpN292eTRvOTVjeGtvZTl0Z3BlYXc5bTVqenA3ZzQ0bzI4YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l3zomMQJWLruq1Ycg/giphy.gif"/>
 	<br/>
@@ -265,6 +264,13 @@ Replace `[YOUR_REPOSITORY_URL]` with the actual URL of the ArchExplorer reposito
 
 
 ## 🚀 Project Current Activities
+
+
+<div align="center">
+	<img alt="Example Visualization" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXk2YWZ4Z29rMjlhcjh6cG9yMmc2eWZ0bmw1YzA3M2h0bGFhYm03YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT8qB5POKfq8lGclkQ/giphy.gif"/>
+	<br/>
+	<em>gif image is provided by <a href="https://giphy.com">Giphy</a></em>
+</div>
 
 <div align="left"><a name="project-current-activities"></a>
 
