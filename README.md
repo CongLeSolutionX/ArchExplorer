@@ -265,7 +265,6 @@ Replace `[YOUR_REPOSITORY_URL]` with the actual URL of the ArchExplorer reposito
 
 ## 🚀 Project Current Activities
 
-
 <div align="center">
 	<img alt="Example Visualization" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXk2YWZ4Z29rMjlhcjh6cG9yMmc2eWZ0bmw1YzA3M2h0bGFhYm03YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT8qB5POKfq8lGclkQ/giphy.gif"/>
 	<br/>
@@ -293,6 +292,17 @@ Replace `[YOUR_REPOSITORY_URL]` with the actual URL of the ArchExplorer reposito
 </details>
 
 </div>
+
+
+
+
+<div align="center">
+	<img alt="Example Visualization" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHJsMjcyMHk1Zms3MGZjMzJhZjhteDMzZDhicTh1d3AydnpibmV0OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/nIUav1AOaK06s/giphy.gif"/>
+	<br/>
+	<em>gif image is provided by <a href="https://giphy.com">Giphy</a></em>
+</div>
+
+
 
 ---
 
