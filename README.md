@@ -96,6 +96,14 @@ ArchExplorer covers a wide range of open-source project architectures, including
 
 ## Repository Structure
 
+
+<div align="center">
+	<img alt="Repository Structure" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXNldDd3M3czeHMwaWFpcWl0MGdxbmp4eW8zN3U4ZWdyY3B0YXVrMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/CEZVVu7HfvXCt3IKhG/giphy.gif"/>
+	<br/>
+	<em>gif image is provided by <a href="https://giphy.com">Giphy</a></em>
+</div>
+
+
 The repository is organized by architectural focus area and then by individual project:
 
 ```
