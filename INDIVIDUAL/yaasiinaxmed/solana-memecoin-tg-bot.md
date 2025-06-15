@@ -12,7 +12,7 @@ source: https://github.com/yaasiinaxmed/solana-memecoin-tg-bot
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2U4aHJnYzZ4dHUyZ2g0a25ja21oM3UxNGo4b3AwNjFqd3VoM2Q3byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/10zxDv7Hv5RF9C/giphy.gif)
+> ![Loading...](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTdwNjc2NDlvYWw4ZWVnZzR3cXVsYjVqdzhtbHozMWk2Ym9lanJlciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5NoLXTfMR1xAfsYcgF/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
