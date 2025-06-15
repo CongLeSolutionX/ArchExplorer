@@ -12,7 +12,7 @@ source: https://github.com/internetarchive/cicd
 > 
 > This is a working draft in progress.
 > 
-> ![Loading...](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXVqY2NjengxdXh4N3Jxb2N2aTYxcGV6ODR3Z2J5dHR0c210MGx4dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0LHVgZQp79x2hZEA/giphy.gif)
+> ![Loading...](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjFpN29yNzI1aTczZjE5ZTRtbzM5cm96d3F3eDJlazZtNnc5cnZweiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QWkuGmMgphvmE/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
