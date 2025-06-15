@@ -74,6 +74,13 @@ We achieve this by:
 
 ## Architectural Focus Areas
 
+<div align="center">
+	<img alt="Architectural Focus Areas" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ2Nzc2tjOGV3c3JxNzNteDg5Mm14cWV6MzUzYzZuNWZrYm1uem1sdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Q6gxCtEHXzLswLlcev/giphy.gif"/>
+	<br/>
+	<em>gif image is provided by <a href="https://giphy.com">Giphy</a></em>
+</div>
+
+
 ArchExplorer covers a wide range of open-source project architectures, including:
 
 *   **Operating Systems:** (e.g., Linux Kernel, FreeBSD)
