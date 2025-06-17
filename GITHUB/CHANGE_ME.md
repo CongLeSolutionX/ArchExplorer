@@ -86,7 +86,7 @@ flowchart LR
   Closing_quote@{ shape: braces, label: "...searching insights in the process of formulating better questions..." }
     
   My_Meme ~~~ Closing_quote
-    
+
   Link_to_my_profile{{"<a href='https://github.com/CongLeSolutionX' target='_blank'>Click here if you care about my profile</a>"}}
 
   Closing_quote ~~~ My_Meme
