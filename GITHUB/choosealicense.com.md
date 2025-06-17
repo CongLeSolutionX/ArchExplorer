@@ -72,7 +72,7 @@ config:
     }
   }
 }%%
-flowchart TB
+flowchart LR
     %% Data & Content Layer
     subgraph "Data & Content" 
         direction TB
