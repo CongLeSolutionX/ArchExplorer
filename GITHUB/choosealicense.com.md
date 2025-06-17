@@ -57,8 +57,8 @@ config:
 %% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
 %%{
   init: {
-    'flowchart': { 'htmlLabels': true, 'curve': 'basis' },
-    'fontFamily': 'American Typewriter, monospace',
+    'flowchart': { 'htmlLabels': true, 'curve': 'natural' },
+    'fontFamily': 'Fantasy, Impact',
     'logLevel': 'fatal',
     'themeVariables': {
       'primaryColor': '#22BB',
@@ -68,7 +68,7 @@ config:
       'secondaryColor': '#E2F1',
       'secondaryTextColor': '#6C3483',
       'secondaryBorderColor': '#A569BD',
-      'fontSize': '20px'
+      'fontSize': '25px'
     }
   }
 }%%
