@@ -201,7 +201,7 @@ flowchart LR
     click workflow "https://github.com/github/choosealicense.com/blob/gh-pages//.github/workflows/test.yml"
 
     %% Styles
-    classDef data fill:#cf2,stroke:#007bff,color:#F33F
+    classDef data fill:#c222,stroke:#007bff,color:#F33F
     classDef processing fill:#dda2,stroke:#28a745,color:#F33F
     classDef ci fill:#fFA2,stroke:#ffc107,color:#F33F
     classDef output fill:#e352,stroke:#6c757d,color:#F33F
