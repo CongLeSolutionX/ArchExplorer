@@ -73,76 +73,83 @@ config:
   }
 }%%
 flowchart LR
-    %% Data & Content Layer
-    subgraph "Data & Content" 
-        direction TB
-        subgraph "Markdown Pages"
-            direction TB
-            page404["404.md"]:::data
-            about["about.md"]:::data
-            appendix["appendix.md"]:::data
-            community["community.md"]:::data
-            index["index.html"]:::data
-            licensesPage["licenses.html"]:::data
-            noPermission["no-permission.md"]:::data
-            nonSoftware["non-software.md"]:::data
-            robots["robots.txt"]:::data
-            terms["terms-of-service.md"]:::data
-        end
-        licenseCollection["_licenses/*.txt"]:::data
-        structuredFields["_data/fields.yml"]:::data
-        structuredRules["_data/rules.yml"]:::data
-        structuredMeta["_data/meta.yml"]:::data
+    subgraph Data_Content_Layer["Data & Content Layer"]
+    direction TB
+    style Data_Content_Layer fill:#ccf2,stroke:#007bff,color:#004085
+      
+      subgraph Markdown_Pages["Markdown Pages"]
+      direction TB
+      style Markdown_Pages fill:#2A22,stroke:#72f,color:#FFFF
+        page404["404.md"]:::data
+        about["about.md"]:::data
+        appendix["appendix.md"]:::data
+        community["community.md"]:::data
+        index["index.html"]:::data
+        licensesPage["licenses.html"]:::data
+        noPermission["no-permission.md"]:::data
+        nonSoftware["non-software.md"]:::data
+        robots["robots.txt"]:::data
+        terms["terms-of-service.md"]:::data
+      end
+
+      licenseCollection["_licenses/*.txt"]:::data
+      structuredFields["_data/fields.yml"]:::data
+      structuredRules["_data/rules.yml"]:::data
+      structuredMeta["_data/meta.yml"]:::data
     end
 
-    %% Templating Layer
-    subgraph "Templating Layer"
-        direction TB
-        JekyllEngine["Jekyll Engine (Ruby)"]:::processing
-        subgraph "Layouts"
-            direction TB
-            layoutDefault["default.html"]:::processing
-            layoutLicense["license.html"]:::processing
-        end
-        subgraph "Includes (Partials)"
-            direction TB
-            incHeader["header.html"]:::processing
-            incFooter["footer.html"]:::processing
-            incSidebar["sidebar.html"]:::processing
-            incBreadcrumbs["breadcrumbs.html"]:::processing
-            incOverview["license-overview.html"]:::processing
-            incUsing["using-sentence.html"]:::processing
-            incCss["responsive.css"]:::processing
-        end
+    subgraph Templating_Layer["Templating Layer"]
+    direction TB
+    style Templating_Layer fill:#92A2,stroke:#72f,color:#FFFF
+      JekyllEngine["Jekyll Engine (Ruby)"]:::processing
+      
+      subgraph Layouts["Layouts"]
+      direction TB
+      style Layouts fill:#AA99,stroke:#72f,color:#FFFF
+        layoutDefault["default.html"]:::processing
+        layoutLicense["license.html"]:::processing
+      end
+
+      subgraph Includes["Includes<br/>(Partials)"]
+      direction TB
+      style Includes fill:#BFF2,stroke:#72f,color:#FFFF
+        incHeader["header.html"]:::processing
+        incFooter["footer.html"]:::processing
+        incSidebar["sidebar.html"]:::processing
+        incBreadcrumbs["breadcrumbs.html"]:::processing
+        incOverview["license-overview.html"]:::processing
+        incUsing["using-sentence.html"]:::processing
+        incCss["responsive.css"]:::processing
+      end
     end
 
-    %% Asset Pipeline
-    subgraph "Asset Pipeline"
-        direction TB
-        sass["application.scss"]:::processing
-        coffee["app.coffee"]:::processing
-        vendor["assets/vendor"]:::processing
-        bowerJson["bower.json"]:::processing
-        bowerrc[".bowerrc"]:::processing
+    subgraph Asset_Pipeline["Asset Pipeline"]
+    direction TB
+    style Asset_Pipeline fill:#FA22,stroke:#72f,color:#FFFF
+      sass["application.scss"]:::processing
+      coffee["app.coffee"]:::processing
+      vendor["assets/vendor"]:::processing
+      bowerJson["bower.json"]:::processing
+      bowerrc[".bowerrc"]:::processing
     end
 
-    %% Build & CI Layer
-    subgraph "Build & CI"
-        direction TB
-        bootstrap["script/bootstrap"]:::ci
-        server["script/server"]:::ci
-        genDocs["script/generate-docs"]:::ci
-        ciBuild["script/cibuild"]:::ci
-        checkApproval["script/check-approval"]:::ci
-        rspec["spec/license_meta_spec.rb"]:::ci
-        workflow[".github/workflows/test.yml"]:::ci
+    subgraph Build_and_CI_Layer["Build & CI Layer"]
+    direction TB
+    style Build_and_CI_Layer fill:#A922,stroke:#72f,color:#FFFF
+      bootstrap["script/bootstrap"]:::ci
+      server["script/server"]:::ci
+      genDocs["script/generate-docs"]:::ci
+      ciBuild["script/cibuild"]:::ci
+      checkApproval["script/check-approval"]:::ci
+      rspec["spec/license_meta_spec.rb"]:::ci
+      workflow[".github/workflows/test.yml"]:::ci
     end
 
     %% Deployment & Hosting
     staticSite["_site"]:::output
     hosting["GitHub Pages"]:::output
     external["Licensee & GitHub API"]:::external
-    users["End Users (Browser)"]:::external
+    users["End Users<br/>(Browser)"]:::external
 
     %% Connections
     page404 & about & appendix & community & index & licensesPage & noPermission & nonSoftware & robots & terms & licenseCollection & structuredFields & structuredRules & structuredMeta -->|build input| JekyllEngine
@@ -194,11 +201,11 @@ flowchart LR
     click workflow "https://github.com/github/choosealicense.com/blob/gh-pages//.github/workflows/test.yml"
 
     %% Styles
-    classDef data fill:#cce5ff,stroke:#007bff,color:#004085
-    classDef processing fill:#d4edda,stroke:#28a745,color:#155724
-    classDef ci fill:#fff3cd,stroke:#ffc107,color:#856404
-    classDef output fill:#e2e3e5,stroke:#6c757d,color:#343a40
-    classDef external fill:#f5e1ff,stroke:#b366ff,color:#660066
+    classDef data fill:#cf2,stroke:#007bff,color:#F33F
+    classDef processing fill:#dda2,stroke:#28a745,color:#1724
+    classDef ci fill:#fFA2,stroke:#ffc107,color:#856404
+    classDef output fill:#e352,stroke:#6c757d,color:#343a40
+    classDef external fill:#f1ff,stroke:#b366ff,color:#660066
 ```
 
 ----
@@ -241,7 +248,8 @@ flowchart LR
 
   Closing_quote@{ shape: braces, label: "...searching insights in the process of formulating better questions..." }
     
-  My_Meme ~~~ Closing_quote
+   
+  Closing_quote ~~~ My_Meme
     
   Link_to_my_profile{{"<a href='https://github.com/CongLeSolutionX/CongLeSolutionX' target='_blank'>Click here if you care about my profile</a>"}}
 
