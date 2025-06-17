@@ -202,10 +202,10 @@ flowchart LR
 
     %% Styles
     classDef data fill:#cf2,stroke:#007bff,color:#F33F
-    classDef processing fill:#dda2,stroke:#28a745,color:#1724
-    classDef ci fill:#fFA2,stroke:#ffc107,color:#856404
-    classDef output fill:#e352,stroke:#6c757d,color:#343a40
-    classDef external fill:#f1ff,stroke:#b366ff,color:#660066
+    classDef processing fill:#dda2,stroke:#28a745,color:#F33F
+    classDef ci fill:#fFA2,stroke:#ffc107,color:#F33F
+    classDef output fill:#e352,stroke:#6c757d,color:#F33F
+    classDef external fill:#fE12,stroke:#b366ff,color:#F33F
 ```
 
 ----
