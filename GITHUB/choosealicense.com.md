@@ -4,6 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
+source: https://github.com/github/choosealicense.com
 ---
 
 
@@ -21,7 +22,9 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 ----
 
 
-# CHANGE_ME
+
+
+# choosealicense.com repo project
 <details open>
 <summary>Click to show/hide the full disclaimer.</summary>
    
