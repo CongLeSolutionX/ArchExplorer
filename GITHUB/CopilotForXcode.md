@@ -4,7 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
-source:
+source: https://github.com/github/CopilotForXcode
 ---
 
 
@@ -22,7 +22,7 @@ source:
 ----
 
 
-# CHANGE_ME
+# CopilotForXcode repo project
 <details open>
 <summary>Click to show/hide the full disclaimer.</summary>
    
@@ -40,11 +40,82 @@ source:
 ---
 
 
-
-## MAIN CONTENT - A Diagrammatic Guide 
-
-
+```mermaid
 ---
+title: "CopilotForXcode repo project"
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY-SA 4.0"
+copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+config:
+  layout: elk
+  theme: base
+  look: handDrawn
+---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
+%%{
+  init: {
+    'flowchart': { 'htmlLabels': true, 'curve': 'basis' },
+    'fontFamily': 'American Typewriter, monospace',
+    'logLevel': 'fatal',
+    'themeVariables': {
+      'primaryColor': '#22BB',
+      'primaryTextColor': '#F8B229',
+      'lineColor': '#F8B229',
+      'primaryBorderColor': '#27AE60',
+      'secondaryColor': '#E2F1',
+      'secondaryTextColor': '#6C3483',
+      'secondaryBorderColor': '#A569BD',
+      'fontSize': '20px'
+    }
+  }
+}%%
+flowchart TD
+    %% Frontend Layer
+    subgraph "Frontend Layer"
+        A["Copilot for Xcode"]:::ui
+        B["Xcode Extension (EditorExtension)"]:::ui
+        C["Extension Support Service (ExtensionService)"]:::ui
+    end
+
+    %% Backend Layer
+    subgraph "Backend Layer"
+        D["Communication Bridge (CommunicationBridge / XPCShared)"]:::bridge
+        E["Core Services (Core)"]:::service
+        F["Tool Services (Tool)"]:::service
+    end
+
+    %% External Systems
+    G["GitHub API"]:::external
+
+    %% Data Flow
+    B -->|"SendsUserInput"| D
+    D -->|"ForwardsRequest"| E
+    E -->|"UsesAuxTool"| F
+    E -->|"CallsAPI"| G
+    G -->|"ReturnsResponse"| E
+    E -->|"SendsResult"| D
+    D -->|"DeliversSuggestions"| B
+    C -->|"SupportsInterface"| A
+
+    %% Styles
+    classDef ui fill:#cce5ff,stroke:#003366,stroke-width:2px;
+    classDef service fill:#d4edda,stroke:#155724,stroke-width:2px;
+    classDef bridge fill:#fff3cd,stroke:#856404,stroke-width:2px;
+    classDef external fill:#f8d7da,stroke:#721c24,stroke-width:2px;
+
+    %% Click Events
+    click A "https://github.com/github/copilotforxcode/blob/main/Copilot for Xcode/App.swift"
+    click B "https://github.com/github/copilotforxcode/blob/main/EditorExtension/SourceEditorExtension.swift"
+    click C "https://github.com/github/copilotforxcode/blob/main/ExtensionService/AppDelegate.swift"
+    click D "https://github.com/github/copilotforxcode/blob/main/CommunicationBridge/ServiceDelegate.swift"
+    click E "https://github.com/github/copilotforxcode/tree/main/Core/Sources/ChatService"
+    click F "https://github.com/github/copilotforxcode/tree/main/Tool/Sources"
+```
+
+-----
 
 <!-- 
 ```mermaid
@@ -83,8 +154,8 @@ flowchart LR
   My_Meme@{ img: "https://raw.githubusercontent.com/CongLeSolutionX/CongLeSolutionX/refs/heads/main/assets/images/My-meme-light-bulb-question-marks.png", label: "Ăn uống gì chưa ngừi đẹp?", pos: "b", w: 200, h: 150, constraint: "off" }
 
   Closing_quote@{ shape: braces, label: "...searching insights in the process of formulating better questions..." }
- 
-  Closing_quote ~~~ My_Meme
+    
+  My_Meme ~~~ Closing_quote
 
   Link_to_my_profile{{"<a href='https://github.com/CongLeSolutionX' target='_blank'>Click here if you care about my profile</a>"}}
 
