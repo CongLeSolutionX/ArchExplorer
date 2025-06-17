@@ -1,5 +1,5 @@
 ---
-created: 2025-06-16 05:31:26
+created: 2025-06-08 05:31:26
 author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
@@ -11,7 +11,7 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXVjejV3dnVjc2o5MXd3eXBvcDR1cHlzbHQ1Z2R6YjY0ZHpmdjJ6OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hL9q5k9dk9l0wGd4e0/giphy.gif)
+> ![Loading...](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3VwcHgzZWxnbTc3eWUwd2NpdnEwem9wdWVxemZ1eDE1aHpmZmlhdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/N35rW3vRNeaDC/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
@@ -86,8 +86,8 @@ flowchart LR
   Closing_quote@{ shape: braces, label: "...searching insights in the process of formulating better questions..." }
     
   My_Meme ~~~ Closing_quote
-    
-  Link_to_my_profile{{"<a href='https://github.com/CongLeSolutionX/CongLeSolutionX' target='_blank'>Click here if you care about my profile</a>"}}
+
+  Link_to_my_profile{{"<a href='https://github.com/CongLeSolutionX' target='_blank'>Click here if you care about my profile</a>"}}
 
   Closing_quote ~~~ My_Meme
   My_Meme animatingEdge@--> Link_to_my_profile
