@@ -202,7 +202,7 @@ flowchart LR
 
     %% Styles
     classDef data fill:#c222,stroke:#007bff,color:#F33F
-    classDef processing fill:#dda2,stroke:#28a745,color:#33FF
+    classDef processing fill:#dda2,stroke:#28a745,color:#28a745
     classDef ci fill:#fFA2,stroke:#ffc107,color:#F33F
     classDef output fill:#e352,stroke:#6c757d,color:#F33F
     classDef external fill:#fE12,stroke:#b366ff,color:#F33F
