@@ -105,7 +105,7 @@ flowchart LR
       
       subgraph Layouts["Layouts"]
       direction TB
-      style Layouts fill:#AA99,stroke:#72f,color:#FFFF
+      style Layouts fill:#22BB,stroke:#72f,color:#FFFF
         layoutDefault["default.html"]:::processing
         layoutLicense["license.html"]:::processing
       end
