@@ -57,8 +57,8 @@ config:
 %% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
 %%{
   init: {
-    'flowchart': { 'htmlLabels': true, 'curve': 'basis' },
-    'fontFamily': 'American Typewriter, monospace',
+    'flowchart': { 'htmlLabels': true, 'curve': 'natural' },
+    'fontFamily': 'Fantasy, Impact',
     'logLevel': 'fatal',
     'themeVariables': {
       'primaryColor': '#22BB',
@@ -68,7 +68,7 @@ config:
       'secondaryColor': '#E2F1',
       'secondaryTextColor': '#6C3483',
       'secondaryBorderColor': '#A569BD',
-      'fontSize': '20px'
+      'fontSize': '25px'
     }
   }
 }%%
@@ -105,7 +105,7 @@ flowchart LR
       
       subgraph Layouts["Layouts"]
       direction TB
-      style Layouts fill:#AA99,stroke:#72f,color:#FFFF
+      style Layouts fill:#22BB,stroke:#72f,color:#FFFF
         layoutDefault["default.html"]:::processing
         layoutLicense["license.html"]:::processing
       end
@@ -201,11 +201,11 @@ flowchart LR
     click workflow "https://github.com/github/choosealicense.com/blob/gh-pages//.github/workflows/test.yml"
 
     %% Styles
-    classDef data fill:#cf2,stroke:#007bff,color:#F33F
+    classDef data fill:#c222,stroke:#007bff,color:#28a745
     classDef processing fill:#dda2,stroke:#28a745,color:#F33F
-    classDef ci fill:#fFA2,stroke:#ffc107,color:#F33F
-    classDef output fill:#e352,stroke:#6c757d,color:#F33F
-    classDef external fill:#fE12,stroke:#b366ff,color:#F33F
+    classDef ci fill:#fFA2,stroke:#ffc107,color:#ffc107
+    classDef output fill:#e352,stroke:#6c757d,color:#b366ff
+    classDef external fill:#fE12,stroke:#b366ff,color:#A569BD
 ```
 
 ----
@@ -251,7 +251,7 @@ flowchart LR
    
   Closing_quote ~~~ My_Meme
     
-  Link_to_my_profile{{"<a href='https://github.com/CongLeSolutionX/CongLeSolutionX' target='_blank'>Click here if you care about my profile</a>"}}
+  Link_to_my_profile{{"<a href='https://github.com/CongLeSolutionX' target='_blank'>Click here if you care about my profile</a>"}}
 
   Closing_quote ~~~ My_Meme
   My_Meme animatingEdge@--> Link_to_my_profile
