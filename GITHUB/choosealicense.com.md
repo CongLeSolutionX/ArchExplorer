@@ -202,7 +202,7 @@ flowchart LR
 
     %% Styles
     classDef data fill:#c222,stroke:#007bff,color:#F33F
-    classDef processing fill:#dda2,stroke:#28a745,color:#F33F
+    classDef processing fill:#dda2,stroke:#28a745,color:#33FF
     classDef ci fill:#fFA2,stroke:#ffc107,color:#F33F
     classDef output fill:#e352,stroke:#6c757d,color:#F33F
     classDef external fill:#fE12,stroke:#b366ff,color:#F33F
@@ -251,7 +251,7 @@ flowchart LR
    
   Closing_quote ~~~ My_Meme
     
-  Link_to_my_profile{{"<a href='https://github.com/CongLeSolutionX/CongLeSolutionX' target='_blank'>Click here if you care about my profile</a>"}}
+  Link_to_my_profile{{"<a href='https://github.com/CongLeSolutionX' target='_blank'>Click here if you care about my profile</a>"}}
 
   Closing_quote ~~~ My_Meme
   My_Meme animatingEdge@--> Link_to_my_profile
