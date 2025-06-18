@@ -21,9 +21,6 @@ source: https://github.com/ethereum/EIPs
 
 ----
 
-
-
-
 # EIPs repo project
 <details open>
 <summary>Click to show/hide the full disclaimer.</summary>

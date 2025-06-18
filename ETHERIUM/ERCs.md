@@ -13,7 +13,7 @@ source: https://github.com/ethereum/ERCs
 > This is a working draft in progress
 > 
 > ![Loading...](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDkxcjVkbjA1a3h6MmNodjdmeGpnNHpkOHl5MzV5ZTZzOXJqNTRzdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0MYP5tAQKbLSGg7u/giphy.gif)
->
+> 
 > gif image is provided by [Giphy](https://giphy.com)
 > 
 > ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷

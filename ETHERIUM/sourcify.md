@@ -12,7 +12,7 @@ source: https://github.com/ethereum/sourcify
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExanZydm52NDcyNWIwMWtneG9uOWk4aGpseXQ1bHR4b3c1N2x3MnB6bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/m3XqQ8QhuIUuQau7n5/giphy.gif)
+> ![Loading...](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExanhvM24wZTYxY3E5cHR0MjR4YWNyaThvZmNqbzlqenoyYTI2anRsZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XI7zkv4X89kcsmLJnV/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
