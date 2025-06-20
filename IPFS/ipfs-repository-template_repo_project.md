@@ -47,6 +47,7 @@ copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
   layout: elk
   theme: base
+  look: handDrawn
 ---
 %%%%%%%% Mermaid version v11.4.1-b.14
 %%%%%%%% Available curve styles include the following keywords:
@@ -68,31 +69,35 @@ config:
   }
 }%%
 flowchart TD
-    classDef docs fill:#ADD8E6,stroke:#333
-    classDef cfg fill:#90EE90,stroke:#333
-    classDef ci fill:#98FB98,stroke:#333
-    classDef external fill:#F0E68C,stroke:#333
+    classDef docs fill:#ADE6,stroke:#333
+    classDef cfg fill:#9FF2,stroke:#333
+    classDef ci fill:#9FF2,stroke:#333
+    classDef external fill:#FCC2,stroke:#333
     classDef event fill:#22BB,stroke:#333
-    classDef future fill:#D3D3D3,stroke:#333,stroke-dasharray: 5 5
+    classDef future fill:#D3D3,stroke:#333,stroke-dasharray: 5 5
 
     Contributors((Contributors)):::external
     PR((Pull Request)):::event
     StaleTrigger((Stale Trigger)):::event
 
-    subgraph "GitHub Repository"
-        README["README.md"]:::docs
-        LICENSE["LICENSE.md"]:::docs
-        subgraph ".github"
-            subgraph "ISSUE_TEMPLATE"
+    subgraph GitHub_Repository["GitHub Repository"]
+    style GitHub_Repository fill:#DA22,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5, color:#FFFF
+        README["<b>README.md</b>"]:::docs
+        LICENSE["<b>LICENSE.md</b>"]:::docs
+        subgraph github["<b>.github</b>"]
+        style github fill:#DA22,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5, color:#F22F
+            subgraph ISSUE_TEMPLATE["ISSUE TEMPLATE"]
+            style ISSUE_TEMPLATE fill:#2B22,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5, color:#F8B229
                 ISSUE["Issue Templates"]:::cfg
             end
-            GHCONFIG["config.yml"]:::cfg
-            subgraph "workflows"
-                GEN[(generated-pr.yml)]:::ci
-                STALE[(stale.yml)]:::ci
+            GHCONFIG["<b>config.yml</b>"]:::cfg
+            subgraph workflows["workflows"]
+            style workflows fill:#2B22,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5, color:#F5BB
+                GEN[("<b>generated-pr.yml</b>")]:::ci
+                STALE[("<b>stale.yml</b>")]:::ci
             end
         end
-        FUTURE["src/ (Future code)"]:::future
+        FUTURE["<b>src/</b> <br/>(Future code)"]:::future
     end
 
     Contributors -->|"opens Issue"| ISSUE

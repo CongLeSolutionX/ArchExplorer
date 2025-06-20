@@ -44,6 +44,7 @@ copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
   layout: elk
   theme: base
+  look: handDrawn
 ---
 %%%%%%%% Mermaid version v11.4.1-b.14
 %%%%%%%% Available curve styles include the following keywords:
@@ -65,13 +66,13 @@ config:
   }
 }%%
 flowchart TD
-  %% Consumer
-  subgraph "Consumer"
+  subgraph Consumer["Consumer"]
+  style Consumer fill:#DA22,stroke:#333,stroke-width:2px,stroke-dasharray: 5 5, color:#FFFF
     U["User/Application"]
   end
 
-  %% Supplemental Modules
-  subgraph "Supplemental Modules" 
+  subgraph Supplemental_Modules["Supplemental Modules"]
+  style Supplemental_Modules fill:#D2A2,stroke:#333,stroke-width:2px,stroke-dasharray: 5 5, color:#FFFF
     M1["@helia/unixfs"]:::module
     M2["@helia/ipns"]:::module
     M3["@helia/dag-json"]:::module
@@ -83,8 +84,8 @@ flowchart TD
     M9["@helia/routers"]:::module
   end
 
-  %% Helia Core
-  subgraph "Helia Core" 
+  subgraph Helia_Core["Helia Core"]
+  style Helia_Core fill:#22A2,stroke:#333,stroke-width:2px,stroke-dasharray: 5 5, color:#FFFF
     IF["packages/interface"]:::core
     H1["packages/helia"]:::core
     H2["packages/http"]:::core
@@ -93,7 +94,9 @@ flowchart TD
     BB["BlockBrokers"]:::core
     BS1["Bitswap"]:::core
     TG["TrustlessGateways"]:::core
-    subgraph "libp2p & Protocols"
+  
+    subgraph libp2p_and_Protocols["libp2p & Protocols"]
+    style libp2p_and_Protocols fill:#2A22,stroke:#333,stroke-width:2px,stroke-dasharray: 5 5, color:#FFFF
       LP["libp2p"]:::core
       DHT["DHT"]:::core
       PubSub["PubSub"]:::core
@@ -102,13 +105,12 @@ flowchart TD
     end
   end
 
-  %% External Systems
-  subgraph "External Systems"
+  subgraph External_Systems["External Systems"]
+  style External_Systems fill:#A2F6,stroke:#333,stroke-width:2px,stroke-dasharray: 5 5, color:#FFFF
     Storage["LevelDB/FS/IDB/S3"]:::external
-    Network["Network (P2P)"]:::external
+    Network["Network<br/>(P2P)"]:::external
   end
 
-  %% Interop Tests
   IT["Interop Test Suite"]:::module
 
   %% Connections
@@ -143,7 +145,7 @@ flowchart TD
   BS -->|delegates| BB
 
   BB -->|p2p| BS1
-  %% BB -.fallback.->|http| TG
+  BB -.->|fallback to http| TG
 
   BS1 -->|over| LP
   TG -->|reads/writes| Storage
@@ -188,10 +190,10 @@ flowchart TD
 
   %% Styles
   classDef core fill:#2196f3,stroke:#000,color:#fff
-  classDef module fill:#4caf50,stroke:#000,color:#fff
-  classDef external fill:#9e9e9e,stroke:#000,color:#fff
+  classDef module fill:#4f53,stroke:#000,color:#fff
+  classDef external fill:#939e,stroke:#000,color:#fff
   %% class DS,BB,TG stroke-dasharray: 5 5
-  %% class TG dashed external
+  %% class TG,dashed external
 ```
 
 
