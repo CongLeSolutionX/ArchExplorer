@@ -59,7 +59,7 @@ config:
 %% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
 %%{
   init: {
-    'flowchart': { 'htmlLabels': true, 'curve': 'basis' },
+    'flowchart': { 'htmlLabels': true, 'curve': 'natural' },
     'fontFamily': 'American Typewriter, monospace',
     'logLevel': 'fatal',
     'themeVariables': {
@@ -76,14 +76,16 @@ config:
 }%%
 flowchart TB
     %% External Interfaces Layer
-    subgraph Interfaces
+    subgraph Interfaces["Interfaces"]
+    style Interfaces fill:#F332,stroke:#333,stroke-width:2px, color: #FFFF
         PY["Python API"]:::interface
         CLI["Command Line Interface"]:::interface
         CAPI["C++ API"]:::interface
     end
 
     %% Core Processing Layer
-    subgraph Core
+    subgraph Core["Core"]
+    style Core fill:#B332,stroke:#333,stroke-width:2px, color: #FFFF
         PROC["Processor Interface"]:::core
         NORM["Normalization System"]:::core
         MI["Model Interface"]:::core
@@ -91,7 +93,8 @@ flowchart TB
     end
 
     %% Model Types Layer
-    subgraph Models
+    subgraph Models["Models"]
+    style Models fill:#C152,stroke:#333,stroke-width:2px, color: #FFFF
         BPE["BPE Model"]:::model
         UNI["Unigram Model"]:::model
         CHAR["Character Model"]:::model
@@ -99,7 +102,8 @@ flowchart TB
     end
 
     %% Supporting Systems
-    subgraph Support
+    subgraph Support["Support"]
+    style Support fill:#FF52,stroke:#333,stroke-width:2px, color: #FFFF
         PROTO["Protocol Buffers"]:::support
         UNICODE["Unicode Processing"]:::support
         MF["Model Factory"]:::support
@@ -131,10 +135,10 @@ flowchart TB
     NORM --> UNICODE
 
     %% Styles
-    classDef interface fill:#FFA500,stroke:#333,stroke-width:2px
-    classDef core fill:#3498DB,stroke:#333,stroke-width:2px
-    classDef model fill:#2ECC71,stroke:#333,stroke-width:2px
-    classDef support fill:#95A5A6,stroke:#333,stroke-width:2px
+    classDef interface fill:#F5F2,stroke:#333,stroke-width:2px
+    classDef core fill:#DB22,stroke:#333,stroke-width:2px
+    classDef model fill:#271,stroke:#333,stroke-width:2px
+    classDef support fill:#95A6,stroke:#333,stroke-width:2px
 
     %% Click Events
     click PROC "https://github.com/google/sentencepiece/blob/master/src/sentencepiece_processor.h"
