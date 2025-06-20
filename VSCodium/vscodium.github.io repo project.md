@@ -4,7 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
-source: https://github.com/VSCodium/vscodium-docker-files
+source: https://github.com/VSCodium/vscodium.github.io
 ---
 
 
@@ -12,7 +12,7 @@ source: https://github.com/VSCodium/vscodium-docker-files
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGRsNTUyeG9waXZrZTE0YWdweG10MHp1aWh0MDdnbXF5dHNmYjgzcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/y1MLeSPFMuMrmNMBLN/giphy.gif)
+> ![Loading...](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDZpZDNteWF3cHI4YmR1dHo1Zm01cm5jZGVrNGE5ZG1yYjQybzBnMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kg4gaF4zJr57JfjgkO/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
@@ -24,7 +24,7 @@ source: https://github.com/VSCodium/vscodium-docker-files
 
 
 
-# docker-files repo project
+# vscodium.github.io repo project
 <details open>
 <summary>Click to show/hide the full disclaimer.</summary>
    
@@ -40,7 +40,7 @@ source: https://github.com/VSCodium/vscodium-docker-files
 </details>
 
 
----
+----
 
 ```mermaid
 ---
@@ -74,63 +74,78 @@ config:
     }
   }
 }%%
-flowchart TB
-    %% External Services
-    TravisCI("Travis CI"):::external
-    GitHub[(GitHub Repos)]:::external
-    Registry[(Docker Registry)]:::external
+flowchart LR
+  subgraph "Developer Environment"
+    Dev["Developer"]:::dev
+    Repo["Git Repository (GitHub)"]:::dev
+    CLI["Jekyll CLI"]:::dev
+  end
 
-    %% Host & CI
-    Host["Host Machine/CI Runner"]:::host
-    CLI["Docker CLI"]:::host
-    Daemon["Docker Daemon"]:::host
-    Developer["Developer / CI"]:::host
+  subgraph "Source Files"
+    Posts["Markdown Posts (_posts/)"]:::dev
+    Includes["Layouts & Includes (_includes/)"]:::dev
+    BaseCSS["base.css"]:::dev
+    MainCSS["main.css"]:::dev
+    SkelCSS["skeleton.css"]:::dev
+    Footer["footer.md"]:::dev
+    Index["Home Page (index.html)"]:::dev
+    Combo["Bundled Stylesheet (combo.css)"]:::dev
+    SiteJS["Site JavaScript (site.js)"]:::dev
+    Config["Jekyll Configuration (_config.yml)"]:::config
+    CNAME["CNAME"]:::config
+    WellKnown["Flatpak Verification (.well-known/org.flathub.VerifiedApps.txt)"]:::config
+    Readme["README.md"]:::dev
+    License["LICENSE.txt"]:::dev
+  end
 
-    %% Configuration Files
-    Dockerfile["Dockerfile.ia32"]:::config
-    README["README.md"]:::config
-    LICENSE["LICENSE"]:::config
+  subgraph "Build Output"
+    SiteOut["_site/ (Static Files)"]:::storage
+  end
 
-    %% Build Container Runtime
-    subgraph "Build Container (Runtime)"
-        BaseImage["Base Image"]:::runtime
-        Dependencies["Installed Dependencies"]:::runtime
-        Repos["Cloned Repositories\n(vscodium + vscode)"]:::runtime
-        BuildScripts["Build Scripts / Make Targets"]:::runtime
-        Image["Docker Image\nvscodium-ia32"]:::runtime
-        InteractiveShell["Interactive Shell"]:::runtime
-    end
+  subgraph "Hosting & Delivery"
+    Pages["GitHub Pages / Webserver"]:::runtime
+    Users["End Users (Browsers)"]:::runtime
+  end
 
-    %% Flow
-    TravisCI -->|"trigger docker build"| Host
-    Host -->|"docker build"| CLI
-    CLI -->|calls| Daemon
-    Daemon -->|"reads Dockerfile"| Dockerfile
-    Daemon -->|"pull base image"| BaseImage
-    Daemon -->|"install dependencies"| Dependencies
-    Daemon -->|"git clone"| GitHub
-    GitHub --> Dependencies
-    GitHub --> Repos
-    Dependencies --> Repos
-    Repos -->|"set up build env"| BuildScripts
-    BuildScripts -->|"produce image"| Image
-    Image -->|"push to registry"| Registry
-    Developer -->|"docker run"| Image
-    Image -->|"interactive shell"| InteractiveShell
+  Dev -->|git push| Repo
+  Dev -->|jekyll serve| CLI
+  Repo -->|CI build| CLI
+  Posts -->|jekyll build| CLI
+  Includes -->|jekyll build| CLI
+  Index -->|jekyll build| CLI
+  Combo -->|jekyll build| CLI
+  SiteJS -->|jekyll build| CLI
+  Config -->|jekyll build| CLI
+  CNAME -->|jekyll build| CLI
+  WellKnown -->|jekyll build| CLI
+  CLI -->|outputs| SiteOut
+  SiteOut -->|deploy| Pages
+  Pages -->|HTTP GET| Users
 
-    %% Click Events
-    click Dockerfile "https://github.com/vscodium/vscodium-docker-files/blob/master/Dockerfile.ia32"
-    click README "https://github.com/vscodium/vscodium-docker-files/blob/master/README.md"
-    click LICENSE "https://github.com/vscodium/vscodium-docker-files/tree/master/LICENSE"
+  click Config "https://github.com/vscodium/vscodium.github.io/blob/master/_config.yml"
+  click Includes "https://github.com/vscodium/vscodium.github.io/tree/master/_includes/"
+  click BaseCSS "https://github.com/vscodium/vscodium.github.io/blob/master/_includes/css/base.css"
+  click MainCSS "https://github.com/vscodium/vscodium.github.io/blob/master/_includes/css/main.css"
+  click SkelCSS "https://github.com/vscodium/vscodium.github.io/blob/master/_includes/css/skeleton.css"
+  click Footer "https://github.com/vscodium/vscodium.github.io/blob/master/_includes/footer.md"
+  click Posts "https://github.com/vscodium/vscodium.github.io/tree/master/_posts/"
+  click Index "https://github.com/vscodium/vscodium.github.io/blob/master/index.html"
+  click Combo "https://github.com/vscodium/vscodium.github.io/blob/master/combo.css"
+  click SiteJS "https://github.com/vscodium/vscodium.github.io/blob/master/site.js"
+  click WellKnown "https://github.com/vscodium/vscodium.github.io/blob/master/.well-known/org.flathub.VerifiedApps.txt"
+  click CNAME "https://github.com/vscodium/vscodium.github.io/tree/master/CNAME"
+  click Readme "https://github.com/vscodium/vscodium.github.io/blob/master/README.md"
+  click License "https://github.com/vscodium/vscodium.github.io/blob/master/LICENSE.txt"
 
-    %% Styles
-    classDef external fill:#f9bf3b,stroke:#333,stroke-width:1px
-    classDef host fill:#8ecae6,stroke:#333,stroke-width:1px
-    classDef runtime fill:#a8e6cf,stroke:#333,stroke-width:1px
-    classDef config fill:#e0e0e0,stroke:#333,stroke-width:1px
+  classDef dev fill:#D0E8FF,stroke:#0288D1,color:#000
+  classDef config fill:#FFF4E5,stroke:#FB8C00,color:#000
+  classDef runtime fill:#E8F5E9,stroke:#2E7D32,color:#000
+  classDef storage fill:#EDE7F6,stroke:#5E35B1,color:#000
+
 ```
 
----
+-----
+
 
 <!-- 
 ```mermaid

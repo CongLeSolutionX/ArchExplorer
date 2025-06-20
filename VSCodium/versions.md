@@ -4,7 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
-source: https://github.com/VSCodium/vscodium-docker-files
+source: https://github.com/VSCodium/versions
 ---
 
 
@@ -12,7 +12,7 @@ source: https://github.com/VSCodium/vscodium-docker-files
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGRsNTUyeG9waXZrZTE0YWdweG10MHp1aWh0MDdnbXF5dHNmYjgzcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/y1MLeSPFMuMrmNMBLN/giphy.gif)
+> ![Loading...](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjFnamh5cW90bzFsazV6ZDZ4MjZ1ZzgwYnQ2YjRocGtxOXc4bDQ1eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kl5ctZSctCbE4/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
@@ -24,7 +24,7 @@ source: https://github.com/VSCodium/vscodium-docker-files
 
 
 
-# docker-files repo project
+# versions repo project
 <details open>
 <summary>Click to show/hide the full disclaimer.</summary>
    
@@ -74,63 +74,88 @@ config:
     }
   }
 }%%
-flowchart TB
-    %% External Services
-    TravisCI("Travis CI"):::external
-    GitHub[(GitHub Repos)]:::external
-    Registry[(Docker Registry)]:::external
-
-    %% Host & CI
-    Host["Host Machine/CI Runner"]:::host
-    CLI["Docker CLI"]:::host
-    Daemon["Docker Daemon"]:::host
-    Developer["Developer / CI"]:::host
-
-    %% Configuration Files
-    Dockerfile["Dockerfile.ia32"]:::config
-    README["README.md"]:::config
-    LICENSE["LICENSE"]:::config
-
-    %% Build Container Runtime
-    subgraph "Build Container (Runtime)"
-        BaseImage["Base Image"]:::runtime
-        Dependencies["Installed Dependencies"]:::runtime
-        Repos["Cloned Repositories\n(vscodium + vscode)"]:::runtime
-        BuildScripts["Build Scripts / Make Targets"]:::runtime
-        Image["Docker Image\nvscodium-ia32"]:::runtime
-        InteractiveShell["Interactive Shell"]:::runtime
+flowchart TD
+    %% Storage Layer
+    subgraph STORAGE["Version Metadata Storage"]
+        subgraph INSIDER["insider/"]
+            subgraph INS_LINUX["linux"]
+                IL_X64["x64/latest.json"]:::storage
+                IL_ARM64["arm64/latest.json"]:::storage
+            end
+            subgraph INS_DARWIN["darwin"]
+                ID_X64["x64/latest.json"]:::storage
+                ID_ARM64["arm64/latest.json"]:::storage
+            end
+            subgraph INS_WIN32["win32"]
+                IW_X64["x64/latest.json"]:::storage
+                IW_IA32["ia32/latest.json"]:::storage
+            end
+        end
+        subgraph STABLE["stable/"]
+            subgraph ST_LINUX["linux"]
+                SL_X64["x64/latest.json"]:::storage
+                SL_ARM64["arm64/latest.json"]:::storage
+            end
+            subgraph ST_DARWIN["darwin"]
+                SD_X64["x64/latest.json"]:::storage
+            end
+            subgraph ST_WIN32["win32"]
+                SW_X64["x64/latest.json"]:::storage
+            end
+        end
     end
 
-    %% Flow
-    TravisCI -->|"trigger docker build"| Host
-    Host -->|"docker build"| CLI
-    CLI -->|calls| Daemon
-    Daemon -->|"reads Dockerfile"| Dockerfile
-    Daemon -->|"pull base image"| BaseImage
-    Daemon -->|"install dependencies"| Dependencies
-    Daemon -->|"git clone"| GitHub
-    GitHub --> Dependencies
-    GitHub --> Repos
-    Dependencies --> Repos
-    Repos -->|"set up build env"| BuildScripts
-    BuildScripts -->|"produce image"| Image
-    Image -->|"push to registry"| Registry
-    Developer -->|"docker run"| Image
-    Image -->|"interactive shell"| InteractiveShell
+    %% Validation Layer
+    subgraph VALIDATION["Validation Layer"]
+        INTEGRITY["Integrity Utility\n(integrity.js)"]:::validation
+    end
+
+    %% CI/CD Pipeline
+    CI_CD["CI/CD Pipeline"]:::ci
+    PACKAGE["package.json"]:::ci
+
+    %% Service/API Layer
+    subgraph SERVICE["Service/API Layer"]
+        API["Update Service API"]:::service
+    end
+
+    %% CDN Layer
+    CDN["CDN / Edge Cache"]:::cdn
+
+    %% Client
+    CLIENT["Client\n(Electron App / Installer)"]:::client
+
+    %% Connections
+    CI_CD -->|deploy JSON| INSIDER
+    CI_CD -->|deploy JSON| STABLE
+    INSIDER -.->|validate| INTEGRITY
+    STABLE -.->|validate| INTEGRITY
+    INTEGRITY -->|write-back| INSIDER
+    INTEGRITY -->|write-back| STABLE
+    PACKAGE -->|defines scripts & deps| INTEGRITY
+    INSIDER -->|read metadata| API
+    STABLE -->|read metadata| API
+    API -->|serve JSON| CDN
+    CLIENT -->|fetch metadata| CDN
+    CLIENT -->|fallback fetch| API
 
     %% Click Events
-    click Dockerfile "https://github.com/vscodium/vscodium-docker-files/blob/master/Dockerfile.ia32"
-    click README "https://github.com/vscodium/vscodium-docker-files/blob/master/README.md"
-    click LICENSE "https://github.com/vscodium/vscodium-docker-files/tree/master/LICENSE"
+    click INSIDER "https://github.com/vscodium/versions/tree/master/insider/"
+    click STABLE "https://github.com/vscodium/versions/tree/master/stable/"
+    click INTEGRITY "https://github.com/vscodium/versions/blob/master/integrity.js"
+    click PACKAGE "https://github.com/vscodium/versions/blob/master/package.json"
 
     %% Styles
-    classDef external fill:#f9bf3b,stroke:#333,stroke-width:1px
-    classDef host fill:#8ecae6,stroke:#333,stroke-width:1px
-    classDef runtime fill:#a8e6cf,stroke:#333,stroke-width:1px
-    classDef config fill:#e0e0e0,stroke:#333,stroke-width:1px
+    classDef storage fill:#D0E8FF,stroke:#0366d6,color:#0366d6;
+    classDef validation fill:#C8FACC,stroke:#2c662d,color:#2c662d;
+    classDef service fill:#FFE3B8,stroke:#d97706,color:#d97706;
+    classDef cdn fill:#E3B8FF,stroke:#6b21a8,color:#6b21a8;
+    classDef client fill:#E5E7EB,stroke:#374151,color:#374151;
+    classDef ci fill:#FEE2E2,stroke:#b91c1c,color:#b91c1c;
+
 ```
 
----
+----
 
 <!-- 
 ```mermaid

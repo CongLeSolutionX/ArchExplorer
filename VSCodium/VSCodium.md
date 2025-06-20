@@ -4,7 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
-source: https://github.com/VSCodium/vscodium-docker-files
+source: https://github.com/VSCodium/vscodium
 ---
 
 
@@ -12,7 +12,7 @@ source: https://github.com/VSCodium/vscodium-docker-files
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGRsNTUyeG9waXZrZTE0YWdweG10MHp1aWh0MDdnbXF5dHNmYjgzcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/y1MLeSPFMuMrmNMBLN/giphy.gif)
+> ![Loading...](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2J2a3FheWVnYzAyaW9kZGx3dTB5YWttYTE3NHFubTNqdTZsbG00dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/A06UFEx8jxEwU/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
@@ -24,7 +24,7 @@ source: https://github.com/VSCodium/vscodium-docker-files
 
 
 
-# docker-files repo project
+# VSCodium repo project
 <details open>
 <summary>Click to show/hide the full disclaimer.</summary>
    
@@ -44,7 +44,7 @@ source: https://github.com/VSCodium/vscodium-docker-files
 
 ```mermaid
 ---
-title: "CHANGE_ME_DADDY"
+title: "vscodium repo project"
 author: "Cong Le"
 version: "1.0"
 license(s): "MIT, CC BY-SA 4.0"
@@ -74,63 +74,106 @@ config:
     }
   }
 }%%
-flowchart TB
-    %% External Services
-    TravisCI("Travis CI"):::external
-    GitHub[(GitHub Repos)]:::external
-    Registry[(Docker Registry)]:::external
-
-    %% Host & CI
-    Host["Host Machine/CI Runner"]:::host
-    CLI["Docker CLI"]:::host
-    Daemon["Docker Daemon"]:::host
-    Developer["Developer / CI"]:::host
-
-    %% Configuration Files
-    Dockerfile["Dockerfile.ia32"]:::config
-    README["README.md"]:::config
-    LICENSE["LICENSE"]:::config
-
-    %% Build Container Runtime
-    subgraph "Build Container (Runtime)"
-        BaseImage["Base Image"]:::runtime
-        Dependencies["Installed Dependencies"]:::runtime
-        Repos["Cloned Repositories\n(vscodium + vscode)"]:::runtime
-        BuildScripts["Build Scripts / Make Targets"]:::runtime
-        Image["Docker Image\nvscodium-ia32"]:::runtime
-        InteractiveShell["Interactive Shell"]:::runtime
+flowchart TD
+    subgraph "Source & Upstream Integration"
+        A1["Upstream VS Code Source"]:::source
+        A2["src/insider"]:::source
+        A3["src/stable"]:::source
+        A4["product.json"]:::source
     end
 
-    %% Flow
-    TravisCI -->|"trigger docker build"| Host
-    Host -->|"docker build"| CLI
-    CLI -->|calls| Daemon
-    Daemon -->|"reads Dockerfile"| Dockerfile
-    Daemon -->|"pull base image"| BaseImage
-    Daemon -->|"install dependencies"| Dependencies
-    Daemon -->|"git clone"| GitHub
-    GitHub --> Dependencies
-    GitHub --> Repos
-    Dependencies --> Repos
-    Repos -->|"set up build env"| BuildScripts
-    BuildScripts -->|"produce image"| Image
-    Image -->|"push to registry"| Registry
-    Developer -->|"docker run"| Image
-    Image -->|"interactive shell"| InteractiveShell
+    subgraph "Patch & Customization Layer"
+        B1["patches Directory"]:::patch
+        B2["dev/patch.sh"]:::patch
+        B3["announcements-builtin.json"]:::patch
+        B4["announcements-extra.json"]:::patch
+    end
+
+    subgraph "Build & Packaging System"
+        C1["build Directory"]:::build
+        C2["dev/build.sh, dev/build.ps1, dev/build_docker.sh"]:::build
+        C3["build/linux/appimage/recipe.yml"]:::build
+        C4["build/windows/msi/build.sh"]:::build
+    end
+
+    subgraph "CI/CD & Automation"
+        D1["GitHub Actions Workflows (.github/workflows)"]:::cicd
+    end
+
+    subgraph "Distribution & Store Integrations"
+        E3["release.sh & update_version.sh"]:::dist
+        E1["stores/snapcraft"]:::dist
+        E2["stores/winget"]:::dist
+    end
+
+    subgraph "Documentation"
+        F1["docs Directory"]:::docs
+    end
+
+    %% Flow Connections
+    %% CI/CD triggers build system
+    D1 -->|"triggers_build"| C1
+    D1 -->|"invokes_build_scripts"| C2
+
+    %% Upstream source is cloned and then customized
+    A1 -->|"clone"| B1
+    A2 --- A1
+    A3 --- A1
+    A4 --- A1
+
+    %% Patch & customization layer applies modifications
+    B1 -->|"apply_customizations"| C1
+    B2 --- B1
+    B3 --- B1
+    B4 --- B1
+
+    %% Build process: build directory runs scripts to package binaries
+    C1 -->|"runs_build_scripts"| C2
+    C2 -->|"packages_Linux_binary"| C3
+    C2 -->|"packages_Windows_binary"| C4
+    C2 -->|"produces_final_binaries"| E3
+
+    %% Distribution channels receive final binaries
+    E3 -->|"distributes_to"| E1
+    E3 -->|"distributes_to"| E2
+
+    %% Documentation supports build and troubleshooting
+    F1 ---|"guides"| C1
+
+    %% Style Definitions
+    classDef source fill:#ADD8E6,stroke:#000,stroke-width:1px;
+    classDef patch fill:#C1E1C1,stroke:#333,stroke-width:1px;
+    classDef build fill:#FFFACD,stroke:#333,stroke-width:1px;
+    classDef cicd fill:#FFB6C1,stroke:#333,stroke-width:1px;
+    classDef dist fill:#F4A460,stroke:#333,stroke-width:1px;
+    classDef docs fill:#D3D3D3,stroke:#333,stroke-width:1px;
 
     %% Click Events
-    click Dockerfile "https://github.com/vscodium/vscodium-docker-files/blob/master/Dockerfile.ia32"
-    click README "https://github.com/vscodium/vscodium-docker-files/blob/master/README.md"
-    click LICENSE "https://github.com/vscodium/vscodium-docker-files/tree/master/LICENSE"
+    click A1 "https://github.com/vscodium/vscodium/tree/master/upstream"
+    click A2 "https://github.com/vscodium/vscodium/tree/master/src/insider"
+    click A3 "https://github.com/vscodium/vscodium/tree/master/src/stable"
+    click A4 "https://github.com/vscodium/vscodium/blob/master/product.json"
 
-    %% Styles
-    classDef external fill:#f9bf3b,stroke:#333,stroke-width:1px
-    classDef host fill:#8ecae6,stroke:#333,stroke-width:1px
-    classDef runtime fill:#a8e6cf,stroke:#333,stroke-width:1px
-    classDef config fill:#e0e0e0,stroke:#333,stroke-width:1px
+    click B1 "https://github.com/vscodium/vscodium/tree/master/patches"
+    click B2 "https://github.com/vscodium/vscodium/blob/master/dev/patch.sh"
+    click B3 "https://github.com/vscodium/vscodium/blob/master/announcements-builtin.json"
+    click B4 "https://github.com/vscodium/vscodium/blob/master/announcements-extra.json"
+
+    click C1 "https://github.com/vscodium/vscodium/tree/master/build"
+    click C2 "https://github.com/vscodium/vscodium/blob/master/dev/build.sh"
+    click C3 "https://github.com/vscodium/vscodium/blob/master/build/linux/appimage/recipe.yml"
+    click C4 "https://github.com/vscodium/vscodium/blob/master/build/windows/msi/build.sh"
+
+    click D1 "https://github.com/vscodium/vscodium/tree/master/.github/workflows"
+
+    click E1 "https://github.com/vscodium/vscodium/tree/master/stores/snapcraft"
+    click E2 "https://github.com/vscodium/vscodium/tree/master/stores/winget"
+    click E3 "https://github.com/vscodium/vscodium/blob/master/release.sh"
+
+    click F1 "https://github.com/vscodium/vscodium/tree/master/docs"
 ```
 
----
+----
 
 <!-- 
 ```mermaid

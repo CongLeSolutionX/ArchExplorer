@@ -4,7 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
-source: https://github.com/VSCodium/vscodium-docker-files
+source: https://github.com/VSCodium/update-api
 ---
 
 
@@ -12,7 +12,7 @@ source: https://github.com/VSCodium/vscodium-docker-files
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGRsNTUyeG9waXZrZTE0YWdweG10MHp1aWh0MDdnbXF5dHNmYjgzcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/y1MLeSPFMuMrmNMBLN/giphy.gif)
+> ![Loading...](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmVuZjl3YzJzcWljb3hoMmVpdmp1eHQzeDZnc2ZqcnI5eTFsNGJpMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/12W5Sg2koWYnwA/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
@@ -24,7 +24,7 @@ source: https://github.com/VSCodium/vscodium-docker-files
 
 
 
-# docker-files repo project
+# update-api repo project
 <details open>
 <summary>Click to show/hide the full disclaimer.</summary>
    
@@ -75,62 +75,44 @@ config:
   }
 }%%
 flowchart TB
-    %% External Services
-    TravisCI("Travis CI"):::external
-    GitHub[(GitHub Repos)]:::external
-    Registry[(Docker Registry)]:::external
+    %% Clients
+    VSCodium["VSCodium Updater"]:::client
 
-    %% Host & CI
-    Host["Host Machine/CI Runner"]:::host
-    CLI["Docker CLI"]:::host
-    Daemon["Docker Daemon"]:::host
-    Developer["Developer / CI"]:::host
-
-    %% Configuration Files
-    Dockerfile["Dockerfile.ia32"]:::config
-    README["README.md"]:::config
-    LICENSE["LICENSE"]:::config
-
-    %% Build Container Runtime
-    subgraph "Build Container (Runtime)"
-        BaseImage["Base Image"]:::runtime
-        Dependencies["Installed Dependencies"]:::runtime
-        Repos["Cloned Repositories\n(vscodium + vscode)"]:::runtime
-        BuildScripts["Build Scripts / Make Targets"]:::runtime
-        Image["Docker Image\nvscodium-ia32"]:::runtime
-        InteractiveShell["Interactive Shell"]:::runtime
+    %% Serverless Function Environment
+    subgraph "Serverless Function @ Vercel/Now"
+        API["Update API (Node.js)"]:::function
+        Config["now.json"]:::config
+        PackageJson["package.json"]:::config
+        PackageLock["package-lock.json"]:::config
+        Doc["README.md"]:::docs
     end
 
-    %% Flow
-    TravisCI -->|"trigger docker build"| Host
-    Host -->|"docker build"| CLI
-    CLI -->|calls| Daemon
-    Daemon -->|"reads Dockerfile"| Dockerfile
-    Daemon -->|"pull base image"| BaseImage
-    Daemon -->|"install dependencies"| Dependencies
-    Daemon -->|"git clone"| GitHub
-    GitHub --> Dependencies
-    GitHub --> Repos
-    Dependencies --> Repos
-    Repos -->|"set up build env"| BuildScripts
-    BuildScripts -->|"produce image"| Image
-    Image -->|"push to registry"| Registry
-    Developer -->|"docker run"| Image
-    Image -->|"interactive shell"| InteractiveShell
+    %% External Service
+    GitHub["GitHub Releases API"]:::external
+
+    %% Interactions
+    VSCodium -->|"GET /api/update"| API
+    API -->|"Fetch latest release"| GitHub
+    GitHub -->|"JSON payload"| API
+    API -->|"JSON response"| VSCodium
 
     %% Click Events
-    click Dockerfile "https://github.com/vscodium/vscodium-docker-files/blob/master/Dockerfile.ia32"
-    click README "https://github.com/vscodium/vscodium-docker-files/blob/master/README.md"
-    click LICENSE "https://github.com/vscodium/vscodium-docker-files/tree/master/LICENSE"
+    click API "https://github.com/vscodium/update-api/blob/master/api/update/index.js"
+    click Config "https://github.com/vscodium/update-api/blob/master/now.json"
+    click PackageJson "https://github.com/vscodium/update-api/blob/master/package.json"
+    click PackageLock "https://github.com/vscodium/update-api/blob/master/package-lock.json"
+    click Doc "https://github.com/vscodium/update-api/blob/master/README.md"
 
     %% Styles
-    classDef external fill:#f9bf3b,stroke:#333,stroke-width:1px
-    classDef host fill:#8ecae6,stroke:#333,stroke-width:1px
-    classDef runtime fill:#a8e6cf,stroke:#333,stroke-width:1px
+    classDef client fill:#a2f5a2,stroke:#333,stroke-width:1px
+    classDef function fill:#a2d2f5,stroke:#333,stroke-width:1px
+    classDef external fill:#f5c27a,stroke:#333,stroke-width:1px
     classDef config fill:#e0e0e0,stroke:#333,stroke-width:1px
+    classDef docs fill:#f5e0a2,stroke:#333,stroke-width:1px
+
 ```
 
----
+-----
 
 <!-- 
 ```mermaid
