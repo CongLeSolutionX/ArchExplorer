@@ -67,7 +67,7 @@ config:
       'primaryTextColor': '#F8B229',
       'lineColor': '#F8B229',
       'primaryBorderColor': '#27AE60',
-      'secondaryColor': '#E2F1',
+      'secondaryColor': '#6483',
       'secondaryTextColor': '#6C3483',
       'secondaryBorderColor': '#A569BD',
       'fontSize': '20px'
@@ -77,29 +77,38 @@ config:
 flowchart TD
     %% Storage Layer
     subgraph STORAGE["Version Metadata Storage"]
+    style STORAGE fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
         subgraph INSIDER["insider/"]
+        style INSIDER fill:#22F2,stroke:#333,stroke-width:1px, color: #FFFF
             subgraph INS_LINUX["linux"]
+            style INS_LINUX fill:#FF22,stroke:#333,stroke-width:1px, color: #FFFF
                 IL_X64["x64/latest.json"]:::storage
                 IL_ARM64["arm64/latest.json"]:::storage
             end
             subgraph INS_DARWIN["darwin"]
+            style INS_DARWIN fill:#F2B5,stroke:#333,stroke-width:1px, color: #FFFF
                 ID_X64["x64/latest.json"]:::storage
                 ID_ARM64["arm64/latest.json"]:::storage
             end
             subgraph INS_WIN32["win32"]
+            style INS_WIN32 fill:#22B5,stroke:#333,stroke-width:1px, color: #FFFF
                 IW_X64["x64/latest.json"]:::storage
                 IW_IA32["ia32/latest.json"]:::storage
             end
         end
         subgraph STABLE["stable/"]
+        style STABLE fill:#2DB5,stroke:#333,stroke-width:1px, color: #FFFF
             subgraph ST_LINUX["linux"]
+            style ST_LINUX fill:#FF22,stroke:#333,stroke-width:1px, color: #FFFF
                 SL_X64["x64/latest.json"]:::storage
                 SL_ARM64["arm64/latest.json"]:::storage
             end
             subgraph ST_DARWIN["darwin"]
+            style ST_DARWIN fill:#F2B5,stroke:#333,stroke-width:1px, color: #FFFF
                 SD_X64["x64/latest.json"]:::storage
             end
             subgraph ST_WIN32["win32"]
+            style ST_WIN32 fill:#22B5,stroke:#333,stroke-width:1px, color: #FFFF
                 SW_X64["x64/latest.json"]:::storage
             end
         end
@@ -107,7 +116,8 @@ flowchart TD
 
     %% Validation Layer
     subgraph VALIDATION["Validation Layer"]
-        INTEGRITY["Integrity Utility\n(integrity.js)"]:::validation
+    style VALIDATION fill:#2B25,stroke:#333,stroke-width:1px, color: #FFFF
+        INTEGRITY["Integrity Utility<br/>(integrity.js)"]:::validation
     end
 
     %% CI/CD Pipeline
@@ -116,14 +126,15 @@ flowchart TD
 
     %% Service/API Layer
     subgraph SERVICE["Service/API Layer"]
+    style SERVICE fill:#B225,stroke:#333,stroke-width:1px, color: #FFFF
         API["Update Service API"]:::service
     end
 
     %% CDN Layer
-    CDN["CDN / Edge Cache"]:::cdn
+    CDN["CDN /<br/> Edge Cache"]:::cdn
 
     %% Client
-    CLIENT["Client\n(Electron App / Installer)"]:::client
+    CLIENT["Client<br/>(Electron App / Installer)"]:::client
 
     %% Connections
     CI_CD -->|deploy JSON| INSIDER
@@ -146,12 +157,12 @@ flowchart TD
     click PACKAGE "https://github.com/vscodium/versions/blob/master/package.json"
 
     %% Styles
-    classDef storage fill:#D0E8FF,stroke:#0366d6,color:#0366d6;
-    classDef validation fill:#C8FACC,stroke:#2c662d,color:#2c662d;
-    classDef service fill:#FFE3B8,stroke:#d97706,color:#d97706;
-    classDef cdn fill:#E3B8FF,stroke:#6b21a8,color:#6b21a8;
-    classDef client fill:#E5E7EB,stroke:#374151,color:#374151;
-    classDef ci fill:#FEE2E2,stroke:#b91c1c,color:#b91c1c;
+    classDef storage fill:#D0FF,stroke:#0366d6,color:#FFFF
+    classDef validation fill:#CFACC,stroke:#2c662d,color:#FFFF
+    classDef service fill:#F2B8,stroke:#d97706,color:#FFFF
+    classDef cdn fill:#E2FF,stroke:#6b21a8,color:#FFFF
+    classDef client fill:#FB22,stroke:#374151,color:#FFFF
+    classDef ci fill:#FBB2,stroke:#b91c1c,color:#b91c1c
 
 ```
 
