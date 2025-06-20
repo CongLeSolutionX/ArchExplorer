@@ -39,7 +39,6 @@ source: https://github.com/mokeyish/obsidian-code-emitter
 
 </details>
 
-
 ---
 
 ```mermaid
@@ -75,117 +74,120 @@ config:
   }
 }%%
 flowchart TD
-    %% Obsidian Host Layer
-    subgraph "Obsidian Host Layer"
-        direction TB
-        Manifest["manifest.json"] 
-        MainTS["main.tsx"]
-        HMR["hmr.ts"]
-        Solidify["solidify.ts"]
-        HostSetting["setting.ts"]
-    end
+  subgraph Obsidian_Host_Layer["Obsidian Host Layer"]
+  style Obsidian_Host_Layer fill:#9227,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5, color:#FFFF
+  direction TB
+    Manifest["manifest.json"] 
+    MainTS["main.tsx"]
+    HMR["hmr.ts"]
+    Solidify["solidify.ts"]
+    HostSetting["setting.ts"]
+  end
 
-    %% Plugin Frontend Layer
-    subgraph "Plugin Frontend Layer"
-        direction TB
-        CodeBlock["CodeBlock.tsx"]:::ui
-        PlayBtn["Play.tsx"]:::ui
-        TermComp["Term.tsx"]:::ui
-        SpinComp["Spin.tsx"]:::ui
-        SettingTabUI["SettingTab.tsx"]:::ui
-        IconComp["Icon.tsx"]:::ui
-        UIStyle["style.css"]:::ui
-    end
+  subgraph Plugin_Frontend_Layer["Plugin Frontend Layer"]
+  style Plugin_Frontend_Layer fill:#22BB,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5, color:#FFFF
+  direction TB
+    CodeBlock["CodeBlock.tsx"]:::ui
+    PlayBtn["Play.tsx"]:::ui
+    TermComp["Term.tsx"]:::ui
+    SpinComp["Spin.tsx"]:::ui
+    SettingTabUI["SettingTab.tsx"]:::ui
+    IconComp["Icon.tsx"]:::ui
+    UIStyle["style.css"]:::ui
+  end
 
-    %% Plugin Core Layer
-    subgraph "Plugin Core Layer"
-        direction TB
-        CoreIndex["backend/index.ts"]:::core
-        Store["backend/store.ts"]:::storage
-        LangIndex["languages/index.ts"]:::core
-    end
+  subgraph Plugin_Core_Layer["Plugin Core Layer"]
+  style Plugin_Core_Layer fill:#F2F2,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5, color:#FFFF
+  direction TB
+    CoreIndex["backend/index.ts"]:::core
+    Store["backend/store.ts"]:::storage
+    LangIndex["languages/index.ts"]:::core
+  end
 
-    %% Execution Layer: Local Sandbox
-    subgraph "Local Sandbox Execution Engines"
-        direction TB
-        SandboxIndex["sandbox/index.ts"]:::exec
-        ProxySandbox["proxySandbox.ts"]:::exec
-        CommonSandbox["common.ts"]:::exec
-        UtilsSandbox["utils.ts"]:::exec
-        Interfaces["interfaces.ts"]:::exec
-    end
+  %% Execution Layer: Local Sandbox
+  subgraph Local_Sandbox_Execution_Engines["Local Sandbox Execution Engines"]
+  style Local_Sandbox_Execution_Engines fill:#BFF2,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5, color:#FFFF
+  direction TB
+    SandboxIndex["sandbox/index.ts"]:::exec
+    ProxySandbox["proxySandbox.ts"]:::exec
+    CommonSandbox["common.ts"]:::exec
+    UtilsSandbox["utils.ts"]:::exec
+    Interfaces["interfaces.ts"]:::exec
+  end
 
-    %% Execution Layer: Remote Providers
-    subgraph "Remote Providers"
-        direction TB
-        SoloLearn["sololearn.ts"]:::exec
-    end
+  %% Execution Layer: Remote Providers
+  subgraph Remote_Providers["Remote Providers"]
+  style Remote_Providers fill:#CC22,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5, color:#FFFF
+  direction TB
+    SoloLearn["sololearn.ts"]:::exec
+  end
 
-    %% Network Layer
-    subgraph "Network Layer"
-        direction TB
-        URLImport["url_import.ts"]:::core
-        ExternalService[(Third-Party HTTP Endpoints)]:::external
-    end
+  subgraph Network_Layer["Network Layer"]
+  style Network_Layer fill:#AA22,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5, color:#FFFF
+  direction TB
+    URLImport["url_import.ts"]:::core
+    ExternalService[(Third-Party HTTP Endpoints)]:::external
+  end
 
-    %% Data Store
-    subgraph "Obsidian Data Store"
-        direction TB
-        Store
-        HostSetting
-    end
+  %% Data Store
+  subgraph Obsidian_Data_Store["Obsidian Data Store"]
+  style Obsidian_Data_Store fill:#DA22,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5, color:#FFFF
+  direction TB
+    Store
+    HostSetting
+  end
 
-    %% Connections
-    CodeBlock -->|"runCode(lang, source)"| CoreIndex
-    PlayBtn --> CoreIndex
-    CoreIndex -->|"load strategy"| LangIndex
-    LangIndex -->|"js/ts/python"| SandboxIndex
-    SandboxIndex --> ProxySandbox
-    SandboxIndex --> CommonSandbox
-    CommonSandbox --> Interfaces
-    CommonSandbox --> UtilsSandbox
-    LangIndex -->|"others"| SoloLearn
-    SoloLearn -->|"fetch POST"| ExternalService
-    ExternalService -->|"response"| SoloLearn
-    ProxySandbox -->|"result"| CoreIndex
-    CommonSandbox -->|"result"| CoreIndex
-    SoloLearn -->|"result"| CoreIndex
-    CoreIndex -->|"stdout/stderr"| TermComp
+  %% Connections
+  CodeBlock -->|"runCode(lang, source)"| CoreIndex
+  PlayBtn --> CoreIndex
+  CoreIndex -->|"load strategy"| LangIndex
+  LangIndex -->|"js/ts/python"| SandboxIndex
+  SandboxIndex --> ProxySandbox
+  SandboxIndex --> CommonSandbox
+  CommonSandbox --> Interfaces
+  CommonSandbox --> UtilsSandbox
+  LangIndex -->|"others"| SoloLearn
+  SoloLearn -->|"fetch POST"| ExternalService
+  ExternalService -->|"response"| SoloLearn
+  ProxySandbox -->|"result"| CoreIndex
+  CommonSandbox -->|"result"| CoreIndex
+  SoloLearn -->|"result"| CoreIndex
+  CoreIndex -->|"stdout/stderr"| TermComp
 
-    %% Click Events
-    click Manifest "https://github.com/mokeyish/obsidian-code-emitter/blob/main/manifest.json"
-    click MainTS "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/main.tsx"
-    click HMR "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/hmr.ts"
-    click Solidify "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/solidify.ts"
-    click HostSetting "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/setting.ts"
+  %% Click Events
+  click Manifest "https://github.com/mokeyish/obsidian-code-emitter/blob/main/manifest.json"
+  click MainTS "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/main.tsx"
+  click HMR "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/hmr.ts"
+  click Solidify "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/solidify.ts"
+  click HostSetting "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/setting.ts"
 
-    click CodeBlock "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/components/CodeBlock.tsx"
-    click PlayBtn "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/components/Play.tsx"
-    click TermComp "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/components/Term.tsx"
-    click SpinComp "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/components/Spin.tsx"
-    click SettingTabUI "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/components/SettingTab.tsx"
-    click IconComp "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/components/Icon.tsx"
-    click UIStyle "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/style.css"
+  click CodeBlock "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/components/CodeBlock.tsx"
+  click PlayBtn "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/components/Play.tsx"
+  click TermComp "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/components/Term.tsx"
+  click SpinComp "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/components/Spin.tsx"
+  click SettingTabUI "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/components/SettingTab.tsx"
+  click IconComp "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/components/Icon.tsx"
+  click UIStyle "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/style.css"
 
-    click CoreIndex "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/backend/index.ts"
-    click Store "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/backend/store.ts"
+  click CoreIndex "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/backend/index.ts"
+  click Store "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/backend/store.ts"
 
-    click LangIndex "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/backend/languages/index.ts"
-    click ProxySandbox "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/lib/sandbox/proxySandbox.ts"
-    click CommonSandbox "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/lib/sandbox/common.ts"
-    click SandboxIndex "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/lib/sandbox/index.ts"
-    click UtilsSandbox "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/lib/sandbox/utils.ts"
-    click Interfaces "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/lib/sandbox/interfaces.ts"
+  click LangIndex "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/backend/languages/index.ts"
+  click ProxySandbox "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/lib/sandbox/proxySandbox.ts"
+  click CommonSandbox "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/lib/sandbox/common.ts"
+  click SandboxIndex "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/lib/sandbox/index.ts"
+  click UtilsSandbox "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/lib/sandbox/utils.ts"
+  click Interfaces "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/lib/sandbox/interfaces.ts"
 
-    click SoloLearn "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/backend/providers/sololearn.ts"
-    click URLImport "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/lib/url_import.ts"
+  click SoloLearn "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/backend/providers/sololearn.ts"
+  click URLImport "https://github.com/mokeyish/obsidian-code-emitter/blob/main/src/lib/url_import.ts"
 
-    %% Styles
-    classDef ui fill:#D0E8FF,stroke:#0366D6,color:#000
-    classDef core fill:#E8F5D0,stroke:#2E8B57,color:#000
-    classDef exec fill:#DFF0D8,stroke:#4CAF50,color:#000
-    classDef storage fill:#FFF4D0,stroke:#DAA520,color:#000
-    classDef external fill:#F0F0F0,stroke-dasharray: 5 5,stroke:#888,color:#000
+  %% Styles
+  classDef ui fill:#D2F5,stroke:#0366D6,color:#FFFF
+  classDef core fill:#E5D2,stroke:#2E8B57,color:#FFFF
+  classDef exec fill:#22BB,stroke:#4CAF50,color:#FFFF
+  classDef storage fill:#FFD2,stroke:#DAA520,color:#FFFF
+  classDef external fill:#F2F4,stroke-dasharray: 5 5,stroke:#888,color:#FFFF
 ```
 
 ----
