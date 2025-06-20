@@ -71,8 +71,8 @@ flowchart LR
   style Layer_1 fill:#DA22,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5, color:#FFFF
   direction TB
     App["Custom Application"]:::frontend
-    CLI1["CLI: boxo-migrate"]:::frontend
-    CLI2["CLI: deprecator"]:::frontend
+    CLI1["CLI:<br/>boxo-migrate"]:::frontend
+    CLI2["CLI:<br/>deprecator"]:::frontend
     Examples["Examples"]:::frontend
   end
 
