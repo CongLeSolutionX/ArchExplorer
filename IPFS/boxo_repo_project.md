@@ -66,7 +66,7 @@ config:
     }
   }
 }%%
-flowchart TD
+flowchart LR
   subgraph Layer_1["Layer 1:<br/>Applications"]
   style Layer_1 fill:#DA22,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5, color:#FFFF
   direction TB
