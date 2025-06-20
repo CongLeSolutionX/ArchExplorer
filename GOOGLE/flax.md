@@ -75,15 +75,18 @@ config:
 flowchart TB
     %% Main Layers
     subgraph User["User Applications"]
-        UA[User Code]
+    style User fill:#FF52,stroke:#333,stroke-width:2px, color: #FFFF
+      UA[User Code]
     end
 
     subgraph HighLevel["High-Level APIs"]
+    style HighLevel fill:#B5F2,stroke:#333,stroke-width:2px, color: #FFFF
         NNX["Neural Network API"]:::api
         Training["Training Infrastructure"]:::training
     end
 
     subgraph Core["Core Systems"]
+    style Core fill:#B332,stroke:#333,stroke-width:2px, color: #FFFF
         ModSys["Module System"]:::core
         VarMgmt["Variable Management"]:::core
         RNGMgmt["RNG Management"]:::core
@@ -92,12 +95,14 @@ flowchart TB
     end
 
     subgraph JAXLayer["JAX Integration Layer"]
+    style JAXLayer fill:#BFF2,stroke:#333,stroke-width:1px, color: #FFFF
         JAX["JAX Runtime"]:::jax
         SPMD["SPMD/Parallelism"]:::jax
     end
 
     %% Neural Network Components
     subgraph NeuralComponents["Neural Network Components"]
+    style NeuralComponents fill:#FF22,stroke:#333,stroke-width:1px, color: #FFFF
         Attention["Attention Layers"]:::nn
         Linear["Linear Layers"]:::nn
         Norm["Normalization Layers"]:::nn
@@ -107,6 +112,7 @@ flowchart TB
 
     %% Training Components
     subgraph TrainingComponents["Training Components"]
+    style TrainingComponents fill:#CC22,stroke:#333,stroke-width:1px, color: #FFFF
         TrainState["Training State"]:::training
         Checkpoint["Checkpointing"]:::training
         Serial["Serialization"]:::training
@@ -134,9 +140,9 @@ flowchart TB
 
     %% Styles
     classDef core fill:#2374ab
-    classDef api fill:#47a025
-    classDef training fill:#ffb627
-    classDef nn fill:#7785ac
+    classDef api fill:#a025
+    classDef training fill:#f2F7
+    classDef nn fill:#F2F2
     classDef jax fill:#d62828
 
     %% Click Events
