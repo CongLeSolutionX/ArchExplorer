@@ -77,20 +77,20 @@ flowchart TB
   subgraph User_Layer["User Layer"]
   style User_Layer fill:#F5F2,stroke:#333,stroke-width:2px, color: #FFFF
   direction TB
-    UserCode["User Code\n@gin.configurable"]:::user
-    ConfigFiles[".gin Config Files"]:::user
+    UserCode["User Code<br/><b>@gin.configurable</b>"]:::user
+    ConfigFiles["<b>.gin</b> Config Files"]:::user
   end
 
   %% Core Layer
   subgraph Core_Gin_Package["Core Gin Package"]
   style Core_Gin_Package fill:#F212,stroke:#333,stroke-width:2px, color: #FFFF
   direction TB
-    API["gin.parse_config_files_and_bindings()"]:::core
-    config["config.py\nRegistry & @configurable"]:::core
-    reader["resource_reader.py"]:::core
-    parser["config_parser.py"]:::core
-    selector["selector_map.py"]:::core
-    utils["utils.py"]:::core
+    API["<code>gin.parse_config_files_and_bindings()</code>"]:::core
+    config["<b>config.py</b><br/>Registry & <code>@configurable</code>"]:::core
+    reader["<b>resource_reader.py</b>"]:::core
+    parser["<b>config_parser.py</b>"]:::core
+    selector["<b>selector_map.py</b>"]:::core
+    utils["<b>utils.py</b>"]:::core
   end
 
   %% Extension Layer
@@ -101,16 +101,16 @@ flowchart TB
       subgraph TensorFlow_Extension["TensorFlow Extension"]
       style TensorFlow_Extension fill:#C2F2,stroke:#333,stroke-width:2px, color: #FFFF
       direction TB
-        tfInit["__init__.py"]:::ext
-        tfReg["external_configurables.py"]:::ext
-        tfUtils["utils.py"]:::ext
+        tfInit["<b>__init__.py</b>"]:::ext
+        tfReg["<b>external_configurables.py</b>"]:::ext
+        tfUtils["<b>utils.py</b>"]:::ext
       end
       
       subgraph PyTorch_Extension["PyTorch Extension"]
       style PyTorch_Extension fill:#AFB2,stroke:#333,stroke-width:2px, color: #FFFF
       direction TB
-        torchInit["__init__.py"]:::ext
-        torchReg["external_configurables.py"]:::ext
+        torchInit["<b>__init__.py</b>"]:::ext
+        torchReg["<b>external_configurables.py</b>"]:::ext
     end
   end
 
@@ -128,27 +128,27 @@ flowchart TB
 
     subgraph Core_Tests["Core Tests"]
     style Core_Tests fill:#22BB,stroke:#333,stroke-width:2px, color: #FFFF
-      parserTest["config_parser_test.py"]:::test
-      configTest["config_test.py"]:::test
-      readerTest["resource_reader_test.py"]:::test
-      selectorTest["selector_map_test.py"]:::test
+      parserTest["<b>config_parser_test.py</b>"]:::test
+      configTest["<b>config_test.py</b>"]:::test
+      readerTest["<b>resource_reader_test.py</b>"]:::test
+      selectorTest["<b>selector_map_test.py</b>"]:::test
     end
     
     subgraph TF_Tests["TF Tests"]
     style TF_Tests fill:#2BF2,stroke:#333,stroke-width:2px, color: #FFFF
-      tfConfigTest["tf/config_test.py"]:::test
-      tfRegTest["tf/external_configurables_test.py"]:::test
-      tfUtilsTest["tf/utils_test.py"]:::test
+      tfConfigTest["<b>tf/config_test.py</b>"]:::test
+      tfRegTest["<b>tf/external_configurables_test.py</b>"]:::test
+      tfUtilsTest["<b>tf/utils_test.py</b>"]:::test
     end
     
     subgraph Torch_Tests["Torch Tests"]
     style Torch_Tests fill:#BFF2,stroke:#333,stroke-width:2px, color: #FFFF
-      torchTest["torch/external_configurables_test.py"]:::test
+      torchTest["<b>torch/external_configurables_test.py</b>"]:::test
     end
 
-    testdata["gin/testdata"]:::test
-    runTests["run_tests.sh"]:::script
-    pipPkg["pip_pkg.sh"]:::script
+    testdata["<b>gin/testdata</b>"]:::test
+    runTests["<b>run_tests.sh</b>"]:::script
+    pipPkg["<b>pip_pkg.sh</b>"]:::script
   end
 
   %% Main Flow
