@@ -45,6 +45,7 @@ copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
   layout: elk
   theme: base
+  look: handDrawn
 ---
 %%%%%%%% Mermaid version v11.4.1-b.14
 %%%%%%%% Available curve styles include the following keywords:
@@ -66,168 +67,170 @@ config:
   }
 }%%
 flowchart TD
-    %% Layer 1: Applications
-    subgraph "Layer 1: Applications" 
-        direction TB
-        App["Custom Application"]:::frontend
-        CLI1["CLI: boxo-migrate"]:::frontend
-        CLI2["CLI: deprecator"]:::frontend
-        Examples["Examples"]:::frontend
-    end
+  subgraph Layer_1["Layer 1:<br/>Applications"]
+  style Layer_1 fill:#DA22,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5, color:#FFFF
+  direction TB
+    App["Custom Application"]:::frontend
+    CLI1["CLI: boxo-migrate"]:::frontend
+    CLI2["CLI: deprecator"]:::frontend
+    Examples["Examples"]:::frontend
+  end
 
-    %% Layer 2: Facade
-    subgraph "Layer 2: Boxo SDK Façade"
-        direction TB
-        BoxoFacade["Boxo SDK Facade"]:::facade
-    end
+  %% Layer 2: Facade
+  subgraph Layer_2["Layer 2:<br/>Boxo SDK Façade"]
+  style Layer_2 fill:#22BB,stroke:#333,stroke-width:2px,stroke-dasharray: 5 5, color:#FFFF
+  direction TB
+    BoxoFacade["Boxo SDK Facade"]:::facade
+  end
 
-    %% Layer 3: Protocol Modules
-    subgraph "Layer 3: Protocol Modules"
-        direction TB
-        bitswap["Bitswap"]:::module
-        routingHttp["Routing HTTP"]:::module
-        routingOffline["Routing Offline"]:::module
-        ipns["IPNS"]:::module
-        namesys["Namesys"]:::module
-        provider["Provider & Reprovider"]:::module
-        exchangeOffline["Exchange Offline"]:::module
-        pinner["Pinning: Pinner"]:::module
-        pinnerRemote["Pinning: Remote"]:::module
-        fetcher["Fetcher"]:::module
-        chunker["Chunker"]:::module
-        verifcid["Verifcid"]:::module
-    end
+  subgraph Layer_3["Layer 3:<br/>Protocol Modules"]
+  style Layer_3 fill:#BFF2,stroke:#333,stroke-width:2px,stroke-dasharray: 5 5, color:#FFFF
+  direction TB
+    bitswap["Bitswap"]:::module
+    routingHttp["Routing HTTP"]:::module
+    routingOffline["Routing Offline"]:::module
+    ipns["IPNS"]:::module
+    namesys["Namesys"]:::module
+    provider["Provider & Reprovider"]:::module
+    exchangeOffline["Exchange Offline"]:::module
+    pinner["Pinning:<br/>Pinner"]:::module
+    pinnerRemote["Pinning:<br/>Remote"]:::module
+    fetcher["Fetcher"]:::module
+    chunker["Chunker"]:::module
+    verifcid["Verifcid"]:::module
+  end
 
-    %% Layer 4: Data Layers
-    subgraph "Layer 4: Data Layers"
-        direction TB
-        blockservice["BlockService"]:::data
-        blockstore["Blockstore"]:::data
-        datastore["Datastore"]:::data
-        filestore["Filestore"]:::data
-        merkledag["IPLD Merkle DAG"]:::data
-        unixfs["IPLD UnixFS"]:::data
-    end
+  subgraph Layer_4["Layer 4:<br/>Data Layers"]
+  style Layer_4 fill:#FB25,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5, color:#FFFF
+  direction TB
+    blockservice["BlockService"]:::data
+    blockstore["Blockstore"]:::data
+    datastore["Datastore"]:::data
+    filestore["Filestore"]:::data
+    merkledag["IPLD Merkle DAG"]:::data
+    unixfs["IPLD UnixFS"]:::data
+  end
 
-    %% Layer 5: External Systems
-    subgraph "Layer 5: External Systems"
-        direction TB
-        IPFSNetwork["IPFS Network Peers"]:::external
-        DHT["DHT"]:::external
-        HTTPGateway["HTTP Gateway Service"]:::external
-        UnderlyingDS["Underlying Datastore"]:::external
-    end
+  subgraph Layer_5["Layer 5:<br/>External Systems"]
+  style Layer_5 fill:#F225,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5, color:#FFFF
+  direction TB
+    IPFSNetwork["IPFS Network Peers"]:::external
+    DHT["DHT"]:::external
+    HTTPGateway["HTTP Gateway Service"]:::external
+    UnderlyingDS["Underlying Datastore"]:::external
+  end
 
-    %% Utilities/Internal
-    subgraph "Internal Utilities"
-        direction TB
-        util["Util"]:::util
-        tracing["Tracing"]:::util
-        keystore["Keystore"]:::util
-        mfs["MFS"]:::util
-        files["Files"]:::util
-        tar["Tar"]:::util
-        path["Path Resolver"]:::util
-        peering["Peering"]:::util
-    end
+  %% Utilities/Internal
+  subgraph Internal_Utilities["Internal Utilities"]
+  style Internal_Utilities fill:#F2F5,stroke:#333,stroke-width:1px,stroke-dasharray: 5 5, color:#FFFF
+  direction TB
+    util["Util"]:::util
+    tracing["Tracing"]:::util
+    keystore["Keystore"]:::util
+    mfs["MFS"]:::util
+    files["Files"]:::util
+    tar["Tar"]:::util
+    path["Path Resolver"]:::util
+    peering["Peering"]:::util
+  end
 
-    %% CLI & Examples to Facade
-    App -->|uses| BoxoFacade
-    CLI1 -->|uses| BoxoFacade
-    CLI2 -->|uses| BoxoFacade
-    Examples -->|uses| BoxoFacade
+  %% CLI & Examples to Facade
+  App -->|uses| BoxoFacade
+  CLI1 -->|uses| BoxoFacade
+  CLI2 -->|uses| BoxoFacade
+  Examples -->|uses| BoxoFacade
 
-    %% Facade to Modules
-    BoxoFacade --> bitswap
-    BoxoFacade --> routingHttp
-    BoxoFacade --> routingOffline
-    BoxoFacade --> ipns
-    BoxoFacade --> namesys
-    BoxoFacade --> provider
-    BoxoFacade --> exchangeOffline
-    BoxoFacade --> pinner
-    BoxoFacade --> pinnerRemote
-    BoxoFacade --> fetcher
-    BoxoFacade --> chunker
-    BoxoFacade --> verifcid
+  %% Facade to Modules
+  BoxoFacade --> bitswap
+  BoxoFacade --> routingHttp
+  BoxoFacade --> routingOffline
+  BoxoFacade --> ipns
+  BoxoFacade --> namesys
+  BoxoFacade --> provider
+  BoxoFacade --> exchangeOffline
+  BoxoFacade --> pinner
+  BoxoFacade --> pinnerRemote
+  BoxoFacade --> fetcher
+  BoxoFacade --> chunker
+  BoxoFacade --> verifcid
 
-    %% Data flows
-    bitswap -->|fetches blocks| blockservice
-    bitswap -->|sync| IPFSNetwork
-    blockservice --> blockstore
-    blockstore --> datastore
-    blockstore --> filestore
-    blockservice --> merkledag
-    merkledag --> unixfs
-    unixfs --> chunker
+  %% Data flows
+  bitswap -->|fetches blocks| blockservice
+  bitswap -->|sync| IPFSNetwork
+  blockservice --> blockstore
+  blockstore --> datastore
+  blockstore --> filestore
+  blockservice --> merkledag
+  merkledag --> unixfs
+  unixfs --> chunker
 
-    %% Naming and Routing
-    ipns --> namesys
-    namesys --> DHT
-    provider --> DHT
-    exchangeOffline --> provider
+  %% Naming and Routing
+  ipns --> namesys
+  namesys --> DHT
+  provider --> DHT
+  exchangeOffline --> provider
 
-    %% Pinning
-    pinner --> blockstore
-    pinnerRemote -->|remote API| blockstore
+  %% Pinning
+  pinner --> blockstore
+  pinnerRemote -->|remote API| blockstore
 
-    %% Gateway
-    HTTPGateway -->|HTTP requests| gatewayHandler["Gateway Handler"]:::module
-    gatewayHandler --> blockservice
-    gatewayHandler --> unixfs
+  %% Gateway
+  HTTPGateway -->|HTTP requests| gatewayHandler["Gateway Handler"]:::module
+  gatewayHandler --> blockservice
+  gatewayHandler --> unixfs
 
-    %% Utilities usage
-    BoxoFacade --> util
-    BoxoFacade --> tracing
-    BoxoFacade --> keystore
-    BoxoFacade --> mfs
-    BoxoFacade --> files
-    BoxoFacade --> tar
-    BoxoFacade --> path
-    BoxoFacade --> peering
+  %% Utilities usage
+  BoxoFacade --> util
+  BoxoFacade --> tracing
+  BoxoFacade --> keystore
+  BoxoFacade --> mfs
+  BoxoFacade --> files
+  BoxoFacade --> tar
+  BoxoFacade --> path
+  BoxoFacade --> peering
 
-    %% External datastore
-    datastore --> UnderlyingDS
+  %% External datastore
+  datastore --> UnderlyingDS
 
-    %% Click Events
-    click bitswap "https://github.com/ipfs/boxo/tree/main/bitswap/"
-    click blockservice "https://github.com/ipfs/boxo/tree/main/blockservice/"
-    click blockstore "https://github.com/ipfs/boxo/tree/main/blockstore/"
-    click datastore "https://github.com/ipfs/boxo/tree/main/datastore/"
-    click merkledag "https://github.com/ipfs/boxo/tree/main/ipld/merkledag/"
-    click unixfs "https://github.com/ipfs/boxo/tree/main/ipld/unixfs/"
-    click chunker "https://github.com/ipfs/boxo/tree/main/chunker/"
-    click ipns "https://github.com/ipfs/boxo/tree/main/ipns/"
-    click namesys "https://github.com/ipfs/boxo/tree/main/namesys/"
-    click path "https://github.com/ipfs/boxo/tree/main/path/"
-    click routingHttp "https://github.com/ipfs/boxo/tree/main/routing/http/"
-    click routingOffline "https://github.com/ipfs/boxo/tree/main/routing/offline/"
-    click provider "https://github.com/ipfs/boxo/tree/main/provider/"
-    click exchangeOffline "https://github.com/ipfs/boxo/tree/main/exchange/offline/"
-    click fetcher "https://github.com/ipfs/boxo/tree/main/fetcher/"
-    click files "https://github.com/ipfs/boxo/tree/main/files/"
-    click filestore "https://github.com/ipfs/boxo/tree/main/filestore/"
-    click tar "https://github.com/ipfs/boxo/tree/main/tar/"
-    click keystore "https://github.com/ipfs/boxo/tree/main/keystore/"
-    click mfs "https://github.com/ipfs/boxo/tree/main/mfs/"
-    click pinner "https://github.com/ipfs/boxo/tree/main/pinning/pinner/"
-    click pinnerRemote "https://github.com/ipfs/boxo/tree/main/pinning/remote/"
-    click peering "https://github.com/ipfs/boxo/tree/main/peering/"
-    click gatewayHandler "https://github.com/ipfs/boxo/tree/main/gateway/"
-    click tracing "https://github.com/ipfs/boxo/tree/main/tracing/"
-    click util "https://github.com/ipfs/boxo/tree/main/util/"
-    click verifcid "https://github.com/ipfs/boxo/tree/main/verifcid/"
-    click CLI1 "https://github.com/ipfs/boxo/tree/main/cmd/boxo-migrate/"
-    click CLI2 "https://github.com/ipfs/boxo/tree/main/cmd/deprecator/"
-    click Examples "https://github.com/ipfs/boxo/tree/main/examples/"
+  %% Click Events
+  click bitswap "https://github.com/ipfs/boxo/tree/main/bitswap/"
+  click blockservice "https://github.com/ipfs/boxo/tree/main/blockservice/"
+  click blockstore "https://github.com/ipfs/boxo/tree/main/blockstore/"
+  click datastore "https://github.com/ipfs/boxo/tree/main/datastore/"
+  click merkledag "https://github.com/ipfs/boxo/tree/main/ipld/merkledag/"
+  click unixfs "https://github.com/ipfs/boxo/tree/main/ipld/unixfs/"
+  click chunker "https://github.com/ipfs/boxo/tree/main/chunker/"
+  click ipns "https://github.com/ipfs/boxo/tree/main/ipns/"
+  click namesys "https://github.com/ipfs/boxo/tree/main/namesys/"
+  click path "https://github.com/ipfs/boxo/tree/main/path/"
+  click routingHttp "https://github.com/ipfs/boxo/tree/main/routing/http/"
+  click routingOffline "https://github.com/ipfs/boxo/tree/main/routing/offline/"
+  click provider "https://github.com/ipfs/boxo/tree/main/provider/"
+  click exchangeOffline "https://github.com/ipfs/boxo/tree/main/exchange/offline/"
+  click fetcher "https://github.com/ipfs/boxo/tree/main/fetcher/"
+  click files "https://github.com/ipfs/boxo/tree/main/files/"
+  click filestore "https://github.com/ipfs/boxo/tree/main/filestore/"
+  click tar "https://github.com/ipfs/boxo/tree/main/tar/"
+  click keystore "https://github.com/ipfs/boxo/tree/main/keystore/"
+  click mfs "https://github.com/ipfs/boxo/tree/main/mfs/"
+  click pinner "https://github.com/ipfs/boxo/tree/main/pinning/pinner/"
+  click pinnerRemote "https://github.com/ipfs/boxo/tree/main/pinning/remote/"
+  click peering "https://github.com/ipfs/boxo/tree/main/peering/"
+  click gatewayHandler "https://github.com/ipfs/boxo/tree/main/gateway/"
+  click tracing "https://github.com/ipfs/boxo/tree/main/tracing/"
+  click util "https://github.com/ipfs/boxo/tree/main/util/"
+  click verifcid "https://github.com/ipfs/boxo/tree/main/verifcid/"
+  click CLI1 "https://github.com/ipfs/boxo/tree/main/cmd/boxo-migrate/"
+  click CLI2 "https://github.com/ipfs/boxo/tree/main/cmd/deprecator/"
+  click Examples "https://github.com/ipfs/boxo/tree/main/examples/"
 
-    %% Styles
-    classDef frontend fill:#FFDDAA,stroke:#333,stroke-width:1px
-    classDef facade fill:#CCE5FF,stroke:#333,stroke-width:1px
-    classDef module fill:#CCFFCC,stroke:#333,stroke-width:1px
-    classDef data fill:#FFCCFF,stroke:#333,stroke-width:1px
-    classDef external fill:#EEEECC,stroke:#333,stroke-width:1px
-    classDef util fill:#FFF2CC,stroke:#333,stroke-width:1px
+  %% Styles
+  classDef frontend fill:#FDA2,stroke:#333,stroke-width:1px
+  classDef facade fill:#CEF2,stroke:#333,stroke-width:1px
+  classDef module fill:#CFC2,stroke:#333,stroke-width:1px
+  classDef data fill:#F2F2,stroke:#333,stroke-width:1px
+  classDef external fill:#EEC2,stroke:#333,stroke-width:1px
+  classDef util fill:#F2C2,stroke:#333,stroke-width:1px
 ```
 
 
