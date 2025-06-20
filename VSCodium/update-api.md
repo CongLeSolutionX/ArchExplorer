@@ -78,13 +78,14 @@ flowchart TB
     %% Clients
     VSCodium["VSCodium Updater"]:::client
 
-    %% Serverless Function Environment
-    subgraph "Serverless Function @ Vercel/Now"
-        API["Update API (Node.js)"]:::function
-        Config["now.json"]:::config
-        PackageJson["package.json"]:::config
-        PackageLock["package-lock.json"]:::config
-        Doc["README.md"]:::docs
+    subgraph Serverless_Function_Environment["Serverless Function @ Vercel/Now"]
+    style Serverless_Function_Environment fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
+    
+        API["Update API<br/>(<b>Node.js</b>)"]:::function
+        Config["<b>now.json</b>"]:::config
+        PackageJson["<b>package.json</b>"]:::config
+        PackageLock["<b>package-lock.json</b>"]:::config
+        Doc["<b>README.md</b>"]:::docs
     end
 
     %% External Service
@@ -104,11 +105,11 @@ flowchart TB
     click Doc "https://github.com/vscodium/update-api/blob/master/README.md"
 
     %% Styles
-    classDef client fill:#a2f5a2,stroke:#333,stroke-width:1px
-    classDef function fill:#a2d2f5,stroke:#333,stroke-width:1px
-    classDef external fill:#f5c27a,stroke:#333,stroke-width:1px
-    classDef config fill:#e0e0e0,stroke:#333,stroke-width:1px
-    classDef docs fill:#f5e0a2,stroke:#333,stroke-width:1px
+    classDef client fill:#aa22,stroke:#333,stroke-width:1px
+    classDef function fill:#a2f5,stroke:#333,stroke-width:1px
+    classDef external fill:#f27a,stroke:#333,stroke-width:1px
+    classDef config fill:#eBB2,stroke:#333,stroke-width:1px
+    classDef docs fill:#522,stroke:#333,stroke-width:1px
 
 ```
 
