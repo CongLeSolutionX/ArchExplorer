@@ -139,7 +139,7 @@ flowchart TB
     SPMD --> JAX
 
     %% Styles
-    classDef core fill:#2374ab
+    classDef core fill:#74ab
     classDef api fill:#a025
     classDef training fill:#f2F7
     classDef nn fill:#F2F2
