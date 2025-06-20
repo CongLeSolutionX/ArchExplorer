@@ -44,7 +44,7 @@ source: https://github.com/VSCodium/vscodium.github.io
 
 ```mermaid
 ---
-title: "CHANGE_ME_DADDY"
+title: "vscodium.github.io repo project"
 author: "Cong Le"
 version: "1.0"
 license(s): "MIT, CC BY-SA 4.0"
@@ -75,36 +75,40 @@ config:
   }
 }%%
 flowchart LR
-  subgraph "Developer Environment"
+  subgraph Developer_Environment["Developer Environment"]
+  style Developer_Environment fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
     Dev["Developer"]:::dev
-    Repo["Git Repository (GitHub)"]:::dev
+    Repo["Git Repository<br/>(GitHub)"]:::dev
     CLI["Jekyll CLI"]:::dev
   end
 
-  subgraph "Source Files"
-    Posts["Markdown Posts (_posts/)"]:::dev
-    Includes["Layouts & Includes (_includes/)"]:::dev
+  subgraph Source_Files["Source Files"]
+  style Source_Files fill:#FF22,stroke:#333,stroke-width:1px, color: #FFFF
+    Posts["Markdown Posts <br/>(_posts/)"]:::dev
+    Includes["Layouts & Includes <br/>(_includes/)"]:::dev
     BaseCSS["base.css"]:::dev
     MainCSS["main.css"]:::dev
     SkelCSS["skeleton.css"]:::dev
     Footer["footer.md"]:::dev
     Index["Home Page (index.html)"]:::dev
-    Combo["Bundled Stylesheet (combo.css)"]:::dev
-    SiteJS["Site JavaScript (site.js)"]:::dev
-    Config["Jekyll Configuration (_config.yml)"]:::config
+    Combo["Bundled Stylesheet <br/>(combo.css)"]:::dev
+    SiteJS["Site JavaScript <br/>(site.js)"]:::dev
+    Config["Jekyll Configuration <br/>(_config.yml)"]:::config
     CNAME["CNAME"]:::config
-    WellKnown["Flatpak Verification (.well-known/org.flathub.VerifiedApps.txt)"]:::config
+    WellKnown["Flatpak Verification <br/>(.well-known/org.flathub.VerifiedApps.txt)"]:::config
     Readme["README.md"]:::dev
     License["LICENSE.txt"]:::dev
   end
 
-  subgraph "Build Output"
+  subgraph Build_Output["Build Output"]
+  style Build_Output fill:#BB22,stroke:#333,stroke-width:1px, color: #FFFF
     SiteOut["_site/ (Static Files)"]:::storage
   end
 
-  subgraph "Hosting & Delivery"
-    Pages["GitHub Pages / Webserver"]:::runtime
-    Users["End Users (Browsers)"]:::runtime
+  subgraph Hosting_and_Delivery["Hosting & Delivery"]
+  style Hosting_and_Delivery fill:#B2F2,stroke:#333,stroke-width:1px, color: #FFFF
+    Pages["GitHub Pages /<br/> Webserver"]:::runtime
+    Users["End Users<br/>(Browsers)"]:::runtime
   end
 
   Dev -->|git push| Repo
@@ -137,10 +141,10 @@ flowchart LR
   click Readme "https://github.com/vscodium/vscodium.github.io/blob/master/README.md"
   click License "https://github.com/vscodium/vscodium.github.io/blob/master/LICENSE.txt"
 
-  classDef dev fill:#D0E8FF,stroke:#0288D1,color:#000
-  classDef config fill:#FFF4E5,stroke:#FB8C00,color:#000
-  classDef runtime fill:#E8F5E9,stroke:#2E7D32,color:#000
-  classDef storage fill:#EDE7F6,stroke:#5E35B1,color:#000
+  classDef dev fill:#D0FF,stroke:#0288D1,color:#FFFF
+  classDef config fill:#FF25,stroke:#FB8C00,color:#FFFF
+  classDef runtime fill:#E229,stroke:#2E7D32,color:#FFFF
+  classDef storage fill:#EFF6,stroke:#5E35B1,color:#FFFF
 
 ```
 
