@@ -75,45 +75,51 @@ config:
   }
 }%%
 flowchart TD
-    subgraph "Source & Upstream Integration"
+    subgraph Source_and_Upstream_Integration["Source & Upstream Integration"]
+    style Source_and_Upstream_Integration fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
         A1["Upstream VS Code Source"]:::source
         A2["src/insider"]:::source
         A3["src/stable"]:::source
         A4["product.json"]:::source
     end
 
-    subgraph "Patch & Customization Layer"
+    subgraph Patch_and_Customization_Layer["Patch & Customization Layer"]
+    style Patch_and_Customization_Layer fill:#22F2,stroke:#333,stroke-width:1px, color: #FFFF
         B1["patches Directory"]:::patch
         B2["dev/patch.sh"]:::patch
         B3["announcements-builtin.json"]:::patch
         B4["announcements-extra.json"]:::patch
     end
 
-    subgraph "Build & Packaging System"
+    subgraph Build_and_Packaging_System["Build & Packaging System"]
+    style Build_and_Packaging_System fill:#FFB2,stroke:#333,stroke-width:1px, color: #FFFF
         C1["build Directory"]:::build
         C2["dev/build.sh, dev/build.ps1, dev/build_docker.sh"]:::build
         C3["build/linux/appimage/recipe.yml"]:::build
         C4["build/windows/msi/build.sh"]:::build
     end
 
-    subgraph "CI/CD & Automation"
+    subgraph CI_CD_and_Automation["CI/CD & Automation"]
+    style CI_CD_and_Automation fill:#FBB2,stroke:#333,stroke-width:1px, color: #FFFF
         D1["GitHub Actions Workflows (.github/workflows)"]:::cicd
     end
 
-    subgraph "Distribution & Store Integrations"
+    subgraph Distribution_and_Store_Integrations["Distribution & Store Integrations"]
+    style Distribution_and_Store_Integrations fill:#B2F2,stroke:#333,stroke-width:1px, color: #FFFF
         E3["release.sh & update_version.sh"]:::dist
         E1["stores/snapcraft"]:::dist
         E2["stores/winget"]:::dist
     end
 
-    subgraph "Documentation"
+    subgraph Documentation["Documentation"]
+    style Documentation fill:#A2F2,stroke:#333,stroke-width:1px, color: #FFFF
         F1["docs Directory"]:::docs
     end
 
     %% Flow Connections
     %% CI/CD triggers build system
-    D1 -->|"triggers_build"| C1
-    D1 -->|"invokes_build_scripts"| C2
+    D1 -->|"triggers build"| C1
+    D1 -->|"invokes build scripts"| C2
 
     %% Upstream source is cloned and then customized
     A1 -->|"clone"| B1
@@ -122,31 +128,31 @@ flowchart TD
     A4 --- A1
 
     %% Patch & customization layer applies modifications
-    B1 -->|"apply_customizations"| C1
+    B1 -->|"apply customizations"| C1
     B2 --- B1
     B3 --- B1
     B4 --- B1
 
     %% Build process: build directory runs scripts to package binaries
-    C1 -->|"runs_build_scripts"| C2
-    C2 -->|"packages_Linux_binary"| C3
-    C2 -->|"packages_Windows_binary"| C4
-    C2 -->|"produces_final_binaries"| E3
+    C1 -->|"runs build scripts"| C2
+    C2 -->|"packages Linux binary"| C3
+    C2 -->|"packages Windows binary"| C4
+    C2 -->|"produces final binaries"| E3
 
     %% Distribution channels receive final binaries
-    E3 -->|"distributes_to"| E1
-    E3 -->|"distributes_to"| E2
+    E3 -->|"distributes to"| E1
+    E3 -->|"distributes to"| E2
 
     %% Documentation supports build and troubleshooting
     F1 ---|"guides"| C1
 
     %% Style Definitions
-    classDef source fill:#ADD8E6,stroke:#000,stroke-width:1px;
-    classDef patch fill:#C1E1C1,stroke:#333,stroke-width:1px;
-    classDef build fill:#FFFACD,stroke:#333,stroke-width:1px;
-    classDef cicd fill:#FFB6C1,stroke:#333,stroke-width:1px;
-    classDef dist fill:#F4A460,stroke:#333,stroke-width:1px;
-    classDef docs fill:#D3D3D3,stroke:#333,stroke-width:1px;
+    classDef source fill:#A826,stroke:#000,stroke-width:1px;
+    classDef patch fill:#C1C1,stroke:#333,stroke-width:1px;
+    classDef build fill:#FCD2,stroke:#333,stroke-width:1px;
+    classDef cicd fill:#F6C1,stroke:#333,stroke-width:1px;
+    classDef dist fill:#F462,stroke:#333,stroke-width:1px;
+    classDef docs fill:#DBD3,stroke:#333,stroke-width:1px;
 
     %% Click Events
     click A1 "https://github.com/vscodium/vscodium/tree/master/upstream"
