@@ -4,7 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
-source:
+source: https://github.com/VSCodium/vscodium-docker-files
 ---
 
 
@@ -24,7 +24,7 @@ source:
 
 
 
-# CHANGE_ME
+# docker-files repo project
 <details open>
 <summary>Click to show/hide the full disclaimer.</summary>
    
@@ -39,11 +39,96 @@ source:
 
 </details>
 
+
 ---
 
+```mermaid
+---
+title: "CHANGE_ME_DADDY"
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY-SA 4.0"
+copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+config:
+  layout: elk
+  theme: base
+  look: handDrawn
+---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
+%%{
+  init: {
+    'flowchart': { 'htmlLabels': true, 'curve': 'basis' },
+    'fontFamily': 'American Typewriter, monospace',
+    'logLevel': 'fatal',
+    'themeVariables': {
+      'primaryColor': '#22BB',
+      'primaryTextColor': '#F8B229',
+      'lineColor': '#F8B229',
+      'primaryBorderColor': '#27AE60',
+      'secondaryColor': '#E2F1',
+      'secondaryTextColor': '#6C3483',
+      'secondaryBorderColor': '#A569BD',
+      'fontSize': '20px'
+    }
+  }
+}%%
+flowchart TB
+    %% External Services
+    TravisCI("Travis CI"):::external
+    GitHub[(GitHub Repos)]:::external
+    Registry[(Docker Registry)]:::external
 
-## MAIN CONTENT - A Diagrammatic Guide 
+    %% Host & CI
+    Host["Host Machine/CI Runner"]:::host
+    CLI["Docker CLI"]:::host
+    Daemon["Docker Daemon"]:::host
+    Developer["Developer / CI"]:::host
 
+    %% Configuration Files
+    Dockerfile["Dockerfile.ia32"]:::config
+    README["README.md"]:::config
+    LICENSE["LICENSE"]:::config
+
+    %% Build Container Runtime
+    subgraph "Build Container (Runtime)"
+        BaseImage["Base Image"]:::runtime
+        Dependencies["Installed Dependencies"]:::runtime
+        Repos["Cloned Repositories\n(vscodium + vscode)"]:::runtime
+        BuildScripts["Build Scripts / Make Targets"]:::runtime
+        Image["Docker Image\nvscodium-ia32"]:::runtime
+        InteractiveShell["Interactive Shell"]:::runtime
+    end
+
+    %% Flow
+    TravisCI -->|"trigger docker build"| Host
+    Host -->|"docker build"| CLI
+    CLI -->|calls| Daemon
+    Daemon -->|"reads Dockerfile"| Dockerfile
+    Daemon -->|"pull base image"| BaseImage
+    Daemon -->|"install dependencies"| Dependencies
+    Daemon -->|"git clone"| GitHub
+    GitHub --> Dependencies
+    GitHub --> Repos
+    Dependencies --> Repos
+    Repos -->|"set up build env"| BuildScripts
+    BuildScripts -->|"produce image"| Image
+    Image -->|"push to registry"| Registry
+    Developer -->|"docker run"| Image
+    Image -->|"interactive shell"| InteractiveShell
+
+    %% Click Events
+    click Dockerfile "https://github.com/vscodium/vscodium-docker-files/blob/master/Dockerfile.ia32"
+    click README "https://github.com/vscodium/vscodium-docker-files/blob/master/README.md"
+    click LICENSE "https://github.com/vscodium/vscodium-docker-files/tree/master/LICENSE"
+
+    %% Styles
+    classDef external fill:#f9bf3b,stroke:#333,stroke-width:1px
+    classDef host fill:#8ecae6,stroke:#333,stroke-width:1px
+    classDef runtime fill:#a8e6cf,stroke:#333,stroke-width:1px
+    classDef config fill:#e0e0e0,stroke:#333,stroke-width:1px
+```
 
 ---
 
