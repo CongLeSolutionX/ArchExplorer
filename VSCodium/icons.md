@@ -75,9 +75,9 @@ config:
   }
 }%%
 flowchart TB
-  %% Generation Pipeline
-  subgraph "Generation Pipeline"
-    direction TB
+  subgraph Generation_Pipeline["Generation Pipeline"]
+  style Generation_Pipeline fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
+  direction TB
     TS["Templates (Shapes)"]:::storage
     TBk["Templates (Backgrounds)"]:::storage
     TC["Templates (Colors)"]:::storage
@@ -88,9 +88,9 @@ flowchart TB
     OS["Output Store (icons/)"]:::storage
   end
 
-  %% Previewer Application
-  subgraph "Previewer Application"
-    direction TB
+  subgraph Previewer_Application["Previewer Application"]
+  style Previewer_Application fill:#22F2,stroke:#333,stroke-width:1px, color: #FFFF
+  direction TB
     SS["Next.js Server"]:::web
     SC["previewer/config/*.json"]:::web
     UI["UI Components"]:::web
@@ -102,9 +102,9 @@ flowchart TB
     BR["Browser Client"]:::external
   end
 
-  %% External Services
-  subgraph "External/Hosting Services"
-    direction TB
+  subgraph External_Hosting_Services["External/Hosting Services"]
+  style External_Hosting_Services fill:#22BF,stroke:#333,stroke-width:1px, color: #FFFF
+  direction TB
     GH["GitHub (CI/CD)"]:::external
     NT["Netlify (Hosting)"]:::external
   end
@@ -157,10 +157,10 @@ flowchart TB
   click ST "https://github.com/vscodium/icons/blob/main/previewer/prettier.config.js"
 
   %% Styles
-  classDef scripts fill:#add8e6,stroke:#000;
-  classDef storage fill:#90ee90,stroke:#000;
-  classDef web fill:#dda0dd,stroke:#000;
-  classDef external fill:#ffdead,stroke:#000;
+  classDef scripts fill:#ade6,stroke:#000;
+  classDef storage fill:#9e92,stroke:#000;
+  classDef web fill:#d0dd,stroke:#000;
+  classDef external fill:#fed2,stroke:#000;
 ```
 
 ----

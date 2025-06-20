@@ -87,17 +87,18 @@ flowchart TB
     Developer["Developer / CI"]:::host
 
     %% Configuration Files
-    Dockerfile["Dockerfile.ia32"]:::config
-    README["README.md"]:::config
-    LICENSE["LICENSE"]:::config
+    Dockerfile["<b>Dockerfile.ia32</b>"]:::config
+    README["<b>README.md</b>"]:::config
+    LICENSE["<b>LICENSE</b>"]:::config
 
     %% Build Container Runtime
-    subgraph "Build Container (Runtime)"
+    subgraph Build_Container["Build Container<br/>(Runtime)"]
+    style Build_Container fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
         BaseImage["Base Image"]:::runtime
         Dependencies["Installed Dependencies"]:::runtime
-        Repos["Cloned Repositories\n(vscodium + vscode)"]:::runtime
-        BuildScripts["Build Scripts / Make Targets"]:::runtime
-        Image["Docker Image\nvscodium-ia32"]:::runtime
+        Repos["Cloned Repositories<br/>(vscodium + vscode)"]:::runtime
+        BuildScripts["Build Scripts /<br/> Make Targets"]:::runtime
+        Image["Docker Image<br/>vscodium-ia32"]:::runtime
         InteractiveShell["Interactive Shell"]:::runtime
     end
 
@@ -124,10 +125,10 @@ flowchart TB
     click LICENSE "https://github.com/vscodium/vscodium-docker-files/tree/master/LICENSE"
 
     %% Styles
-    classDef external fill:#f9bf3b,stroke:#333,stroke-width:1px
-    classDef host fill:#8ecae6,stroke:#333,stroke-width:1px
-    classDef runtime fill:#a8e6cf,stroke:#333,stroke-width:1px
-    classDef config fill:#e0e0e0,stroke:#333,stroke-width:1px
+    classDef external fill:#f3b1,stroke:#333,stroke-width:1px
+    classDef host fill:#8ae6,stroke:#333,stroke-width:1px
+    classDef runtime fill:#22BB,stroke:#333,stroke-width:1px
+    classDef config fill:#e2e3,stroke:#333,stroke-width:1px
 ```
 
 ---
