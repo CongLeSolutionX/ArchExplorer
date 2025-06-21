@@ -3,11 +3,24 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![License: CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)](LICENSE-CC-BY)
 
----
-
 Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 ---
+
+
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+> 
+> This project in under working progress.
+> 
+> ![Loading...](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTF2MTZ3MnQ0ZmVtdTQ2bzFvbXZyODlzenJqcW5pYTg1OW9mMGR2bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2A29ghC2SEWYIYXGKt/giphy.gif)
+>
+> gif image is provided by [Giphy](https://giphy.com)
+> 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+
+
+----
+
 
 Welcome to **ArchExplorer**!
 
@@ -17,16 +30,21 @@ This open-source project aims to demystify the architectures of popular open-sou
 
 ## Table of Contents
 
-- [About the Project](#about-the-project)
-- [Architectural Focus Areas](#architectural-focus-areas)
-- [Repository Structure](#repository-structure)
-- [Example Visualization: Simplified Kubernetes Architecture](#example-visualization-simplified-kubernetes-architecture)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Disclaimer](#disclaimer)
-- [Markdown and Visualization Resources](#markdown-and-visualization-resources)
+- [ArchExplorer: Deconstructing Open-Source Architectures with Visualizations](#archexplorer-deconstructing-open-source-architectures-with-visualizations)
+  - [Table of Contents](#table-of-contents)
+  - [About the Project](#about-the-project)
+  - [Architectural Focus Areas](#architectural-focus-areas)
+  - [Repository Structure](#repository-structure)
+  - [Example Visualization: Simplified Kubernetes Architecture](#example-visualization-simplified-kubernetes-architecture)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Cloning the Repository](#cloning-the-repository)
+  - [Usage](#usage)
+  - [🚀 Project Current Activities](#-project-current-activities)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Disclaimer](#disclaimer)
+  - [Markdown and Visualization Resources](#markdown-and-visualization-resources)
 
 ---
 
@@ -50,11 +68,18 @@ We achieve this by:
 *   **Focusing on Clarity:**  We prioritize clarity and simplicity over exhaustive detail.  The goal is to provide an accessible overview, not a complete blueprint.
 *   **Community Contributions:** We welcome contributions from the community to expand the library of visualized architectures.
 
-**This project builds upon the visual learning principles established in AlgoVerse (algorithm visualization) and Synthetic Zooniverse (AI model visualization), extending the approach to the realm of software architecture.**
+**This project builds upon the visual learning principles established in [AlgoVerse](https://github.com/CongLeSolutionX/AlgoVerse) (algorithm visualization) and [Synthetic Zooniverse](https://github.com/CongLeSolutionX/Synthetic-Zooniverse) (AI model visualization), extending the approach to the realm of software architecture.**
 
 ---
 
 ## Architectural Focus Areas
+
+<div align="center">
+	<img alt="Architectural Focus Areas" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ2Nzc2tjOGV3c3JxNzNteDg5Mm14cWV6MzUzYzZuNWZrYm1uem1sdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Q6gxCtEHXzLswLlcev/giphy.gif"/>
+	<br/>
+	<em>gif image is provided by <a href="https://giphy.com">Giphy</a></em>
+</div>
+
 
 ArchExplorer covers a wide range of open-source project architectures, including:
 
@@ -70,6 +95,14 @@ ArchExplorer covers a wide range of open-source project architectures, including
 ---
 
 ## Repository Structure
+
+
+<div align="center">
+	<img alt="Repository Structure" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXNldDd3M3czeHMwaWFpcWl0MGdxbmp4eW8zN3U4ZWdyY3B0YXVrMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/CEZVVu7HfvXCt3IKhG/giphy.gif"/>
+	<br/>
+	<em>gif image is provided by <a href="https://giphy.com">Giphy</a></em>
+</div>
+
 
 The repository is organized by architectural focus area and then by individual project:
 
@@ -116,6 +149,13 @@ Each project folder contains:
 ---
 
 ## Example Visualization: Simplified Kubernetes Architecture
+
+<div align="center">
+	<img alt="Example Visualization" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmQ3M2hpN292eTRvOTVjeGtvZTl0Z3BlYXc5bTVqenA3ZzQ0bzI4YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l3zomMQJWLruq1Ycg/giphy.gif"/>
+	<br/>
+	<em>gif image is provided by <a href="https://giphy.com">Giphy</a></em>
+</div>
+
 
 This example demonstrates how ArchExplorer uses Mermaid to illustrate the core components of Kubernetes.
 
@@ -197,6 +237,14 @@ This diagram provides a high-level overview of the Kubernetes architecture.  Mor
 
 ## Getting Started
 
+
+<div align="center">
+	<img alt="Getting Started" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnJzeDdlNjhmZ2pydno1OTJkamhsZ3Q4N21rb2x2aTFhdzUwanh3diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o85xA30i7z1LUIISY/giphy.gif"/>
+	<br/>
+	<em>gif image is provided by <a href="https://giphy.com">Giphy</a></em>
+</div>
+
+
 ### Prerequisites
 
 *   **Web Browser:** A modern web browser that supports JavaScript and Mermaid.js.
@@ -219,6 +267,49 @@ Replace `[YOUR_REPOSITORY_URL]` with the actual URL of the ArchExplorer reposito
 2.  **Read the README.md:** Start with the README.md file in each project's directory.  This will provide the architectural overview and diagrams.
 3.  **Examine the Diagrams:**  View the Mermaid.js diagrams in the README.md files. You can also open the `.mmd` files in the `diagrams/` directory to see the source code and modify them.
 4.  **Follow Links to Source Code:**  Use the provided links to explore the actual source code of the project.
+
+---
+
+
+## 🚀 Project Current Activities
+
+<div align="center">
+	<img alt="Project Current Activities" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXk2YWZ4Z29rMjlhcjh6cG9yMmc2eWZ0bmw1YzA3M2h0bGFhYm03YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT8qB5POKfq8lGclkQ/giphy.gif"/>
+	<br/>
+	<em>gif image is provided by <a href="https://giphy.com">Giphy</a></em>
+</div>
+
+<div align="left"><a name="project-current-activities"></a>
+
+<details open>
+<summary>Click to show/hide more on recent activities of this project </summary>
+
+> powered by [OSS Insight](https://ossinsight.io)
+<!-- All the diagrams below are made with [OSS Insight](https://ossinsight.io/) -->
+
+| :bar_chart: Widget & Description | :art: Snapshot (Light Mode) |
+|---|---|
+| Active Contributors :technologist: of CongLeSolutionX/ArchExplorer - Last 28 days | ![Active Contributors of CongLeSolutionX/ArchExplorer - Last 28 days](https://next.ossinsight.io/widgets/official/compose-recent-active-contributors/thumbnail.png?repo_id=945004235&limit=30&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/compose-recent-active-contributors?repo_id=945004235&limit=30) |
+| Pushes :arrow_up: and Commits :writing_hand: of CongLeSolutionX/ArchExplorer | ![Pushes and Commits of CongLeSolutionX/ArchExplorer](https://next.ossinsight.io/widgets/official/analyze-repo-pushes-and-commits-per-month/thumbnail.png?repo_id=945004235&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/analyze-repo-pushes-and-commits-per-month?repo_id=945004235) |
+| Pull Request Size :straight_ruler: of CongLeSolutionX/ArchExplorer | ![Pull Request Size of CongLeSolutionX/ArchExplorer](https://next.ossinsight.io/widgets/official/analyze-repo-pull-requests-size-per-month/thumbnail.png?repo_id=945004235&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/analyze-repo-pull-requests-size-per-month?repo_id=945004235) |
+| Pull Request Lifecycle :arrows_counterclockwise: of CongLeSolutionX/ArchExplorer | ![Pull Request Lifecycle of CongLeSolutionX/ArchExplorer](https://next.ossinsight.io/widgets/official/analyze-repo-pull-request-open-to-merged/thumbnail.png?repo_id=945004235&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/analyze-repo-pull-request-open-to-merged?repo_id=945004235) |
+| Lines of Code Changes :computer::scroll: of CongLeSolutionX/ArchExplorer | ![Lines of Code Changes of CongLeSolutionX/ArchExplorer](https://next.ossinsight.io/widgets/official/analyze-repo-loc-per-month/thumbnail.png?repo_id=945004235&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/analyze-repo-loc-per-month?repo_id=945004235) |
+| Commits Time Distribution :alarm_clock::date: of CongLeSolutionX/ArchExplorer | ![Commits Time Distribution of CongLeSolutionX/ArchExplorer](https://next.ossinsight.io/widgets/official/analyze-repo-commits-time-distribution/thumbnail.png?repo_id=945004235&period=last_1_year&zone=0&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/analyze-repo-commits-time-distribution?repo_id=945004235&period=last_1_year&zone=0) | 
+
+
+</details>
+
+</div>
+
+
+
+<div align="center">
+	<img alt="Project Current Activities Too" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHJsMjcyMHk1Zms3MGZjMzJhZjhteDMzZDhicTh1d3AydnpibmV0OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/nIUav1AOaK06s/giphy.gif"/>
+	<br/>
+	<em>gif image is provided by <a href="https://giphy.com">Giphy</a></em>
+</div>
+
+
 
 ---
 
@@ -266,3 +357,51 @@ The architectural visualizations provided in this repository are for educational
 *   **GitDiagram:** [https://github.com/ahmedkhaleel2004/gitdiagram/](https://github.com/ahmedkhaleel2004/gitdiagram/) -  A primary source of inspiration for this project, leveraging LLMs to convert open-source projects into Mermaid diagrams.
 
 ---
+
+<!-- 
+```mermaid
+%% Current Mermaid version
+info
+```  -->
+
+
+```mermaid
+---
+title: "CongLeSolutionX"
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY-SA 4.0"
+copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+config:
+  theme: base
+---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%{
+  init: {
+    'flowchart': { 'htmlLabels': false },
+    'fontFamily': 'Bradley Hand',
+    'themeVariables': {
+      'primaryColor': '#fc82',
+      'primaryTextColor': '#F8B229',
+      'primaryBorderColor': '#27AE60',
+      'secondaryColor': '#81c784',
+      'secondaryTextColor': '#6C3483',
+      'lineColor': '#F8B229',
+      'fontSize': '20px'
+    }
+  }
+}%%
+flowchart LR
+    My_Meme@{ img: "https://raw.githubusercontent.com/CongLeSolutionX/MY_GRAPHIC_ASSETS/refs/heads/Designing_graphic_syntax/MY_MEME/My-meme-icon-design.png", label: "Ăn uống gì chưa ngừi đẹp?", pos: "b", w: 200, h: 150, constraint: "on" }
+
+Closing_quote@{ shape: braces, label: "I'll leave this Earth empty-handed anyway!<br/>YOLO" }
+My_Meme ~~~ Closing_quote
+Link_to_my_profile{{"<a href='https://github.com/CongLeSolutionX' target='_blank'>Click here if you care about my profile</a>"}}
+
+Closing_quote ~~~ My_Meme
+My_Meme animatingEdge@--> Link_to_my_profile
+animatingEdge@{ animate: true }
+
+```
+
+----
