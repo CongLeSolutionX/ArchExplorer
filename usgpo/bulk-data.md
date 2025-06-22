@@ -75,58 +75,70 @@ config:
   }
 }%%
 flowchart LR
-    %% Documentation Zone
-    subgraph "Documentation Zone"
-        direction TB
-        README["README.md"]:::doc
-        CODEOWNERS["CODEOWNERS"]:::doc
-        subgraph "Markdown User Guides"
-            direction TB
-            BILLSGuide["Bills-XML-User-Guide.md"]:::doc
-            BILLSSummaryGuide["Bills-Summary-XML-User-Guide.md"]:::doc
-            CFRGuide["CFR-XML_User-Guide.md"]:::doc
-            ECFRGuide["ECFR-XML-User-Guide.md"]:::doc
-            FRGuide["FR-XML_User-Guide.md"]:::doc
-        end
-        subgraph "PDF Guides"
-            direction TB
-            pdfBILLS["BILLS-XML_User-Guide-v2.pdf"]:::doc
-            pdfBILLSUM["BILLSUM-XML_User-Guide-v2.pdf"]:::doc
-            pdfCFR["CFR-XML_User-Guide-v1.pdf"]:::doc
-            pdfFR["FR-XML_User-Guide-v1.pdf"]:::doc
-        end
-        subgraph "Sample XML Snapshots"
-            direction TB
-            subgraph "Current Snapshots"
-                direction TB
-                curECFR1["ECFR-title1.xml"]:::doc
-                curECFR14["ECFR-title14.xml"]:::doc
-                curECFR15["ECFR-title15.xml"]:::doc
-                curFR["FR-2024-02-12.xml"]:::doc
-            end
-            subgraph "Updated Snapshots"
-                direction TB
-                updECFR1["ECFR-title1.xml"]:::doc
-                updECFR14["ECFR-title14.xml"]:::doc
-                updECFR15["ECFR-title15.xml"]:::doc
-                updFR["FR-2024-02-12.xml"]:::doc
-            end
-        end
+    subgraph Documentation_Zone["Documentation Zone"]
+    style Documentation_Zone fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
+    direction TB
+      README["README.md"]:::doc
+      CODEOWNERS["CODEOWNERS"]:::doc
+
+      subgraph Markdown_User_Guides["Markdown User Guides"]
+      style Markdown_User_Guides fill:#22F2,stroke:#333,stroke-width:1px, color: #FFFF
+      direction TB
+        BILLSGuide["Bills-XML-User-Guide.md"]:::doc
+        BILLSSummaryGuide["Bills-Summary-XML-User-Guide.md"]:::doc
+        CFRGuide["CFR-XML_User-Guide.md"]:::doc
+        ECFRGuide["ECFR-XML-User-Guide.md"]:::doc
+        FRGuide["FR-XML_User-Guide.md"]:::doc
+      end
+
+      subgraph PDF_Guides["PDF Guides"]
+      style PDF_Guides fill:#FFF2,stroke:#333,stroke-width:1px, color: #FFFF
+      direction TB
+          pdfBILLS["BILLS-XML_User-Guide-v2.pdf"]:::doc
+          pdfBILLSUM["BILLSUM-XML_User-Guide-v2.pdf"]:::doc
+          pdfCFR["CFR-XML_User-Guide-v1.pdf"]:::doc
+          pdfFR["FR-XML_User-Guide-v1.pdf"]:::doc
+      end
+
+      subgraph Sample_XML_Snapshots["Sample XML Snapshots"]
+      style Sample_XML_Snapshots fill:#BFAA,stroke:#333,stroke-width:1px, color: #FFFF
+      direction TB
+
+          subgraph Current_Snapshots["Current Snapshots"]
+          style Current_Snapshots fill:#A22A,stroke:#333,stroke-width:1px, color: #FFFF
+          direction TB
+            curECFR1["ECFR-title1.xml"]:::doc
+            curECFR14["ECFR-title14.xml"]:::doc
+            curECFR15["ECFR-title15.xml"]:::doc
+            curFR["FR-2024-02-12.xml"]:::doc
+          end
+
+          subgraph Updated_Snapshots["Updated Snapshots"]
+          style Updated_Snapshots fill:#22A,stroke:#333,stroke-width:1px, color: #FFFF
+          direction TB
+            updECFR1["ECFR-title1.xml"]:::doc
+            updECFR14["ECFR-title14.xml"]:::doc
+            updECFR15["ECFR-title15.xml"]:::doc
+            updFR["FR-2024-02-12.xml"]:::doc
+          end
+      end
     end
 
     %% Service Zone
-    subgraph "Service Zone"
-        direction TB
-        API["GPO govinfo Bulkdata API"]:::api
-        BillsEndpoint["/bulkdata/xml/BILLS/{congress}/{chamber}/{doc}"]:::api
-        JSONEndpoint["/bulkdata/json/{collection}/{year}/{id}"]:::api
-        FREndpoint["/bulkdata/FR/{year}/{month}/{day}"]:::api
+    subgraph Service_Zone["Service Zone"]
+    style Service_Zone fill:#22A,stroke:#333,stroke-width:1px, color: #FFFF
+    direction TB
+      API["GPO govinfo Bulkdata API"]:::api
+      BillsEndpoint["/bulkdata/xml/BILLS/{congress}/{chamber}/{doc}"]:::api
+      JSONEndpoint["/bulkdata/json/{collection}/{year}/{id}"]:::api
+      FREndpoint["/bulkdata/FR/{year}/{month}/{day}"]:::api
     end
 
     %% User Zone
-    subgraph "User Zone"
-        direction TB
-        User["Users (CLI, scripts, browser)"]:::user
+    subgraph User_Zone["User Zone"]
+    style User_Zone fill:#2BBA,stroke:#333,stroke-width:1px, color: #FFFF
+    direction TB
+      User["Users<br/>(CLI, scripts, browser)"]:::user
     end
 
     %% Connections
@@ -159,9 +171,9 @@ flowchart LR
     click updFR "https://github.com/usgpo/bulk-data/blob/main/ndash-changes-March2024/updated/FR-2024-02-12.xml"
 
     %% Styles
-    classDef doc fill:#D0E6FF,stroke:#004E9F
-    classDef api fill:#D0FFD0,stroke:#009F00
-    classDef user fill:#FFE4C4,stroke:#CC6600
+    classDef doc fill:#004E9F,stroke:#004E9F
+    classDef api fill:#009F00,stroke:#009F00
+    classDef user fill:#C2DF,stroke:#CC6600
 
 
 ```

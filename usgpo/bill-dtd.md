@@ -78,8 +78,9 @@ flowchart LR
     PR_Review["PR Review & Merge<br/>(CONTRIBUTING.md & CODEOWNERS)"]:::gate
 
     %% GitHub Repository and artifacts
-    subgraph "GitHub Repository" 
-        direction TB
+    subgraph GitHub_Repository["GitHub Repository"]
+    style GitHub_Repository fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
+    direction TB
         Bill_DTD["Bill DTD<br/>bill.dtd"]:::repo
         Amend_DTD["Amendment DTD<br/>amend.dtd"]:::repo
         Res_DTD["Resolution DTD<br/>res.dtd"]:::repo
@@ -115,6 +116,7 @@ flowchart LR
     PR_Review -->|merge config| Gitignore
 
     subgraph PublishFlow[" "]
+    style PublishFlow fill:#22F2,stroke:#333,stroke-width:1px, color: #FFFF
     direction TB
         GitHub_RepoNode["GitHub Repository"]:::repo
         GitHub_RepoNode -->|git clone/pull| Publication_Pipeline
@@ -141,12 +143,12 @@ flowchart LR
     click Gitignore "https://github.com/usgpo/bill-dtd/blob/master/.gitignore"
 
     %% Styles
-    classDef repo fill:#bbdefb,stroke:#0d47a1,color:#0d47a1;
-    classDef pipeline fill:#ffe0b2,stroke:#e65100,color:#e65100;
-    classDef hosting fill:#c8e6c9,stroke:#1b5e20,color:#1b5e20;
-    classDef consumer fill:#eeeeee,stroke:#424242,color:#424242;
-    classDef contributor fill:#f0f4c3,stroke:#afb42b,color:#afb42b;
-    classDef gate fill:#fff9c4,stroke:#f9a825,color:#f57f17;
+    classDef repo fill:#0d47a1,stroke:#0d47a1
+    classDef pipeline fill:#e65100,stroke:#e65100
+    classDef hosting fill:#1b5e20,stroke:#1b5e20
+    classDef consumer fill:#424242,stroke:#424242
+    classDef contributor fill:#a42b,stroke:#afb42b
+    classDef gate fill:#7ff2,stroke:#f9a825
 
 ```
 
