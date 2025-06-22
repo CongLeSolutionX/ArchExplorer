@@ -4,7 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
-source:
+source: https://github.com/EthanDF/Marc_BatchLoading_Checks
 ---
 
 
@@ -12,7 +12,7 @@ source:
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXVjejV3dnVjc2o5MXd3eXBvcDR1cHlzbHQ1Z2R6YjY0ZHpmdjJ6OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hL9q5k9dk9l0wGd4e0/giphy.gif)
+> ![Loading...](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnVhMWplbnlmMXdzdmhmNWFsNXlqdWgxZGsyaG5kbjhodDdrdm9hbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wqzktGaaBDEF9TpCyK/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
@@ -22,9 +22,7 @@ source:
 ----
 
 
-
-
-# CHANGE_ME
+# EthanDF - Marc_BatchLoading_Checks repo project
 <details open>
 <summary>Click to show/hide the full disclaimer.</summary>
    
@@ -39,13 +37,82 @@ source:
 
 </details>
 
----
-
-
-## MAIN CONTENT - A Diagrammatic Guide 
-
 
 ---
+
+```mermaid
+---
+title: "EthanDF - Marc_BatchLoading_Checks repo project"
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY-SA 4.0"
+copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+config:
+  layout: elk
+  theme: base
+  look: handDrawn
+---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
+%%{
+  init: {
+    'flowchart': { 'htmlLabels': true, 'curve': 'basis' },
+    'fontFamily': 'American Typewriter, monospace',
+    'logLevel': 'fatal',
+    'themeVariables': {
+      'primaryColor': '#22BB',
+      'primaryTextColor': '#F8B229',
+      'lineColor': '#F8B229',
+      'primaryBorderColor': '#27AE60',
+      'secondaryColor': '#E2F1',
+      'secondaryTextColor': '#6C3483',
+      'secondaryBorderColor': '#A569BD',
+      'fontSize': '20px'
+    }
+  }
+}%%
+flowchart TD
+    %% Nodes
+    Input["Input MARC File"]:::database
+    CLI["CLI / Entry Point"]:::module
+    Parser["Parser"]:::module
+    Checks["Error Check Modules"]:::module
+    Reporter["Reporter / Output Module"]:::module
+    Outputs["Outputs<br/>stdout / CSV / JSON"]:::output
+    Config["Configuration / Rules Store<br/>(Notes_On_Error_Checks.md)"]:::config
+    subgraph "Future Enhancements"
+        direction TB
+        FutureUpdater["Updater Module<br/>(Future)"]:::future
+        NewOutput["New MARC Output"]:::output
+    end
+
+    %% Connections
+    Input --> CLI
+    CLI --> Parser
+    Parser --> Checks
+    Checks --> Reporter
+    Reporter --> Outputs
+    Config -.-> Checks
+    Checks --> FutureUpdater
+    FutureUpdater --> NewOutput
+
+    %% Click events
+    click CLI "https://github.com/ethandf/marc_batchloading_checks/blob/master/marcCheck.py"
+    click Parser "https://github.com/ethandf/marc_batchloading_checks/blob/master/marcCheck.py"
+    click Checks "https://github.com/ethandf/marc_batchloading_checks/blob/master/marcCheck.py"
+    click Reporter "https://github.com/ethandf/marc_batchloading_checks/blob/master/marcCheck.py"
+    click Config "https://github.com/ethandf/marc_batchloading_checks/blob/master/Notes_On_Error_Checks.md"
+
+    %% Styles
+    classDef module fill:#ADD8E6,stroke:#333,stroke-width:1px
+    classDef database fill:#90EE90,stroke:#333,stroke-width:1px,stroke-dasharray: 0
+    classDef output fill:#FFD700,stroke:#333,stroke-width:1px
+    classDef config fill:#E6E6FA,stroke:#333,stroke-width:1px
+    classDef future fill:#FFFFFF,stroke:#333,stroke-width:1px,stroke-dasharray:5 5
+```
+
+----
 
 <!-- 
 ```mermaid
