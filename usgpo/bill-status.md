@@ -75,19 +75,20 @@ config:
   }
 }%%
 flowchart TD
-    %% Batch Pipeline
-    subgraph "Batch Pipeline"
+    subgraph Batch_Pipeline["Batch Pipeline"]
+    style Batch_Pipeline fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
         Scheduler["Scheduler/Orchestrator<br/><i>every 4hrs (current) / daily (prior)</i>"]:::compute
         Ingestion["Ingestion Service<br/>(fetch GPO Bulk API)"]:::compute
         Processing["Processing & Organization<br/>(ETL & sample organization)"]:::compute
     end
 
-    %% Storage Layer
-    subgraph "Storage Layer"
+    subgraph Storage_Layer["Storage Layer"]
+    style Storage_Layer fill:#22BB,stroke:#333,stroke-width:1px, color: #FFFF
         XMLStore(("XML File Store")):::storage
         RSSGen["RSS Feed Generator"]:::compute
         RSSStore(("RSS Feed Store")):::storage
-        subgraph "Sample Data Organization"
+        subgraph Sample_Data_Organization["Sample Data Organization"]
+        style Sample_Data_Organization fill:#FB22,stroke:#333,stroke-width:1px, color: #FFFF
             SamplesAC["actions-committees"]:::storage
             SamplesAV["amendment-votes"]:::storage
             SamplesFCc["formatChange/current"]:::storage
@@ -97,15 +98,15 @@ flowchart TD
         end
     end
 
-    %% Publication Layer
-    subgraph "Publication Layer"
+    subgraph Publication_Layer["Publication Layer"]
+    style Publication_Layer fill:#FBA2,stroke:#333,stroke-width:1px, color: #FFFF
         StaticSite["Static Site Hosting<br/>(GitHub Pages + GovInfo)"]:::delivery
         RSSFeed["RSS Feed Endpoint"]:::delivery
         Sitemap["Sitemap Index"]:::delivery
     end
 
-    %% Documentation Artifacts
-    subgraph "Documentation Artifacts"
+    subgraph Documentation_Artifacts["Documentation Artifacts"]
+    style Documentation_Artifacts fill:#BB22,stroke:#333,stroke-width:1px, color: #FFFF
         UserGuidePDF["BILLSTATUS-XML_User-Guide-v1.pdf"]:::docs
         UserGuideMD["BILLSTATUS-XML_User_User-Guide.md"]:::docs
         CHANGELOG["CHANGELOG.md"]:::docs
@@ -144,11 +145,11 @@ flowchart TD
     click CODEOWNERS "https://github.com/usgpo/bill-status/tree/main/CODEOWNERS"
 
     %% Styles
-    classDef compute fill:#D0E8FF,stroke:#0366d6,color:#0366d6,stroke-width:1px;
-    classDef storage fill:#E8F5E9,stroke:#2E7D32,color:#2E7D32,stroke-width:1px;
-    classDef delivery fill:#FFF3E0,stroke:#EF6C00,color:#EF6C00,stroke-width:1px;
-    classDef docs fill:#F3E5F5,stroke:#6A1B9A,color:#6A1B9A,stroke-width:1px;
-    classDef external fill:#ECEFF1,stroke:#546E7A,color:#546E7A,stroke-width:1px;
+    classDef compute fill:#0366d6,stroke:#0366d6,stroke-width:1px;
+    classDef storage fill:#2E7D32,stroke:#2E7D32,stroke-width:1px;
+    classDef delivery fill:#E2BB,stroke:#EF6C00,stroke-width:1px;
+    classDef docs fill:#6A1B9A,stroke:#6A1B9A,stroke-width:1px;
+    classDef external fill:#546E7A,stroke:#546E7A,stroke-width:1px;
 
 ```
 
