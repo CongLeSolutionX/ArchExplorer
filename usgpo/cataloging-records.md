@@ -76,16 +76,18 @@ config:
 }%%
 flowchart LR
     %% External Data Source
-    CGP["CGP Catalog\n(external)"]:::external
+    CGP["CGP Catalog<br/>(external)"]:::external
 
     %% Processing Pipeline
-    Pipeline["Ingestion Pipeline\n(scripts/tools)"]:::pipeline
+    Pipeline["Ingestion Pipeline<br/>(scripts/tools)"]:::pipeline
 
     %% GitHub Repository Storage
-    subgraph "GitHub Repository" 
+    subgraph GitHub_Repository["GitHub Repository"]
+    style GitHub_Repository fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
         Repo_README["README.md"] 
         Repo_Images["images/"]
-        subgraph "Collections"
+        subgraph Collections["Collections"]
+        style Collections fill:#2B2B,stroke:#333,stroke-width:1px, color: #FFFF
             C1["1950_Census_Collection"]
             C2["AIANNH_Subject-Based-Resources"]
             C3["Artificial_Intelligence_Subject-Based-Resources"]
@@ -104,7 +106,7 @@ flowchart LR
     end
 
     %% Consumers
-    Users["End-Users\n(clone/pull/download)"]:::consumer
+    Users["End-Users<br/>(clone/pull/download)"]:::consumer
 
     %% Data Flow
     CGP -->|"HTTP pull"| Pipeline
@@ -180,10 +182,10 @@ flowchart LR
     click C14 "https://github.com/usgpo/cataloging-records/tree/main/Updating_Databases"
 
     %% Styles
-    classDef external fill:#cce5ff,stroke:#4aa3df,stroke-width:2px
-    classDef pipeline fill:#d4edda,stroke:#28a745,stroke-width:2px
-    classDef storage fill:#ffe5b4,stroke:#ff9f00,stroke-width:2px
-    classDef consumer fill:#fff3cd,stroke:#ffcd39,stroke-width:2px
+    classDef external fill:#c2ff,stroke:#4aa3df,stroke-width:2px
+    classDef pipeline fill:#ed22,stroke:#28a745,stroke-width:2px
+    classDef storage fill:#f5b4,stroke:#ff9f00,stroke-width:2px
+    classDef consumer fill:#f222,stroke:#ffcd39,stroke-width:2px
 
 ```
 
