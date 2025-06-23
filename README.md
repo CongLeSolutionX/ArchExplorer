@@ -21,20 +21,21 @@ Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 ---
 
+<div align="center">
+	
+⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
 
-> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
-> 
-> This project in under working progress.
-> 
-> ![Loading...](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTF2MTZ3MnQ0ZmVtdTQ2bzFvbXZyODlzenJqcW5pYTg1OW9mMGR2bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2A29ghC2SEWYIYXGKt/giphy.gif)
->
-> gif image is provided by [Giphy](https://giphy.com)
-> 
-> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+This project in under working progress.
 
+![Loading...](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTF2MTZ3MnQ0ZmVtdTQ2bzFvbXZyODlzenJqcW5pYTg1OW9mMGR2bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2A29ghC2SEWYIYXGKt/giphy.gif)
+
+gif image is provided by [Giphy](https://giphy.com)
+
+⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+	
+</div>
 
 ----
-
 
 Welcome to **ArchExplorer**!
 
