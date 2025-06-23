@@ -1,5 +1,17 @@
+<div align="center">
+	<h1>
+		    <strong>ArchExplorer</strong>
+	</h1>
+</div>
 
-# ArchExplorer:<br/>Deconstructing Open-Source Architectures with Visualizations
+<div align="center">
+<h2>
+	<ins>
+		<em>Deconstructing Open-Source Architectures with Visualizations</em>
+	</ins>
+</h2>
+ 
+</div>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![License: CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)](LICENSE-CC-BY)
 
