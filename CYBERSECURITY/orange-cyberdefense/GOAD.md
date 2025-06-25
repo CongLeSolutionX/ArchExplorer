@@ -12,7 +12,7 @@ source: https://github.com/Orange-Cyberdefense/GOAD
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXVjejV3dnVjc2o5MXd3eXBvcDR1cHlzbHQ1Z2R6YjY0ZHpmdjJ6OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hL9q5k9dk9l0wGd4e0/giphy.gif)
+> ![Loading...](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDc1NWc5MTg2MHE3b21mdTJsZXRvb3Y3MzBlMHA4eDQ2bGtmeGt4MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GnWdE6FhFWn5atbOhe/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
@@ -83,29 +83,29 @@ flowchart TD
 
     subgraph Orchestrator_Provisioning_Engine["Orchestrator/Provisioning Engine"]
     style Orchestrator_Provisioning_Engine fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
-        OPY["goad.py <br/>(CLI)"]:::orchestration
-        OMOD["goad/ <br/>(Modules)"]:::orchestration
+        OPY["<b>goad.py</b> <br/>(CLI)"]:::orchestration
+        OMOD["<b>goad/</b> <br/>(Modules)"]:::orchestration
     end
 
     %% Lab Environment Variants
-    LV["Lab Variants <br/>(ad/)"]:::lab
+    LV["Lab Variants <br/>(<b>ad/</b>)"]:::lab
 
     %% Infrastructure Providers
-    PR["Providers <br/>(goad/provider)"]:::provider
+    PR["Providers <br/>(<b>goad/provider</b>)"]:::provider
 
     %% Automation/Configuration Management
-    ANS["Ansible Provisioning <br/>(ansible/)"]:::automation
+    ANS["Ansible Provisioning <br/>(<b>ansible/</b>)"]:::automation
 
     %% Virtual Machine Image Builders
-    PACK["VM Image Builder <br/>(packer/)"]:::vm
-    VAGR["VM Manager <br/>(vagrant/)"]:::vm
+    PACK["VM Image Builder <br/>(<b>packer/</b>)"]:::vm
+    VAGR["VM Manager <br/>(<b>vagrant/</b>)"]:::vm
 
     %% Extensions
-    EXT["Extensions <br/>(extensions/)"]:::extension
+    EXT["Extensions <br/>(<b>extensions/</b>)"]:::extension
 
     %% Documentation and Templates
-    DOC["Documentation<br/>(docs/)"]:::docs
-    TEMP["Templates<br/>(template/)"]:::docs
+    DOC["Documentation<br/>(<b>docs/</b>)"]:::docs
+    TEMP["Templates<br/>(<b>template/</b>)"]:::docs
 
     %% Connections
     U -->|"invokes"| OPY
