@@ -74,7 +74,7 @@ config:
     }
   }
 }%%
-flowchart TD
+flowchart LR
     subgraph Input_Layer["Input Layer"]
     style Input_Layer fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
     direction TB
@@ -177,7 +177,7 @@ flowchart TD
     %% Styles
     classDef io fill:#cfc2,stroke:#006600,stroke-width:1px
     classDef module fill:#c5f2,stroke:#003399,stroke-width:1px
-    classDef script stroke-dasharray: 5 5,stroke:#666666,fill:#ffffff
+    %% classDef script fill:#ccf2,stroke:#333,fill:#fff
     classDef config fill:#fcb2,stroke:#cc6600,stroke-width:1px
 
 ```
