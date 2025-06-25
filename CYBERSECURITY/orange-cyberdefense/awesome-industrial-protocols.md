@@ -75,8 +75,8 @@ config:
   }
 }%%
 flowchart TD
-    %% Content/Data Layer
-    subgraph "Content/Data Layer"
+    subgraph Content_Data_Layer["Content/Data Layer"]
+    style Content_Data_Layer fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
         style DataLayer fill:none,stroke:none
         Links((db/links.json)):::data
         Packets((db/packets.json)):::data
@@ -88,22 +88,22 @@ flowchart TD
         License["LICENSE"]:::repo
     end
 
-    %% Build/Generation Layer
-    subgraph "Build/Generation Layer"
+    subgraph Build_Generation_Layer["Build/Generation Layer"]
+    style Build_Generation_Layer fill:#22F2,stroke:#333,stroke-width:1px, color: #FFFF
         style BuildLayer fill:none,stroke:none
         GitHubRepo["GitHub Repository"]:::repo
         CI["GitHub Actions (CI/CD)"]:::process
         Generator["site-generator.js"]:::process
     end
 
-    %% Hosting/Delivery Layer
-    subgraph "Hosting/Delivery Layer"
+    subgraph Hosting_Delivery_Layer["Hosting/Delivery Layer"]
+    style Hosting_Delivery_Layer fill:#22FF,stroke:#333,stroke-width:1px, color: #FFFF
         style HostLayer fill:none,stroke:none
         Pages("GitHub Pages"):::host
     end
 
-    %% Client/User Layer
-    subgraph "Client/User Layer"
+    subgraph Client_User_Layer["Client/User Layer"]
+    style Client_User_Layer fill:#44BB,stroke:#333,stroke-width:1px, color: #FFFF
         style ClientLayer fill:none,stroke:none
         Browser["Web Browser"]:::client
     end
@@ -136,11 +136,11 @@ flowchart TD
     click License "https://github.com/orange-cyberdefense/awesome-industrial-protocols/tree/main/LICENSE"
 
     %% Styles
-    classDef data fill:#bbdefb,stroke:#1e88e5,color:#0d47a1
-    classDef process fill:#c8e6c9,stroke:#2e7d32,color:#1b5e20
-    classDef host fill:#ffcc80,stroke:#ef6c00,color:#e65100
-    classDef client fill:#e0e0e0,stroke:#616161,color:#263238
-    classDef repo fill:#d1c4e9,stroke:#6a1b9a,color:#4a148c
+    classDef data fill:#0d47a1,stroke:#1e88e5
+    classDef process fill:#1b5e20,stroke:#2e7d32
+    classDef host fill:#e65100,stroke:#ef6c00
+    classDef client fill:#263238,stroke:#616161
+    classDef repo fill:#4a148c,stroke:#6a1b9a
 
 ```
 
