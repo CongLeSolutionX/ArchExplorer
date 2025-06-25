@@ -75,29 +75,35 @@ config:
   }
 }%%
 flowchart TD
-    subgraph "KeePwn Application"
-        subgraph "CLI Layer"
-            CLI1["KeePwn.py"]:::cli
-            CLI2["keepwn/__main__.py"]:::cli
+    subgraph KeePwn_Application["KeePwn Application"]
+    style KeePwn_Application fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
+        subgraph CLI_Layer["CLI Layer"]
+        style CLI_Layer fill:#22F2,stroke:#333,stroke-width:1px, color: #FFFF
+            CLI1["<b>KeePwn.py</b>"]:::cli
+            CLI2["<b>keepwn/__main__.py</b>"]:::cli
         end
-        subgraph "Core Modules Layer"
-            Search["Search Module\n(smb discovery)"]:::core
-            Plugin["Plugin Module\n(DLL abuse)"]:::core
-            Trigger["Trigger Module\n(XML triggers)"]:::core
-            ParseDump["ParseDump Module\n(memory dump)"]:::core
-            Convert["Convert Module\n(KDBX→hash)"]:::core
+
+        subgraph Core_Modules_Layer["Core Modules Layer"]
+        style Core_Modules_Layer fill:#62F2,stroke:#333,stroke-width:1px, color: #FFFF
+            Search["Search Module<br/>(smb discovery)"]:::core
+            Plugin["Plugin Module<br/>(DLL abuse)"]:::core
+            Trigger["Trigger Module<br/>(XML triggers)"]:::core
+            ParseDump["ParseDump Module<br/>(memory dump)"]:::core
+            Convert["Convert Module<br/>(KDBX→hash)"]:::core
         end
-        subgraph "Utility Layer"
+
+        subgraph Utility_Layer["Utility Layer"]
+        style Utility_Layer fill:#92F2,stroke:#333,stroke-width:1px, color: #FFFF
             SMBUtils["SMB Utilities"]:::util
             ParserUtils["Parser Utilities"]:::util
             Logging["Logging Utilities"]:::util
             ThreadTools["Threading Tools"]:::util
             JohnHelper["KDBX→John Helper"]:::util
-            XMLTemplate["export_database_trigger.xml"]:::util
+            XMLTemplate["<b>export_database_trigger.xml</b>"]:::util
         end
     end
 
-    RemoteHost(("Remote Hosts\n(Windows C$ share)")):::ext
+    RemoteHost(("Remote Hosts<br/>(Windows <code>C$</code> share)")):::ext
     LocalFS(("Local File System")):::ext
 
     CLI1 -->|dispatch| Search
@@ -125,10 +131,10 @@ flowchart TD
     ParserUtils -->|file I/O| LocalFS
     JohnHelper -->|output hashes| LocalFS
 
-    classDef cli fill:#cce5ff,stroke:#004085,color:#004085
-    classDef core fill:#d4edda,stroke:#155724,color:#155724
-    classDef util fill:#fff3cd,stroke:#856404,color:#856404
-    classDef ext fill:#e2e3e5,stroke:#6c757d,color:#6c757d
+    classDef cli fill:#004085,stroke:#004085
+    classDef core fill:#155724,stroke:#155724
+    classDef util fill:#856404,stroke:#856404
+    classDef ext fill:#6c757d,stroke:#6c757d
 
     click CLI1 "https://github.com/orange-cyberdefense/keepwn/blob/main/KeePwn.py"
     click CLI2 "https://github.com/orange-cyberdefense/keepwn/blob/main/keepwn/__main__.py"
