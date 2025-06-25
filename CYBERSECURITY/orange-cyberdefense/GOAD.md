@@ -32,7 +32,7 @@ source: https://github.com/Orange-Cyberdefense/GOAD
 >
 > This document contains my personal notes on the topic,
 > compiled from publicly available documentation and various cited sources.
-> The materials are intended for educational purposes (<ins>sometimes, entertainment purposes</ins>), personal study, and reference.
+> The materials are intended for 👨‍🎓 <ins>educational purposes</ins> 👨‍🎓 (<ins>:trollface:sometimes, entertainment purposes:trollface:</ins>), 📖 <ins> personal study </ins> 📖, and 🔖 <ins> reference </ins> 🔖.
 > The content is dual-licensed:
 > 1. **MIT License:** Applies to all code implementations (Swift, Mermaid, and other programming languages).
 > 2. **Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0):** Applies to all non-code content, including text, explanations, diagrams, and illustrations.
@@ -76,46 +76,49 @@ config:
 }%%
 flowchart TD
     %% Global Entities
-    U["User Command"]:::orchestration
 
-    %% Orchestrator/Provisioning Engine Subgraph
-    subgraph "Orchestrator/Provisioning Engine"
-        OPY["goad.py (CLI)"]:::orchestration
-        OMOD["goad/ (Modules)"]:::orchestration
+    U@{ img: "https://raw.githubusercontent.com/CongLeSolutionX/CongLeSolutionX/refs/heads/main/assets/images/My-meme-questions-magnifying-glass-tangled-lines-bubble-thought.png", label: "User Command", pos: "b", w: 200, h: 150, constraint: "on" }
+
+    U:::orchestration
+
+    subgraph Orchestrator_Provisioning_Engine["Orchestrator/Provisioning Engine"]
+    style Orchestrator_Provisioning_Engine fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
+        OPY["goad.py <br/>(CLI)"]:::orchestration
+        OMOD["goad/ <br/>(Modules)"]:::orchestration
     end
 
     %% Lab Environment Variants
-    LV["Lab Variants (ad/)"]:::lab
+    LV["Lab Variants <br/>(ad/)"]:::lab
 
     %% Infrastructure Providers
-    PR["Providers (goad/provider)"]:::provider
+    PR["Providers <br/>(goad/provider)"]:::provider
 
     %% Automation/Configuration Management
-    ANS["Ansible Provisioning (ansible/)"]:::automation
+    ANS["Ansible Provisioning <br/>(ansible/)"]:::automation
 
     %% Virtual Machine Image Builders
-    PACK["VM Image Builder (packer/)"]:::vm
-    VAGR["VM Manager (vagrant/)"]:::vm
+    PACK["VM Image Builder <br/>(packer/)"]:::vm
+    VAGR["VM Manager <br/>(vagrant/)"]:::vm
 
     %% Extensions
-    EXT["Extensions (extensions/)"]:::extension
+    EXT["Extensions <br/>(extensions/)"]:::extension
 
     %% Documentation and Templates
-    DOC["Documentation (docs/)"]:::docs
-    TEMP["Templates (template/)"]:::docs
+    DOC["Documentation<br/>(docs/)"]:::docs
+    TEMP["Templates<br/>(template/)"]:::docs
 
     %% Connections
     U -->|"invokes"| OPY
-    OPY -->|"loads_modules"| OMOD
-    OMOD -->|"parses_config"| LV
-    OMOD -->|"calls_provider_logic"| PR
-    PR -->|"applies_Packer/Terraform"| PACK
-    PR -->|"applies_Vagrant_config"| VAGR
-    PR -->|"deploys_VMs"| LV
-    OMOD -->|"triggers_Ansible"| ANS
-    LV -->|"loads_extensions"| EXT
-    LV -->|"references_docs"| DOC
-    LV -->|"references_templates"| TEMP
+    OPY -->|"loads modules"| OMOD
+    OMOD -->|"parses config"| LV
+    OMOD -->|"calls provider logic"| PR
+    PR -->|"applies Packer/Terraform"| PACK
+    PR -->|"applies Vagrant config"| VAGR
+    PR -->|"deploys VMs"| LV
+    OMOD -->|"triggers Ansible"| ANS
+    LV -->|"loads extensions"| EXT
+    LV -->|"references docs"| DOC
+    LV -->|"references templates"| TEMP
 
     %% Click Events
     click OPY "https://github.com/orange-cyberdefense/goad/blob/main/goad.py"
@@ -130,13 +133,13 @@ flowchart TD
     click TEMP "https://github.com/orange-cyberdefense/goad/tree/main/template/"
 
     %% Styles
-    classDef orchestration fill:#FFCC00,stroke:#000,stroke-width:2px;
-    classDef lab fill:#BBDEFB,stroke:#000,stroke-width:2px;
-    classDef provider fill:#C8E6C9,stroke:#000,stroke-width:2px;
-    classDef automation fill:#FFECB3,stroke:#000,stroke-width:2px;
-    classDef vm fill:#B2EBF2,stroke:#000,stroke-width:2px;
-    classDef extension fill:#FFCDD2,stroke:#000,stroke-width:2px;
-    classDef docs fill:#E0E0E0,stroke:#000,stroke-width:2px;
+    classDef orchestration fill:#FF211,stroke:#000,stroke-width:2px;
+    classDef lab fill:#BEB2,stroke:#000,stroke-width:2px;
+    classDef provider fill:#C6C9,stroke:#000,stroke-width:2px;
+    classDef automation fill:#FEC3,stroke:#000,stroke-width:2px;
+    classDef vm fill:#BBF2,stroke:#000,stroke-width:2px;
+    classDef extension fill:#FCD2,stroke:#000,stroke-width:2px;
+    classDef docs fill:#EE22,stroke:#000,stroke-width:2px;
 ```
 
 ----
