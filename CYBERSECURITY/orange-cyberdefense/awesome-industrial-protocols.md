@@ -75,6 +75,8 @@ config:
   }
 }%%
 flowchart TD
+    Dev@{ img: "https://raw.githubusercontent.com/CongLeSolutionX/CongLeSolutionX/refs/heads/main/assets/images/My-meme-questions-magnifying-glass-tangled-lines-bubble-thought-cyber-theme.png", label: "Developer", pos: "b", w: 200, h: 150, constraint: "on" }
+    
     subgraph Content_Data_Layer["Content/Data Layer"]
     style Content_Data_Layer fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
         Links((db/links.json)):::data
@@ -105,7 +107,7 @@ flowchart TD
     end
 
     %% Relationships
-    Dev[/"Developer"/]:::client -->|push| GitHubRepo
+    Dev:::client -->|push| GitHubRepo
     GitHubRepo -->|triggers build| CI
     CI -->|runs| Generator
     Generator -->|reads| Links

@@ -32,7 +32,7 @@ source: https://github.com/Orange-Cyberdefense/arsenal
 >
 > This document contains my personal notes on the topic,
 > compiled from publicly available documentation and various cited sources.
-> The materials are intended for educational purposes (<ins>sometimes, entertainment purposes</ins>), personal study, and reference.
+> The materials are intended for 👨‍🎓 <ins>educational purposes</ins> 👨‍🎓 (<ins>:trollface:sometimes, entertainment purposes:trollface:</ins>), 📖 <ins> personal study </ins> 📖, and 🔖 <ins> reference </ins> 🔖.
 > The content is dual-licensed:
 > 1. **MIT License:** Applies to all code implementations (Swift, Mermaid, and other programming languages).
 > 2. **Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0):** Applies to all non-code content, including text, explanations, diagrams, and illustrations.
@@ -40,7 +40,7 @@ source: https://github.com/Orange-Cyberdefense/arsenal
 </details>
 
 
-----
+-----
 
 ```mermaid
 ---
@@ -75,7 +75,11 @@ config:
   }
 }%%
 flowchart TD
-    User["User"]:::external
+
+    User@{ img: "https://raw.githubusercontent.com/CongLeSolutionX/CongLeSolutionX/refs/heads/main/assets/images/My-meme-questions-magnifying-glass-tangled-lines-bubble-thought-cyber-theme.png", label: "User", pos: "b", w: 200, h: 150, constraint: "on" }
+    
+    User:::external
+
     subgraph Core_Modules["Core Modules"]
     style Core_Modules fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
         CLI["CLI Parser"]:::core
