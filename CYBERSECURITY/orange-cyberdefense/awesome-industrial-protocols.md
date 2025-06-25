@@ -77,7 +77,6 @@ config:
 flowchart TD
     subgraph Content_Data_Layer["Content/Data Layer"]
     style Content_Data_Layer fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
-        style DataLayer fill:none,stroke:none
         Links((db/links.json)):::data
         Packets((db/packets.json)):::data
         ProtocolsManifest((db/protocols.json)):::data
@@ -90,21 +89,18 @@ flowchart TD
 
     subgraph Build_Generation_Layer["Build/Generation Layer"]
     style Build_Generation_Layer fill:#22F2,stroke:#333,stroke-width:1px, color: #FFFF
-        style BuildLayer fill:none,stroke:none
         GitHubRepo["GitHub Repository"]:::repo
-        CI["GitHub Actions (CI/CD)"]:::process
+        CI["GitHub Actions<br/>(CI/CD)"]:::process
         Generator["site-generator.js"]:::process
     end
 
     subgraph Hosting_Delivery_Layer["Hosting/Delivery Layer"]
     style Hosting_Delivery_Layer fill:#22FF,stroke:#333,stroke-width:1px, color: #FFFF
-        style HostLayer fill:none,stroke:none
         Pages("GitHub Pages"):::host
     end
 
     subgraph Client_User_Layer["Client/User Layer"]
     style Client_User_Layer fill:#44BB,stroke:#333,stroke-width:1px, color: #FFFF
-        style ClientLayer fill:none,stroke:none
         Browser["Web Browser"]:::client
     end
 
@@ -138,7 +134,7 @@ flowchart TD
     %% Styles
     classDef data fill:#0d47a1,stroke:#1e88e5
     classDef process fill:#1b5e20,stroke:#2e7d32
-    classDef host fill:#e65100,stroke:#ef6c00
+    classDef host fill:#51B5,stroke:#ef6c00
     classDef client fill:#263238,stroke:#616161
     classDef repo fill:#4a148c,stroke:#6a1b9a
 
