@@ -32,7 +32,7 @@ source: https://github.com/Orange-Cyberdefense/grepmarx
 >
 > This document contains my personal notes on the topic,
 > compiled from publicly available documentation and various cited sources.
-> The materials are intended for educational purposes (<ins>sometimes, entertainment purposes</ins>), personal study, and reference.
+> The materials are intended for 👨‍🎓 <ins>educational purposes</ins> 👨‍🎓 (<ins>:trollface:sometimes, entertainment purposes:trollface:</ins>), 📖 <ins> personal study </ins> 📖, and 🔖 <ins> reference </ins> 🔖.
 > The content is dual-licensed:
 > 1. **MIT License:** Applies to all code implementations (Swift, Mermaid, and other programming languages).
 > 2. **Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0):** Applies to all non-code content, including text, explanations, diagrams, and illustrations.
@@ -40,7 +40,7 @@ source: https://github.com/Orange-Cyberdefense/grepmarx
 </details>
 
 
-----
+---
 
 ```mermaid
 ---
@@ -75,9 +75,9 @@ config:
   }
 }%%
 flowchart TB
-    %% Client Layer
-    subgraph "Client (Browser)" 
-        direction TB
+    subgraph Client_Layer["Client Layer (Browser)"]
+    style Client_Layer fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
+    direction TB
         StaticAssets["Static Assets"]:::frontend
         Templates["Templates"]:::frontend
     end
@@ -85,29 +85,30 @@ flowchart TB
     %% Edge Layer
     NGINX["NGINX Reverse Proxy"]:::server
 
-    %% Web Server
-    subgraph "Web Server"
-        direction TB
+    subgraph Web_Server["Web Server"]
+    style Web_Server fill:#FBF2,stroke:#333,stroke-width:1px, color: #FFFF
+    direction TB
         Gunicorn["Gunicorn WSGI"]:::server
-        Procfile["Procfile"]:::server
-        Entrypoint["entrypoint.sh"]:::server
-        Dockerfile["Dockerfile"]:::server
-        Runtime["runtime.txt"]:::server
-        GunicornCfg["gunicorn-cfg.py"]:::server
-        Supervisor["supervisord.conf"]:::server
-        SupervisorDocker["supervisord-docker.conf"]:::server
+        Procfile["<b>Procfile</b>"]:::server
+        Entrypoint["<b>entrypoint.sh</b>"]:::server
+        Dockerfile["<b>Dockerfile</b>"]:::server
+        Runtime["<b>runtime.txt</b>"]:::server
+        GunicornCfg["<b>gunicorn-cfg.py</b>"]:::server
+        Supervisor["<b>supervisord.conf</b>"]:::server
+        SupervisorDocker["<b>supervisord-docker.conf</b>"]:::server
     end
 
-    %% Application Layer
-    subgraph "Flask Application" 
-        direction TB
-        CoreRun["run.py"]:::server
-        Init["__init__.py"]:::server
-        Config["config.py"]:::server
-        Constants["constants.py"]:::server
+    subgraph Flask_Application["Flask Application Layer"]
+    style Flask_Application fill:#2BF2,stroke:#333,stroke-width:1px, color: #FFFF
+    direction TB
+        CoreRun["<b>run.py</b>"]:::server
+        Init["<b>__init__.py</b>"]:::server
+        Config["<b>config.py</b>"]:::server
+        Constants["<b>constants.py</b>"]:::server
 
-        subgraph "Blueprints"
-            direction TB
+        subgraph Blueprints["Blueprints"]
+        style Blueprints fill:#2BB2,stroke:#333,stroke-width:1px, color: #FFFF
+        direction TB
             BaseBP["Base"]:::server
             AdminBP["Administration"]:::server
             AnalysisBP["Analysis"]:::server
@@ -117,57 +118,60 @@ flowchart TB
     end
 
     %% Data Stores
-    subgraph "Database & Migrations"
-        direction TB
+    subgraph Database_and_Migrations["Database & Migrations"]
+    style Database_and_Migrations fill:#BBF5,stroke:#333,stroke-width:1px, color: #FFFF
+    direction TB
         DB["Relational Database"]:::datastore
         MigrationsDir["migrations"]:::datastore
-        AlembicIni["alembic.ini"]:::datastore
+        AlembicIni["<b>alembic.ini</b>"]:::datastore
         Versions["versions"]:::datastore
     end
 
-    subgraph "Task Queue & Worker"
-        direction TB
-        Redis["Redis (Broker)"]:::datastore
+    subgraph Task_Queue_and_Worker["Task Queue & Worker"]
+    style Task_Queue_and_Worker fill:#B2F5,stroke:#333,stroke-width:1px, color: #FFFF
+    direction TB
+        Redis["Redis<br/>(Broker)"]:::datastore
         Celery["Celery Worker"]:::server
     end
 
     %% Third-Party Tools
-    subgraph "Third-Party Analysis Engines"
-        direction TB
+    subgraph Third_Party_Analysis_Engines["Third-Party Analysis Engines"]
+    style Third_Party_Analysis_Engines fill:#FBF5,stroke:#333,stroke-width:1px, color: #FFFF
+    direction TB
         AppInspector["Application Inspector"]:::external
-        SCC["SCC (LOC Counter)"]:::external
+        SCC["SCC<br/>(LOC Counter)"]:::external
     end
 
     %% Artifact Storage
-    Storage["Scan Outputs (media/)"]:::datastore
+    Storage["Scan Outputs<br/>(<b>media/</b>)"]:::datastore
 
     %% Deployment Orchestration
-    DockerCompose["docker-compose.yml"]:::server
+    DockerCompose["<b>docker-compose.yml</b>"]:::server
 
     %% Connections
-    StaticAssets -->|"Serves UI"| NGINX
-    Templates -->|"Serves UI"| NGINX
+    StaticAssets -->|"serves UI"| NGINX
+    Templates -->|"serves UI"| NGINX
     NGINX -->|"HTTP"| Gunicorn
     Gunicorn -->|"WSGI"| CoreRun
-    CoreRun -->|"Loads"| Init
-    CoreRun -->|"Loads"| Config
-    CoreRun -->|"Loads"| Constants
+    CoreRun -->|"loads"| Init
+    CoreRun -->|"loads"| Config
+    CoreRun -->|"loads"| Constants
 
-    CoreRun -->|"Controller Calls"| BaseBP
-    CoreRun -->|"Controller Calls"| AdminBP
-    CoreRun -->|"Controller Calls"| AnalysisBP
-    CoreRun -->|"Controller Calls"| ProjectsBP
-    CoreRun -->|"Controller Calls"| RulesBP
+    CoreRun -->|"Controller calls"| BaseBP
+    CoreRun -->|"Controller calls"| AdminBP
+    CoreRun -->|"Controller calls"| AnalysisBP
+    CoreRun -->|"Controller calls"| ProjectsBP
+    CoreRun -->|"Controller calls"| RulesBP
 
-    AnalysisBP -->|"Enqueue Task (AMQP/Redis)"| Redis
-    Redis -->|"Pull Task"| Celery
-    Celery -->|"CLI Call"| AppInspector
-    Celery -->|"CLI Call"| SCC
-    Celery -->|"Store Results (SQL)"| DB
-    Celery -->|"Store Files"| Storage
+    AnalysisBP -->|"enqueue task<br/>(AMQP/Redis)"| Redis
+    Redis -->|"pull task"| Celery
+    Celery -->|"CLI call"| AppInspector
+    Celery -->|"CLI call"| SCC
+    Celery -->|"store results<br/>(SQL)"| DB
+    Celery -->|"store files"| Storage
 
-    CoreRun -->|"Query/Write (SQL)"| DB
-    CoreRun -->|"Read Results"| DB
+    CoreRun -->|"query/write<br/>(SQL)"| DB
+    CoreRun -->|"read results"| DB
 
     DockerCompose --> NGINX
     DockerCompose --> Gunicorn
@@ -205,10 +209,10 @@ flowchart TB
     click DockerCompose "https://github.com/orange-cyberdefense/grepmarx/blob/main/docker-compose.yml"
 
     %% Styles
-    classDef frontend fill:#ADD8E6,stroke:#333,stroke-width:1px
-    classDef server fill:#90EE90,stroke:#333,stroke-width:1px
-    classDef datastore fill:#F4A460,stroke:#333,stroke-width:1px
-    classDef external fill:#D3D3D3,stroke:#333,stroke-width:1px
+    classDef frontend fill:#A2A6,stroke:#333,stroke-width:1px
+    classDef server fill:#9E92,stroke:#333,stroke-width:1px
+    classDef datastore fill:#F462,stroke:#333,stroke-width:1px
+    classDef external fill:#D3B3,stroke:#333,stroke-width:1px
 
 ```
 
