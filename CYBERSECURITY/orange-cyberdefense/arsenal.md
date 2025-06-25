@@ -76,7 +76,8 @@ config:
 }%%
 flowchart TD
     User["User"]:::external
-    subgraph "Core Modules"
+    subgraph Core_Modules["Core Modules"]
+    style Core_Modules fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
         CLI["CLI Parser"]:::core
         Config["Config Manager"]:::core
         Loader["Cheat Loader"]:::core
@@ -84,16 +85,19 @@ flowchart TD
         Builder["Command Builder"]:::core
         Injector["Injection Engine"]:::core
     end
-    subgraph "Data Sources"
+    subgraph Data_Sources["Data Sources"]
+    style Data_Sources fill:#F335,stroke:#333,stroke-width:1px, color: #FFFF
         FileSystem[(Cheats File System)]:::data
         MyCheats[(my_cheats)]:::data
     end
-    subgraph "External Tools"
+    subgraph External_Tools["External Tools"]
+    style External_Tools fill:#F3B5,stroke:#333,stroke-width:1px, color: #FFFF
         FZF["fzf"]:::external
         Tmux["tmux"]:::external
     end
     Shell["Shell/Tmux"]:::external
-    subgraph "Entry & Packaging"
+    subgraph Entry_and_Packaging["Entry & Packaging"]
+    style Entry_and_Packaging fill:#3BB5,stroke:#333,stroke-width:1px, color: #FFFF
         run("run"):::packaging
         setup("setup.py"):::packaging
         pyproject("pyproject.toml"):::packaging
@@ -132,10 +136,10 @@ flowchart TD
     click PKGBUILD "https://github.com/orange-cyberdefense/arsenal/tree/master/PKGBUILD"
     click CI "https://github.com/orange-cyberdefense/arsenal/blob/master/.github/workflows/lint_python.yml"
 
-    classDef core fill:#ADD8E6,stroke:#000
-    classDef external fill:#98FB98,stroke:#000
-    classDef data fill:#FFA500,stroke:#000
-    classDef packaging fill:#D8BFD8,stroke:#000
+    classDef core fill:#A2E6,stroke:#000
+    classDef external fill:#F28B,stroke:#000
+    classDef data fill:#FA52,stroke:#000
+    classDef packaging fill:#D3D8,stroke:#000
 
 ```
 
