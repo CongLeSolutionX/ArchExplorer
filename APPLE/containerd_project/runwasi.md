@@ -11,7 +11,7 @@ source: https://github.com/containerd/runwasi
   <p>⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷</p>
   <i>This is a working draft in progress.</i>
   <br/>
-  <img alt="Loading…" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHJ4YXdtYjJpMDl0MzEwYmU4ZzBobG0waGNiN3MzNzR0d2R2NnMwNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26gssNOlBJKjEM3yo/giphy.gif"/>
+  <img alt="Loading…" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHJzMDhqNWl4ZHhocXIzOHpham44NXJ1cXB4dWtvOWZ3OXZyd2JtMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/d688ZL279Z4GB4mdj6/giphy.gif"/>
   <br/>
   <blockquote>
 	  <i>gif image is provided by <a href="https://giphy.com">Giphy</a></i>
