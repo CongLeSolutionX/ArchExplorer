@@ -4,14 +4,14 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
+source: https://github.com/apple/pkl
 ---
-
 
 > ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmkyeTh4c3podTM1M21pbW12dmdyYXZwaDBidW52MWh4Z25pOTE4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xp6n2H229mIb6/giphy.gif)
+> ![Loading...](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTZ6OHF4bjJka2I4Z3QzbWlpNTU1cWkwbTc4YmdkYjk4ZjVhc2xsciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/imjTC8KaAB1HW/giphy.gif)
 > 
 > gif image is provided by [Giphy](https://giphy.com)
 > 
@@ -20,7 +20,7 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 ----
 
 
-# ml-stable-diffusion
+# pkl
 > **Disclaimer:**
 >
 > This document contains my personal notes on the topic,
@@ -36,9 +36,11 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 
 
+
+
 ```mermaid
 ---
-title: "Apple - ML Stable Diffusion"
+title: "Apple - pkl"
 author: "Cong Le"
 version: "1.0"
 license(s): "MIT, CC BY 4.0"
@@ -54,7 +56,7 @@ config:
 %% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
 %%{
   init: {
-    "flowchart": {"htmlLabels": true, 'curve': 'natural'},
+    "graph": {"htmlLabels": true, 'curve': 'natural'},
     'fontFamily': 'Fantasy',
     'themeVariables': {
       'primaryColor': '#f231',
@@ -67,49 +69,80 @@ config:
   }
 }%%
 flowchart TD
-    A["PyTorch Model Source"]:::external
-    B["Python Conversion & Optimization<br>(torch2coreml, activation_quantization, mixed_bit_compression, ControlNet)"]:::conversion
-    C["Core ML Model Assets & Resources"]:::asset
+    %% External Nodes
+    U["User Input"]:::external
+    Gs["Gradle Build<br>(buildSrc & Config)"]:::external
 
-    subgraph Swift_Inference_Integration["Swift Inference / Integration"]
-        D1["Swift Package"]:::swift
-        D2["Tokenizer"]:::swift
-        D3["CLI"]:::swift
-        D4["Test Modules"]:::swift
+    %% Core Language Processing Layer
+    subgraph Core_Language_Processing["Core Language Processing"]
+        A["Core Engine<br>(Parser,AST,Evaluator,ModuleResolver)"]:::core
+        B["Standard Library<br>(JSON,YAML,XML,etc.)"]:::core
     end
 
-    subgraph Python_Inference_Pipeline["Python Inference Pipeline"]
-        E1["Diffusers-like Interface"]:::python
-        E2["Pipeline Module"]:::python
+    %% Interfaces Layer
+    subgraph Interfaces["Interfaces"]
+        C["CLI<br>(Interactive/Scriptable)"]:::interface
+        D["Executor<br>(Remote/Embedded)"]:::interface
+        E["Server<br>(Execution Service)"]:::interface
+        F["Build Integration<br>(Gradle Plugin)"]:::interface
     end
 
-    A -->|"downloads+transforms"| B
-    B -->|"outputs"| C
-    C -->|"loaded by"| D1
-    C -->|"loaded by"| D2
-    C -->|"loaded by"| D3
-    C -->|"loaded by"| D4
-    C -->|"loaded by"| E1
-    C -->|"loaded by"| E2
-    D1 -->|"feedback"| B
-    E1 -->|"feedback"| B
+    %% Tooling Layer
+    subgraph Tooling["Tooling"]
+        G["Java Code Generation"]:::tooling
+        H["Kotlin Code Generation"]:::tooling
+        I["Commons CLI Support"]:::tooling
+        J["Documentation Generator"]:::tooling
+        K["Additional Tools & Plugins"]:::tooling
+    end
 
-    click B "https://github.com/apple/ml-stable-diffusion/tree/main/python_coreml_stable_diffusion"
-    click C "https://github.com/apple/ml-stable-diffusion/tree/main/assets"
-    click D1 "https://github.com/apple/ml-stable-diffusion/tree/main/swift/StableDiffusion"
-    click D3 "https://github.com/apple/ml-stable-diffusion/tree/main/swift/StableDiffusionCLI"
-    click E1 "https://github.com/apple/ml-stable-diffusion/tree/main/tests"
-    click E2 "https://github.com/apple/ml-stable-diffusion/blob/main/python_coreml_stable_diffusion/pipeline.py"
+    %% Data Flows & Relationships
+    U -->|"triggers"| C
+    U -->|"triggers"| F
 
-    classDef external fill:#F464,stroke:#000,stroke-width:2px
-    classDef conversion fill:#ADE3,stroke:#000,stroke-width:2px
-    classDef asset fill:#D3D3,stroke:#000,stroke-width:2px
-    classDef swift fill:#9E92,stroke:#000,stroke-width:2px
-    classDef python fill:#FDB2,stroke:#000,stroke-width:2px
+    Gs -->|"configures"| A
+    Gs -->|"configures"| C
+    Gs -->|"configures"| F
+    Gs -->|"configures"| G
+    Gs -->|"configures"| H
+    Gs -->|"configures"| I
+    Gs -->|"configures"| J
+
+    C -->|"invokes"| A
+    F -->|"invokes"| A
+
+    A -->|"imports"| B
+
+    A -->|"executes"| D
+    A -->|"executes"| E
+
+    A -->|"generates"| G
+    A -->|"generates"| H
+    A -->|"supports"| I
+    A -->|"provides info"| J
+
+    A -->|"integrates with"| K
+
+    %% Click Events
+    click A "https://github.com/apple/pkl/tree/main/pkl-core"
+    click B "https://github.com/apple/pkl/tree/main/stdlib"
+    click C "https://github.com/apple/pkl/tree/main/pkl-cli"
+    click D "https://github.com/apple/pkl/tree/main/pkl-executor"
+    click E "https://github.com/apple/pkl/tree/main/pkl-server"
+    click F "https://github.com/apple/pkl/tree/main/pkl-gradle"
+    click G "https://github.com/apple/pkl/tree/main/pkl-codegen-java"
+    click H "https://github.com/apple/pkl/tree/main/pkl-codegen-kotlin"
+    click I "https://github.com/apple/pkl/tree/main/pkl-commons-cli"
+    click J "https://github.com/apple/pkl/tree/main/pkl-doc"
+    click K "https://github.com/apple/pkl/tree/main/pkl-tools"
+
+    %% Styles
+    classDef core fill:#f8d7d,stroke:#721c24,stroke-width:2px
+    classDef interface fill:#d4edd,stroke:#155724,stroke-width:2px
+    classDef tooling fill:#d1ecf,stroke:#0c5460,stroke-width:2px
+    classDef external fill:#fff3c,stroke:#856404,stroke-width:2px
     
 ```
-
-
 
 
 
@@ -163,6 +196,7 @@ flowchart LR
   animatingEdge@{ animate: true }
 
 ```
+
 
 
 
