@@ -11,7 +11,7 @@ source: https://github.com/apple/swift-nio-transport-services
   <p>⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷</p>
   <i>This is a working draft in progress.</i>
   <br/>
-  <img alt="Loading…" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHJ4YXdtYjJpMDl0MzEwYmU4ZzBobG0waGNiN3MzNzR0d2R2NnMwNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26gssNOlBJKjEM3yo/giphy.gif"/>
+  <img alt="Loading…" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExOW1rZGIzeGEzcjZmY2Iwa2hycWx2NWo1bHUyNGNtcDhsNjUxNThybSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UQ25FULQkgfwALbzpR/giphy.gif"/>
   <br/>
   <blockquote>
 	  <i>gif image is provided by <a href="https://giphy.com">Giphy</a></i>
