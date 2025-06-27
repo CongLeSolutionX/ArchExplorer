@@ -42,14 +42,6 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 ----
 
-<div align="center">
-	<img alt="Loading…" src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTc3ZG5tY3QybHBoN3RkbXFob2ZsaXV2cnp0NWJ2dXBqMDI2eHY0Mmt6ZyZlcD12MV9pbnRlcm5hbF_naWZfYnlfaWQmY3Q9Zw/TkVpDkJY4E5z2/giphy.gif"/>
-	<br/>
-	<em>Use knowledge wisely. gif image is provided by <a href="https://giphy.com">Giphy</a></em>
-</div>
-
-----
-
 ```mermaid
 ---
 title: "❓...CongLeSolutionX....❓"
