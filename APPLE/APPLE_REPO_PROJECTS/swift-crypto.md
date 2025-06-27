@@ -148,7 +148,7 @@ flowchart TB
     %% Styles
     classDef swift fill:#004085,stroke:#004085
     classDef c fill:#155724,stroke:#155724
-    classDef tools fill:#6c757d,stroke:#6c757d
+    classDef tools fill:#757d,stroke:#6c757d
     classDef external fill:#856404,stroke:#856404
 
 ```
