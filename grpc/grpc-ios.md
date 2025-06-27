@@ -12,7 +12,7 @@ source: https://github.com/grpc/grpc-ios
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdm14Y3Q5bHhubmc4dmw5azZwcmtxZzNjY216ZWNxcG5lZnRzcnd3byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l378vVT5oFEzn93fa/giphy.gif)
+> ![Loading...](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjlyZHRwYWR4dHFxeW14dHVyemVmcjFwNmhnbXJxcnowdDByZXg5NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jsqbq7Qd7i1ochcVef/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
