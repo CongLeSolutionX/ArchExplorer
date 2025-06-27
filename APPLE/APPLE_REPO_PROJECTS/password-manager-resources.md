@@ -11,7 +11,7 @@ source: https://github.com/apple/password-manager-resources
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTZ6OHF4bjJka2I4Z3QzbWlpNTU1cWkwbTc4YmdkYjk4ZjVhc2xsciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/imjTC8KaAB1HW/giphy.gif)
+> ![Loading...](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmoxd2hnZnd1b2g2bGFqcmUwYzVlOHRhNHczdGN1ZXlqN3Zlc3AyZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/bKj0qEKTVBdF2o5Dgn/giphy.gif)
 > 
 > gif image is provided by [Giphy](https://giphy.com)
 > 
