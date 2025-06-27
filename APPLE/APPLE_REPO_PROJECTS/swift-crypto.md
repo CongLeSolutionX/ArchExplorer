@@ -73,33 +73,33 @@ config:
 flowchart TB
     subgraph Build_System["Build System"]
     style Build_System fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
-        SwiftPM["Swift Package Manager<br/>(Package.swift)"]:::tools
-        CMakeTop["CMake Top-Level<br/>(CMakeLists.txt)"]:::tools
-        CMakeSub["CMake for CCryptoBoringSSL<br/>(Sources/CCryptoBoringSSL/CMakeLists.txt)"]:::tools
-        GyBTemplates["GyB Templates<br/>(Sources/Crypto/*.gyb)"]:::tools
-        GyBScripts["GyB Scripts<br/>(scripts/gyb.py<br/>scripts/generate_boilerplate_files_with_gyb.sh)"]:::tools
+        SwiftPM["Swift Package Manager<br/>(<b>Package.swift</b>)"]:::tools
+        CMakeTop["CMake Top-Level<br/>(<b>CMakeLists.txt</b>)"]:::tools
+        CMakeSub["CMake for CCryptoBoringSSL<br/>(<b>Sources/CCryptoBoringSSL/CMakeLists.txt</b>)"]:::tools
+        GyBTemplates["GyB Templates<br/>(<b>Sources/Crypto/*.gyb</b>)"]:::tools
+        GyBScripts["GyB Scripts<br/>(<b>scripts/gyb.py</b><br/><b>scripts/generate_boilerplate_files_with_gyb.sh</b>)"]:::tools
     end
 
     subgraph Source_Layers["Source Layers"]
     style Source_Layers fill:#22F2,stroke:#333,stroke-width:1px, color: #FFFF
-        PublicAPI["Crypto Module<br/>(Sources/Crypto)"]:::swift
-        AppleBackend["CryptoKit Re-Export<br/>(Sources/Crypto/CryptoKitErrors.swift)"]:::external
+        PublicAPI["Crypto Module<br/>(<b>Sources/Crypto</b>)"]:::swift
+        AppleBackend["CryptoKit Re-Export<br/>(<b>Sources/Crypto/CryptoKitErrors.swift</b>)"]:::external
         subgraph Linux_Backend["Linux Backend"]
         style Linux_Backend fill:#FFB2,stroke:#333,stroke-width:1px, color: #FFFF
-            SwiftWrappers["Swift Wrappers<br/>(Sources/Crypto/.../BoringSSL/AES-GCM_boring.swift)"]:::swift
-            CCryptoShims["CCryptoBoringSSL Shims<br/>(Sources/CCryptoBoringSSLShims)"]:::c
-            VendoredBoringSSL["Vendored BoringSSL C/C++<br/>(Sources/CCryptoBoringSSL)"]:::c
+            SwiftWrappers["Swift Wrappers<br/>(<b>Sources/Crypto/.../BoringSSL/AES-GCM_boring.swift</b>)"]:::swift
+            CCryptoShims["CCryptoBoringSSL Shims<br/>(<b>Sources/CCryptoBoringSSLShims</b>)"]:::c
+            VendoredBoringSSL["Vendored BoringSSL C/C++<br/>(<b>Sources/CCryptoBoringSSL</b>)"]:::c
         end
-        CryptoBoringWrapper["CryptoBoringWrapper<br/>(Sources/CryptoBoringWrapper)"]:::swift
-        CryptoExtras["_CryptoExtras<br/>(Sources/_CryptoExtras)"]:::swift
+        CryptoBoringWrapper["CryptoBoringWrapper<br/>(<b>Sources/CryptoBoringWrapper</b>)"]:::swift
+        CryptoExtras["_CryptoExtras<br/>(<b>Sources/_CryptoExtras</b>)"]:::swift
     end
 
     %% Tests & CI
     subgraph Quality_and_CI["Quality & CI"]
     style Quality_and_CI fill:#FB21,stroke:#333,stroke-width:1px, color: #FFFF
-        Tests["Tests<br/>(Tests/**)"]:::tools
-        Benchmarks["Benchmarks<br/>(Benchmarks/**)"]:::tools
-        CI["CI Workflows<br/>(.github/workflows/*.yml)"]:::tools
+        Tests["Tests<br/>(<b>Tests/**</b>)"]:::tools
+        Benchmarks["Benchmarks<br/>(<b>Benchmarks/**</b>)"]:::tools
+        CI["CI Workflows<br/>(<b>.github/workflows/*.yml</b>)"]:::tools
     end
 
     %% Build-time Flow
