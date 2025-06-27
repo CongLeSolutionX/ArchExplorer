@@ -12,7 +12,7 @@ source: https://github.com/grpc/psm-interop
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXVjejV3dnVjc2o5MXd3eXBvcDR1cHlzbHQ1Z2R6YjY0ZHpmdjJ6OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hL9q5k9dk9l0wGd4e0/giphy.gif)
+> ![Loading...](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2dyNWNxMWc5dDJzbWNiY2RyMzV6MXVmdWM0ZDF3d3QwNGMyc2NsOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jSDRVBcoaBqTCfr6ZX/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
