@@ -3,7 +3,8 @@ created: 2025-06-26 05:31:26
 author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
-copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
+copyright: Copyright © 2025 Cong Le. All Rights Reserved.
+source:
 ---
 
 <div align="center">
@@ -61,7 +62,7 @@ config:
       'primaryColor': '#fc82',
       'primaryTextColor': '#F8B229',
       'primaryBorderColor': '#27AE60',
-      'secondaryColor': '#559129',
+      'secondaryColor': '#81c784',
       'secondaryTextColor': '#6C3483',
       'lineColor': '#F8B229',
       'fontSize': '20px'
