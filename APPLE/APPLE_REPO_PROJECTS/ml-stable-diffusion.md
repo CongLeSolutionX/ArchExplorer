@@ -12,7 +12,7 @@ source: https://github.com/apple/ml-stable-diffusion
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmkyeTh4c3podTM1M21pbW12dmdyYXZwaDBidW52MWh4Z25pOTE4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xp6n2H229mIb6/giphy.gif)
+> ![Loading...](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmd1NTA2dWxnNmZuNWxxeWs3MnZzeGVsNG5icWQ1YzZwYng4ZmVzNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sG9gPr1gJU3FS/giphy.gif)
 > 
 > gif image is provided by [Giphy](https://giphy.com)
 > 
