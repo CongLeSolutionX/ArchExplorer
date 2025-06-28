@@ -219,7 +219,7 @@ flowchart LR
 
     %% Styles
     classDef user fill:#fc82,stroke:#222
-    classDef core fill:#0b5394,stroke:#0b5394
+    classDef core fill:#324,stroke:#0b5394
     classDef external fill:#d35400,stroke:#d35400
     classDef aux fill:#8e44ad,stroke:#8e44ad
 
