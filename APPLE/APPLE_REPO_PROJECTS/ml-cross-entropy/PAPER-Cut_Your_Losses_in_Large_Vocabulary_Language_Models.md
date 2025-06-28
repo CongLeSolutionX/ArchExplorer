@@ -11,7 +11,7 @@ source: https://arxiv.org/abs/2411.09009
 > 
 > This is an ongoing document collecting notes for personal educational purposes and references. 
 > 
-> ![Loading...](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHJ4YXdtYjJpMDl0MzEwYmU4ZzBobG0waGNiN3MzNzR0d2R2NnMwNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26gssNOlBJKjEM3yo/giphy.gif)
+> ![Loading...](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2lkdHo5bThtd2o0eDRsNHVhMXFrZDRiMWF6eTJrNnN4OWxhN2pteiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3ohhwqrNt7rd9yuj7O/giphy.gif)
 > 
 > gif image is provided by [Giphy](https://giphy.com)
 > 
