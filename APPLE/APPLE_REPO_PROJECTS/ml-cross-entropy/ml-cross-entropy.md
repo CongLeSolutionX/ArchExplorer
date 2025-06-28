@@ -11,7 +11,7 @@ source: https://github.com/apple/ml-cross-entropy
 > 
 > This is an ongoing document collecting notes for personal educational purposes and references. 
 > 
-> ![Loading...](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHJ4YXdtYjJpMDl0MzEwYmU4ZzBobG0waGNiN3MzNzR0d2R2NnMwNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26gssNOlBJKjEM3yo/giphy.gif)
+> ![Loading...](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmJqb3lpOTFlNjVnb3N1aGhmcTR1Y3JybHdqcjZ6Z3AzZHUwYjAyaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7btObApReFdPILwk/giphy.gif)
 > 
 > gif image is provided by [Giphy](https://giphy.com)
 > 
@@ -49,20 +49,21 @@ copyright: "Copyright © 2025 Cong Le. All Rights Reserved."
 config:
   layout: elk
   theme: base
+  look: handDrawn
 ---
 %%%%%%%% Mermaid version v11.4.1-b.14
 %%%%%%%% Available curve styles include the following keywords:
 %% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
 %%{
   init: {
-    'flowchart': { 'htmlLabels': true, 'curve': 'linear'},
+    'flowchart': { 'htmlLabels': true, 'curve': 'monotoneX'},
     'fontFamily': 'Monaco',
     'themeVariables': {
       'primaryColor': '#22BB',
       'primaryTextColor': '#F8B229',
       'lineColor': '#F8B229',
       'primaryBorderColor': '#27AE60',
-      'secondaryColor': '#EEF2',
+      'secondaryColor': '#3483',
       'secondaryTextColor': '#6C3483',
       'secondaryBorderColor': '#A569BD',
       'fontSize': '15px'
@@ -71,78 +72,85 @@ config:
 }%%
 flowchart LR
     %% User Application Layer
-    subgraph "User Application Layer"
-        direction TB
-        Scripts["scripts/train.sh"]:::user
-        Training["training/train.py"]:::user
-        Benchmark["benchmark/__main__.py"]:::user
+    subgraph User_Application_Layer["User Application Layer"]
+    style User_Application_Layer fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
+    direction TB
+        Scripts["<b>scripts/train.sh</b>"]:::user
+        Training["<b>training/train.py</b>"]:::user
+        Benchmark["<b>benchmark/__main__.py</b>"]:::user
         CustomLoop["Custom PyTorch Loop"]:::user
         TransformersClient["Transformers Training API"]:::user
     end
 
     %% CCE Library Core
-    subgraph "CCE Library Core"
+    subgraph CCE_Library_Core["CCE Library Core"]
+    style CCE_Library_Core fill:#22F2,stroke:#333,stroke-width:1px, color: #FFFF
+    direction TB
+        CoreAPI["<b>cce.py</b> <br/>(Core API)"]:::core
+        Dispatcher["<b>torch_compile.py</b> <br/>(Implementation Dispatcher)"]:::core
+
+        subgraph Forward_Kernels["Forward Kernels"]
+        style Forward_Kernels fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
         direction TB
-        CoreAPI["cce.py (Core API)"]:::core
-        Dispatcher["torch_compile.py (Implementation Dispatcher)"]:::core
-
-        subgraph "Forward Kernels"
-            direction TB
-            LSEForward["cce_lse_forward.py"]:::core
-            LinearCE["linear_cross_entropy.py"]:::core
-            IndexedDot["indexed_dot.py"]:::core
+            LSEForward["<b>cce_lse_forward.py</b>"]:::core
+            LinearCE["<b>linear_cross_entropy.py</b>"]:::core
+            IndexedDot["<b>indexed_dot.py</b>"]:::core
         end
 
-        Backward["cce_backward.py"]:::core
+        Backward["<b>cce_backward.py</b>"]:::core
 
-        subgraph "Constants & Utilities"
-            direction TB
-            Constants["constants.py"]:::core
-            CCEUtils["cce_utils.py"]:::core
-            Utils["utils.py"]:::core
+        subgraph Constants_and_Utilities["Constants & Utilities"]
+        style Constants_and_Utilities fill:#2BB5,stroke:#333,stroke-width:1px, color: #FFFF
+        direction TB
+            Constants["<b>constants.py</b>"]:::core
+            CCEUtils["<b>cce_utils.py</b>"]:::core
+            Utils["<b>utils.py</b>"]:::core
         end
 
-        subgraph "Autotuning & Triton Helpers"
-            direction TB
-            Autotune["tl_autotune.py"]:::core
-            TLUtils["tl_utils.py"]:::core
+        subgraph Autotuning_and_Triton_Helpers["Autotuning & Triton Helpers"]
+        style Autotuning_and_Triton_Helpers fill:#B2B5,stroke:#333,stroke-width:1px, color: #FFFF
+        direction TB
+            Autotune["<b>tl_autotune.py</b>"]:::core
+            TLUtils["<b>tl_utils.py</b>"]:::core
         end
     end
 
-    %% Integration Layer
-    subgraph "Integration Layer"
+    subgraph Integration_Layer["Integration Layer"]
+    style Integration_Layer fill:#115,stroke:#333,stroke-width:1px, color: #FFFF
+    direction TB
+        subgraph Transformers_Adapters["Transformers Adapters"]
+        style Transformers_Adapters fill:#B225,stroke:#333,stroke-width:1px, color: #FFFF
         direction TB
-        subgraph "Transformers Adapters"
-            direction TB
-            Patch["patch.py"]:::core
-            LlamaAdapter["llama.py"]:::core
-            MistralAdapter["mistral.py"]:::core
-            Gemma2Adapter["gemma2.py"]:::core
-            Phi3Adapter["phi3.py"]:::core
-            Qwen2Adapter["qwen2.py"]:::core
-            TFUtils["utils.py"]:::core
+            Patch["<b>patch.py</b>"]:::core
+            LlamaAdapter["<b>llama.py</b>"]:::core
+            MistralAdapter["<b>mistral.py</b>"]:::core
+            Gemma2Adapter["<b>gemma2.py</b>"]:::core
+            Phi3Adapter["<b>phi3.py</b>"]:::core
+            Qwen2Adapter["<b>qwen2.py</b>"]:::core
+            TFUtils["<b>utils.py</b>"]:::core
         end
-        subgraph "Vocabulary Parallelism"
-            direction TB
-            VPUtils["utils.py (vocab_parallel)"]:::core
-            VPTorchCompile["vocab_parallel_torch_compile.py"]:::core
+        subgraph Vocabulary_Parallelism["Vocabulary Parallelism"]
+        style Vocabulary_Parallelism fill:#BB15,stroke:#333,stroke-width:1px, color: #FFFF
+        direction TB
+            VPUtils["<b>utils.py</b> <br/>(vocab_parallel)"]:::core
+            VPTorchCompile["<b>vocab_parallel_torch_compile.py</b>"]:::core
         end
     end
 
-    %% Auxiliary Modules
-    subgraph "Auxiliary Modules"
-        direction TB
-        Tests["tests/... (unit tests)"]:::aux
+    subgraph Auxiliary_Modules["Auxiliary Modules"]
+    style Auxiliary_Modules fill:#B215,stroke:#333,stroke-width:1px, color: #FFFF
+    direction TB
+        Tests["<b>tests/...</b> <br/>(unit tests)"]:::aux
     end
 
-    %% External Dependencies
-    subgraph "External Dependencies"
-        direction TB
-        PyTorch["PyTorch 2.4+"]:::external
-        Triton["Triton 3.0+"]:::external
+    subgraph External_Dependencies["External Dependencies"]
+    style External_Dependencies fill:#D195,stroke:#333,stroke-width:1px, color: #FFFF
+    direction TB
+        PyTorch["<b>PyTorch 2.4+</b>"]:::external
+        Triton["<b>Triton 3.0+</b>"]:::external
         CUDA["CUDA GPU"]:::external
-        ProcessGroup["torch.distributed ProcessGroup"]:::external
-        GPUMem["GPU Memory (flash + global)"]:::external
+        ProcessGroup["<code>torch.distributed ProcessGroup</code>"]:::external
+        GPUMem["GPU Memory <br/>(flash + global)"]:::external
     end
 
     %% Connections
@@ -158,7 +166,7 @@ flowchart LR
     Dispatcher -->|"Triton path"| LinearCE
     Dispatcher -->|"Triton path"| IndexedDot
     Dispatcher -->|"Fallback"| DispatchTorchCompile --> TLCompile["torch_compile path"]:::core
-    TLCompile -->|"compute via torch.compile"| GPUMem
+    TLCompile -->|"compute via <code>torch.compile</code>"| GPUMem
 
     LSEForward -->|"embeddings, logits"| GPUMem
     LinearCE -->|"embeddings, logits"| GPUMem
@@ -210,10 +218,10 @@ flowchart LR
     click Training "https://github.com/apple/ml-cross-entropy/blob/main/training/train.py"
 
     %% Styles
-    classDef user fill:#e0f7e9,stroke:#2d9a4e,color:#2d9a4e;
-    classDef core fill:#e1ecf4,stroke:#0b5394,color:#0b5394;
-    classDef external fill:#ffe6cc,stroke:#d35400,color:#d35400;
-    classDef aux fill:#f3e6ff,stroke:#8e44ad,color:#8e44ad;
+    classDef user fill:#fc82,stroke:#222
+    classDef core fill:#324,stroke:#0b5394
+    classDef external fill:#B215,stroke:#d35400
+    classDef aux fill:#84d,stroke:#8e44ad
 
 ```
 
