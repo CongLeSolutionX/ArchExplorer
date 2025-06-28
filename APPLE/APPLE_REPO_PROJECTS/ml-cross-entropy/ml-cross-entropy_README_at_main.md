@@ -69,6 +69,7 @@ copyright: "Copyright © 2025 Cong Le. All Rights Reserved."
 config:
   layout: elk
   theme: base
+  look: handDrawn
 ---
 %%%%%%%% Mermaid version v11.4.1-b.14
 %%%%%%%% Available curve styles include the following keywords:
@@ -92,7 +93,8 @@ config:
 }%%
 flowchart TD
     subgraph Traditional_Cross_Entropy_Workflow["Traditional Cross-Entropy Workflow"]
-        A["Embeddings<br>(B, T, D)"] --> B_MM["Matrix Multiplication<br><br><span style='font-family:monospace; font-size:1.2em;'>embeddings @ classifier.T</span>"]
+    style Traditional_Cross_Entropy_Workflow fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
+        A["Embeddings<br>(B, T, D)"] --> B_MM["Matrix Multiplication<br/><br/><span style='font-family:Bradley Hand; font-size:1.5em;'>embeddings @ classifier.T</span>"]
         W["Classifier Weights<br>(V, D)"] --> B_MM
         B_MM --> C["Logits Matrix<br>(B * T, V)<br><br><b style='color:red;'>HUGE MEMORY BOTTLENECK!</b>"]
         D["Labels<br>(B, T)"] --> E("Cross-Entropy Loss")
@@ -100,7 +102,7 @@ flowchart TD
         E --> F["Final Loss Value"]
     end
 
-    style C fill:#ffcccc,stroke:#cc0000,stroke-width:2px;
+    style C fill:#fcc2,stroke:#cc0000,stroke-width:2px;
 ```
 
 The `logits` matrix has a size of `(Batch * Sequence Length, Vocabulary Size)`. For a model like Gemma 2 (2B) with a large vocabulary, this matrix alone can take **24 GB** of precious GPU memory. This severely limits the batch sizes and sequence lengths you can use for training.
