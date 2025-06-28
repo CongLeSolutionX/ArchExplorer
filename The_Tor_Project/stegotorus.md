@@ -173,7 +173,7 @@ flowchart TD
     classDef client fill:#f2f9,stroke:#333,stroke-width:2px;
     classDef network fill:#aff1,stroke:#333,stroke-width:2px;
     classDef core fill:#fbb1,stroke:#333,stroke-width:2px;
-    classDef steg fill:#abc6,stroke:#333,stroke-width:2px;
+    classDef steg fill:#b2c6,stroke:#333,stroke-width:2px;
     classDef config fill:#dbf2,stroke:#333,stroke-width:2px;
     classDef external fill:#f7f2,stroke:#333,stroke-width:2px;
     classDef build fill:#d4d2,stroke:#333,stroke-width:2px;
