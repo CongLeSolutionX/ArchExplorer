@@ -125,6 +125,7 @@ copyright: "Copyright © 2025 Cong Le. All Rights Reserved."
 config:
   layout: elk
   theme: base
+  look: handDrawn
 ---
 %%%%%%%% Mermaid version v11.4.1-b.14
 %%%%%%%% Available curve styles include the following keywords:
@@ -147,16 +148,17 @@ config:
   }
 }%%
 flowchart TD
-    subgraph CCE Workflow
+    subgraph CCE_Workflow["CCE Workflow"]
+    style CCE_Workflow fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
     direction LR
-
-        subgraph Triton_Kernel["Triton Kernel (Inside GPU SRAM/Flash Memory)"]
-        style Triton_Kernel fill:#e6f3ff,stroke:#0066cc,stroke-width:2px;
+        subgraph Triton_Kernel["Triton Kernel<br/>(Inside GPU SRAM/Flash Memory)"]
+        style Triton_Kernel fill:#F212,stroke:#0066cc,stroke-width:2px,color: #A569BD
             A["Embeddings<br>(B, T, D)"]
             W["Classifier Weights<br>(V, D)"]
             D_Labels["Labels<br>(B, T)"]
 
             subgraph On_the_Fly_Computation["On-the-Fly Computation"]
+            style On_the_Fly_Computation fill:#2FF2,stroke:#333,stroke-width:1px, color: #27AE60
             direction TB
                 C_MM["Blocked<br>Matrix Multiply"]
                 C_LSE["LogSumExp<br>Reduction"]
@@ -173,6 +175,7 @@ flowchart TD
         end
 
         subgraph Final_Output["Final Output"]
+        style Final_Output fill:#2FF2,stroke:#333,stroke-width:1px, color: #BB2
         direction TB
             K_LSE["Final LSE Value"]
             K_TARGET["Final Target Logit"]
@@ -307,26 +310,26 @@ mindmap
   root)"**Implementation Choices**"(
     cce))"**cce**"((
       ::icon(fas fa-rocket)
-      **Best Overall Choice**
+      Best_Overall_Choice{{"**Best Overall Choice**"}}
       Triton-based kernel
       Lowest memory usage
       Often the fastest
       Requires Ampere+ GPU
     torch_compile))"**torch_compile**"((
       ::icon(fas fa-bolt)
-      **Fastest for Smaller Vocab**
-      Uses `torch.compile`
+      Fastest_for_Smaller_Vocab{{"**Fastest for Smaller Vocab**"}}
+      Uses_torch_compile["Uses <char>torch.compile</char>"]
       High memory usage
-      Good fallback for non-Triton systems (CPU, MacOS)
+      Good_fallback_for_non_Triton_systems["Good fallback for non-Triton systems<br/>(CPU, MacOS)"]
     cce_kahan))"**cce_kahan**"((
       ::icon(fas fa-calculator)
-      **High Precision**
+      High_Precision{{"**High Precision**"}}
       Uses Kahan summation
       Slightly more memory/slower
       Good for long sequences or numerically sensitive models
     cce_kahan_full_c_OR_cce_exact))"**cce_kahan_full_c** /<br/> **cce_exact**"((
       ::icon(fas fa-vial)
-      **For Debugging & Pretraining**
+      For_Debugging_and_Pretraining{{"**For Debugging & Pretraining**"}}
       Removes gradient filtering
       Slower, but provides exact reference gradients
 ```
