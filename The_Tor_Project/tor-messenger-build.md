@@ -12,7 +12,7 @@ source: https://github.com/TheTorProject/tor-messenger-build
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzNxN2phYjJxY3UyZmRicDA3cHFteTJsZDN5M3RyMmN6OXJ5MXF4NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o85fTbmA8BbUhJvri/giphy.gif)
+> ![Loading...](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXFtdDhnZG1kcjlnMDhkYzZ0cWcyNDdtMDNzMnlzd3lrcjU0a2hubyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0Iy3uCVSzlSmtQbe/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 

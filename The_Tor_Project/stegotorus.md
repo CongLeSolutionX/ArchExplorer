@@ -12,7 +12,7 @@ source: https://github.com/TheTorProject/stegotorus
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXVjejV3dnVjc2o5MXd3eXBvcDR1cHlzbHQ1Z2R6YjY0ZHpmdjJ6OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hL9q5k9dk9l0wGd4e0/giphy.gif)
+> ![Loading...](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmwyMW9rMnJxNWozdzB2MXd0a3diaTBwMXF1dnowZzV1ano5eWg3NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ScuEQUt218fwQ/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
@@ -76,26 +76,26 @@ config:
   }
 }%%
 flowchart TD
-    %% Client Layer
-    subgraph "Client Layer"
+    subgraph Client_Layer["Client Layer"]
+    style Client_Layer fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
         Client("Client Connection"):::client
     end
 
-    %% Network Communication Layer
-    subgraph "Network Communication Layer"
+    subgraph Network_Communication_Layer["Network Communication Layer"]
+    style Network_Communication_Layer fill:#22F2,stroke:#333,stroke-width:1px, color: #FFFF
         NetMgmt("Connection Management"):::network
         NetHandle("Network Handling"):::network
         TransProxy("Transparent Proxy"):::network
         Socks("SOCKS Handling"):::network
     end
 
-    %% Chopper Protocol Layer
-    subgraph "Chopper Protocol Layer"
+    subgraph Chopper_Protocol_Layer["Chopper Protocol Layer"]
+    style Chopper_Protocol_Layer fill:#BB52,stroke:#333,stroke-width:1px, color: #FFFF
         Chopper("Chopper Protocol"):::core
     end
 
-    %% Steg Modules Layer
-    subgraph "Steg Modules Layer"
+    subgraph Steg_Modules_Layer["Steg Modules Layer"]
+    style Steg_Modules_Layer fill:#FF52,stroke:#333,stroke-width:1px, color: #FFFF
         NoSteg("NoSteg Module"):::steg
         HTTPSteg("HTTP Steg Modules"):::steg
         ApachePayload("Apache Payload Server"):::steg
@@ -103,8 +103,8 @@ flowchart TD
         TracePayload("Trace Payload Server"):::steg
     end
 
-    %% HTTP Steg SubModules
-    subgraph "HTTP Steg SubModules"
+    subgraph HTTP_Steg_SubModules["HTTP Steg SubModules"]
+    style HTTP_Steg_SubModules fill:#DD52,stroke:#333,stroke-width:1px, color: #FFFF
         HttpGeneral("HTTP Steg General"):::steg
         FileSteg("File Steg"):::steg
         GifSteg("GIF Steg"):::steg
@@ -116,14 +116,14 @@ flowchart TD
         SwfSteg("SWF Steg"):::steg
     end
 
-    %% Configuration & Deployment
-    subgraph "Configuration & Deployment"
-        Config("Configuration Files (conf.d)"):::config
-        TestConfig("Test Config (src/test/test_conf.d)"):::config
+    subgraph Configuration_and_Deployment["Configuration & Deployment"]
+    style Configuration_and_Deployment fill:#F252,stroke:#333,stroke-width:1px, color: #FFFF
+        Config("Configuration Files<br/>(conf.d)"):::config
+        TestConfig("Test Config<br/>(src/test/test_conf.d)"):::config
     end
 
-    %% External Dependencies
-    subgraph "External Dependencies"
+    subgraph External_Dependencies["External Dependencies"]
+    style External_Dependencies fill:#BFF2,stroke:#333,stroke-width:1px, color: #FFFF
         OpenSSL("OpenSSL"):::external
         LibEvent("libevent"):::external
         LibCurl("libcurl"):::external
@@ -132,8 +132,8 @@ flowchart TD
         Zlib("zlib"):::external
     end
 
-    %% Build Tools
-    subgraph "Build Tools"
+    subgraph Build_Tools["Build Tools"]
+    style Build_Tools fill:#BAF2,stroke:#333,stroke-width:1px, color: #FFFF
         Autotools("GNU Autotools"):::build
         BuildScripts("Platform Build Scripts"):::build
     end
@@ -170,13 +170,13 @@ flowchart TD
     Autotools -->|"generates"| BuildScripts
 
     %% Styles
-    classDef client fill:#f9e79f,stroke:#333,stroke-width:2px;
-    classDef network fill:#aed6f1,stroke:#333,stroke-width:2px;
-    classDef core fill:#f5b7b1,stroke:#333,stroke-width:2px;
-    classDef steg fill:#abebc6,stroke:#333,stroke-width:2px;
-    classDef config fill:#d6eaf8,stroke:#333,stroke-width:2px;
-    classDef external fill:#f9e79f,stroke:#333,stroke-width:2px;
-    classDef build fill:#d2b4de,stroke:#333,stroke-width:2px;
+    classDef client fill:#f2f9,stroke:#333,stroke-width:2px;
+    classDef network fill:#aff1,stroke:#333,stroke-width:2px;
+    classDef core fill:#fbb1,stroke:#333,stroke-width:2px;
+    classDef steg fill:#b2c6,stroke:#333,stroke-width:2px;
+    classDef config fill:#dbf2,stroke:#333,stroke-width:2px;
+    classDef external fill:#f7f2,stroke:#333,stroke-width:2px;
+    classDef build fill:#d4d2,stroke:#333,stroke-width:2px;
 
     %% Click Events for Chopper Protocol Components
     click Chopper "https://github.com/thetorproject/stegotorus/blob/master/src/protocol/chop.cc"
