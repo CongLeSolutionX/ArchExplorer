@@ -11,7 +11,7 @@ source: https://github.com/apple/ml-cross-entropy/blob/main/README.md
 > 
 > This is an ongoing document collecting notes for personal educational purposes and references. 
 > 
-> ![Loading...](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2JmNHc2MnVzOXRjdHo3Yml6MmdpaXkxM3Fjb3JpZHJqOTk0Ym44biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3ohzdL95gkIo73F3Vu/giphy.gif)
+> ![Loading...](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjY5dWRwZG91cGR0b2FscWV4dDJpcm81OHk3NnNuZWJ4Zzlmc2F2byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ArEECl6XZRZ5e/giphy.gif)
 > 
 > gif image is provided by [Giphy](https://giphy.com)
 > 
