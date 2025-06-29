@@ -4,7 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright © 2025 Cong Le. All Rights Reserved.
-source:
+source: https://github.com/jupyter/.github
 ---
 
 
@@ -24,7 +24,7 @@ source:
 
 
 
-# CHANGE_ME
+# dot github repo project
 <details open>
 <summary>Click to show/hide the full disclaimer.</summary>
    
@@ -42,11 +42,79 @@ source:
 
 ---
 
-
-## MAIN CONTENT - A Diagrammatic Guide 
-
-
+```mermaid
 ---
+title: "dot github repo project"
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY-SA 4.0"
+copyright: "Copyright © 2025 Cong Le. All Rights Reserved."
+config:
+  layout: elk
+  theme: base
+  look: handDrawn
+---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
+%%{
+  init: {
+    'flowchart': { 'htmlLabels': true, 'curve': 'basis' },
+    'fontFamily': 'American Typewriter, monospace',
+    'logLevel': 'fatal',
+    'themeVariables': {
+      'primaryColor': '#22BB',
+      'primaryTextColor': '#F8B229',
+      'lineColor': '#F8B229',
+      'primaryBorderColor': '#27AE60',
+      'secondaryColor': '#E2F1',
+      'secondaryTextColor': '#6C3483',
+      'secondaryBorderColor': '#A569BD',
+      'fontSize': '20px'
+    }
+  }
+}%%
+flowchart TB
+    subgraph "Central Configuration Repository"
+        GH[".github repo<br/>(community health templates)"]:::repo
+        COC["CODE_OF_CONDUCT.md"]:::policy
+        SEC["SECURITY.md"]:::policy
+        RD["README.md"]:::doc
+    end
+
+    GH --> COC
+    GH --> SEC
+    GH --> RD
+
+    subgraph "Organization Target Repositories"
+        TR["All @jupyter repos"]:::repo
+    end
+
+    COC -->|"Inherited"| TR
+    SEC -->|"Inherited"| TR
+
+    Contrib[(Contributors)]:::actor
+    TR -->|"Show templates<br/>(COC & SECURITY)"| Contrib
+    Contrib -->|"Open Issue/PR"| TR
+
+    Maintainers[(Maintainers)]:::actor
+    SecTeam[(Security Team)]:::actor
+    TR -->|"Notify"| Maintainers
+    TR -->|"Security reports"| SecTeam
+
+    click GH "https://github.com/jupyter/.github/tree/main//"
+    click COC "https://github.com/jupyter/.github/blob/main//CODE_OF_CONDUCT.md"
+    click SEC "https://github.com/jupyter/.github/blob/main//SECURITY.md"
+    click RD "https://github.com/jupyter/.github/blob/main//README.md"
+
+    classDef repo fill:#e0ffe0,stroke:#008000,stroke-width:2px
+    classDef policy fill:#e0f0ff,stroke:#0000ff,stroke-width:2px
+    classDef doc fill:#f0f8ff,stroke:#5a5aad,stroke-width:2px
+    classDef actor fill:#fff0e0,stroke:#ff8000,stroke-width:2px
+
+```
+
+-----
 
 <!-- 
 ```mermaid
