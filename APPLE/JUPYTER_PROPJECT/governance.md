@@ -12,7 +12,7 @@ source: https://github.com/jupyter/governance
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXVjejV3dnVjc2o5MXd3eXBvcDR1cHlzbHQ1Z2R6YjY0ZHpmdjJ6OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hL9q5k9dk9l0wGd4e0/giphy.gif)
+> ![Loading...](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ2V5bGE1MG1wMnd0NWMzZDdlb3c0dHJmdG91eGpiMzljYnh6NXo2cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3UglY2KhHiHdLceuL8/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
