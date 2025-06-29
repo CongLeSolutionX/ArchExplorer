@@ -1,5 +1,5 @@
 ---
-created: 2025-06-20 05:31:26
+created: 2025-06-29 05:31:26
 author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
@@ -84,7 +84,8 @@ flowchart LR
 
   Closing_quote@{ shape: braces, label: "...searching insights in the process of formulating better questions..." }
     
-  My_Meme ~~~ Closing_quote
+
+  Closing_quote ~~~ My_Meme
     
   Link_to_my_profile{{"<a href='https://github.com/CongLeSolutionX/CongLeSolutionX' target='_blank'>Click here if you care about my profile</a>"}}
 
