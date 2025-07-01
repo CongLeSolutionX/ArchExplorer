@@ -4,7 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright © 2025 Cong Le. All Rights Reserved.
-source:
+source: https://github.com/cloudflare/api-schemas
 ---
 
 
@@ -24,7 +24,7 @@ source:
 
 
 
-# CHANGE_ME
+# api-schemas repo project
 <details open>
 <summary>Click to show/hide the full disclaimer.</summary>
    
