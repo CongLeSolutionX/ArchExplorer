@@ -20,6 +20,7 @@ source: https://github.com/containerd/rust-extensions
 
 </div>
 
+---
 
 # rust-extensions repo project
 <details open>
@@ -45,7 +46,7 @@ title: "rust-extensions repo project"
 author: "Cong Le"
 version: "1.0"
 license(s): "MIT, CC BY-SA 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+copyright: "Copyright © 2025 Cong Le. All Rights Reserved."
 config:
   layout: elk
   theme: base
@@ -72,9 +73,9 @@ config:
   }
 }%%
 flowchart TD
-    %% External Services
-    subgraph "External Services"
-        direction TB
+    subgraph External_Services["External Services"]
+    style External_Services fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
+    direction TB
         Client["containerd-client (gRPC client)"]:::client
         RuncCLI["runc CLI (OCI runtime)"]:::external
     end
@@ -83,16 +84,18 @@ flowchart TD
     Containerd["containerd daemon"]:::external
 
     %% Rust Plugins (loaded by containerd)
-    subgraph "Containerd Plugins" 
-        direction TB
+    subgraph Containerd_Plugins["Containerd Plugins"]
+    style Containerd_Plugins fill:#32F2,stroke:#333,stroke-width:1px, color: #FFFF
+    direction TB
         RuncShim["containerd-runc-shim"]:::plugin
         Logging["containerd-shim-logging"]:::plugin
         Snapshots["containerd-snapshots"]:::plugin
     end
 
     %% Rust Libraries/Crates
-    subgraph "Rust Crates"
-        direction TB
+    subgraph Rust_Crates["Rust Crates"]
+    style Rust_Crates fill:#222,stroke:#333,stroke-width:1px, color: #FFFF
+    direction TB
         ShimProtos["containerd-shim-protos"]:::lib
         ShimFW["containerd-shim (framework)"]:::lib
         RuncWrap["runc (wrapper)"]:::lib
@@ -154,19 +157,19 @@ flowchart TD
     click InstallProto "https://github.com/containerd/rust-extensions/blob/main/scripts/install-protobuf.sh"
     click UpdateVendor "https://github.com/containerd/rust-extensions/blob/main/scripts/update-vendor.sh"
 
-    %% Legend
-    subgraph Legend
-        direction TB
+    subgraph Legend["Legend"]
+    style Legend fill:#2BB2,stroke:#333,stroke-width:1px, color: #FFFF
+    direction TB
         ext["External Services"]:::external
         plug["Containerd Plugins"]:::plugin
         libc["Rust Crates"]:::lib
         cli["Client Libraries"]:::client
     end
 
-    classDef external fill:#ADD8E6,stroke:#000,stroke-width:1px;
-    classDef plugin fill:#90EE90,stroke:#000,stroke-width:1px;
-    classDef client fill:#FFA500,stroke:#000,stroke-width:1px;
-    classDef lib fill:#F0E68C,stroke:#000,stroke-width:1px;
+    classDef external fill:#A8E6,stroke:#000,stroke-width:1px
+    classDef plugin fill:#9E92,stroke:#000,stroke-width:1px
+    classDef client fill:#F555,stroke:#000,stroke-width:1px
+    classDef lib fill:#F682,stroke:#000,stroke-width:1px
 
 ```
 
