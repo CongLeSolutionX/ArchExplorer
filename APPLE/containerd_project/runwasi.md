@@ -71,11 +71,12 @@ config:
     }
   }
 }%%
-flowchart TD
-    %% External Clients
-    subgraph "External Clients"
+flowchart LR
+    subgraph External_Clients["External Clients"]
+    style External_Clients fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
+	  direction LR
         CTR["ctr CLI"]:::external
-        KUBE["Kubernetes CRI (kubelet)"]:::external
+        KUBE["Kubernetes CRI<br/>(kubelet)"]:::external
         REG["Container Image Registry"]:::external
     end
 
@@ -91,10 +92,12 @@ flowchart TD
     click Shimkit "https://github.com/containerd/runwasi/tree/main/crates/containerd-shimkit"
 
     %% Sandbox
-    Sandbox["Sandbox (WASM Execution)"]:::library
+    Sandbox["Sandbox<br/>(WASM Execution)"]:::library
 
     %% Runtime Adapters
-    subgraph "WASM Engine Adapters"
+    subgraph WASM_Engine_Adapters["WASM Engine Adapters"]
+    style WASM_Engine_Adapters fill:#23F2,stroke:#333,stroke-width:1px, color: #FFFF
+	  direction LR
         Wasmtime["Wasmtime Adapter"]:::adapter
         click Wasmtime "https://github.com/containerd/runwasi/tree/main/crates/containerd-shim-wasmtime"
         Wasmer["Wasmer Adapter"]:::adapter
@@ -105,29 +108,36 @@ flowchart TD
         click WasmEdge "https://github.com/containerd/runwasi/tree/main/crates/containerd-shim-wasmedge"
     end
 
-    %% WASM Module
     Module["WASI Module"]:::module
     click Module "https://github.com/containerd/runwasi/tree/main/crates/wasi-demo-app"
 
     %% OS / Sys Abstractions
-    OS["OS / Sys Calls"]:::os
+    OS["OS /<br/> Sys Calls"]:::os
 
-    %% Supporting Tooling
-    subgraph "Supporting Tooling"
+    subgraph Supporting_Tooling["Supporting Tooling"]
+    style Supporting_Tooling fill:#2BF2,stroke:#333,stroke-width:1px, color: #FFFF
+	  direction TB
         OCI["OCI Image Builder"]:::tooling
         click OCI "https://github.com/containerd/runwasi/tree/main/crates/oci-tar-builder"
+        
         Stress["Stress-Test Harness"]:::tooling
         click Stress "https://github.com/containerd/runwasi/tree/main/crates/stress-test"
+        
         Bench["Benchmark Suite"]:::tooling
         click Bench "https://github.com/containerd/runwasi/tree/main/benches/containerd-shim-benchmarks"
+        
         Docs["Documentation"]:::tooling
         click Docs "https://github.com/containerd/runwasi/blob/main/docs/src/developer/architecture.md"
+        
         TestK8s["K8s Examples"]:::tooling
         click TestK8s "https://github.com/containerd/runwasi/tree/main/test/k8s"
+        
         TestK3s["K3s Examples"]:::tooling
         click TestK3s "https://github.com/containerd/runwasi/tree/main/test/k3s"
+        
         Scripts["Build & CI Scripts"]:::tooling
         click Scripts "https://github.com/containerd/runwasi/tree/main/scripts"
+        
         CI["CI Workflows"]:::tooling
         click CI "https://github.com/containerd/runwasi/tree/main/.github/workflows"
     end
@@ -147,19 +157,19 @@ flowchart TD
     WAMR -->|runs WASM| Module
     WasmEdge -->|runs WASM| Module
     Module -->|WASI syscalls| OS
-    OS -->|host calls| _[Underlying Host]:::os
+    OS -->|host calls| _["Underlying Host"]:::os
 
     Containerd -->|status/results| CTR
     Containerd -->|status/results| KUBE
 
     %% Styles
-    classDef external fill:#AED6F1,stroke:#2E86C1,color:#1B4F72
-    classDef shim fill:#ABEBC6,stroke:#27AE60,color:#145A32
-    classDef library fill:#FCF3CF,stroke:#F1C40F,color:#7D6608
-    classDef adapter fill:#FAD7A0,stroke:#EB984E,color:#7E5109
-    classDef module fill:#D7BDE2,stroke:#8E44AD,color:#512E5F
-    classDef os fill:#D5D8DC,stroke:#797D7F,color:#2C3E50
-    classDef tooling fill:#F2F4F4,stroke:#AEB6BF,color:#566573
+    classDef external fill:#1B4F72,stroke:#2E86C1
+    classDef shim fill:#145A32,stroke:#27AE60
+    classDef library fill:#7D6608,stroke:#F1C40F
+    classDef adapter fill:#7E5109,stroke:#EB984E
+    classDef module fill:#512E5F,stroke:#8E44AD
+    classDef os fill:#2C3E50,stroke:#797D7F
+    classDef tooling fill:#566573,stroke:#AEB6BF
 
 ```
 
