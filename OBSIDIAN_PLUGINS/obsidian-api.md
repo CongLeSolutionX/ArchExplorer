@@ -4,6 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright © 2025 Cong Le. All Rights Reserved.
+source: https://github.com/obsidianmd/obsidian-api
 ---
 
 
@@ -23,7 +24,7 @@ copyright: Copyright © 2025 Cong Le. All Rights Reserved.
 
 
 
-# CHANGE_ME
+# obsidian-api repo project by obsidianmd
 <details open>
 <summary>Click to show/hide the full disclaimer.</summary>
    
@@ -39,14 +40,86 @@ copyright: Copyright © 2025 Cong Le. All Rights Reserved.
 </details>
 
 
+
+----
+
+```mermaid
 ---
-
-
-
-## MAIN CONTENT - A Diagrammatic Guide 
-
-
+title: "obsidian-api repo project by obsidianmd"
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY-SA 4.0"
+copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+config:
+  layout: elk
+  theme: base
+  look: handDrawn
 ---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
+%%{
+  init: {
+    'flowchart': { 'htmlLabels': true, 'curve': 'basis' },
+    'fontFamily': 'American Typewriter, monospace',
+    'logLevel': 'fatal',
+    'themeVariables': {
+      'primaryColor': '#22BB',
+      'primaryTextColor': '#F8B229',
+      'lineColor': '#F8B229',
+      'primaryBorderColor': '#27AE60',
+      'secondaryColor': '#E2F1',
+      'secondaryTextColor': '#6C3483',
+      'secondaryBorderColor': '#A569BD',
+      'fontSize': '20px'
+    }
+  }
+}%%
+flowchart TD
+    %% API Type Definitions Subgraph
+    subgraph "API Type Definitions"
+        A["Obsidian API"]:::api
+        V["Vault Interface"]:::api
+        W["Workspace Interface"]:::api
+        M["MetadataCache Interface"]:::api
+        C["Canvas API"]:::api
+        P["Publish API"]:::api
+    end
+
+    A -->|"includes"| V
+    A -->|"includes"| W
+    A -->|"includes"| M
+
+    %% Plugin Integration Subgraph
+    subgraph "Plugin Integration"
+        PM["Plugin Manifest (manifest.json)"]:::plugin
+        PC["Plugin Code (main.js)"]:::plugin
+        PE["Extension Points (Ribbon,Commands,Events)"]:::plugin
+    end
+
+    PC -->|"calls"| A
+    PC -->|"uses"| PE
+    PE -->|"registers_to"| A
+
+    %% External Documentation/Developer Resources
+    subgraph "External Resources"
+        EX["Documentation/Developer Community"]:::external
+    end
+
+    PC -->|"references"| EX
+
+    %% Click Events for API Type Definitions
+    click A "https://github.com/obsidianmd/obsidian-api/blob/master/obsidian.d.ts"
+    click C "https://github.com/obsidianmd/obsidian-api/blob/master/canvas.d.ts"
+    click P "https://github.com/obsidianmd/obsidian-api/blob/master/publish.d.ts"
+
+    %% Styles
+    classDef api fill:#FFDDCC,stroke:#333,stroke-width:2px;
+    classDef plugin fill:#CCFFCC,stroke:#333,stroke-width:2px;
+    classDef external fill:#CCE5FF,stroke:#333,stroke-width:2px;
+```
+
+-----
 
 <!-- 
 ```mermaid

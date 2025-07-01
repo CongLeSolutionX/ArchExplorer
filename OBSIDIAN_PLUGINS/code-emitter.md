@@ -3,7 +3,7 @@ created: 2025-06-20 05:31:26
 author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
-copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
+copyright: Copyright © 2025 Cong Le. All Rights Reserved.
 source: https://github.com/mokeyish/obsidian-code-emitter
 ---
 
