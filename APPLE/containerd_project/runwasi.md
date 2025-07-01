@@ -71,7 +71,7 @@ config:
     }
   }
 }%%
-flowchart TD
+flowchart LR
     subgraph External_Clients["External Clients"]
     style External_Clients fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
 	  direction LR
@@ -116,7 +116,7 @@ flowchart TD
 
     subgraph Supporting_Tooling["Supporting Tooling"]
     style Supporting_Tooling fill:#2BF2,stroke:#333,stroke-width:1px, color: #FFFF
-	  direction LR
+	  direction TB
         OCI["OCI Image Builder"]:::tooling
         click OCI "https://github.com/containerd/runwasi/tree/main/crates/oci-tar-builder"
         
