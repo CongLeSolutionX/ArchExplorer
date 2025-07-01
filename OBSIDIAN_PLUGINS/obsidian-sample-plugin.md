@@ -4,7 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright © 2025 Cong Le. All Rights Reserved.
-source: https://github.com/obsidianmd/obsidian-api
+source: https://github.com/obsidianmd/obsidian-sample-plugin
 ---
 
 
@@ -24,7 +24,7 @@ source: https://github.com/obsidianmd/obsidian-api
 
 
 
-# obsidian-api repo project by obsidianmd
+# obsidian-sample-plugin repo project by obsidianmd
 <details open>
 <summary>Click to show/hide the full disclaimer.</summary>
    
@@ -41,11 +41,11 @@ source: https://github.com/obsidianmd/obsidian-api
 
 
 
-----
+---
 
 ```mermaid
 ---
-title: "obsidian-api repo project by obsidianmd"
+title: "obsidian-sample-plugin repo project by obsidianmd"
 author: "Cong Le"
 version: "1.0"
 license(s): "MIT, CC BY-SA 4.0"
@@ -75,51 +75,91 @@ config:
     }
   }
 }%%
-flowchart TD
-    %% API Type Definitions Subgraph
-    subgraph "API Type Definitions"
-        A["Obsidian API"]:::api
-        V["Vault Interface"]:::api
-        W["Workspace Interface"]:::api
-        M["MetadataCache Interface"]:::api
-        C["Canvas API"]:::api
-        P["Publish API"]:::api
+flowchart LR
+    %% Host Application Layer
+    subgraph "Host Application"
+        O["Obsidian Core"]:::host
+        PL["Plugin Loader"]:::host
     end
 
-    A -->|"includes"| V
-    A -->|"includes"| W
-    A -->|"includes"| M
+    %% External API Definitions
+    API["obsidian.d.ts"]:::external
 
-    %% Plugin Integration Subgraph
-    subgraph "Plugin Integration"
-        PM["Plugin Manifest (manifest.json)"]:::plugin
-        PC["Plugin Code (main.js)"]:::plugin
-        PE["Extension Points (Ribbon,Commands,Events)"]:::plugin
+    %% Plugin Package
+    subgraph "Sample Plugin Package"
+        MP["manifest.json"]:::plugin
+        MT["main.ts"]:::plugin
+        SC["styles.css"]:::plugin
+        subgraph "Plugin Runtime Features"
+            RIB["Ribbon Icon Handler"]:::plugin
+            CMD["Command: Open Sample Modal"]:::plugin
+            MOD["Modal Window"]:::plugin
+            SET["Settings UI"]:::plugin
+            EV["Global Event Handler"]:::plugin
+            INT["Interval Logger"]:::plugin
+        end
     end
 
-    PC -->|"calls"| A
-    PC -->|"uses"| PE
-    PE -->|"registers_to"| A
-
-    %% External Documentation/Developer Resources
-    subgraph "External Resources"
-        EX["Documentation/Developer Community"]:::external
+    %% Developer Toolchain
+    subgraph "Developer Toolchain"
+        NPM["Node.js / npm"]:::dev
+        ESB["esbuild.config.mjs"]:::dev
+        TS["tsconfig.json"]:::dev
+        PKG["package.json"]:::dev
+        VBS["version-bump.mjs"]:::dev
+        VRS["versions.json"]:::dev
+        RMD["README.md"]:::dev
+        ESLRC[".eslintrc"]:::dev
+        ESLIG[".eslintignore"]:::dev
+        EDCFG[".editorconfig"]:::dev
     end
 
-    PC -->|"references"| EX
+    %% Relationships
+    O -->|"discovers/plugins"| PL
+    PL -->|"load() lifecycle"| MT
+    PL --> MP
+    PL --> SC
+    MT --> RIB
+    MT --> CMD
+    CMD --> MOD
+    SET -->|"reads/writes"| MT
+    EV -->|"listens to"| API
+    INT -->|"calls"| API
 
-    %% Click Events for API Type Definitions
-    click A "https://github.com/obsidianmd/obsidian-api/blob/master/obsidian.d.ts"
-    click C "https://github.com/obsidianmd/obsidian-api/blob/master/canvas.d.ts"
-    click P "https://github.com/obsidianmd/obsidian-api/blob/master/publish.d.ts"
+    API -.->|API Definitions| MT
+
+    %% Build Pipeline
+    ESB -->|"bundle"| SC
+    ESB -->|"bundle"| MT
+    TS -->|"compile"| MT
+    PKG -->|"scripts"| NPM
+    NPM -->|"runs"| ESB
+    NPM -->|"runs"| TS
+    VBS -->|"updates"| VRS
+    RMD -->|"docs for"| MT
 
     %% Styles
-    classDef api fill:#FFDDCC,stroke:#333,stroke-width:2px;
-    classDef plugin fill:#CCFFCC,stroke:#333,stroke-width:2px;
-    classDef external fill:#CCE5FF,stroke:#333,stroke-width:2px;
+    classDef host fill:#d3d3d3,stroke:#333,stroke-width:1px;
+    classDef plugin fill:#add8e6,stroke:#333,stroke-width:1px;
+    classDef dev fill:#90ee90,stroke:#333,stroke-width:1px;
+    classDef external fill:#f4a460,stroke:#333,stroke-width:1px;
+
+    %% Click Events
+    click MP "https://github.com/obsidianmd/obsidian-sample-plugin/blob/master/manifest.json"
+    click MT "https://github.com/obsidianmd/obsidian-sample-plugin/blob/master/main.ts"
+    click SC "https://github.com/obsidianmd/obsidian-sample-plugin/blob/master/styles.css"
+    click ESB "https://github.com/obsidianmd/obsidian-sample-plugin/blob/master/esbuild.config.mjs"
+    click TS "https://github.com/obsidianmd/obsidian-sample-plugin/blob/master/tsconfig.json"
+    click PKG "https://github.com/obsidianmd/obsidian-sample-plugin/blob/master/package.json"
+    click VBS "https://github.com/obsidianmd/obsidian-sample-plugin/blob/master/version-bump.mjs"
+    click VRS "https://github.com/obsidianmd/obsidian-sample-plugin/blob/master/versions.json"
+    click RMD "https://github.com/obsidianmd/obsidian-sample-plugin/blob/master/README.md"
+    click ESLRC "https://github.com/obsidianmd/obsidian-sample-plugin/blob/master/.eslintrc"
+    click ESLIG "https://github.com/obsidianmd/obsidian-sample-plugin/blob/master/.eslintignore"
+    click EDCFG "https://github.com/obsidianmd/obsidian-sample-plugin/blob/master/.editorconfig"
 ```
 
------
+----
 
 <!-- 
 ```mermaid
