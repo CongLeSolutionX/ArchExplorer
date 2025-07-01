@@ -4,7 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright © 2025 Cong Le. All Rights Reserved.
-source:
+source: https://github.com/cloudflare/workers-rs
 ---
 
 
@@ -24,7 +24,7 @@ source:
 
 
 
-# CHANGE_ME
+# workers-rs repo project
 <details open>
 <summary>Click to show/hide the full disclaimer.</summary>
    
@@ -40,14 +40,94 @@ source:
 </details>
 
 
----
-
-
-
-## MAIN CONTENT - A Diagrammatic Guide 
-
 
 ---
+
+```mermaid
+---
+title: "workers-rs repo project"
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY-SA 4.0"
+copyright: "Copyright © 2025 Cong Le. All Rights Reserved."
+config:
+  layout: elk
+  theme: base
+  look: handDrawn
+---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
+%%{
+  init: {
+    'flowchart': { 'htmlLabels': true, 'curve': 'basis' },
+    'fontFamily': 'American Typewriter, monospace',
+    'logLevel': 'fatal',
+    'themeVariables': {
+      'primaryColor': '#22BB',
+      'primaryTextColor': '#F8B229',
+      'lineColor': '#F8B229',
+      'primaryBorderColor': '#27AE60',
+      'secondaryColor': '#E2F1',
+      'secondaryTextColor': '#6C3483',
+      'secondaryBorderColor': '#A569BD',
+      'fontSize': '20px'
+    }
+  }
+}%%
+flowchart TD
+    %% Core Libraries
+    subgraph "Core Libraries"
+        WMC("Worker‑macros (Code Generation & Macros)"):::core
+        WM("Worker (Core API)"):::core
+        WS("Worker‑sys (FFI/Runtime Bindings)"):::core
+    end
+
+    %% Build Tooling
+    subgraph "Build Tooling"
+        WB("Worker‑build (Build Tooling)"):::build
+        WC("Worker‑codegen (Code Generation)"):::build
+        WASM("WASM Bundle"):::build
+    end
+
+    %% Application Layer
+    subgraph "Application Layer"
+        ET("Examples & Templates"):::examples
+    end
+
+    %% Deployment & External Tools
+    subgraph "Deployment & External Tools"
+        CF("Cloudflare Workers Platform"):::external
+        WMK("Wrangler & Miniflare"):::external
+    end
+
+    %% Relationships
+    WMC -->|"macro_expansion"| WM
+    WM -->|"FFI_calls"| WS
+    ET -->|"consumes_API"| WM
+    ET -->|"source_code"| WB
+    WB -->|"build_output"| WASM
+    WC -->|"codegen_output"| WASM
+    WASM -->|"deployment"| CF
+    WASM -->|"testing_deploy"| WMK
+
+    %% Click Events
+    click WM "https://github.com/cloudflare/workers-rs/tree/main/worker/"
+    click WS "https://github.com/cloudflare/workers-rs/tree/main/worker-sys/"
+    click WMC "https://github.com/cloudflare/workers-rs/tree/main/worker-macros/"
+    click WB "https://github.com/cloudflare/workers-rs/tree/main/worker-build/"
+    click WC "https://github.com/cloudflare/workers-rs/tree/main/worker-codegen/"
+    click ET "https://github.com/cloudflare/workers-rs/tree/main/examples/"
+
+    %% Styles
+    classDef core fill:#B3E5FC,stroke:#333,stroke-width:2px;
+    classDef build fill:#C8E6C9,stroke:#333,stroke-width:2px;
+    classDef examples fill:#FFECB3,stroke:#333,stroke-width:2px;
+    classDef external fill:#D1C4E9,stroke:#333,stroke-width:2px;
+
+```
+
+----
 
 <!-- 
 ```mermaid
