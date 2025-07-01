@@ -369,7 +369,7 @@ The architectural visualizations provided in this repository are for educational
 *   **GitHub Flavored Markdown Spec:** [https://github.github.com/gfm/](https://github.github.com/gfm/)
 *   **Mermaid.js Documentation:** [https://mermaid.js.org/](https://mermaid.js.org/)
 *   **Mermaid.js Live Editor:** [https://mermaid.live/](https://mermaid.live/)
-*   **GitDiagram:** [https://github.com/ahmedkhaleel2004/gitdiagram/](https://github.com/ahmedkhaleel2004/gitdiagram/) -  A primary source of inspiration for this project, leveraging LLMs to convert open-source projects into Mermaid diagrams.
+*   **GitDiagram:** [https://github.com/ahmedkhaleel2004/gitdiagram/](https://github.com/ahmedkhaleel2004/gitdiagram/) -  <ins>*A primary source of inspiration for this project, leveraging LLMs to convert open-source projects into Mermaid diagrams.*</ins>
 
 ---
 
