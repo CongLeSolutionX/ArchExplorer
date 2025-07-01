@@ -74,6 +74,7 @@ config:
 flowchart TD
     %% External Clients
     subgraph "External Clients"
+	direction LR
         CTR["ctr CLI"]:::external
         KUBE["Kubernetes CRI (kubelet)"]:::external
         REG["Container Image Registry"]:::external
@@ -95,6 +96,7 @@ flowchart TD
 
     %% Runtime Adapters
     subgraph "WASM Engine Adapters"
+	direction LR
         Wasmtime["Wasmtime Adapter"]:::adapter
         click Wasmtime "https://github.com/containerd/runwasi/tree/main/crates/containerd-shim-wasmtime"
         Wasmer["Wasmer Adapter"]:::adapter
@@ -114,6 +116,7 @@ flowchart TD
 
     %% Supporting Tooling
     subgraph "Supporting Tooling"
+	direction LR
         OCI["OCI Image Builder"]:::tooling
         click OCI "https://github.com/containerd/runwasi/tree/main/crates/oci-tar-builder"
         Stress["Stress-Test Harness"]:::tooling
