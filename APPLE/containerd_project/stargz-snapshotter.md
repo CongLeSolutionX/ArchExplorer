@@ -45,7 +45,7 @@ title: "stargz-snapshotter repo project"
 author: "Cong Le"
 version: "1.0"
 license(s): "MIT, CC BY-SA 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+copyright: "Copyright © 2025 Cong Le. All Rights Reserved."
 config:
   layout: elk
   theme: base
@@ -72,32 +72,28 @@ config:
   }
 }%%
 flowchart TD
-    %% External Systems
-    subgraph "External Systems"
-        direction TB
+    subgraph External_Systems["External Systems"]
+    direction TB
         Containerd["containerd"]:::external
         Registry["Container Registry (OCI/Docker)"]:::cloud
         IPFSCloud["IPFS Network"]:::cloud
     end
-
-    %% Daemon / Plugin
-    subgraph "Plugin Daemon (gRPC Snapshotter)" 
-        direction TB
+    
+    subgraph Plugin_Daemon["Plugin Daemon (gRPC Snapshotter)"]
+    direction TB
         DaemonMain["main.go"]:::runtime
         DaemonServer["server.go"]:::runtime
     end
 
-    %% Service Layer
-    subgraph "Service Layer"
-        direction TB
+    subgraph Service_Layer["Service Layer"]
+    direction TB
         Service["service.go"]:::runtime
         PluginAPI["plugin.go"]:::runtime
         PluginCore["plugincore/plugin.go"]:::runtime
     end
 
-    %% Resolver & Authentication
-    subgraph "Resolver & Authentication"
-        direction TB
+    subgraph Resolver_and_Authentication["Resolver & Authentication"]
+    direction TB
         ResolverRegistry["registry.go"]:::runtime
         ResolverCRI["cri.go"]:::runtime
         KeychainDocker["dockerconfig.go"]:::runtime
@@ -106,9 +102,8 @@ flowchart TD
         KeychainConfig["keychainconfig.go"]:::runtime
     end
 
-    %% Store Manager & Chunk Control API
-    subgraph "Store Manager & Chunk Control"
-        direction TB
+    subgraph Store_Manager_and_Chunk_Control_API["Store Manager & Chunk Control API"]
+    direction TB
         StoreManager["manager.go"]:::runtime
         StoreFS["fs.go"]:::runtime
         StoreRefs["refs.go"]:::runtime
@@ -119,9 +114,8 @@ flowchart TD
     %% Snapshot Orchestration
     Snapshot["snapshot.go"]:::runtime
 
-    %% Filesystem Layer
-    subgraph "Filesystem Layer"
-        direction TB
+    subgraph Filesystem_Layer["Filesystem Layer"]
+    direction TB
         FSCore["fs.go"]:::runtime
         FSConfig["config.go"]:::runtime
         FSLayer["layer.go"]:::runtime
@@ -133,32 +127,30 @@ flowchart TD
     %% Cache Layer
     Cache["cache.go"]:::runtime
 
-    %% Analyzer / Prefetcher
-    subgraph "Analyzer / Prefetcher"
+    subgraph Analyzer_Prefetcher["Analyzer / Prefetcher"]
         direction TB
         AnalyzerCore["analyzer.go"]:::prefetch
         Fanotify["fanotify.go"]:::prefetch
         Recorder["recorder.go"]:::prefetch
     end
 
-    %% FUSE Manager
-    subgraph "FUSE Manager"
-        direction TB
+    subgraph FUSE_Manager["FUSE Manager"]
+    direction TB
         FuseMgr["fusemanager.go"]:::runtime
         FuseAPI["api.proto"]:::runtime
         FuseClient["client.go"]:::runtime
         FuseSvc["service.go"]:::runtime
     end
 
-    %% CLI & Conversion Libraries
-    subgraph "CLI & Conversion"
-        direction TB
+    subgraph CLI_and_Conversion_Libraries["CLI & Conversion Libraries"]
+    direction TB
         CLI_Daemon["containerd-stargz-grpc"]:::cli
         CTRRemote["ctr-remote/main.go"]:::cli
         StargzStore["stargz-store/main.go"]:::cli
         FuseCLI["stargz-fuse-manager/main.go"]:::cli
-        subgraph "Image Conversion Libs"
-            direction TB
+        
+        subgraph Image_Conversion_Libs["Image Conversion Libs"]
+        direction TB
             Estargz["estargz.go"]:::cli
             ExternalTOC["externaltoc.go"]:::cli
             Gzip["gzip.go"]:::cli
@@ -279,7 +271,7 @@ title: "❓...CongLeSolutionX....❓"
 author: "Cong Le"
 version: "1.0"
 license(s): "MIT, CC BY-SA 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+copyright: "Copyright © 2025 Cong Le. All Rights Reserved."
 config:
   theme: base
 ---
