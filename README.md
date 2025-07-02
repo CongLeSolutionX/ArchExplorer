@@ -435,8 +435,10 @@ flowchart LR
     My_Meme@{ img: "https://raw.githubusercontent.com/CongLeSolutionX/MY_GRAPHIC_ASSETS/refs/heads/Designing_graphic_syntax/MY_MEME/My-meme-icon-design.png", label: "Ăn uống gì chưa ngừi đẹp?", pos: "b", w: 200, h: 150, constraint: "on" }
 
 Closing_quote@{ shape: braces, label: "...." }
-My_Meme ~~~ Closing_quote
-Link_to_my_profile{{"<a href='https://github.com/CongLeSolutionX' target='_blank'>Click here if you care about my profile</a>"}}
+
+Closing_quote ~~~ My_Meme
+
+Link_to_my_profile{{"<a href='https://github.com/CongLeSolutionX' target='_blank'>Click here if you care about a tech kid looking for a job</a>"}}
 
 Closing_quote ~~~ My_Meme
 My_Meme animatingEdge@--> Link_to_my_profile
