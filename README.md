@@ -25,7 +25,9 @@ Copyright © 2025 Cong Le. All Rights Reserved.
 	
 ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
 
-This project is in progress.
+This project is in progress...
+
+<ins>By a regular kid love mixing digital art and AI models to build things as hobby for my own academic research... and I'm looking for a job.</ins>
 
 ![Loading...](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTF2MTZ3MnQ0ZmVtdTQ2bzFvbXZyODlzenJqcW5pYTg1OW9mMGR2bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2A29ghC2SEWYIYXGKt/giphy.gif)
 
