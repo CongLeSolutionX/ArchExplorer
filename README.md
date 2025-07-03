@@ -20,8 +20,11 @@ Copyright © 2025 Cong Le. All Rights Reserved.
 </div>
 
 
-----
 
+----
+<details open>
+<summary>Click to show/hide the full disclaimer.</summary>
+	
 > <ins>📢 **Disclaimer** 🚨</ins>
 >
 > This project is born from my fascination with blending digital art and artificial intelligence.</br>
@@ -34,12 +37,14 @@ Copyright © 2025 Cong Le. All Rights Reserved.
 
 > This document contains my personal notes on the topic,</br>
 > compiled from publicly available documentation and various cited sources.
-> 
+>
 > The materials are intended for educational purposes (<ins>sometimes, entertainment purposes</ins>), personal study, and technical reference.
+>
 > The content is dual-licensed:
 > 1. **MIT License:** Applies to all code implementations (Swift, Mermaid, and other programming languages).
 > 2. **Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0):** Applies to all non-code content, including text, explanations, diagrams, and illustrations.
 
+</details>
 
 
 ---
