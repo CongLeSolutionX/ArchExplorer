@@ -1,5 +1,5 @@
 ---
-created: 2025-06-20 05:31:26
+created: 2025-07-14 05:31:26
 author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
@@ -86,7 +86,7 @@ flowchart LR
     
   My_Meme ~~~ Closing_quote
     
-  Link_to_my_profile{{"<a href='https://github.com/CongLeSolutionX/CongLeSolutionX' target='_blank'>Click here if you care about my profile</a>"}}
+  Link_to_my_profile{{"<a href='https://github.com/CongLeSolutionX/CongLeSolutionX' target='_blank'>Click here if you care about the profile of a tech guy seeking for job 🙏🏼</a>"}}
 
   Closing_quote ~~~ My_Meme
   My_Meme animatingEdge@--> Link_to_my_profile
