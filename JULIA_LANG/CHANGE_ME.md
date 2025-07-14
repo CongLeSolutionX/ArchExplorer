@@ -4,6 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
+source:
 ---
 
 
@@ -55,7 +56,7 @@ info
 
 ```mermaid
 ---
-title: "CongLeSolutionX"
+title: "C<char>o&#770;</char>ngL<char>e&#770;</char>SolutionX"
 author: "Cong Le"
 version: "1.0"
 license(s): "MIT, CC BY-SA 4.0"
