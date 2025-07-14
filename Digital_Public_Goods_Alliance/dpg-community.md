@@ -4,7 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
-source:
+source: https://github.com/DPGAlliance/dpg-community
 ---
 
 
@@ -24,7 +24,7 @@ source:
 
 
 
-# CHANGE_ME
+# dpg-community repo project
 <details open>
 <summary>Click to show/hide the full disclaimer.</summary>
    
@@ -39,13 +39,93 @@ source:
 
 </details>
 
----
-
-
-## MAIN CONTENT - A Diagrammatic Guide 
 
 
 ---
+
+```mermaid
+---
+title: "dpg-community repo project"
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY-SA 4.0"
+copyright: "Copyright © 2025 Cong Le. All Rights Reserved."
+config:
+  layout: elk
+  theme: base
+---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
+%%{
+  init: {
+    'flowchart': { 'htmlLabels': true, 'curve': 'linear'},
+    'fontFamily': 'Monaco',
+    'themeVariables': {
+      'primaryColor': '#22BB',
+      'primaryTextColor': '#F8B229',
+      'lineColor': '#F8B229',
+      'primaryBorderColor': '#27AE60',
+      'secondaryColor': '#EEF2',
+      'secondaryTextColor': '#6C3483',
+      'secondaryBorderColor': '#A569BD',
+      'fontSize': '15px'
+    }
+  }
+}%%
+flowchart TD
+    %% Actors
+    Contributor(["Contributor"]):::enduser
+
+    %% Internal Workflow
+    subgraph "Content Repository (GitHub Repo)"
+        RepoMain["GitHub Repo"]:::internal
+        README["README.md"]:::internal
+        CodeConduct["CODE_OF_CONDUCT.md"]:::internal
+        Assets["assets/"]:::internal
+        MeetingsDir["meetings/"]:::internal
+        MeetingNote["Nov 22 - Tracking local implementations 2ee0e05baddb4a739bcb5dd5e8fb9ccb.md"]:::internal
+    end
+
+    BuildDeploy["Static Build & Deploy\n(GitHub Actions/GitHub Pages)"]:::internal
+    Hosting["GitHub Pages CDN\n(Hosting)"]:::internal
+    Browser(["End Users\n(Browser Client)"]):::enduser
+
+    %% External Services
+    subgraph "External Services"
+        Discussions(["GitHub Discussions"]):::external
+        Calendar(["Google Calendar"]):::external
+        Airtable(["Airtable Form"]):::external
+        GDocs(["Google Docs"]):::external
+        DPGRegistry(["DPG Registry/Standard Repos"]):::external
+    end
+
+    %% Connections
+    Contributor -->|"Git push / PR"| RepoMain
+    RepoMain -->|"Git push triggers build"| BuildDeploy
+    BuildDeploy -->|"deploy via HTTPS"| Hosting
+    Hosting -->|"serve content (HTTPS)"| Browser
+
+    Browser -->|click link| Discussions
+    Browser -->|click link| Calendar
+    Browser -->|click link| Airtable
+    Browser -->|click link| GDocs
+    Browser -->|click link| DPGRegistry
+
+    %% Click Events
+    click README "https://github.com/dpgalliance/dpg-community/blob/main/README.md"
+    click CodeConduct "https://github.com/dpgalliance/dpg-community/blob/main/CODE_OF_CONDUCT.md"
+    click Assets "https://github.com/dpgalliance/dpg-community/tree/main/assets/"
+    click MeetingsDir "https://github.com/dpgalliance/dpg-community/tree/main/meetings/"
+    click MeetingNote "https://github.com/dpgalliance/dpg-community/blob/main/meetings/Nov 22 - Tracking local implementations 2ee0e05baddb4a739bcb5dd5e8fb9ccb.md"
+
+    %% Styles
+    classDef internal fill:#D6EAF8,stroke:#2E86C1,color:#1B4F72
+    classDef enduser fill:#D4EFDF,stroke:#27AE60,color:#145A32
+    classDef external fill:#FCF3CF,stroke:#F1C40F,color:#B9770E
+```
+
+-----
 
 <!-- 
 ```mermaid
