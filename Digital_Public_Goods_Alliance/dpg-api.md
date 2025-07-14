@@ -4,7 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
-source:
+source: https://github.com/DPGAlliance/dpg-api
 ---
 
 
@@ -24,7 +24,7 @@ source:
 
 
 
-# CHANGE_ME
+# dpg-api repo project
 <details open>
 <summary>Click to show/hide the full disclaimer.</summary>
    
@@ -39,13 +39,98 @@ source:
 
 </details>
 
----
-
-
-## MAIN CONTENT - A Diagrammatic Guide 
-
 
 ---
+
+```mermaid
+---
+title: "dpg-api repo project"
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY-SA 4.0"
+copyright: "Copyright © 2025 Cong Le. All Rights Reserved."
+config:
+  layout: elk
+  theme: base
+---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
+%%{
+  init: {
+    'flowchart': { 'htmlLabels': true, 'curve': 'linear'},
+    'fontFamily': 'Monaco',
+    'themeVariables': {
+      'primaryColor': '#22BB',
+      'primaryTextColor': '#F8B229',
+      'lineColor': '#F8B229',
+      'primaryBorderColor': '#27AE60',
+      'secondaryColor': '#EEF2',
+      'secondaryTextColor': '#6C3483',
+      'secondaryBorderColor': '#A569BD',
+      'fontSize': '15px'
+    }
+  }
+}%%
+flowchart TD
+    %% Repositories
+    subgraph "Repositories"
+        A["Source Repo<br/>(DPGAlliance/publicgoods-candidates)"]:::repo
+        B["API Repo<br/>(api.digitalpublicgoods.net)"]:::repo
+    end
+
+    %% CI/CD Process
+    A -->|"on push to main"| GHA["GitHub Actions<br/>(generation script)"]:::process
+    GHA -->|"push generated JSON"| B
+
+    %% API Repo File Structure
+    subgraph "API Repo Files"
+        C["docs/ (JSON Artifacts)"]:::artifact
+        D["CNAME"]:::config
+        E["README.md"]:::doc
+        F["LICENSE"]:::doc
+        H["CODE_OF_CONDUCT.md"]:::doc
+        I[".gitignore"]:::doc
+    end
+
+    %% JSON Endpoints inside docs/
+    %% C --> 
+    subgraph "JSON Endpoints"
+        C1["docs/dpg/"]:::artifact
+        C2["docs/dpgs/index.json"]:::artifact
+        C3["docs/nominee/"]:::artifact
+        C4["docs/nominees/index.json"]:::artifact
+    end
+
+    %% Hosting and Clients
+    B -->|"deploy via Pages"| GHP["GitHub Pages<br/>(static hosting)"]:::host
+    GHP -->|"HTTPS GET"| Client["Client Applications"]:::client
+
+    %% Click Events
+    click C "https://github.com/dpgalliance/dpg-api/tree/main/docs/"
+    click C1 "https://github.com/dpgalliance/dpg-api/tree/main/docs/dpg/"
+    click C2 "https://github.com/dpgalliance/dpg-api/blob/main/docs/dpgs/index.json"
+    click C3 "https://github.com/dpgalliance/dpg-api/tree/main/docs/nominee/"
+    click C4 "https://github.com/dpgalliance/dpg-api/blob/main/docs/nominees/index.json"
+    click D "https://github.com/dpgalliance/dpg-api/tree/main/CNAME"
+    click E "https://github.com/dpgalliance/dpg-api/blob/main/README.md"
+    click F "https://github.com/dpgalliance/dpg-api/tree/main/LICENSE"
+    click H "https://github.com/dpgalliance/dpg-api/blob/main/CODE_OF_CONDUCT.md"
+    click I "https://github.com/dpgalliance/dpg-api/blob/main/.gitignore"
+
+    %% Styles
+    classDef repo fill:#DAE8FC,stroke:#6C8EBF,stroke-width:1px
+    classDef process fill:#F8CECC,stroke:#B85450,stroke-width:1px
+    classDef artifact fill:#D5E8D4,stroke:#82B366,stroke-width:1px
+    classDef config fill:#FFF2CC,stroke:#D6B656,stroke-width:1px
+    classDef doc fill:#E1D5E7,stroke:#9673A6,stroke-width:1px
+    classDef host fill:#E1E1E1,stroke:#999999,stroke-width:1px
+    classDef client fill:#F2F2F2,stroke:#666666,stroke-width:1px
+
+```
+
+----
+
 
 <!-- 
 ```mermaid

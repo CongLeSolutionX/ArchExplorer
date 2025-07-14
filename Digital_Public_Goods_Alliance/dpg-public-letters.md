@@ -4,7 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
-source:
+source: https://github.com/DPGAlliance/dpg-public-letters
 ---
 
 
@@ -24,7 +24,7 @@ source:
 
 
 
-# CHANGE_ME
+# dpg-public-letters repo project
 <details open>
 <summary>Click to show/hide the full disclaimer.</summary>
    
@@ -39,13 +39,77 @@ source:
 
 </details>
 
----
-
-
-## MAIN CONTENT - A Diagrammatic Guide 
-
 
 ---
+
+```mermaid
+---
+title: "dpg-public-letters repo project"
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY-SA 4.0"
+copyright: "Copyright © 2025 Cong Le. All Rights Reserved."
+config:
+  layout: elk
+  theme: base
+---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
+%%{
+  init: {
+    'flowchart': { 'htmlLabels': true, 'curve': 'linear'},
+    'fontFamily': 'Monaco',
+    'themeVariables': {
+      'primaryColor': '#22BB',
+      'primaryTextColor': '#F8B229',
+      'lineColor': '#F8B229',
+      'primaryBorderColor': '#27AE60',
+      'secondaryColor': '#EEF2',
+      'secondaryTextColor': '#6C3483',
+      'secondaryBorderColor': '#A569BD',
+      'fontSize': '15px'
+    }
+  }
+}%%
+flowchart TD
+    Contributors["Contributors"]:::people
+    subgraph "Repository Contents"
+        GitHubRepo["GitHub Repository"]:::repo
+        README["README.md"]:::file
+        Letter["dpg-sustainability-letter.md"]:::file
+        Config["_config.yml"]:::file
+    end
+    CI["GitHub Actions CI (optional)"]:::process
+    Build["Jekyll Build"]:::process
+    GitHubPages["GitHub Pages (Hosting)"]:::cloud
+    Visitors["End Users"]:::people
+
+    Contributors -->|"Fork/Clone & Edit"| GitHubRepo
+    GitHubRepo -->|"Contains"| README
+    GitHubRepo -->|"Contains"| Letter
+    GitHubRepo -->|"Contains"| Config
+    GitHubRepo -->|"Open Pull Request"| GitHubRepo
+    GitHubRepo --> CI
+    CI -->|"Checks Passed"| GitHubRepo
+    GitHubRepo --> Build
+    Build -->|"Generate HTML"| GitHubPages
+    GitHubPages --> Visitors
+
+    click README "https://github.com/dpgalliance/dpg-public-letters/blob/main/README.md"
+    click Letter "https://github.com/dpgalliance/dpg-public-letters/blob/main/dpg-sustainability-letter.md"
+    click Config "https://github.com/dpgalliance/dpg-public-letters/blob/main/_config.yml"
+    click GitHubRepo "https://github.com/dpgalliance/dpg-public-letters/blob/main/."
+
+    classDef people fill:#f9f,stroke:#333,stroke-width:1px
+    classDef repo fill:#ccf,stroke:#333,stroke-width:1px
+    classDef process fill:#cfc,stroke:#333,stroke-width:1px
+    classDef cloud fill:#cff,stroke:#333,stroke-width:1px
+    classDef file fill:#fcf,stroke:#333,stroke-width:1px
+
+```
+
+----
 
 <!-- 
 ```mermaid
